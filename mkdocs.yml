@@ -2,6 +2,7 @@ site_name: Onegini docs
 site_description: Onegini public documentation
 
 nav:
+  - Introduction: introduction.md
 
 extra:
   search:
