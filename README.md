@@ -1,4 +1,5 @@
 # Public docs parent
+[![Documentation Status](https://readthedocs.com/projects/onegini-onegini-public-docs-parent/badge/?version=latest&token=c64f387fcc48becb6c9e51883f501ebf351e220e3fb2a39a720f28f24b68ddb6)](https://onegini-onegini-public-docs-parent.readthedocs-hosted.com/en/latest/?badge=latest)
 
 The parent docs site that is deployed to [readthedocs.com](https://readthedocs.com). Readthedocs supports a hierarchy of docs sites. This project is the root of that hierarchy.
 
