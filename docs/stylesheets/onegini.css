@@ -1,0 +1,9 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:700&display=swap';
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
