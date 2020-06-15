@@ -2,19 +2,11 @@ site_name: Onegini docs
 site_description: Onegini public documentation
 
 nav:
-  - Introduction: introduction.md
 
 extra:
   search:
     tokenizer: '[\s\-\.]+'
   manifest: 'manifest.webmanifest'
-markdown_extensions:
-  - admonition
-  - codehilite:
-      linenums: true
-  - pymdownx.details
-  - toc:
-      permalink: true
 plugins:
   - search
   - redirects:
