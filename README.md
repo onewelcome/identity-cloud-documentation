@@ -1,2 +1,3 @@
-# public-docs-parent
-Public docs parent for our documentation on readthedocs
+# Onegini identity cloud documentation
+
+Public docs for the Onegini identity cloud on readthedocs.
