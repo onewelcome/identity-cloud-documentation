@@ -24,6 +24,6 @@ These ten sections, with customer-friendly names, will be used as a structure fo
 * Device registration and management
 * Secure mobile apps
 * Client environment embedding (implementation) 
-* Delegated User Management
+* CIAM for B2B
 * Monitoring, Logging & alerting 
 * API descriptions
