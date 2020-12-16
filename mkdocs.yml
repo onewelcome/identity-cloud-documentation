@@ -4,11 +4,46 @@ site_description: Onegini public documentation
 nav:
   - Introduction: index.md
 
+copyright: "Onegini B.V."
+
+extra_css:
+- stylesheets/extra.css
+
+theme:
+  name: 'material'
+  logo: 'images/logo.png'
+  favicon: 'images/onegini-logo-small.webp'
+  font: false
+
 extra:
   search:
     tokenizer: '[\s\-\.]+'
   manifest: 'manifest.webmanifest'
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/Onegini
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/onegini/
+    - icon: fontawesome/brands/vimeo
+      link: https://vimeo.com/onegini
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - pymdownx.details
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
 plugins:
   - search
+  - drawio-exporter:
+        cache_dir: 'rendered-diagrams'
+        format: svg
+        sources: '*.drawio'
   - redirects:
       redirect_maps:

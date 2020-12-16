@@ -1,2 +1,7 @@
 mkdocs
 mkdocs-redirects
+mkdocs-material
+mkdocs-plugin-mermaid
+mkdocs-drawio-exporter
+pymdown-extensions
+pygments
