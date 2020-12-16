@@ -1,7 +1,8 @@
-site_name: Onegini docs
+site_name: Onegini Identity Cloud
 site_description: Onegini public documentation
 
 nav:
+  - Introduction: index.md
 
 extra:
   search:
@@ -11,4 +12,3 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        'index.md': 'https://docs.onegini.com'
