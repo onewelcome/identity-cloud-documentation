@@ -3,8 +3,10 @@ site_description: Onegini public documentation
 
 nav:
   - Introduction: index.md
+  - Architecture:
+      - 'Mobile Identity & Access': architecture/mobile-identity-access.md
   - Single sign on:
-    - 'Protected data in Single Page Apps': single-sign-on/protected-data-openid-connect-access-tokens.md
+      - 'Protected data in Single Page Apps': single-sign-on/protected-data-openid-connect-access-tokens.md
 
 copyright: "Onegini B.V."
 
