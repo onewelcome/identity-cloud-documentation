@@ -42,9 +42,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_div_format
 plugins:
   - search
-  - drawio-exporter:
-        cache_dir: 'rendered-diagrams'
-        format: svg
-        sources: '*.drawio'
+#  - drawio-exporter:
+#        cache_dir: 'rendered-diagrams'
+#        format: svg
+#        sources: '*.drawio'
   - redirects:
       redirect_maps:

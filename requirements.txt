@@ -1,6 +1,6 @@
 mkdocs
 mkdocs-redirects
-mkdocs-material
+mkdocs-material>=5.0
 mkdocs-plugin-mermaid
 mkdocs-drawio-exporter
 pymdown-extensions
