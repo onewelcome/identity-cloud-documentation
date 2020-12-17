@@ -3,6 +3,8 @@ site_description: Onegini public documentation
 
 nav:
   - Introduction: index.md
+  - Single sign on:
+    - Fetch protected data with OpenID Connect and Access Tokens: single-sign-on/protected-data-openid-connect-access-tokens.md
 
 copyright: "Onegini B.V."
 
