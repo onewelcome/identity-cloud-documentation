@@ -1,6 +1,6 @@
-# Fetching protected data with OpenID Connect in Single Page Apps
+# Protected data in Single Page Apps
 
-What do the website of a bank, an online retailer, and Twitter have in common? They serve public facing content and personalized content based on your account. After you have signed in with your bank, you can check your balance, transfer money or request a new (debit) card. At the online retailer, you can check your previous orders or update your wish list. At Twitter, you can place Tweets, receive notifications or update your profile.
+What do the website of a bank, an online retailer, and social media have in common? They serve public facing content and personalized content based on your account. After you have signed in with your bank, you can check your balance, transfer money or request a new (debit) card. At the online retailer, you can check your previous orders or update your wish list. At Twitter, you can place Tweets, receive notifications or update your profile.
 
 These frontends must return the data of the correct users. On this page, you can read how to accomplish that in a Single Page App using Access Tokens obtained via the OpenID Connect standard.
 
@@ -70,16 +70,10 @@ The access token is meant to access secured data in the backend. The frontend se
 
 Access tokens have a limited validity. For single page apps, we recommend a validity of several minutes, and this is configurable. The validity is send with the token response to the Relying Party. Depending on the configuration, a refresh token is sent with the access token. When the access token is about to expire, or when the access token is refused by the backend, your single page app should use the refresh token to obtain a new set of tokens. This refresh token must be kept in a secure location. The RP must not share the refresh token with backend systems or other sites. Unfortunately a single page app does not have a really secure location to store data in the browser. At the moment, [`sessionStorage`](https://developer.mozilla.org/en/docs/Web/API/Window/sessionStorage) is acceptable to store a refresh token. Be aware, any script with access to your page can read the `sessionStorage`. 
 
+In order to limit the abuse of refresh tokens, we recommend limiting the validity of refresh tokens for Single Page Apps. This validity is configurable in Onegini Identity Cloud and is calculated from the moment the first access token had been issued. When this validity has exceeded, the user needs to authenticate again to obtain a new set of tokens. 
 
-----------
-Translate the text below:  
+## Responsibilities
 
-Bij Relying Parties die via de backend access tokens aanvragen, is de geldigheid van refresh tokens vaak onbeperkt of voor een langere periode. Voor client side applicaties, zoals bijvoorbeeld een React app, is het advies om een refresh token beperkt geldig te laten zijn tot maximaal een aantal uren gerekend vanaf de uitgifte van het eerste access token na inloggen. Gedurende die geldigheid kan de RP nieuwe access tokens aanvragen. Is ook de geldigheid van de refresh tokens verlopen, dan moet de gebruiker opnieuw inloggen.
+When you use a Single Page App, some responsibilities move from the backend to the frontend. The frontend is now responsible for keeping the tokens in a secure enough location and for the user experience when the user has not obtained a token or when tokens have expired.
 
-## Verschuiving van verantwoordelijkheden
-
-Wordt het voor jou als frontender nou echt makkelijker om OpenID Connect en access tokens te gebruiken ipv klassieke sessies met een simpel inlogformulier? Waarschijnlijk niet, want nu is de frontend verantwoordelijk voor het zo veilig mogelijk opslaan van tokens en nieuwe tokens aan te vragen als de oude (bijna) verlopen zijn. 
-
-Bij volledig publieke websites heb je meestal geen tokens nodig, maar bij gepersonaliseerde websites kun je hier wel mee te maken krijgen. Een reden kan zijn dat het inloggen, het teruggeven van je bestelgeschiedenis en het beheren van je favorieten door drie verschillende webapplicaties wordt afgehandeld. Voor de gebruiker is dit echte één website waarvoor die verwacht met één keer inloggen bij al diens gegevens te kunnen. 
-
-In de backend wordt het wel eenvoudiger. Er is geen synchronisatie van sessies nodig, slechts één applicatie houdt zich bezig met het uitgeven van de tokens, terwijl de andere applicaties los van elkaar de access tokens kunnen consumeren voor het teruggeven of wijzigen van beveiligde gegevens.
+An advantage of this setup is that multiple (backend) services can handle protected data independently of each other. They no longer need to synchronize sessions for a Single Sign On experience.
