@@ -144,7 +144,7 @@
         <rect class="BoundingBox" stroke="none" fill="none" x="3899" y="4471" width="6102" height="680"/>
         <path fill="none" stroke="rgb(52,101,164)" d="M 3900,5000 L 9570,5000"/>
         <path fill="rgb(52,101,164)" stroke="none" d="M 10000,5000 L 9550,4850 9550,5150 10000,5000 Z"/>
-        <text class="TextShape"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4345" y="4938"><tspan fill="rgb(0,0,0)" stroke="none">1: mijn gegevens?</tspan></tspan></tspan></text>
+        <text class="TextShape"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4345" y="4938"><tspan fill="rgb(0,0,0)" stroke="none">1: my data?</tspan></tspan></tspan></text>
        </g>
       </g>
       <g class="com.sun.star.drawing.LineShape">
@@ -152,7 +152,7 @@
         <rect class="BoundingBox" stroke="none" fill="none" x="10595" y="6899" width="856" height="5702"/>
         <path fill="none" stroke="rgb(52,101,164)" d="M 11300,6900 L 11300,12170"/>
         <path fill="rgb(52,101,164)" stroke="none" d="M 11300,12600 L 11450,12150 11150,12150 11300,12600 Z"/>
-        <text class="TextShape" transform="rotate(90 10748 7549)"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="10748" y="7549"><tspan fill="rgb(0,0,0)" stroke="none">2: vraagt token</tspan></tspan></tspan></text>
+        <text class="TextShape" transform="rotate(90 10748 7549)"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="10748" y="7549"><tspan fill="rgb(0,0,0)" stroke="none">2: request token</tspan></tspan></tspan></text>
        </g>
       </g>
       <g class="com.sun.star.drawing.LineShape">
@@ -160,7 +160,7 @@
         <rect class="BoundingBox" stroke="none" fill="none" x="12850" y="6900" width="856" height="5702"/>
         <path fill="none" stroke="rgb(52,101,164)" d="M 13000,12600 L 13000,7330"/>
         <path fill="rgb(52,101,164)" stroke="none" d="M 13000,6900 L 12850,7350 13150,7350 13000,6900 Z"/>
-        <text class="TextShape" transform="rotate(-90 13552 11929)"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="13552" y="11929"><tspan fill="rgb(0,0,0)" stroke="none">3: geeft tokens</tspan></tspan></tspan></text>
+        <text class="TextShape" transform="rotate(-90 13552 11929)"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="13552" y="11929"><tspan fill="rgb(0,0,0)" stroke="none">3: issue tokens</tspan></tspan></tspan></text>
        </g>
       </g>
       <g class="com.sun.star.drawing.LineShape">
@@ -168,7 +168,7 @@
         <rect class="BoundingBox" stroke="none" fill="none" x="13899" y="3591" width="6002" height="1560"/>
         <path fill="none" stroke="rgb(52,101,164)" d="M 13900,5000 L 19470,5000"/>
         <path fill="rgb(52,101,164)" stroke="none" d="M 19900,5000 L 19450,4850 19450,5150 19900,5000 Z"/>
-        <text class="TextShape"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="14648" y="4074"><tspan fill="rgb(0,0,0)" stroke="none">4: verzoek met </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15014" y="4938"><tspan fill="rgb(0,0,0)" stroke="none">access token</tspan></tspan></tspan></text>
+        <text class="TextShape"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="14648" y="4074"><tspan fill="rgb(0,0,0)" stroke="none">4: request with </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15014" y="4938"><tspan fill="rgb(0,0,0)" stroke="none">access token</tspan></tspan></tspan></text>
        </g>
       </g>
       <g class="com.sun.star.drawing.LineShape">
@@ -176,7 +176,7 @@
         <rect class="BoundingBox" stroke="none" fill="none" x="13900" y="5900" width="6002" height="1670"/>
         <path fill="none" stroke="rgb(52,101,164)" d="M 14187,6000 L 19900,6000"/>
         <path fill="rgb(52,101,164)" stroke="none" d="M 13900,6000 L 14200,6100 14200,5900 13900,6000 Z"/>
-        <text class="TextShape"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15055" y="6552"><tspan fill="rgb(0,0,0)" stroke="none">5: beveiligde</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15514" y="7416"><tspan fill="rgb(0,0,0)" stroke="none">gegevens</tspan></tspan></tspan></text>
+        <text class="TextShape"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15055" y="6552"><tspan fill="rgb(0,0,0)" stroke="none">5: secured</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15514" y="7416"><tspan fill="rgb(0,0,0)" stroke="none">data</tspan></tspan></tspan></text>
        </g>
       </g>
       <g class="com.sun.star.drawing.LineShape">
@@ -184,7 +184,7 @@
         <rect class="BoundingBox" stroke="none" fill="none" x="3800" y="5900" width="6202" height="806"/>
         <path fill="none" stroke="rgb(52,101,164)" d="M 4087,6000 L 10000,6000"/>
         <path fill="rgb(52,101,164)" stroke="none" d="M 3800,6000 L 4100,6100 4100,5900 3800,6000 Z"/>
-        <text class="TextShape"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4555" y="6552"><tspan fill="rgb(0,0,0)" stroke="none">6: uw gegevens!</tspan></tspan></tspan></text>
+        <text class="TextShape"><tspan class="TextParagraph" font-family="Open Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4555" y="6552"><tspan fill="rgb(0,0,0)" stroke="none">6: your data!</tspan></tspan></tspan></text>
        </g>
       </g>
      </g>
