@@ -3,6 +3,8 @@ site_description: Onegini public documentation
 
 nav:
   - Introduction: index.md
+  - Architecture:
+      - 'Mobile Identity & Access': architecture/mobile-identity-access.md
 
 copyright: "Onegini B.V."
 
