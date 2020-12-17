@@ -56,7 +56,7 @@ How do you obtain a (JWT) access token? There are multiple standards and one of 
 
 Your (single page) application is called a Relying Party (RP) in OIDC. It's calling the authentication endpoint in Onegini Identity Cloud, which is an OpenID Provider (OP). We recommend using an existing, [certified library](https://openid.net/certification/#RPs) to handle this. The certified libraries comply to the specifications of the OpenID Foundation for a RP implementation.
 
-When the user reaches the Onegini Identity Cloud, they may need to sign in. How the user authenticates depends on the configuration. Onegini Identity Cloud supports multiple (external) identity providers. When the user has an existing session, it can be reused. After the user has successfully authenticated, the Onegini Identity Cloud sends a short lived token, called an access grant. Your single page app will exchange this access grant for at most three tokens: an ID token, an access token and a refresh token. 
+When the user reaches the Onegini Identity Cloud, they may need to sign in. How the user authenticates depends on the configuration. Onegini Identity Cloud supports multiple (external) identity providers. When the user has an existing session, it can be reused. After the user has successfully authenticated, the Onegini Identity Cloud sends a short-lived token, called an access grant. Your single page app will exchange this access grant for at most three tokens: an ID token, an access token, and a refresh token. 
 
 ### ID token
 
