@@ -1,5 +1,6 @@
 site_name: Onegini Identity Cloud
 site_description: Onegini public documentation
+repo_url: https://github.com/Onegini/onegini-identity-cloud-documentation
 
 nav:
   - Introduction: index.md
