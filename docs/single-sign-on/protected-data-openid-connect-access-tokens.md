@@ -52,7 +52,7 @@ The frontend and various backend services can decide independently to which (sec
 
 How do you obtain a (JWT) access token? There are multiple standards and one of them is [OpenID Connect](https://openid.net/) (OIDC). OpenID Connect is a layer on top of [OAuth 2.0](https://oauth.net/). OAuth is all about authorization (what are you allowed), while OIDC also handles authentication (who are you). For simplicity, we'll treat them as one standard, and use the terminology of OpenID Connect.
 
-![Flow chart of getting data with OpenID Connect](./img/oidc-schema.svg)
+![Flow chart of getting data with OpenID Connect](./img/oidc-token.svg)
 
 Your (single page) application is called a Relying Party (RP) in OIDC. It's calling the authentication endpoint in Onegini Identity Cloud, which is an OpenID Provider (OP). We recommend using an existing, [certified library](https://openid.net/certification/#RPs) to handle this. The certified libraries comply to the specifications of the OpenID Foundation for a RP implementation.
 
