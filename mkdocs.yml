@@ -4,9 +4,26 @@ site_description: Onegini public documentation
 nav:
   - Introduction: index.md
   - Architecture:
+      - Functional flows: lorem-ipsum/functional-flows.md
       - 'Mobile Identity & Access': architecture/mobile-identity-access.md
-  - Single sign on:
+  - Identity management:
+    - Identity management: lorem-ipsum/identity-management.md
+    - Identity Proofing: lorem-ipsum/identity-proofing.md
+  - Third party identity providers: lorem-ipsum/identity-providers.md
+  - 'Strong (multi-factor) authentication': lorem-ipsum/strong-authentication.md
+  - 'Single sign-on (SSO)':
+      - Action tokens: lorem-ipsum/action-tokens.md
+      - OpenID Connect: lorem-ipsum/openid-connect.md
       - 'Protected data in Single Page Apps': single-sign-on/protected-data-openid-connect-access-tokens.md
+      - SAML: lorem-ipsum/saml.md
+      - Sign out: lorem-ipsum/single-sign-out.md
+      - Web applications: lorem-ipsum/sign-in-web.md
+  - Device registration and management: lorem-ipsum/device-registration.md
+  - Secure mobile apps: lorem-ipsum/secure-mobile-apps.md
+  - 'Client environment embedding (implementation)': lorem-ipsum/implementation.md
+  - Delegated administration: lorem-ipsum/delegated-administration.md
+  - 'Monitoring, logging & alerting': lorem-ipsum/monitoring.md
+  - API descriptions: lorem-ipsum/api-descriptions.md
 
 copyright: "Onegini B.V."
 
