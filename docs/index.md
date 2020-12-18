@@ -29,7 +29,7 @@
 * [Platform update November 2020](https://blog.onegini.com/onegini-identity-cloud-platform-update-november-2020)
 * [Platform update August 2020](https://blog.onegini.com/onegini-identity-cloud-platform-update-august-2020)
 
-## Documentation for our Single-tenant platform
+## Documentation for our single-tenant platform
 
 <div class="single-tenant-blocks">
     <div class="single-tenant-block single-tenant-block__ts">
