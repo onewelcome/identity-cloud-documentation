@@ -1,0 +1,10 @@
+version: 2.1
+orbs:
+    onegini-build: onegini/onegini-build@1
+
+workflows:
+  version: 2
+  engineering-workflow:
+    jobs:
+      - onegini-build/build-docs:
+          context: internal-docs
