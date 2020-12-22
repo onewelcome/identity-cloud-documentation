@@ -10,7 +10,7 @@ nav:
   - Identity management:
     - Identity management: lorem-ipsum/identity-management.md
     - Identity Proofing: lorem-ipsum/identity-proofing.md
-  - Third party identity providers: lorem-ipsum/identity-providers.md
+  - Third party identity providers: identity-providers.md
   - 'Strong (multi-factor) authentication': lorem-ipsum/strong-authentication.md
   - 'Single sign-on (SSO)':
       - Action tokens: lorem-ipsum/action-tokens.md
