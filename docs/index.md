@@ -4,23 +4,12 @@
 
 ### Concepts
 
-- [API Access Management](./lorem-ipsum/api-descriptions.md)
-- [Action tokens](./lorem-ipsum/action-tokens.md)
-- [Authentication](./lorem-ipsum/strong-authentication.md)
-- [Events](./lorem-ipsum/monitoring.md)
-- [Feature lifecycle management](./lorem-ipsum/feature-lifecycle-management.md)
-- [Functional flows](./lorem-ipsum/functional-flows.md)
-- [Identity Proofing](#)
 - [Identity Providers](identity-providers.md)
-- [OpenID Connect](./lorem-ipsum/openid-connect.md)
-- [SAML](./lorem-ipsum/saml.md)
 - [More...](#)
 
 ### Guides
 
 - [Protected data in Single Page Apps](./single-sign-on/protected-data-openid-connect-access-tokens.md)
-- [Sign users in to your Web application](./lorem-ipsum/sign-in-web.md)
-- [Sign users out](./lorem-ipsum/single-sign-out.md)
 - [More...](#)
 
 

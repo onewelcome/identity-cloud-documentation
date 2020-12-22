@@ -5,27 +5,27 @@ repo_url: https://github.com/Onegini/onegini-identity-cloud-documentation
 nav:
   - Introduction: index.md
   - Architecture:
-      - Functional flows: lorem-ipsum/functional-flows.md
-      - 'Mobile Identity & Access': architecture/mobile-identity-access.md
-  - Identity management:
-    - Identity management: lorem-ipsum/identity-management.md
-    - Identity Proofing: lorem-ipsum/identity-proofing.md
+#      - Functional flows: lorem-ipsum/functional-flows.md
+      - 'Mobile Id  entity & Access': architecture/mobile-identity-access.md
+#  - Identity management:
+#    - Identity management: lorem-ipsum/identity-management.md
+#    - Identity Proofing: lorem-ipsum/identity-proofing.md
   - Third party identity providers: identity-providers.md
-  - 'Strong (multi-factor) authentication': lorem-ipsum/strong-authentication.md
+#  - 'Strong (multi-factor) authentication': lorem-ipsum/strong-authentication.md
   - 'Single sign-on (SSO)':
-      - Action tokens: lorem-ipsum/action-tokens.md
-      - OpenID Connect: lorem-ipsum/openid-connect.md
+#      - Action tokens: lorem-ipsum/action-tokens.md
+#      - OpenID Connect: lorem-ipsum/openid-connect.md
       - 'Protected data in Single Page Apps': single-sign-on/protected-data-openid-connect-access-tokens.md
-      - SAML: lorem-ipsum/saml.md
-      - Sign out: lorem-ipsum/single-sign-out.md
-      - Web applications: lorem-ipsum/sign-in-web.md
-  - Device registration and management: lorem-ipsum/device-registration.md
-  - Secure mobile apps: lorem-ipsum/secure-mobile-apps.md
-  - 'Client environment embedding (implementation)':
-    - 'Feature lifecycle management': lorem-ipsum/feature-lifecycle-management.md
-  - Delegated administration: lorem-ipsum/delegated-administration.md
-  - 'Monitoring, logging & alerting': lorem-ipsum/monitoring.md
-  - API descriptions: lorem-ipsum/api-descriptions.md
+#      - SAML: lorem-ipsum/saml.md
+#      - Sign out: lorem-ipsum/single-sign-out.md
+#      - Web applications: lorem-ipsum/sign-in-web.md
+#  - Device registration and management: lorem-ipsum/device-registration.md
+#  - Secure mobile apps: lorem-ipsum/secure-mobile-apps.md
+#  - 'Client environment embedding (implementation)':
+#    - 'Feature lifecycle management': lorem-ipsum/feature-lifecycle-management.md
+#  - Delegated administration: lorem-ipsum/delegated-administration.md
+#  - 'Monitoring, logging & alerting': lorem-ipsum/monitoring.md
+#  - API descriptions: lorem-ipsum/api-descriptions.md
 
 copyright: "Onegini B.V."
 
@@ -67,9 +67,5 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_div_format
 plugins:
   - search
-#  - drawio-exporter:
-#        cache_dir: 'rendered-diagrams'
-#        format: svg
-#        sources: '*.drawio'
   - redirects:
       redirect_maps:
