@@ -1,5 +1,6 @@
 site_name: Onegini Identity Cloud
 site_description: Onegini public documentation
+repo_url: https://github.com/Onegini/onegini-identity-cloud-documentation
 
 nav:
   - Introduction: index.md
@@ -30,6 +31,8 @@ copyright: "Onegini B.V."
 
 extra_css:
 - stylesheets/extra.css
+extra_javascript:
+  - javascripts/reading-time.js
 
 theme:
   name: 'material'

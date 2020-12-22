@@ -1,12 +1,46 @@
-
 {% extends "base.html" %}
 
 {% block analytics %}
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PWJM58F');</script>
+<script>(function (w, d, s, l, i) {
+  w[l] = w[l] || [];
+  w[l].push({
+    'gtm.start':
+      new Date().getTime(), event: 'gtm.js'
+  });
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+  j.async = true;
+  j.src =
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+  f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-PWJM58F');</script>
 <!-- End Google Tag Manager -->
+{% endblock %}
+
+{% block content %}
+
+<div class="detail-wrapper">
+  {{ super() }}
+</div>
+{% endblock %}
+
+
+{% block footer %}
+{{ super() }}
+<script>
+  const h1 = document.querySelector('h1');
+  if (h1 !== null && h1.innerText.trim().toLowerCase()!== 'onegini identity cloud') {
+    const rt = document.createElement('div');
+    rt.classList.add('reading-time');
+    rt.innerHTML = `<span class="reading-time__label"></span>
+  <span class="reading-time__duration"></span>
+  <span class="reading-time__word-count"></span>`;
+    h1.parentNode.insertBefore(rt, h1.nextSibling);
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      new ReadingTime(270, 'Reading time:', 'min', 'words', 'Less than a minute');
+    });
+  }
+</script>
 {% endblock %}
