@@ -8,7 +8,7 @@
 - [Action tokens](./lorem-ipsum/action-tokens.md)
 - [Authentication](./lorem-ipsum/strong-authentication.md)
 - [Events](./lorem-ipsum/monitoring.md)
-- [External Identity Providers](./lorem-ipsum/identity-providers.md)
+- [External Identity Providers](identity-providers.md)
 - [Feature lifecycle management](./lorem-ipsum/feature-lifecycle-management.md)
 - [Functional flows](./lorem-ipsum/functional-flows.md)
 - [Identity Proofing](#)
