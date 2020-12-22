@@ -6,7 +6,7 @@ nav:
   - Introduction: index.md
   - Architecture:
 #      - Functional flows: lorem-ipsum/functional-flows.md
-      - 'Mobile Id  entity & Access': architecture/mobile-identity-access.md
+      - 'Mobile Identity & Access': architecture/mobile-identity-access.md
 #  - Identity management:
 #    - Identity management: lorem-ipsum/identity-management.md
 #    - Identity Proofing: lorem-ipsum/identity-proofing.md
