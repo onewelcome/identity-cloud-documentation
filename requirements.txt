@@ -1,7 +1,7 @@
 mkdocs
 mkdocs-redirects
 mkdocs-material>=5.0
-mkdocs-plugin-mermaid
+mkdocs-mermaid2-plugin
 mkdocs-drawio-exporter
-pymdown-extensions
+pymdown-extensions>=8.0
 pygments

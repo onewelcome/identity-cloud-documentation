@@ -34,7 +34,6 @@ extra_css:
 - stylesheets/extra.css
 extra_javascript:
   - javascripts/reading-time.js
-  - https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js
 
 theme:
   name: 'material'
@@ -71,4 +70,4 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-  - markdownmermaid
+  - mermaid2
