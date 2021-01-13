@@ -46,8 +46,8 @@ OpenID Connect is an authentication standard built on top of OAuth 2.0. It adds 
 Although OpenID Connect is built on top of OAuth 2.0, the [OpenID Connect specification](https://openid.net/connect/) uses somewhat different terms for the roles in the flows:
 
 - The "*OpenID provider*" — The authorization server that issues the ID token. In this case the Onegini Identity Cloud is the OpenID provider.
-- The "*end user*" — Whose information is contained in the ID token 
-- The "*relying party*" — The client application that requests the ID token 
+- The "*end user*" — Whose information is contained in the ID token
+- The "*relying party*" — The client application that requests the ID token
 - The "*ID token*" is issued by the OpenID Provider and contains information about the end user in the form of claims.
 - A "*claim*" is a piece of information about the end user.
 
@@ -82,20 +82,22 @@ Any OAuth flow will give you an access token, but not all flows are supported by
 
 The Authorization Code flow is best used by server-side apps. The apps should be server-side because the request that exchanges the authorization code for a token requires a client secret (or JSON Web Key Set), which has to be stored in your client. The server-side app requires an end user, however, because it relies on interaction with the end user's web browser, which redirects the user and then receives the authorization code.
 
+```mermaid
 sequenceDiagram
     participant RO as Resource Owner (User)
     participant RP as Web application
     participant AS as Authorization Server (Onegini)
     participant RS as Resource Server (Your App)
 
-    RP->>AS Authentication Code Request to /authorize
-    AS->>RO 302 redirect to authentication prompt
-    RO->>AS Authentication & Consent
-    AS->>RP Authentication Code Response
-    RP->>AS Send auhorization code + client secre (or JWKS) to /token
-    AS->>RP Access token, Refresh token, and ID token
-    RP->>RS Request with Access token
-    RS->>RP Response
+    RP->>AS: Authentication Code Request to /authorize
+    AS->>RO: 302 redirect to authentication prompt
+    RO->>AS: Authentication & Consent
+    AS->>RP: Authentication Code Response
+    RP->>AS: Send auhorization code + client secre (or JWKS) to /token
+    AS->>RP: Access token, Refresh token, and ID token
+    RP->>RS: Request with Access token
+    RS->>RP: Response
+```
 
 ### Authorization Code Flow with PKCE
 
@@ -111,22 +113,24 @@ When the authorization code is sent in the access token request, the code verifi
 
 A rogue app could only intercept the authorization code, but it wouldn't have access to the code challenge or verifier, since they are both sent over HTTPS.
 
+```mermaid
 sequenceDiagram
     participant RO as Resource Owner (User)
     participant RP as Web application
     participant AS as Authorization Server (Onegini)
     participant RS as Resource Server (Your App)
 
-    RP->>RP Generate PKCE code_verifier & code_challenge
-    RP->>AS Authentication Code Request + code_challenger to /authorize
-    AS->>RO 302 redirect to authentication prompt
-    RO->>AS Authentication & Consent
-    AS->>RP Authentication Code Response
-    RP->>AS Send auhorization code + code_verifier to /token
-    AS->>AS Checks PKCE code
-    AS->>RP Access token, Refresh token, and ID token
-    RP->>RS Request with Access token
-    RS->>RP Response
+    RP->>RP: Generate PKCE code_verifier & code_challenge
+    RP->>AS: Authentication Code Request + code_challenger to /authorize
+    AS->>RO: 302 redirect to authentication prompt
+    RO->>AS: Authentication & Consent
+    AS->>RP: Authentication Code Response
+    RP->>AS: Send auhorization code + code_verifier to /token
+    AS->>AS: Checks PKCE code
+    AS->>RP: Access token, Refresh token, and ID token
+    RP->>RS: Request with Access token
+    RS->>RP: Response
+```
 
 ### Client Credentials Flow
 
@@ -134,12 +138,14 @@ The Client Credentials flow is intended for server-side (AKA "confidential") cli
 
 > **Note:** The Client Credentials Flow doesn't support refresh tokens.
 
-  sequenceDiagram
+```mermaid
+sequenceDiagram
     participant RO as Client + Resource Owner
     participant AS as Authorization Server (Onegini)
     participant RS as Resource Server (Your App)
 
-    RO->>AS Acces token request to /token
-    AS->>RO Access token
-    RP->>RS Request with Access token
-    RS->>RO Response
+    RO->>AS: Acces token request to /token
+    AS->>RO: Access token
+    RP->>RS: Request with Access token
+    RS->>RO: Response
+```

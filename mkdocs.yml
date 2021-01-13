@@ -13,6 +13,7 @@ nav:
   - Third party identity providers: identity-providers.md
 #  - 'Strong (multi-factor) authentication': lorem-ipsum/strong-authentication.md
   - 'Single sign-on (SSO)':
+      - 'OAuth vs OpenID Connect': oauth-vs-oidc.md
 #      - Action tokens: lorem-ipsum/action-tokens.md
 #      - OpenID Connect: lorem-ipsum/openid-connect.md
       - 'Protected data in Single Page Apps': single-sign-on/protected-data-openid-connect-access-tokens.md
@@ -33,6 +34,7 @@ extra_css:
 - stylesheets/extra.css
 extra_javascript:
   - javascripts/reading-time.js
+  - https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js
 
 theme:
   name: 'material'
@@ -69,3 +71,4 @@ plugins:
   - search
   - redirects:
       redirect_maps:
+  - markdownmermaid
