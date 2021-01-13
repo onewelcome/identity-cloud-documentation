@@ -5,9 +5,9 @@ To decide which authentication flow is best for you based on the type of applica
 ## OAuth 2.0 vs OpenID Connect
 
 - The [OAuth 2.0](https://tools.ietf.org/html/rfc6749) protocol controls authorization to access a protected resource, like your web app, native app, or API service.
-- The [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) protocol is built on the OAuth 2.0 protocol and helps authenticate users and convey information about them. It is also more stricy than plain OAuth 2.0, for example in its scope definitions.
+- The [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) protocol is built on the OAuth 2.0 protocol and helps authenticate users and convey information about them. It is also more strictly compared to plain OAuth 2.0, for example in its scope definitions.
 
-The OAuth 2.0 protocol provides API security through scoped access tokens. OAuth 2.0 enables you to delegate authorization, while the OpenID Connect protocol enables you to retrieve and store authentication information about your end users. OpenID Connect extends OAuth 2.0 by providing user authentication and single sign-on (SSO) functionality.
+The OAuth 2.0 protocol provides API security through scoped access tokens. OAuth 2.0 enables you to delegate authorization, while the OpenID Connect protocol enables you to retrieve and store authentication information about your end users. OpenID Connect extends OAuth 2.0 by providing user authentication and single sign-on (SSO), and single logout (SLO) functionality.
 
 ### OAuth 2.0
 
@@ -18,7 +18,7 @@ The OAuth 2.0 spec has four important roles:
 - The "*authorization server*" — The server that issues the access token. In this case the Onegini Identity Cloud is the authorization server.
 - The "*resource owner*" — Normally your application's end user that grants permission to access the resource server with an access token
 - The "*client*" — The application that requests the access token and then passes it to the resource server
-- The "*resource server*" — Accepts the access token and must verify that it's valid. In this case this is your application.
+- The "*resource server*" — Accepts the access token and must verify that it's valid. In this case this is your application back-end.
 
 Other important terms:
 
@@ -35,7 +35,7 @@ The usual OAuth 2.0 grant flow looks like this:
 
 > **Note:** For a deeper dive into OAuth 2.0, see the [OAuth 2.0 spec](https://tools.ietf.org/html/rfc6749).
 
-At the core of both OAuth 2.0 and its OpenID Connect extension is the authorization server. An authorization server is simply an OAuth 2.0 token minting engine. Each authorization server has a unique issuer URI and its own signing key for tokens to keep a proper boundary between security domains. In the context of this guide, The Onegini Identity Cloud is your authorization server.
+At the core of both OAuth 2.0 and its OpenID Connect extension is the authorization server. Each authorization server has a unique issuer URI and its own signing key for tokens to keep a proper boundary between security domains. In the context of this guide, The Onegini Identity Cloud is your authorization server.
 
 The authorization server also acts as an OpenID Connect Provider, which means you can request [ID tokens](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) in addition to [access tokens](https://tools.ietf.org/html/rfc6749#section-1.4) from the authorization server endpoints.
 
@@ -43,7 +43,7 @@ The authorization server also acts as an OpenID Connect Provider, which means yo
 
 OpenID Connect is an authentication standard built on top of OAuth 2.0. It adds an additional token called an ID token. OpenID Connect also standardizes areas that OAuth 2.0 leaves up to choice, such as scopes, endpoint discovery, and dynamic registration of clients. Onegini is [OpenID Certified](https://openid.net/certification/).
 
-Although OpenID Connect is built on top of OAuth 2.0, the [OpenID Connect specification](https://openid.net/connect/) uses slightly different terms for the roles in the flows:
+Although OpenID Connect is built on top of OAuth 2.0, the [OpenID Connect specification](https://openid.net/connect/) uses somewhat different terms for the roles in the flows:
 
 - The "*OpenID provider*" — The authorization server that issues the ID token. In this case the Onegini Identity Cloud is the OpenID provider.
 - The "*end user*" — Whose information is contained in the ID token 
@@ -70,7 +70,7 @@ The table shows you which OAuth 2.0 flow to use for the type of application that
 
 ### Does your application need an ID token?
 
-Any OAuth flow will give you an access token, but not all flows are supported by OIDC and therefore do not supply an ID tokens.
+Any OAuth flow will give you an access token, but not all flows are supported by OIDC and therefore do not supply an ID token.
 
 |                                  | Access Token | ID Token |
 | :------------------------------- | :----------: | :------: |
@@ -80,7 +80,7 @@ Any OAuth flow will give you an access token, but not all flows are supported by
 
 ### Authorization Code Flow
 
-The Authorization Code flow is best used by server-side apps where the source code isn't publicly exposed. The apps should be server-side because the request that exchanges the authorization code for a token requires a client secret (or JSON Web Key Set), which has to be stored in your client. The server-side app requires an end user, however, because it relies on interaction with the end user's web browser, which redirects the user and then receives the authorization code.
+The Authorization Code flow is best used by server-side apps. The apps should be server-side because the request that exchanges the authorization code for a token requires a client secret (or JSON Web Key Set), which has to be stored in your client. The server-side app requires an end user, however, because it relies on interaction with the end user's web browser, which redirects the user and then receives the authorization code.
 
 sequenceDiagram
     participant RO as Resource Owner (User)
@@ -101,7 +101,7 @@ sequenceDiagram
 
 For web/native/mobile applications, the client secret can't be stored in the application because it could easily be exposed. Additionally, mobile redirects use `app://` protocols, which are prone to interception. Basically, a rogue application could intercept the authorization code as it is being passed through the mobile/native operating system. Therefore native apps should make use of Proof Key for Code Exchange (PKCE), which acts like a secret but isn't hard-coded, to keep the Authorization Code flow secure.
 
-PKCE is an extension to the regular Authorization Code flow, so the flow is very similar, except that PKCE elements are included at various steps in the flow.
+[PKCE](https://oauth.net/2/pkce/) is an extension to the regular Authorization Code flow, so the flow is very similar, except that PKCE elements are included at various steps in the flow.
 
 > **Note:** The Authorization Code Flow with PKCE doesn't support refresh tokens for SPAs and other browser-based apps.
 
