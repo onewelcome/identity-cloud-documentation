@@ -21,7 +21,8 @@ nav:
 #      - Web applications: lorem-ipsum/sign-in-web.md
 #  - Device registration and management: lorem-ipsum/device-registration.md
 #  - Secure mobile apps: lorem-ipsum/secure-mobile-apps.md
-#  - 'Client environment embedding (implementation)':
+  - 'Client environment embedding (implementation)':
+      - 'OAuth vs OpenID Connect': oauth-vs-oidc.md
 #    - 'Feature lifecycle management': lorem-ipsum/feature-lifecycle-management.md
 #  - Delegated administration: lorem-ipsum/delegated-administration.md
 #  - 'Monitoring, logging & alerting': lorem-ipsum/monitoring.md
@@ -69,3 +70,4 @@ plugins:
   - search
   - redirects:
       redirect_maps:
+  - mermaid2
