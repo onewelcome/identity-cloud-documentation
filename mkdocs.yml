@@ -70,4 +70,6 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-  - mermaid2
+  - mermaid2:
+      arguments:
+        securityLevel: 'loose'
