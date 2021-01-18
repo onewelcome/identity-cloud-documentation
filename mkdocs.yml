@@ -35,7 +35,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/reading-time.js
-  - https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js
+  - https://unpkg.com/mermaid@8.8.4/dist/mermaid.js
 
 theme:
   name: 'material'
