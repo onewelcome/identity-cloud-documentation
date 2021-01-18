@@ -72,4 +72,3 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-  - markdownmermaid
