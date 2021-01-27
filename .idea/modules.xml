@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/onegini-identity-cloud-documentation.iml" filepath="$PROJECT_DIR$/.idea/onegini-identity-cloud-documentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onegini-identity-cloud-documentation.iml" filepath="$PROJECT_DIR$/onegini-identity-cloud-documentation.iml" />
     </modules>
   </component>
 </project>

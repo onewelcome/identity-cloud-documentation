@@ -31,9 +31,13 @@ nav:
 copyright: "Onegini B.V."
 
 extra_css:
-- stylesheets/extra.css
+  - stylesheets/extra.css
+
 extra_javascript:
+  - https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js
   - javascripts/reading-time.js
+  - javascripts/mermaid-config.js
+  - javascripts/mermaid-custom-loader.js
 
 theme:
   name: 'material'
@@ -65,9 +69,8 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_div_format
+          format: !!python/name:pymdownx.superfences.fence_code_format
 plugins:
   - search
   - redirects:
       redirect_maps:
-  - mermaid2
