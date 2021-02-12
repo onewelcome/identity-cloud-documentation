@@ -28,11 +28,11 @@ These attributes can be added to a group with custom attributes.
 
 ## Topic Guides
 - [How to create a new policy via the API](./guides/create-policy-via-api.md)
-- [Person report - what is it and how to generate it](./guides/person-report.md)
+- [Person report - What is it and how to generate it](./guides/person-report.md)
 - [In-depth view on managing policies in groups](./guides/managing-policies.md)
 - [Responsibilities of external system connected to DABP](./guides/external-systems-responsibilities.md)
 - [In-depth view on permissions](./guides/permissions-in-depth.md)
 - [In-depth view on policies](./guides/policies-in-depth.md)
-- [Inviting users to DABP](./guides/inviting-users.md)
+- [Inviting users in DABP](./guides/inviting-users.md)
 - [Managing subgroups best practices](./guides/subgroups-best-practices.md)
-- [How and when to use attributes](./guides/group-attributes.md)
+- [How and when to use custom attributes on groups](./guides/custom-attributes.md)
