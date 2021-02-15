@@ -1,6 +1,6 @@
-# How and when to use custom attributes on groups
+# How and when to use group attributes
 When DABP is used in coordination with an external system to manage policies of users it might be beneficial to be able to add additional information to the group.
-This can be achieved by custom attributes.
+This can be achieved by group attributes.
 
 ## When to use attributes?
 Attributes can be helpful in a wide range of scenarios.
