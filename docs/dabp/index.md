@@ -1,21 +1,20 @@
 # Delegated Administration for Business Partners
 Delegated administration for business partners (DABP) is an add-on feature for your platform.
-It is a ready-to-use feature that enables you to let selected (third-party) contacts manage access and authorizations for other users in a secure way.
+It is a ready-to-use feature that enables you to let selected (third-party) contact person manage access and authorizations for other users in a secure way.
 This helps you reduce the management overhead. It can be configured easily for the needs of different industries and client-types.
 
 ## Main concepts
 
 ### Groups
-A group is a generic term for what a company can be for our customers, sometimes this is called an employer or intermediary.
+A group is generic term. It gathers people and policies. You can think about it as employer, intermediary or a business line inside a company.
 A group can have subgroups, to each group or subgroup you can add people which are then members of that group.
 A group can also have 1 or more policies added to it. A policy has to be added to a group if you want to assign it to a person.
 
 ### Person
-A person in DABP is a reference to a user of an external system, for example, CIM.
-Because DABP is not the owner of the user data we store as it only stores person reference for accounts that come from external systems.
+A person in DABP should be considered as a personal user account. It represents user data, his relation with groups, policies and permissions within the system.
 
 ### Permission
-Permissions can be assigned to people. Permissions are strictly linked to the DABP system and control what user can do in DABP.
+Permissions can be assigned to people. Permissions are strictly linked to the DABP system and control what users can do in DABP.
 They are not exposed outside of DABP and have no meaning for external systems.
 
 ### Policies
