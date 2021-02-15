@@ -41,8 +41,8 @@ extra_javascript:
 
 theme:
   name: 'material'
-  logo: 'images/logo.png'
-  favicon: 'images/onegini-logo-small.webp'
+  logo: 'images/onegini-logo-white.svg'
+  favicon: 'images/favicon.ico'
   font: false
   custom_dir: 'theme'
 
