@@ -16,6 +16,6 @@ Example:
 Attributes can be added to the group from the Group Details dialog.
 Use `+ Add custom attribtue` button to add a new attribute. You will need to specify a key (name) of the attribute and its value.
 
-![edit group attribuges](../img/group-attributes.png)
+![edit group attributes](../img/group-attributes.png)
 
 Click save to confirm your changes.

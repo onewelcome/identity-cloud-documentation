@@ -27,7 +27,7 @@ These attributes can be added to a group with custom attributes.
 
 ## Topic Guides
 - [How to create a new policy via the API](./guides/create-policy-via-api.md)
-- [Person report - What is it and how to generate it](./guides/person-report.md)
+- [Person report - What is it and how to fetch it](./guides/person-report.md)
 - [In-depth view on managing policies in groups](./guides/managing-policies.md)
 - [Responsibilities of external system connected to DABP](./guides/external-systems-responsibilities.md)
 - [In-depth view on permissions](./guides/permissions-in-depth.md)
