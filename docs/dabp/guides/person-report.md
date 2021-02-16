@@ -8,6 +8,12 @@ This could be done in order to answer an authorization question.
 The report can be fetched via an API call.
 The details can also be returned as JWT claim (OIDC) and as SAML attribute.
 
+## Person Report and Permissions
+Permissions are not included in the Person Report. 
+This is because permissions only should be used for authorizations of users to DABP itself.
+
+However, a special policy, `role_superuser`, is returned for groups for where he got any groups.
+
 ## Get Person Report via API
 In this guide, we will assume the DABP is available under `https://dabp.onegini.com` url. 
 The API requires authentication using OIDC. Make sure you add a valid access token to the request header.
@@ -23,16 +29,3 @@ curl --location --request GET 'https://dabp.onegini.com/api/v1/people/eb82d9a9-b
 --header 'Authorization: Bearer  <access token>' \
 --header 'Content-Type: application/json'
 ```
-
-[comment]: <> (# Person report)
-
-[comment]: <> (Person report contains detailed information about person, including assigned policiec, group memberships and permissions in those groups.)
-
-[comment]: <> (To generate a person report you need to call a dedicated API endpoint.)
-
-[comment]: <> (In this guide we will assume the DABP service is available under `https://dabp.onegini.com` url.)
-
-
-[comment]: <> (## Generating the report)
-
-[comment]: <> (To generate the report you should call ...)
