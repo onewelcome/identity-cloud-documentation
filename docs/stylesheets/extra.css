@@ -107,16 +107,16 @@
 :root {
 
   /* Primary color shades */
-  --md-primary-fg-color: #00aeef;
-  --md-primary-fg-color--light: #00aeef00;
-  --md-primary-fg-color--dark: #00aeef;
+  --md-primary-fg-color: #EB4D00;
+  --md-primary-fg-color--light: #EB4D0000;
+  --md-primary-fg-color--dark: #EB4D00;
   --md-primary-bg-color: hsla(0, 0%, 100%, 1);
   --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
-  --md-text-link-color: #00AEEF;
+  --md-text-link-color: #EB4D00;
 
   /* Accent color shades */
-  --md-accent-fg-color: #00AEEF;
-  --md-accent-fg-color--transparent: #00AEEF25;
+  --md-accent-fg-color: #EB4D00;
+  --md-accent-fg-color--transparent: #EB4D0025;
   --md-accent-bg-color: hsla(0, 0%, 100%, 1);
   --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
 }
@@ -155,14 +155,19 @@ h1, h2, h3, h4, button {
 }
 
 .md-typeset h4, .md-typeset h5, .md-typeset h6 {
-  color: #00AEEF;
+  color: #EB4D00;
 }
 
 .md-typeset table:not([class]) th {
   font-family: Montserrat, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  background-color: #00AEEF;
+  background-color: #EB4D00;
+}
+
+.md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
+  width: 150px;
+  height: auto;
 }
 
 .single-tenant-blocks {
