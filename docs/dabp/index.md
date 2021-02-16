@@ -34,7 +34,7 @@ These attributes can be added to a group with custom attributes. Check out [How 
 - [In-depth view on managing policies in groups](./guides/managing-policies.md)
 - [Inviting users in DABP](./guides/inviting-users.md)
 - [Managing subgroups best practices](./guides/subgroups-best-practices.md)
-- [How and when to use custom attributes on groups](./guides/custom-attributes.md)
+- [How and when to use custom attributes on groups](./guides/group-attributes.md)
 
 ### Administration
 - [How to create a new policy via the API](./guides/create-policy-via-api.md)
