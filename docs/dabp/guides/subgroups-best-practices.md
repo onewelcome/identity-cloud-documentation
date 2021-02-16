@@ -19,8 +19,10 @@ A person can still manage groups on the same level.
 However, this requires that person to get assigned the permissions manually to each group.  
 
 
-## Policies
+## Policies on Group level
 A subgroup can only get assigned policies that are assigned to its parent group.
+Assigning a policy to a group does not automatically assign it to a subgroup.
 This makes it possible to limit what policies a group member can assign to a subgroup.
+
 
 Two groups on the same level can get assigned the same policies as they have the same parent group.

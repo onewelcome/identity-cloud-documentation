@@ -1,7 +1,7 @@
 # Creating policy via API
 In this guide, we will assume the DABP is available under `https://dabp.onegini.com` url.
-API is protected with OIDC security, so you must provide an access token with the request.
-Please note that the token must be linked to the account that has "Manage policies" permission
+The API is protected with OIDC, so you must provide an access token with the request.
+Please note that the token must be linked to the account that has "Manage policies" permission.
 
 ## How to create a policy
 To create a policy a POST request must be sent to `https://dabp.onegini.com/api/v2/policies` with a proper request body
