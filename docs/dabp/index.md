@@ -15,23 +15,30 @@ A person in DABP should be considered as a personal user account. It represents 
 
 ### Permission
 Permissions can be assigned to people. Permissions are strictly linked to the DABP system and control what users can do in DABP.
-They are not exposed outside of DABP and have no meaning for external systems.
+They are not exposed outside of DABP and have no meaning for external systems. Check out [In-depth view on permissions](./guides/permissions-in-depth.md) for details
 
 ### Policies
 A policy represents the rights/privileges a person has in the end system of the customer. They are not linked to user permissions inside DABP.
-Policies are exposed outside of DABP to customer end systems.
+Policies are exposed outside of DABP to customer end systems. Check out [In-depth view on policies](./guides/policies-in-depth.md) for details
 
 ### Group custom attributes
 Sometimes a customer would like to add an attribute to a group, for example, a reference to a Salesfore group which allows synchronization between Salesforce and DABP.
-These attributes can be added to a group with custom attributes. 
+These attributes can be added to a group with custom attributes. Check out [How and when to use custom attributes on groups](./guides/group-attributes.md) for more information.
 
 ## Topic Guides
-- [How to create a new policy via the API](./guides/create-policy-via-api.md)
-- [Person report - What is it and how to generate it](./guides/person-report.md)
-- [In-depth view on managing policies in groups](./guides/managing-policies.md)
-- [Responsibilities of external system connected to DABP](./guides/external-systems-responsibilities.md)
+### Concepts in depth
 - [In-depth view on permissions](./guides/permissions-in-depth.md)
 - [In-depth view on policies](./guides/policies-in-depth.md)
+
+### Managing groups and users
+- [In-depth view on managing policies in groups](./guides/managing-policies.md)
 - [Inviting users in DABP](./guides/inviting-users.md)
 - [Managing subgroups best practices](./guides/subgroups-best-practices.md)
-- [How and when to use custom attributes on groups](./guides/group-attributes.md)
+- [How and when to use custom attributes on groups](./guides/custom-attributes.md)
+
+### Administration
+- [How to create a new policy via the API](./guides/create-policy-via-api.md)
+
+### Technical details
+- [Responsibilities of external system connected to DABP](./guides/external-systems-responsibilities.md)
+- [Person report - What is it and how to generate it](./guides/person-report.md)

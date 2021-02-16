@@ -11,6 +11,7 @@ Example:
 2. Storing additional information about a group
     * when a group represents physical offices it can be addresses or contact information
     * any kind of metadata related to the group that is needed for external system or users of DABP
+3. API exposes an endpoint that allows you to search for group with specified attribute.
 
 ## Adding attributes to group
 Attributes can be added to the group from the Group Details dialog.

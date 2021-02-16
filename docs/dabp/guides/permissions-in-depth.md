@@ -17,8 +17,8 @@ Permissions are inherited within the groups. If a user was invited to DABP to jo
 then he will have those permissions in every subgroup of `group A`.
 
 ## Managing permissions of other users
-A user that has `Manage group members` can add and remove users from the group.
-He need `Manage permissions` in addition to assign persons to the user.
+A user that has `Manage group members` permission can add and remove users from the group.
+A user that has `Manage permissions` permission can assign permissions to the user.
 When inviting a user you can select what permissions he will have in the group. The most important thing is that you **cannot grant permissions that you don't have yourself**
 
 For example:  

@@ -1,10 +1,7 @@
 # Creating policy via API
-In this guide, we will assume the DABP service is available under `https://dabp.onegini.com` url.
-API is protected with Oidc security, so you must provide an auth token with the request.
+In this guide, we will assume the DABP is available under `https://dabp.onegini.com` url.
+API is protected with OIDC security, so you must provide an access token with the request.
 Please note that the token must be linked to the account that has "Manage policies" permission
-
-//SHOULD WE MENTION THE TENANT HEADER HERE?
-Since DABP is a multitenant application, to be able to call the API you should know the tenant id of your service and add it to the header of the request
 
 ## How to create a policy
 To create a policy a POST request must be sent to `https://dabp.onegini.com/api/v2/policies` with a proper request body
@@ -18,8 +15,7 @@ To create a policy a POST request must be sent to `https://dabp.onegini.com/api/
 ## Example request using curl
 
 ```
-curl --location --request POST 'http://localhost:8078/api/v2/policies' \
---header 'Onegini-Tenant-ID: 5735436a-2cab-4e3a-8c13-218450c61f3a' \
+curl --location --request POST 'https://dabp.onegini.com/api/v2/policies' \
 --header 'Content: application/json' \
 --header 'Authorization: Bearer  <access token>' \
 --header 'Content-Type: application/json' \

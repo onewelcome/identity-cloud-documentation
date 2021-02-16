@@ -10,7 +10,9 @@ This could tell the end system to allow this person to sell life insurances.
 To manage user policies open the user details modal, click the vertical ellipsis and choose "Change membership".
 This will switch the modal to the edit mode where you will be able to change the user policies.
 Please note that you can only assign policies that are linked to the group in which you are editing a person.
+
 ![edit person dialog](../img/edit-person.png)
+
 Click save to confirm your choices.
 
 If you have the privilege to manage person policies you **can assign policies that are not assigned to you**.

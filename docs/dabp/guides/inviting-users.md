@@ -13,4 +13,4 @@ The form will automatically get filled with person details when an e-mail of an 
 The person that is being invited can have an account in the identity management system because he is already part of another DABP group or has registered an account by other means.
 
 You will have to fill in the person details manually if a user wasn't found by the e-mail address.
-In this scenario will the person also get invited to create a user account.
+In this scenario the person will be assigned to the group, but also get invited to create a user account.
