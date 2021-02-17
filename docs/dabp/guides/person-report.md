@@ -22,7 +22,7 @@ doing a GET request to: `https://dabp.onegini.com/api/v2/people/{referenceId}/re
 
 Example request call
 ```
-curl --location --request GET 'https://dabp.onegini.com/api/v1/people/eb82d9a9-bba5-4bbb-a9fc-508ce6f8705c/report' \
+curl --location --request GET 'https://dabp.onegini.com/api/v2/people/eb82d9a9-bba5-4bbb-a9fc-508ce6f8705c/report' \
 --header 'Content: application/json' \
 --header 'Authorization: Bearer  <access token>' \
 --header 'Content-Type: application/json'
