@@ -1,28 +1,28 @@
 # Managing subgroups best practices
-Groups can either get created at the same or as a subgroup of each other.
-The different options got different advantages that impact how you manage your groups.
+Each group can have subgroups.
+Since subgroups have some additional restrictions comparing to standard groups you should always think about the use case.
+Sometimes using a subgroup can be very beneficial, sometimes using a standard group is a better option.
+This topic guide will explain the differences between groups and subgroups and will try to explain when to use subgroups.
 
-Groups on the same level are independent of each other. 
+## Differences between group and subgroup
+Groups are independent of each other.
 This might be a good fit when the groups represent physical or legally separated entities.    
-Subgroups got dependencies on their parent groups (ancestors). 
-This makes it possible to orchestrates permissions and policies together in an easier way.      
+Subgroups are dependent on their parent groups (ancestors). Subgroups can be configured to access only some of the policies of the parent.
+This makes subgroups a good fit when you want to represent a line of business in a legal entity (ie. separate life insurances from car insurances)
 
-## Permissions
-Assigned permission is also giving the member permissions to all the subgroups.
-
+### Permissions
+Assigning permission to a group member means that he will also have this permission in all subgroups.
 Sub-groups thus make it possible to have 'super users' that manage multiple groups.
-He will automatically manage subgroups that are created in the future.
 
 Assigned permission is not impacting the permissions of other groups on the same level.
-This makes it possible to have different users manage different groups. 
-A person can still manage groups on the same level. 
-However, this requires that person to get assigned the permissions manually to each group.  
+This makes it possible to have different users manage different groups.
+A person can still manage multiple groups on the same level.
+However, this requires that person to get assigned the permissions manually to each group.
 
 
 ## Policies on Group level
-A subgroup can only get assigned policies that are assigned to its parent group.
+Subgroup cannot be connected with a policy that is not linked to a parent group.
 Assigning a policy to a group does not automatically assign it to a subgroup.
-This makes it possible to limit what policies a group member can assign to a subgroup.
-
+This makes it possible to limit what policies can be assigned to members of a subgroup.
 
 Two groups on the same level can get assigned the same policies as they have the same parent group.

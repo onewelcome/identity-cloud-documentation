@@ -7,6 +7,7 @@ That means that a subgroup cannot have more policies assigned than its direct pa
 To add/remove a policy to a group you should select the group that you want to assign policies to on the group list screen.
 After clicking on the desired group a modal window with group information will appear. Click on the vertical ellipsis button and select `Edit group`.
 Now you can select which policies can be assigned to the group.
+
 ![edit group dialog](../img/edit-group-dialog.png)
 
 After selecting the required policies click save to confirm your choice.
