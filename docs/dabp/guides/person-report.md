@@ -18,6 +18,17 @@ The API requires authentication using OIDC. Make sure you add a valid access tok
 The person report for a person with a given identifier (`referenceId`) can be received by
 doing a GET request to: `https://dabp.onegini.com/api/v2/people/{referenceId}/report`.
 
+Person report is meant to be used only by external systems and not directly by logged in users.
+To achieve this, endpoint is secured with OIDC, and requesting party should provide a specified scope in the jwt.
+Besides specific scope, the jwt must not contain a `sub` claim that is present in the tokens provided to logged in users.
+
+Security options of the person report can be configured by the following properties
+
+
+dum.engine.auth.oidc-scopes-claim-name=scp
+dum.engine.auth.oidc-person-report-scope-name=dabp_person_report
+dum.engine.auth.oidc-trusted-clients-cid=dabp-trusted-clients
+
 ### Example
 
 Example request call
