@@ -24,10 +24,11 @@ Besides specific scope, the jwt must not contain a `sub` claim that is present i
 
 Security options of the person report can be configured by the following properties
 
+| Parameter name                            | Default Value  |  Description                           |
+| ------------------------------------------| ---------------|----------------------------------------|
+| dum.engine.auth.oidc-scopes-claim-name    |       scp      | claim name to be verified if it contains required scope |
+| dum.engine.auth.oidc-person-report-scope-name  | dabp_person_report           | value that should appear in the claim to allow access to person report  |
 
-dum.engine.auth.oidc-scopes-claim-name=scp
-dum.engine.auth.oidc-person-report-scope-name=dabp_person_report
-dum.engine.auth.oidc-trusted-clients-cid=dabp-trusted-clients
 
 ### Example
 
