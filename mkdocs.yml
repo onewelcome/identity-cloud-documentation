@@ -3,14 +3,14 @@ site_description: Onegini public documentation
 repo_url: https://github.com/Onegini/onegini-identity-cloud-documentation
 
 nav:
-  - Introduction: index.md
-  - Architecture:
+  - 'Introduction': index.md
+  - 'Architecture':
 #      - Functional flows: lorem-ipsum/functional-flows.md
       - 'Mobile Identity & Access': architecture/mobile-identity-access.md
 #  - Identity management:
 #    - Identity management: lorem-ipsum/identity-management.md
 #    - Identity Proofing: lorem-ipsum/identity-proofing.md
-  - Third party identity providers: identity-providers.md
+  - 'Third party identity providers': identity-providers.md
 #  - 'Strong (multi-factor) authentication': lorem-ipsum/strong-authentication.md
   - 'Single sign-on (SSO)':
 #      - Action tokens: lorem-ipsum/action-tokens.md
@@ -23,12 +23,18 @@ nav:
 #  - Secure mobile apps: lorem-ipsum/secure-mobile-apps.md
   - 'Client environment embedding (implementation)':
       - 'OAuth vs OpenID Connect': oauth-vs-oidc.md
+      - 'Responsibilities of external system connected to DABP': dabp/guides/external-systems-responsibilities.md
 #    - 'Feature lifecycle management': lorem-ipsum/feature-lifecycle-management.md
-#  - Delegated administration: lorem-ipsum/delegated-administration.md
+  - 'Delegated administration': dabp/index.md
+      - 'In-depth view on permissions': dabp/guides/permissions-in-depth.md
+      - 'In-depth view on policies': dabp/guides/policies-in-depth.md
+      - 'Inviting users in DABP': dabp/guides/inviting-users.md
+      - 'Managing subgroups best practices': dabp/guides/subgroups-best-practices.md
+      - 'How and when to use custom attributes on groups': dabp/guides/group-attributes.md
+      - 'How to create a new policy via the API': dabp/guides/create-policy-via-api.md
+      - 'Person report - What is it and how to generate it': dabp/guides/person-report.md
 #  - 'Monitoring, logging & alerting': lorem-ipsum/monitoring.md
 #  - API descriptions: lorem-ipsum/api-descriptions.md
-  - Onegini Cloud Components:
-      - 'Delegated Administration for Business Partners': dabp/index.md
 copyright: "Onegini B.V."
 
 extra_css:
