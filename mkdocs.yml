@@ -27,7 +27,8 @@ nav:
 #  - Delegated administration: lorem-ipsum/delegated-administration.md
 #  - 'Monitoring, logging & alerting': lorem-ipsum/monitoring.md
 #  - API descriptions: lorem-ipsum/api-descriptions.md
-
+  - Onegini Cloud Components:
+      - 'Delegated Administration for Business Partners': dabp/index.md
 copyright: "Onegini B.V."
 
 extra_css:

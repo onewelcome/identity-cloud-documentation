@@ -6,6 +6,7 @@
 
 - [Identity Providers](identity-providers.md)
 - [OAuth 2.0 and OpenID Connect Overview](oauth-vs-oidc.md)
+- [Delegated Administration for Business Partners](./dabp/index.md)
 - [More...](#)
 
 ### Guides
