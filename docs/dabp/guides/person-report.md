@@ -29,6 +29,14 @@ Security options of the person report can be configured by the following propert
 | dum.engine.auth.oidc-scopes-claim-name    |       scp      | claim name to be verified if it contains required scope |
 | dum.engine.auth.oidc-person-report-scope-name  | dabp_person_report           | value that should appear in the claim to allow access to person report  |
 
+There are two scenarios when the report is requested
+* when the user is logged in to the external system and it needs to check user policies (so linked with real user activity)
+* when external system does some synchronization work and needs to check some user information (so not linked with real user activity)
+
+To support both scenarios and keep the information about user activity, generation of the report will update person last activity date by default.
+If you want to use the report for the second scenario (not related to user activity) please execute the request with additional parameter `skipUpdatingActivity=true`
+ie `https://dabp.onegini.com/api/v2/people/{referenceId}/report?skipUpdatingActivity=true`
+
 
 ### Example
 
