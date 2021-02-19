@@ -19,7 +19,7 @@ The person report for a person with a given identifier (`referenceId`) can be re
 doing a GET request to: `https://dabp.onegini.com/api/v2/people/{referenceId}/report`.
 
 Person report is meant to be used only by external systems and not directly by logged in users.
-To achieve this, the external system should be enrolled in the access component as a client, and should request a dedicated scope when obtaining the token.
+To achieve this, the external system should be enrolled in the access component as a client, and should request a dedicated scope `dabp_person_report` when obtaining the token.
 This token should be then provided when requesting the person report.
 
 There are two scenarios when the report is requested
