@@ -25,7 +25,8 @@ nav:
       - 'OAuth vs OpenID Connect': oauth-vs-oidc.md
       - 'Responsibilities of external system connected to DABP': dabp/guides/external-systems-responsibilities.md
 #    - 'Feature lifecycle management': lorem-ipsum/feature-lifecycle-management.md
-  - 'Delegated administration': dabp/index.md
+  - 'Delegated administration':
+      - 'Introduction': dabp/index.md
       - 'In-depth view on permissions': dabp/guides/permissions-in-depth.md
       - 'In-depth view on policies': dabp/guides/policies-in-depth.md
       - 'Inviting users in DABP': dabp/guides/inviting-users.md
