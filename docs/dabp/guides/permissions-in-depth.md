@@ -3,6 +3,7 @@ A permission represents the rights/privileges a person has in the DABP tool and 
 Permissions are strictly linked to the DABP system and are not exposed outside of DABP and have no meaning for external systems. 
 
 In total are there 6 permissions:
+
 - **Invite/remove group members** enables the user to add, edit, and delete members of the group, and its subgroups.
 - **Assign permissions to group members** enables the user to add, edit, and delete permissions of group members.
 - **Assign policies to group members** enables the user to add, edit, and delete policies of group members.
@@ -24,6 +25,7 @@ When inviting a person you can select what permissions he will have in the group
 The most important rule is that you **cannot grant permissions that you don't have yourself**
 
 For example:  
+
 - User A has all permissions  
 - User B has permissions `Invite/remove group members` and `Assign permissions to group members`  
 - They both are members of the same group.  
