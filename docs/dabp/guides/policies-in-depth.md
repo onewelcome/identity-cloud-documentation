@@ -10,11 +10,12 @@ This could tell the end system to allow this person to sell life insurances.
 Both groups and persons can have policies assigned to it. The difference is that a person can only have policies assigned that are also assigned to a group.
 This means that assigning policies to a person is a contextual operation.
 Let's take this scenario:
-* There are 2 policies `Sell life insurance` and `Sell car insurance`. 
-* There are  2 groups `Life` and `All products`.
-* Policy `Sell life insurance` is linked to group `Life` and `All products`.
-* Policy `Sell car insurance` is linked only to group `All products`
-* A user `John Doe` is a member of both groups. 
+
+- There are 2 policies `Sell life insurance` and `Sell car insurance`. 
+- There are  2 groups `Life` and `All products`.
+- Policy `Sell life insurance` is linked to group `Life` and `All products`.
+- Policy `Sell car insurance` is linked only to group `All products`
+- A user `John Doe` is a member of both groups. 
 
 
 | Groups                | `Sell life insurance` | `Sell car insurance` |
