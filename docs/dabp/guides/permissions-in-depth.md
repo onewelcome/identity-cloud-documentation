@@ -3,12 +3,12 @@ A permission represents the rights/privileges a person has in the DABP tool and 
 Permissions are strictly linked to the DABP system and are not exposed outside of DABP and have no meaning for external systems. 
 
 In total are there 6 permissions:
-* **Invite/remove group members** enables the user to add, edit, and delete members of the group, and its subgroups.
-* **Assign permissions to group members** enables the user to add, edit, and delete permissions of group members.
-* **Assign policies to group members** enables the user to add, edit, and delete policies of group members.
-* **Add/edit/delete groups** enables the user to add, edit, and delete subgroups
-* **Assign policies to groups** enables the user to add, edit, and delete policies on a group level.
-* **Add/edit/delete policies** enables the user to add, edit, and delete policies to the system.
+- **Invite/remove group members** enables the user to add, edit, and delete members of the group, and its subgroups.
+- **Assign permissions to group members** enables the user to add, edit, and delete permissions of group members.
+- **Assign policies to group members** enables the user to add, edit, and delete policies of group members.
+- **Add/edit/delete groups** enables the user to add, edit, and delete subgroups
+- **Assign policies to groups** enables the user to add, edit, and delete policies on a group level.
+- **Add/edit/delete policies** enables the user to add, edit, and delete policies to the system.
 
 If a person has any permissions for any (sub)group we refer to that user as a superuser.
 If a person has all permissions on the root level we refer to that user as an administrator.
@@ -24,13 +24,13 @@ When inviting a person you can select what permissions he will have in the group
 The most important rule is that you **cannot grant permissions that you don't have yourself**
 
 For example:  
-* User A has all permissions  
-* User B has permissions `Invite/remove group members` and `Assign permissions to group members`  
-* They both are members of the same group.  
-* User B cannot remove `Manage group`, `Manage person policies`, `Manage group policies`, or `Manage policies` permission from User A.  
-* User B can remove `Manage group members` and `Manage permissions` from User A.  
-* User B can invite a new user to their group, but can only assign `Manage group members` and `Manage permissions` or a subset when inviting him.  
-* User A can invite a new user to their group and can assign all permissions or a subset.
+- User A has all permissions  
+- User B has permissions `Invite/remove group members` and `Assign permissions to group members`  
+- They both are members of the same group.  
+- User B cannot remove `Manage group`, `Manage person policies`, `Manage group policies`, or `Manage policies` permission from User A.  
+- User B can remove `Manage group members` and `Manage permissions` from User A.  
+- User B can invite a new user to their group, but can only assign `Manage group members` and `Manage permissions` or a subset when inviting him.  
+- User A can invite a new user to their group and can assign all permissions or a subset.
 
 To manage user permissions open the user details modal, click the vertical ellipsis and choose "Change membership".
 This will switch the modal to the edit mode where you will be able to change user permissions.
