@@ -28,7 +28,7 @@
                     ├── translation.json
             ├── logo.png
             ├── palette.json
-
+            ├── favicon.ico
 
 The `cim` directory contains login templates and messages. Within the `extension-resources` folder any of the following folders can be added:
 
@@ -47,6 +47,7 @@ The `delegation` directory contains resources that allow to customize web experi
 
   - Translations: full translations file is required, please refer to [the example](translation.json)
   - Logo: use `logo.png` file
+  - Favicon: use `favicon.ico` file
   - Application theme: use `palette.json` file, [more information available here](https://material-ui.com/customization/theming/)
 
 ### Create git repository connection
