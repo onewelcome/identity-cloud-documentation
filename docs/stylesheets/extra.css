@@ -165,9 +165,9 @@ h1, h2, h3, h4, button {
   background-color: #EB4D00;
 }
 
-.md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
-  width: 150px;
-  height: auto;
+.md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg,
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+  width: auto;
 }
 
 .single-tenant-blocks {
