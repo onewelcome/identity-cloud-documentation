@@ -5,32 +5,172 @@ repo_url: https://github.com/Onegini/onegini-identity-cloud-documentation
 nav:
   - 'Introduction': index.md
   - 'Onegini Identity Cloud':
-    - 'Platform architecture':
-        - 'Mobile Identity & Access': architecture/mobile-identity-access.md
-        - 'Identity & Single Sign-On': architecture/identity-single-sign-on.md
+      - 'Platform architecture':
+          - 'Mobile Identity & Access': architecture/mobile-identity-access.md
+          - 'Identity & Single Sign-On': architecture/identity-single-sign-on.md
   - 'Topic guides':
-    - 'Third party identity providers': identity-providers.md
-    - 'Single sign-on (SSO)':
-        - 'Protected data in Single Page Apps': single-sign-on/protected-data-openid-connect-access-tokens.md
-    - 'Client environment embedding (implementation)':
-        - 'OAuth vs OpenID Connect': oauth-vs-oidc.md
-        - 'Responsibilities of external system connected to DABP': dabp/guides/external-systems-responsibilities.md
+      - 'Third party identity providers': identity-providers.md
+      - 'Single sign-on (SSO)':
+          - 'Protected data in Single Page Apps': single-sign-on/protected-data-openid-connect-access-tokens.md
+      - 'Client environment embedding (implementation)':
+          - 'OAuth vs OpenID Connect': oauth-vs-oidc.md
+          - 'Responsibilities of external system connected to DABP': dabp/guides/external-systems-responsibilities.md
   - 'Products':
-    - 'Customer Service': products/customer-service.md
-    - 'Delegated administration':
-        - 'Introduction': dabp/index.md
-        - 'Concepts':
-          - 'In-depth view on permissions': dabp/guides/permissions-in-depth.md
-          - 'In-depth view on policies': dabp/guides/policies-in-depth.md
-        - 'How to functional':
-          - 'Inviting users in DABP': dabp/guides/inviting-users.md
-          - 'Managing subgroups best practices': dabp/guides/subgroups-best-practices.md
-          - 'How and when to use custom attributes on groups': dabp/guides/group-attributes.md
-        - 'How to technical':
-          - 'How to create a new policy via the API': dabp/guides/create-policy-via-api.md
-          - 'Person report - What is it and how to generate it': dabp/guides/person-report.md
-    - 'Identity & Single Sign-On': products/identity-single-sign-on.md
-    - 'Mobile Identity & Access': products/mobile-identity-access.md
+      - 'Customer Service': products/customer-service.md
+      - 'Delegated administration':
+          - 'Introduction': dabp/index.md
+          - 'Concepts':
+              - 'In-depth view on permissions': dabp/guides/permissions-in-depth.md
+              - 'In-depth view on policies': dabp/guides/policies-in-depth.md
+          - 'How to functional':
+              - 'Inviting users in DABP': dabp/guides/inviting-users.md
+              - 'Managing subgroups best practices': dabp/guides/subgroups-best-practices.md
+              - 'How and when to use custom attributes on groups': dabp/guides/group-attributes.md
+          - 'How to technical':
+              - 'How to create a new policy via the API': dabp/guides/create-policy-via-api.md
+              - 'Person report - What is it and how to generate it': dabp/guides/person-report.md
+      - 'Identity & Single Sign-On': products/identity-single-sign-on.md
+      - 'Mobile Identity & Access':
+          - 'Introduction': products/mobile-identity-access.md
+          - 'Quick start':
+              - 'Introduction': products/access/quickstart/index.md
+              - 'Setup': products/access/quickstart/setup/index.md
+              - 'Configuration setup example apps': products/access/quickstart/setup/example-apps-minimal-config.md
+              - 'Next steps': products/access/quickstart/setup/next-steps.md
+              - 'Securing resources': products/access/quickstart/setup/securing-resources.md
+          - 'Topic guides':
+              - 'Introduction': products/access/topics/index.md
+              - 'Client authentication methods': products/access/topics/authentication-methods/authentication-methods.md
+              - 'General client application configuration':
+                  - 'Introduction': products/access/topics/general-app-config/index.md
+                  - 'PIN policy configuration': products/access/topics/general-app-config/pin-policy/pin-policy.md
+                  - 'Scopes configuration': products/access/topics/general-app-config/scopes/scopes.md
+                  - 'Identity provider configuration': products/access/topics/general-app-config/identity-providers/identity-providers.md
+                  - 'Resource gateway configuration': products/access/topics/general-app-config/resource-gateway/resource-gateway.md
+                  - 'OS version management': products/access/topics/general-app-config/os-version-configuration/os-version-configuration.md
+              - 'Mobile applications':
+                  - 'Introduction': products/access/topics/mobile-apps/index.md
+                  - 'Mobile application configuration': products/access/topics/mobile-apps/app-configuration/app-configuration.md
+                  - 'Mobile application version management': products/access/topics/mobile-apps/app-configuration/app-version-management.md
+                  - 'Mobile application delivery lifecycle': products/access/topics/mobile-apps/app-delivery-lifecycle/app-delivery-lifecycle.md
+                  - 'Mobile authentication':
+                      - 'Introduction': products/access/topics/mobile-apps/mobile-authentication/mobile-authentication.md
+                      - 'Push authentication': products/access/topics/mobile-apps/mobile-authentication/push-authentication.md
+                      - 'SMS authentication': products/access/topics/mobile-apps/mobile-authentication/sms-authentication.md
+                      - 'One Time Password': products/access/topics/mobile-apps/mobile-authentication/one-time-password.md
+                  - 'Transaction signing': products/access/topics/mobile-apps/transaction-signing/transaction-signing.md
+                  - 'Implicit authentication': products/access/topics/mobile-apps/implicit-authentication/implicit-authentication.md
+              - 'Web clients':
+                  - 'Introduction': products/access/topics/web-clients/index.md
+                  - 'Web client configuration': products/access/topics/web-clients/web-client-configuration.md
+              - 'Tokens':
+                  - 'Introduction': products/access/topics/tokens/index.md
+                  - 'Access Token': products/access/topics/tokens/access-token.md
+                  - 'ID Token': products/access/topics/tokens/id-token.md
+                  - 'Refresh Token': products/access/topics/tokens/refresh-token.md
+              - 'OpenID Connect':
+                  - 'Introduction': products/access/topics/oidc/index.md
+                  - 'OpenID Connect overview': products/access/topics/oidc/overview/overview.md
+                  - 'Authentication': products/access/topics/oidc/overview/authentication.md
+                  - 'Scopes and claims': products/access/topics/oidc/overview/scopes-and-claims.md
+                  - 'Configuration': products/access/topics/oidc/configuration/configuration.md
+                  - 'ID Token Encryption': products/access/topics/oidc/id-token-encryption/id-token-encryption.md
+                  - 'Session Management':
+                      - 'Introduction': products/access/topics/oidc/session-management/index.md
+                      - 'Session Monitoring with iFrames': products/access/topics/oidc/session-management/session-monitoring-with-iframes.md
+                      - 'Relying Party iFrame': products/access/topics/oidc/session-management/relying-party-iframe.md
+                      - 'End Session Endpoint behavior and configuration': products/access/topics/oidc/session-management/end-session-guide.md
+                  - 'Relying Party Examples': products/access/topics/oidc/relying-party/index.md
+              - 'Custom Authenticators':
+                  - 'Introduction': products/access/topics/custom-authenticators/index.md
+                  - 'Custom Authenticators Configuration': products/access/topics/custom-authenticators/custom-authenticators-configuration.md
+                  - 'Custom Authenticator Example': products/access/topics/custom-authenticators/custom-authenticator-example.md
+              - 'Custom Registration':
+                  - 'Introduction': products/access/topics/custom-registration/index.md
+                  - 'Custom API Example': products/access/topics/custom-registration/custom-api-example.md
+                  - 'QR Registration Example': products/access/topics/custom-registration/qr-registration-example.md
+              - 'End user support':
+                  - 'Introduction': products/access/topics/end-user-support/index.md
+                  - 'User management': products/access/topics/end-user-support/user-management/user-management.md
+              - 'Technical application management':
+                  - 'Introduction': products/access/topics/technical-app-management/index.md
+                  - 'General configuration': products/access/topics/technical-app-management/general-config/general-config.md
+                  - 'System features configuration': products/access/topics/technical-app-management/system-features-config/system-features-config.md
+                  - 'Api configuration': products/access/topics/technical-app-management/api-configuration/api-configuration.md
+                  - 'CORS configuration': products/access/topics/technical-app-management/cors-support/cors-support.md
+                  - 'Extension Engine':
+                      - 'Introduction': products/access/topics/technical-app-management/extension-engine/index.md
+                      - 'Connection': products/access/topics/technical-app-management/extension-engine/extension-engine-connection.md
+                      - 'Properties': products/access/topics/technical-app-management/extension-engine/extension-engine-properties.md
+                  - 'SAML Service Provider configuration': products/access/topics/technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md
+                  - 'Cache configuration': products/access/topics/technical-app-management/cache-config/cache-config.md
+                  - 'Geolocation service': products/access/topics/technical-app-management/geolocation-service/geolocation-service.md
+              - 'Integration and extension':
+                  - 'Introduction': products/access/topics/integration-extension/index.md
+                  - 'Configure Scope Verification Service': products/access/topics/integration-extension/scope-verification/scope-verification.md
+              - 'Look and Feel':
+                  - 'Introduction': products/access/topics/look-and-feel/index.md
+                  - 'Templates': products/access/topics/look-and-feel/templates/templates.md
+                  - 'Translations': products/access/topics/look-and-feel/translations/translations.md
+              - 'App To Web SSO': products/access/topics/app-to-web/index.md
+              - 'Delegated User Management':
+                  - 'Introduction': products/access/topics/dum-report/index.md
+                  - 'DUM Engine Configuration': products/access/topics/dum-report/dum-engine-configuration.md
+              - 'OneSee security events': products/access/topics/aws/onesee-events.md
+          - 'API Reference':
+              - 'Introduction': products/access/api-reference/index.md
+              - 'OAuth endpoints': products/access/api-reference/description-oauth-endpoint.md
+              - 'OpenID Connect':
+                  - 'Introduction': products/access/api-reference/oidc/index.md
+                  - 'Discovery API': products/access/api-reference/oidc/discovery.md
+                  - 'JSON Web Key Set API': products/access/api-reference/oidc/jwks.md
+                  - 'User Info API': products/access/api-reference/oidc/user-info.md
+                  - 'Session Management':
+                      - 'Introduction': products/access/api-reference/oidc/session-management/index.md
+                      - 'Check Session API': products/access/api-reference/oidc/session-management/check-session.md
+                      - 'End Session API': products/access/api-reference/oidc/session-management/end-session.md
+              - 'Token Introspection': products/access/api-reference/token-introspection.md
+              - 'Mobile authentication':
+                  - 'Introduction': products/access/api-reference/mobile-authentication/index.md
+                  - 'API version 4': products/access/api-reference/mobile-authentication/mobile-authentication-v4.md
+                  - 'API version 3': products/access/api-reference/mobile-authentication/mobile-authentication-v3.md
+              - 'Custom Registration Backchannel': products/access/api-reference/backchannel-custom-registration.md
+              - 'Admin API':
+                  - 'Introduction': products/access/api-reference/admin-api/index.md
+                  - 'API Client': products/access/api-reference/admin-api/api-client.md
+                  - 'DUM Engine Configuration API': products/access/api-reference/admin-api/dum-engine-configuration-api.md
+              - 'Config API':
+                  - 'Introduction': products/access/api-reference/config-api/index.md
+                  - 'Applications': products/access/api-reference/config-api/applications/index.md
+                  - 'Application versions': products/access/api-reference/config-api/applications/application-version-api.md
+                  - 'Identity Providers': products/access/api-reference/config-api/identity-provider-api.md
+                  - 'Web Client': products/access/api-reference/config-api/web-client.md
+              - 'End user':
+                  - 'Introduction': products/access/api-reference/end-user/index.md
+                  - 'Access token API': products/access/api-reference/end-user/access-token.md
+                  - 'Application API': products/access/api-reference/end-user/application.md
+                  - 'Consent API': products/access/api-reference/end-user/consent.md
+                  - 'Device API version 3 (deprecated)': products/access/api-reference/end-user/device-v3.md
+                  - 'Device API version 4': products/access/api-reference/end-user/device-v4.md
+                  - 'Events API': products/access/api-reference/events-api/index.md
+          - 'Appendix':
+              - 'Introduction': products/access/appendix/index.md
+              - 'Administration console': products/access/appendix/administration/index.md
+              - 'Roles Overview': products/access/appendix/administration/roles-overview.md
+              - 'Activity': products/access/appendix/administration/events.md
+              - 'OAuth Config': products/access/appendix/administration/oauth-config.md
+              - 'API Config': products/access/appendix/administration/api-config.md
+              - 'Templates': products/access/appendix/templates/templates.md
+              - 'Extension Points':
+                  - 'Introduction': products/access/appendix/api-rest-services/index.md
+                  - 'REST Scope Verification Service': products/access/appendix/api-rest-services/scope-verification-service.md
+              - 'Onegini Access events': products/access/appendix/access-events.md
+              - 'Responsible disclosure policy': products/access/appendix/responsible-disclosure-policy.md
+              - 'Deprecation': products/access/appendix/deprecation.md
+          - 'Upgrade instructions': products/access/upgrade-instructions/index.md
+          - 'Release notes':
+              - 'Introduction': products/access/release-notes/index.md
+              - '1.x': products/access/release-notes/1.x.md
 copyright: "Onegini B.V."
 
 extra_css:

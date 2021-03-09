@@ -21,11 +21,11 @@ Android and iOS. The mobile SDKs are responsible for making secure requests towa
 
 ## Server components
 
-Are you looking for the documentation on OAuth, OpenID Connect, or Mobile Authentication? You can read about these topics in the documentation of the
-single-tenant [Token Server](https://docs-single-tenant.onegini.com/msp/stable/token-server/). The multi-tenant documentation for Mobile Identity & Access will
-be available here soon.
+Are you looking for the documentation on OAuth, OpenID Connect, or Mobile Authentication? These topics are covered in this section of the Onegini Identity Cloud
+developer documentation.
 
-Other single-tenant server components:
+## Single-tenant server components:
 
+* [Token Server](https://docs-single-tenant.onegini.com/msp/stable/token-server/)
 * [Security Proxy](https://docs-single-tenant.onegini.com/msp/stable/security-proxy/)
 * [Extension Engine](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/)
