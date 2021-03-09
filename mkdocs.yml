@@ -36,6 +36,10 @@ nav:
       - 'Person report - What is it and how to generate it': dabp/guides/person-report.md
 #  - 'Monitoring, logging & alerting': lorem-ipsum/monitoring.md
 #  - API descriptions: lorem-ipsum/api-descriptions.md
+  - Self-styling:
+      - 'Introduction': self-styling/index.md
+      - 'Onegini Connect Template Styling': self-styling/Tool_Template_Styling.md
+      - 'Frontend styling': self-styling/configuration-page.md
 copyright: "Onegini B.V."
 
 extra_css:

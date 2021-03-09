@@ -1,0 +1,252 @@
+{
+  "api-errors": {
+    "1007": "You do not have permission to access this page or perform the operation. Contact your administrator to get access.",
+    "1008": "An unexpected error has occurred. Refresh the page and try again.",
+    "5003": "This person is already a member of the group."
+  },
+  "auth": {
+    "login": {
+      "redirect": "Finishing login...",
+      "error": "An error occurred during authentication. Refresh the page.",
+      "title": "Login in progress...",
+      "text": "Please wait for the login process to finish."
+    },
+    "logout": {
+      "title": "Logout in progress...",
+      "text": "Please wait for the logout process to finish.",
+      "redirect": "Finishing logout...",
+      "error": "An error occurred during logout. Refresh the page."
+    }
+  },
+  "top-navigation": {
+    "login": "Log in",
+    "profile-menu": {
+      "label": "Your profile",
+      "logged-in-as": "Logged in as {{username}}",
+      "change-organization": "Change organization",
+      "my-profile": "My profile",
+      "logout": "Log out"
+    }
+  },
+  "members": {
+    "added": "Member added successfully",
+    "table-headers": {
+      "name": "Name",
+      "status": "Account Status",
+      "last-activity": "Last activity",
+      "role": "Role",
+      "member": "Member of"
+    },
+    "search": {
+      "name": "Search member",
+      "search-in-subgroups": "Search in subgroups"
+    },
+    "membership-count": {
+      "single": "1 group",
+      "multiple": "{{count}} groups"
+    },
+    "status": {
+      "ANY": "Any status",
+      "ACTIVE": "Active",
+      "BLOCKED": "Blocked",
+      "INVITED": "Invited"
+    },
+    "new-user": "Add User",
+    "total-elements": "{{totalElements}} users in {{groupName}}",
+    "add": {
+      "error": {
+        "email": "Please enter a valid email address.",
+        "firstName": "Please enter a first name",
+        "lastName": "Please enter a last name",
+        "phoneNumber": "Please enter a valid phone number",
+        "permissions": "Permissions",
+        "policies": "Policies"
+      },
+      "title": "Invite user",
+      "email": "Email",
+      "first-name": "First name",
+      "last-name": "Last name",
+      "phone-number": "Mobile number",
+      "permissions": "Permissions",
+      "policies": "Policies",
+      "save": "Add user",
+      "cancel": "Cancel",
+      "email-existence-check-failed": "Lookup of the email address failed. Please try again in a moment.",
+      "email-exists-info": "Found an existing account for this email address. Form is prefilled with the account data."
+    },
+    "permissions": {
+      "GROUP_MEMBER_MANAGE": "Invite/\u200Bremove group members",
+      "GROUP_MANAGE": "Add/\u200Bedit/\u200Bdelete groups",
+      "GROUP_POLICY_MANAGE": "Assign policies to groups",
+      "PERSON_POLICY_MANAGE": "Assign policies to group members",
+      "POLICY_MANAGE": "Add/\u200Bedit/\u200Bdelete policies",
+      "PERMISSION_MANAGE": "Assign permissions to group members"
+    },
+    "select": "Select: ",
+    "all": "all",
+    "none": "none",
+    "details": {
+      "account-status": "Account status",
+      "permissions": "Permissions",
+      "policies": "Policies",
+      "memberships" : "Memberships",
+      "membership": {
+        "cancel": "Cancel",
+        "save": "Save",
+        "Close": "Close",
+        "change": "Change membership",
+        "remove": "Remove membership"
+      }
+    },
+    "errors": {
+      "members.error.unknown": "Something went wrong with your request, please try again later."
+    },
+    "removed": "Member removed",
+    "confirmation": {
+      "remove": {
+        "title": "Remove membership",
+        "content": "Are you sure you want to remove the membership?"
+      },
+      "policies": "Policies",
+      "membership": {
+        "save": "Save",
+        "cancel": "Cancel",
+        "change": "Change membership"
+      }
+    }
+  },
+  "groups": {
+    "table-headers": {
+      "name": "Name",
+      "members": "Members",
+      "subgroups": "Subgroups"
+    },
+    "search": {
+      "name": "Search groups"
+    },
+    "new-group": "New Group",
+    "total-elements": "{{totalElements}} groups in {{groupName}}",
+    "column-prefix": {
+      "members": "{{number}} members",
+      "subgroups": "{{number}} subgroups"
+    },
+    "add": {
+      "error": {
+        "name": "Please enter a name",
+        "custom-attributes": {
+          "key": "Please enter a key",
+          "value": "Please enter a value",
+          "uniqueness": "Attribute keys must be unique"
+        }
+      },
+      "title": "Add a group",
+      "name": "Name",
+      "custom-attributes": {
+        "name": "Attributes",
+        "add-button": "Add attribute",
+        "key": "Key",
+        "value": "Value"
+      },
+      "policies": "Policies",
+      "save": "Add group",
+      "cancel": "Cancel"
+    },
+    "added": "Group added successfully",
+    "edited": "Group updated successfully",
+    "edit": {
+      "menu-item": "Edit a group"
+    },
+    "deletion": {
+      "menu-item": "Delete group",
+      "confirmation": {
+        "title": "Delete",
+        "content": "All subgroups and memberships will be removed by this action. Are you sure you want to continue?"
+      },
+      "success": "Group deleted"
+    },
+    "details": {
+      "name": "Name",
+      "custom-attributes": "Attributes",
+      "no-custom-attributes": "No attributes",
+      "policies": "Policies",
+      "no-policies": "No policies",
+      "members-link": "{{number}} members",
+      "subgroups-link": "{{number}} subgroups",
+      "error": {
+        "name": "Please enter a name"
+      },
+      "save": "Save",
+      "close": "Close",
+      "cancel": "Cancel"
+    }
+  },
+  "policies": {
+    "title": "Policies",
+    "table-headers": {
+      "name": "Name"
+    },
+    "total-elements": "Total policies: {{totalElements}}",
+    "search": {
+      "placeholder": "Search policies"
+    },
+    "new-policy": "New policy",
+    "edit-policy": "Edit policy",
+    "delete-policy": "Delete policy",
+    "add": {
+      "name": "Name",
+      "title": "Add policy",
+      "error": {
+        "name": "Please enter a policy name",
+        "notUnique": "The policy name already exists"
+      },
+      "save": "Add policy",
+      "cancel": "Cancel"
+    },
+    "edit": {
+      "warning": "Users may lose access to applications when you change the name of a policy",
+      "success": "Policy updated successfully",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "details": {
+      "title": "Policy",
+      "id": "Policy ID",
+      "name": "Name",
+      "close": "Close"
+    },
+    "deletion": {
+      "confirmation": {
+        "title": "Delete",
+        "content": "The policy will be removed from all groups and members. Applications may deny access when they require users to have this policy."
+      },
+      "success": "Policy deleted"
+    }
+  },
+  "sidemenu": {
+    "header": {
+      "title": "DABP"
+    },
+    "links": {
+      "members": "Users",
+      "groups": "Groups",
+      "reporting": "Reporting",
+      "settings": "Settings",
+      "policies": "Policies"
+    }
+  },
+  "organization-choose": {
+    "title": "Choose an organization",
+    "description": "Your account gives access to multiple organizations. We ask you to choose an organization now. You can switch to a different organization later via\n  the profile menu in the top right corner.",
+    "list": {
+      "title": "Organization"
+    }
+  },
+  "confirmation": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "delete": "Delete"
+  },
+  "app": {
+    "no-permissions": "You do not have permissions to view this page. Contact your administrator to get access."
+  }
+}
