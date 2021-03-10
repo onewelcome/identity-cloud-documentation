@@ -29,3 +29,4 @@ These ten sections, with customer-friendly names, will be used as a structure fo
 * CIAM for B2B
 * Monitoring, Logging & alerting 
 * API descriptions
+* Self-styling
