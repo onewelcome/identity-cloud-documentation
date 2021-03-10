@@ -170,53 +170,6 @@ h1, h2, h3, h4, button {
   width: auto;
 }
 
-.single-tenant-blocks {
-  margin: 1em 0;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 2em 2em;
-  grid-template-areas:
-    "ts ts ts cim cim cim"
-    "mobile mobile sp sp uma uma";
-}
-
-.single-tenant-block {
-}
-
-.single-tenant-block a {
-  width: 100%;
-  display: inline-block;
-  padding: 1em;
-  text-align: center;
-  border-radius: 1em;
-}
-
-.single-tenant-block a:hover, .single-tenant-block a:focus {
-  background-color: rgba(0, 0, 0, .1);
-}
-
-.single-tenant-block__ts {
-  grid-area: ts;
-}
-
-.single-tenant-block__cim {
-  grid-area: cim;
-}
-
-.single-tenant-block__mobile {
-  grid-area: mobile;
-}
-
-.single-tenant-block__sp {
-  grid-area: sp;
-}
-
-.single-tenant-block__uma {
-  grid-area: uma;
-}
-
 .reading-time {
   color: rgba(0, 0, 0, 0.75);
   font-weight: lighter;
