@@ -34,8 +34,8 @@ The introspection response object described in [paragraph 2.2](https://tools.iet
 | app_identifier                      | The identifier of the [mobile app](../topics/mobile-apps/index.md). Empty when the client is not an instance of a mobile app.
 | app_platform                        | The platform of the mobile app. Empty when the client is not an instance of a mobile app.
 | app_version                         | The [version of the mobile app](../topics/mobile-apps/app-configuration/app-version-management.md). Empty when the client is not an instance of a mobile app.
-| group_permissions                   | [DEPRECATED] Stringified representation of the user's group memberships and permissions. Requires [configuration of the DUM Engine](../topics/dum-report/index.md) and setting the [legacy group permissions](../topics/web-clients/web-client-configuration.md).
-| urn:onegini.com:oidc:group_policies | User's policies and group memberships. Requires [configuration of the DUM Engine](../topics/dum-report/index.md).
+| group_permissions                   | [DEPRECATED] Stringified representation of the user's group memberships and permissions. Requires [configuration of the DABP API](../topics/dum-report/index.md) and setting the [legacy group permissions](../topics/web-clients/web-client-configuration.md).
+| urn:onegini.com:oidc:group_policies | User's policies and group memberships. Requires [configuration of the DABP API](../topics/dum-report/index.md).
 
 ## Example request
 

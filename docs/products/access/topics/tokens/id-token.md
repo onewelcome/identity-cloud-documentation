@@ -57,4 +57,4 @@ Below you can find a description for the generic claims that are in the ID Token
 | iss     | The issuer of this ID Token. This will always be Onegini Access
 | aud     | The audience for which this ID Token is intended. The Relying Party client ID that requested this ID Token is always included as the audience.
 | sub     | The user identifier for then end-user that this ID Token is representing
-| urn:onegini.com:oidc:group_policies | User's policies and group memberships. Requires [configuration of the DUM Engine](../../topics/dum-report/index.md).
+| urn:onegini.com:oidc:group_policies | User's policies and group memberships. Requires [configuration of the Delegated Administration](../../topics/dum-report/index.md).

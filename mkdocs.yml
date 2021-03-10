@@ -134,7 +134,6 @@ nav:
               - 'Admin API':
                   - 'Introduction': products/access/api-reference/admin-api/index.md
                   - 'API Client': products/access/api-reference/admin-api/api-client.md
-                  - 'DUM Engine Configuration API': products/access/api-reference/admin-api/dum-engine-configuration-api.md
               - 'Config API':
                   - 'Introduction': products/access/api-reference/config-api/index.md
                   - 'Applications': products/access/api-reference/config-api/applications/index.md

@@ -114,7 +114,7 @@ JSON body parameters:
 | template_set                       |  no      |  "template1"               |  Identifier of an existing [Template Set](../../topics/look-and-feel/templates/templates.md)
 | consent_disabled                   |  no      |  false                     |  When Consent is skipped, the user is not asked for Consent in the Authorization flow. The value must be `true` when `grant_types` contains `PASSWORD`.
 | open_id_connect                    |  no      |  See table below           |  JSON Object for OpenID Connect configuration. Required when `default_scopes` or `additional_scopes` contain `openid`.
-| legacy_group_permissions_enabled   |  no      |  false                     |  By default, the latest version of the DUM report is returned in claims. Set this flag value to `true` in order to use legacy version 1 of this report.
+| legacy_group_permissions_enabled   |  no      |  false                     |  By default, the latest version of the DABP report is returned in claims. Set this flag value to `true` in order to use legacy version 1 of this report.
 
 The following parameters are a part of the `open_id_connect` object.
 
@@ -294,7 +294,7 @@ Only the fields that are sent in the request will be changed.
 | template_set                       |  no      |  "template1"               |  Identifier of existing [Template Set](../../topics/look-and-feel/templates/templates.md)
 | consent_disabled                   |  no      |  false                     |  When Consent is skipped, the user is not asked for Consent in the Authorization flow
 | open_id_connect                    |  no      |  See table below           |  JSON Object for OpenID Connect configuration. Required when `openid` is added to `default_scopes` or `additional_scopes`.
-| legacy_group_permissions_enabled   |  no      |  false                     |  By default, the latest version of the DUM report is returned in claims. Set this flag value to `true` in order to use legacy version 1 of this report.
+| legacy_group_permissions_enabled   |  no      |  false                     |  By default, the latest version of the DABP report is returned in claims. Set this flag value to `true` in order to use legacy version 1 of this report.
 
 The following parameters are a part of the `open_id_connect` object.
 
