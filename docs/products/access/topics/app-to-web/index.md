@@ -11,5 +11,6 @@ The Onegini SDK allow you to specify a target URL where authentication is requir
 [Action Token](https://docs-single-tenant.onegini.com/cim/stable/idp/topic-guides/authentication/action-token-login.html) configuration. It will then verify that your mobile 
 application's session is valid and establish a session with the IDP before redirecting the user to the target URL with them logged in automatically. 
 Please refer to the Onegini SDK documentation for the specifics on the implementation:
+
 * [Android](https://docs-single-tenant.onegini.com/msp/stable/android-sdk/topics/single-sign-on.html)
 * [iOS](https://docs-single-tenant.onegini.com/msp/stable/ios-sdk/topics/app-to-web-single-sign-on.html)
