@@ -32,12 +32,8 @@ nav:
       - 'Identity & Single Sign-On': products/identity-single-sign-on.md
       - 'Mobile Identity & Access':
           - 'Introduction': products/mobile-identity-access.md
-          - 'Quick start':
-              - 'Introduction': products/access/quickstart/index.md
-              - 'Setup': products/access/quickstart/setup/index.md
-              - 'Configuration setup example apps': products/access/quickstart/setup/example-apps-minimal-config.md
-              - 'Next steps': products/access/quickstart/setup/next-steps.md
-              - 'Securing resources': products/access/quickstart/setup/securing-resources.md
+          - 'How to technical':
+              - 'Securing resources': products/access/how-to-technical/securing-resources.md
           - 'Topic guides':
               - 'Introduction': products/access/topics/index.md
               - 'Client authentication methods': products/access/topics/authentication-methods/authentication-methods.md

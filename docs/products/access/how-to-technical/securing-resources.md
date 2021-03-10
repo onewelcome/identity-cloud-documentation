@@ -43,7 +43,7 @@ the secured API (4 and 5), in this scenario that is Onegini Access device API. F
 ```
 
 To configure a resource gateway in Onegini Access, you might want to consult
-the [Resource gateway configuration](../../topics/general-app-config/resource-gateway/resource-gateway.md) topic guide.
+the [Resource gateway configuration](../topics/general-app-config/resource-gateway/resource-gateway.md) topic guide.
 
 ## Extract the access token from an incoming request
 
@@ -87,7 +87,7 @@ public class AccessTokenExtractor {
 ## Introspect the access token at Onegini Access
 
 The received access token should be send to Onegini Access for introspection. For the API description see Onegini
-Access [introspection API reference](../../api-reference/token-introspection.md).
+Access [introspection API reference](../api-reference/token-introspection.md).
 
 The following code executes the introspection requests and checks if the the token is valid according to Onegini Access:
 
@@ -244,7 +244,7 @@ tokenTypeValidationService.validateNoImplicitAuthenticationToken(tokenIntrospect
 ## Fetch and return the secured resource to the client
 
 After all checks are passed successfully the devices for the user in the access token can be fetched and returned to the original caller. The
-[device API](../../api-reference/end-user/device-v4.md#list-devices) can be reached via uri `/api/v4/users/{userId}/devices`.
+[device API](../api-reference/end-user/device-v4.md#list-devices) can be reached via uri `/api/v4/users/{userId}/devices`.
 
 ```java
 
