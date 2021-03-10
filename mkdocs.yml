@@ -151,8 +151,6 @@ nav:
                   - 'Events API': products/access/api-reference/events-api/index.md
           - 'Appendix':
               - 'Introduction': products/access/appendix/index.md
-              - 'Administration console': products/access/appendix/administration/index.md
-              - 'Roles Overview': products/access/appendix/administration/roles-overview.md
               - 'Activity': products/access/appendix/administration/events.md
               - 'OAuth Config': products/access/appendix/administration/oauth-config.md
               - 'API Config': products/access/appendix/administration/api-config.md
@@ -163,7 +161,6 @@ nav:
               - 'Onegini Access events': products/access/appendix/access-events.md
               - 'Responsible disclosure policy': products/access/appendix/responsible-disclosure-policy.md
               - 'Deprecation': products/access/appendix/deprecation.md
-          - 'Upgrade instructions': products/access/upgrade-instructions/index.md
           - 'Release notes':
               - 'Introduction': products/access/release-notes/index.md
               - '1.x': products/access/release-notes/1.x.md
