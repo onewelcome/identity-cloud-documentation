@@ -67,4 +67,4 @@ Android version 4.4 on tablets and phones, but block Android version 4.4w for we
 
 The request will be denied if the configured version exactly matches the value of the blocked version. Any value is allowed to be configured.
 
-> **Note:** Normally you will configure the supported OS version at build time so that users who are not running the correct OS version will not be able to download your application. However, sometimes you need more drastic measures in case of security vulnerabilities but do not want to completely close down the application usage. In this case the OS blacklist will support you in blocking just the vulnerable OS versions.
+> **Note:** Normally you will configure the supported OS version at build time so that users who are not running the correct OS version will not be able to download your application. However, sometimes you need more drastic measures in case of security vulnerabilities but do not want to completely close down the application usage. In this case you can block the vulnerable OS versions.

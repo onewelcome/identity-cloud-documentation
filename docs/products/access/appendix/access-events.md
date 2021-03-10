@@ -208,7 +208,7 @@ The following events are specific for mobile apps that use the Onegini SDK.
 | Event                                                         | Description
 |---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------
 | CLIENT MIGRATION SUCCESS                                      | The client has been successfully migrated to the newest version of security protocol.
-| CLIENT MIGRATION FAILED OS VERSION INVALID                    | Migration failed, the client's OS version is not supported or blacklisted.
+| CLIENT MIGRATION FAILED OS VERSION INVALID                    | Migration failed, the client's OS version is blocked or not supported.
 | CLIENT MIGRATION FAILED VERSION DISABLED                      | Migration failed, the requested mobile app version is disabled or does not allow new registrations.
 | CLIENT MIGRATION FAILED VERSION UNCHANGED                     | Migration failed, the client is already associated with the given app platform version.
 | CLIENT MIGRATION FAILED APP CLIENT MISMATCH                   | Migration failed, the requested mobile application does not match with the client's configuration.
@@ -223,7 +223,7 @@ The following events are specific for mobile apps that use the Onegini SDK.
 | DYNAMIC REG INVALID HEADER                                    | Unable to perform dynamic client registration because one or more required headers is missing or no mobile application can be found based on the header values.
 | DYNAMIC REG INVALID REQUEST                                   | Unable to perform dynamic client registration because identifier or challenge response is not available in request.
 | DYNAMIC REG NEW REGISTRATIONS DISABLED                        | Dynamic client registration failed because new registrations are disabled for this platform version.
-| DYNAMIC REG OS VERSION INVALID                                | Dynamic client registration failed because client's OS version is not supported or blacklisted.
+| DYNAMIC REG OS VERSION INVALID                                | Dynamic client registration failed because client's OS version is blocked or not supported.
 | DYNAMIC REG PLATFORM VERSION UNKNOWN                          | Dynamic client registration failed because the client's platform version is unknown.
 | DYNAMIC REG VERSION DISABLED                                  | Dynamic client registration failed because the platform version is disabled
 | DYNAMIC REG FAILED INVALID SOFTWARE STATEMENT                 | Dynamic client registration failed because the software statement is invalid (ie. cannot be parsed or signature verification failed
@@ -249,7 +249,7 @@ configuration.
 | CLIENT VALIDATION INVALID SCOPE                               | Client validation failed because scope is invalid.
 | CLIENT VALIDATION JAILBREAK DETECTED                          | Client validation failed because jailbreak was detected.
 | CLIENT VALIDATION NO CLIENT CREDENTIALS GRANT                 | Client validation failed because client has no client credentials grant enabled.
-| CLIENT VALIDATION OS VERSION INVALID                          | Client validation failed because client's OS version is not supported or blacklisted.
+| CLIENT VALIDATION OS VERSION INVALID                          | Client validation failed because client's OS version is blocked or not supported.
 | CLIENT VALIDATION UPGRADE INITIALIZED                         | Client validation resulted in the initialization of Dynamic Client Upgrade.
 | CLIENT VALIDATION VERSION DISABLED                            | Client validation failed because the version has been disabled.
 | CLIENT VALIDATION PLATFORM VERSION UNKNOWN                    | Client validation failed because the client's platform version is unknown

@@ -38,4 +38,4 @@ Blocking specific PINs can be managed by editing an existing PIN policy. Specifi
 
 >*Note:* When the PIN length is changed, all the existing blocked PINs are removed, because their length doesn't match the new PIN length.
 
-![Pin policy blacklist](img/edit-pin-policy.png)
+![Pin policy blocked pins](img/edit-pin-policy.png)
