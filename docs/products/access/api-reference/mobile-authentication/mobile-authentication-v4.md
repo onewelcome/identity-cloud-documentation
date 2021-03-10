@@ -185,7 +185,7 @@ The request must contain a body which is `application/x-www-form-urlencoded;char
 | secure_message | No         | No        | No        | Sensitive message which will be encrypted and delivered to the device with HTTPS
 | phone_number   | No         | No        | Yes       | Phone number to be used in SMS authentication process using the international notation. Example: `+15055551234`
 | language_code  | No         | No        | No        | The language code is used to look up translations for messages defined in the admin console. If no message is specified, the language code is used to match to a configured default message. When no default message is found for the specified language code, English will be used. Examples of language codes: nl, fr, en, de (lowercase). This is also used in combination with ip_address and/or user agent to help construct those messages in the correct language.  
-| ip_address     | No         | No        | No        | The IP address where the initialization request originates. This will be used by the [geolocation service](../../topics/technical-app-management/geolocation-service/geolocation-service.md) to look up location data to be included in the message to the SDK for additional context. 
+| ip_address     | No         | No        | No        | The IP address where the initialization request originates. This will be used by the geolocation service to look up location data to be included in the message to the SDK for additional context. 
 | user_agent     | No         | No        | No        | The raw user agent string of the device/application where the initialization request originates. This will be included in the message to the SDK for additional context. 
 
 **Example push request:**

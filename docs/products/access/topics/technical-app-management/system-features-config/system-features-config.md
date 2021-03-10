@@ -11,9 +11,9 @@ Features that can be enabled/disabled via this mechanism:
 
 - [Transaction signing](../../mobile-apps/transaction-signing/transaction-signing.md)
 - [Mobile authentication](../../mobile-apps/mobile-authentication/mobile-authentication.md)
+- Geolocation for mobile authentication
 - [Custom authenticators](../../custom-authenticators/index.md)
 - [Custom API Registration](../../custom-registration/index.md)
-- [Geolocation service](../geolocation-service/geolocation-service.md)
 - [Responsible disclosure policy](../../../appendix/responsible-disclosure-policy.md)
 
 ![System feature config](img/system-feature-config.png)

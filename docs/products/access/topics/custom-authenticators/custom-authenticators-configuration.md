@@ -2,9 +2,6 @@
 
 Custom Authenticators is an optional component of Onegini Access. If you want to use it, enable the `Custom Authenticators` option described on the [Configure system features](../technical-app-management/system-features-config/system-features-config.md) page.
 
-Onegini Access uses the [Onegini Extension Engine](https://docs-single-tenant.onegini.com/msp/stable/extension-engine).
-You must [configure its connection](../technical-app-management/extension-engine/extension-engine-connection.md) before you can use the Custom Authenticators feature.
-
 ## Create or edit a Custom Authenticator
 
 Go to `Configuration` → `App configuration` → `Custom Authenticators` and add or edit a Custom Authenticator.

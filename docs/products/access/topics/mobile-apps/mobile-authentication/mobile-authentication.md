@@ -42,8 +42,7 @@ the request is originating. This is useful in mitigating phishing attempts since
 
 In order to enable this feature the following conditions must be met:
 
-* the geolocation feature is [enabled](../../technical-app-management/system-features-config/system-features-config.md).
-* the geolocation service is properly [configured](../../technical-app-management/geolocation-service/geolocation-service.md).
+* the geolocation feature is enabled and properly configured
 * the mobile authentication [initialization request](../../../api-reference/mobile-authentication/mobile-authentication-v4.md#mobile-authentication-initialization)
   contains the following optional fields: `ip_address`, `user_agent`.
 

@@ -94,13 +94,9 @@ nav:
                   - 'System features configuration': products/access/topics/technical-app-management/system-features-config/system-features-config.md
                   - 'Api configuration': products/access/topics/technical-app-management/api-configuration/api-configuration.md
                   - 'CORS configuration': products/access/topics/technical-app-management/cors-support/cors-support.md
-                  - 'Extension Engine':
-                      - 'Introduction': products/access/topics/technical-app-management/extension-engine/index.md
-                      - 'Connection': products/access/topics/technical-app-management/extension-engine/extension-engine-connection.md
-                      - 'Properties': products/access/topics/technical-app-management/extension-engine/extension-engine-properties.md
+                  - 'Extension Engine': products/access/topics/technical-app-management/extension-engine/extension-engine-properties.md
                   - 'SAML Service Provider configuration': products/access/topics/technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md
                   - 'Cache configuration': products/access/topics/technical-app-management/cache-config/cache-config.md
-                  - 'Geolocation service': products/access/topics/technical-app-management/geolocation-service/geolocation-service.md
               - 'Integration and extension':
                   - 'Introduction': products/access/topics/integration-extension/index.md
                   - 'Configure Scope Verification Service': products/access/topics/integration-extension/scope-verification/scope-verification.md
