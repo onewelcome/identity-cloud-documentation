@@ -173,7 +173,7 @@ nav:
               - '1.x': products/access/release-notes/1.x.md
       - Self-styling:
           - 'Introduction': self-styling/index.md
-          - 'Onegini Connect Template Styling': self-styling/Tool_Template_Styling.md
+          - 'Onegini Template Styling': self-styling/Tool_Template_Styling.md
           - 'Frontend styling': self-styling/configuration-page.md
 copyright: "Onegini B.V."
 
