@@ -57,12 +57,12 @@ The `delegation` directory contains resources that allow customizing the web exp
 ![Customer Self Styling overview page](./images/ers_1.png)
 1. Fill in the following fields:
 
-    | Field|Description   |
-    |---|---|
-    |  **Remote location** | Define the remote location to clone the Git Repository. Only https:// is supported.   | 
-    |  **No authentication required** | If this option is enabled, username and password are not mandatory, and the Git Repository will be public. This option is disabled by default which means that the Git Repository is private and protected by a username and password.
-    |**Username**| The username for the git repository.|
-    |**Password**| The password for the git repository. Instead of using a password, you can generate a GitHub personal access token here: [Personal access tokens](https://github.com/settings/tokens). |
+    | Field                          | Description
+    |--------------------------------|------------
+    | **Remote location**            | The remote location to clone the Git Repository. It must start with `https://`. `ssh` is not supported. 
+    | **No authentication required** | Enable this option when your GIT repository is publicly accessible. This option is disabled by default which means that the Git Repository is private and protected by a username and password.
+    | **Username**                   | The username for the git repository.
+    | **Password**                   | The password for the git repository. Instead of using a password, you can generate a GitHub personal access token here: [Personal access tokens](https://github.com/settings/tokens).
 
 2. Click [Next: select reference]. (*The form has been validated and stored.*) 
 
@@ -80,13 +80,13 @@ The `delegation` directory contains resources that allow customizing the web exp
 
 The overview page shows the following information:
 
-| Field|Description   |
-|---|---|
-|  **Clone URL** | The remote URL.| 
-|  **Authentication** | The authentication method, for example, 'basic'.|
-|**Username**| The username, only required if the authentication method is "Username and password".|
-|**Branch or Tag**| The selected branch or tag. |
-|**Last checked**| The last time the resources have been fetched from the remote repository.|
+| Field              |Description
+|--------------------|-----------
+| **Clone URL**      | The remote URL of the GIT repository.
+| **Authentication** | The authentication method to access the GIT repository, for example, 'basic'.
+| **Username**       | The username, only required if the authentication method is "Username and password".
+| **Branch or Tag**  | The selected branch or tag for the templates and translations.
+| **Last checked**   | The last time the resources have been fetched from the remote repository.
 
 #### Edit connection   
 To edit the Git repository connection, click [Edit connection]. 
