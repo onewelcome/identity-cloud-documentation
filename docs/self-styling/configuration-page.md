@@ -40,11 +40,11 @@ The `cim` directory contains login templates and messages. Within the `extension
   - Templates: templates displayed in the frontend.
 
 #### Access
-The `access` directory contains template sets used to change your web applications and mobile clients' look and feel. Refer to the [Access component documentation](./products/access/topics/look-and-feel/index.md) to learn more about switching the template set per client and the contents of a particular template set. The name of the directory is resolved as the name of the specific template set. If the template cannot be found in the chosen set's directory, the content will be served from the `default` directory.
+The `access` directory contains template sets used to change your web applications and mobile clients' look and feel. Refer to the [Access component documentation](../products/access/topics/look-and-feel/index.md) to learn more about switching the template set per client and the contents of a particular template set. The name of the directory is resolved as the name of the specific template set. If the template cannot be found in the chosen set's directory, the content will be served from the `default` directory.
 The `messages` subdirectory contains message bundles that the Access Engine application will load. Please note that there is one folder for `messages` that are used by all template sets.  
 
 #### Delegation
-The `delegation` directory contains resources that allow customizing the web experience in [Delegated Administration for Business Partners (DABP)](./dabp/index.md). You can customize the following resources:
+The `delegation` directory contains resources that allow customizing the web experience in [Delegated Administration for Business Partners (DABP)](../dabp/index.md). You can customize the following resources:
 
   - Translations: key-value messages in multiple languages. Please refer to [the example](translation.json)
   - Logo: use `logo.png` file
