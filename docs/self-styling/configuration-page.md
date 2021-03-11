@@ -54,7 +54,7 @@ The `delegation` directory contains resources that allow customizing the web exp
 ### Create git repository connection
 1. Log into **Onegini Customer Identity Access Manager** >`System` > `Frontend styling`.
 2. The window *Frontend styling* opens: <br><br>
-![ERS1](./images/ers_1.png)
+![Customer Self Styling overview page](./images/ers_1.png)
 1. Fill in the following fields:
 
     | Field|Description   |
@@ -69,14 +69,14 @@ The `delegation` directory contains resources that allow customizing the web exp
 ### Select reference
 
 1. After completing the steps under [Create Git repository connection](#create-git-repository-connection), the *Select a Reference*-window opens: <br> <br>
-![Selectareference](./images/Selectareference.png)
+![Page to select a reference](./images/Selectareference.png)
 
 6. In the 'Select a branch' or 'Select a tag' field, all the available remote tags (when working in a staging or production environment) and branches (when working in a development or testing environment) can be selected. The first tag or branch in the list will be preselected.
 7. When the correct tag or branch is selected, click [Save]. 
    *The branch or tag is stored, and synchronization will happen automatically*.
 8. After saving, the overview page is displayed:
 
-![ERS1](./images/ers1.png)
+![Customer Self Styling overview page](./images/ers1.png)
 
 The overview page shows the following information:
 
@@ -98,7 +98,7 @@ To change the reference, click [Change reference].
 
 To synchronize a Git Repository, click [Synchronize] in the overview page:
 
-![ERS1](./images/ers1.png)
+![Customer Self Styling overview page](./images/ers1.png)
 
 - During synchronization, the external resources (HTML/CSS/images) are fetched from the selected Git repository and stored on the server. 
 - After synchronization, the templates are uploaded to your environment. You can now start testing the templates, for example, by loading the login page.
