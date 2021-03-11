@@ -15,5 +15,23 @@ Read about the new features of the Onegini Identity Cloud in our platform update
 * [November 2020](https://blog.onegini.com/onegini-identity-cloud-platform-update-november-2020)
 * [August 2020](https://blog.onegini.com/onegini-identity-cloud-platform-update-august-2020)
 
-We are rewriting our documentation for the Onegini Identity Cloud. You can find the single-tenant documentation
-on [docs-single-tenant.onegini.com](https://docs-single-tenant.onegini.com/).
+## Which documentation should I use?
+
+We are rewriting our documentation for the multi-tenant Onegini Identity Cloud. Eventually you will find all information about the Onegini Identity Cloud on 
+this site.
+
+Here you can find the latest multi-tenant documentation for:
+
+* Mobile Identity & Access
+* Delegated Administration
+* Self styling
+
+Navigate to the single-tenant documentation site on [docs-single-tenant.onegini.com](https://docs-single-tenant.onegini.com/) for:
+
+* Identity & Single Sign-On
+* Token Server, Security Proxy, and Extension Engine
+* Mobile SDKs
+* Customer Service
+
+Contact [Onegini Support](https://support.onegini.com/) if you are not sure whether you are on the single-tenant or multi-tenant version of the Onegini Identity
+Cloud.
