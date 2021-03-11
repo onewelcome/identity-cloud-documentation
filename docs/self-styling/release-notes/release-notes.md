@@ -14,9 +14,9 @@
 
 ## 1.3.0
 ### Improvement
-* Cypress integration test added (ERS-66)
-* Support multiple configuration types (ERS-73)
-* Update resource endpoint with option to return only folders (ERS-71)
+* Cypress integration test added
+* Support multiple configuration types
+* Update resource endpoint with option to return only folders
 * Dependency upgrades
 
 ## 1.2.0
@@ -32,5 +32,5 @@
 
 ## 1.0.0
 
-Onegini is pleased to present Version 1.0.0 of the Customer Self Styling [https://onegini-onegini-external-resources-services.readthedocs-hosted.com/en/latest/] feature. 
+Onegini is pleased to present Version 1.0.0 of the Customer Self Styling feature. 
 The feature consists of two parts: 'Frontend styling' functionality in the 'Onegini Customer Access and Identity Manager' and the tool 'Onegini Connect Template Styling'.

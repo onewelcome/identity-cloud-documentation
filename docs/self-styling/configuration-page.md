@@ -4,31 +4,33 @@
 
 ###  Preparing git repository
 
-    When preparing the git Repository please use the proper directory structure.   
-        
-        ├── cim
-            ├── extension-resources    
-               ├── email-templates
-               ├── messages
-               ├── static
-               |   ├── css
-               |   ├── images
-               |   └── js
-               └── templates
-                   └── personal
-        ├── access
-            ├── <template-set-name>
-                ├── 
-            ├── default
-                ├── 
-            ├── messages
-        ├── delegation
-            ├── locales
-                ├── <locale code>
-                    ├── translation.json
-            ├── logo.png
-            ├── palette.json
-            ├── favicon.ico
+When preparing the git Repository please use the proper directory structure.   
+
+```
+├── cim
+    ├── extension-resources    
+       ├── email-templates
+       ├── messages
+       ├── static
+       |   ├── css
+       |   ├── images
+       |   └── js
+       └── templates
+           └── personal
+├── access
+    ├── <template-set-name>
+        ├── 
+    ├── default
+        ├── 
+    ├── messages
+├── delegation
+    ├── locales
+        ├── <locale code>
+            ├── translation.json
+    ├── logo.png
+    ├── palette.json
+    ├── favicon.ico
+```        
 
 The `cim` directory contains login templates and messages. Within the `extension-resources` folder any of the following folders can be added:
 

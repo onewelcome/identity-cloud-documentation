@@ -1,0 +1,7 @@
+# Customer Service
+
+Customer Service employees can manage users' accounts, and their mobile devices within the Onegini Identity Cloud. They can help customers with their account
+registration, trigger a password reset, update account data, and verify the caller via push messaging. The Customer Service representative can see the latest
+events in the Onegini Identity Cloud for the customer they are helping.
+
+You can read more about this product in the single-tenant [Customer Service documentation](https://docs-single-tenant.onegini.com/cim/stable/uma/)
