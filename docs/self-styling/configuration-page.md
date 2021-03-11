@@ -32,7 +32,7 @@ When preparing the git repository, please use the proper directory structure.
 ```        
 
 #### CIM
-The `cim` directory contains login templates and messages. Within the `extension-resources` folder, you can add any of the following folders:
+The `cim` directory contains templates and messages for login and sign up. Within the `extension-resources` folder, you can add any of the following folders:
 
   - Email templates: templates for emails.
   - Messages: key-value messages in multiple languages.
