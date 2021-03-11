@@ -1,6 +1,6 @@
 # Delegated Administration configuration
 
-The steps below summarizes how to configure the [person reports](../../../../dabp/guides/person-report.md) from Delegated Administration.
+The steps below summarizes how to configure the [person reports](../../../../dabp/guides/technical/person-report.md) from Delegated Administration.
 
 ## Configure mobile application to use selected Delegated Administration configuration
 New `Delegated Administration integration` section will appear in mobile application configuration if at least one DUM engine configuration is present.

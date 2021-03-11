@@ -6,7 +6,7 @@ The report can be fetched via an API call.
 The details can also be returned as JWT claim (OIDC) and as SAML attribute.
 
 ## Person Report and Permissions
-While a person report can be used by applications to check a person's rights/privileges or to answer authorization questions, it does not include [DABP permissions](./permissions-in-depth.md)
+While a person report can be used by applications to check a person's rights/privileges or to answer authorization questions, it does not include [DABP permissions](../concepts/permissions-in-depth.md)
 Permissions are DABP specific and should not be used by external applications.
 
 However, a special policy, `role_superuser`, will be added to report on a group level if the person has any permission within the group.

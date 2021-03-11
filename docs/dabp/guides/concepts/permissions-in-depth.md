@@ -37,6 +37,6 @@ For example:
 To manage user permissions open the user details modal, click the vertical ellipsis and choose "Change membership".
 This will switch the modal to the edit mode where you will be able to change user permissions.
 
-![edit person dialog](../img/edit-person.png)
+![edit person dialog](../../img/edit-person.png)
 
 Click save to confirm your choices.
