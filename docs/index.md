@@ -20,13 +20,13 @@ Read about the new features of the Onegini Identity Cloud in our platform update
 We are rewriting our documentation for the multi-tenant Onegini Identity Cloud. Eventually you will find all information about the Onegini Identity Cloud on 
 this site.
 
-On this site you can find the latest multi-tenant documentation for:
+Here you can find the latest multi-tenant documentation for:
 
 * Mobile Identity & Access
 * Delegated Administration
 * Self styling
 
-Go to the single-tenant documentation site on [docs-single-tenant.onegini.com](https://docs-single-tenant.onegini.com/) for:
+Navigate to the single-tenant documentation site on [docs-single-tenant.onegini.com](https://docs-single-tenant.onegini.com/) for:
 
 * Identity & Single Sign-On
 * Token Server, Security Proxy, and Extension Engine
