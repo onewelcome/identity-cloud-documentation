@@ -3,8 +3,7 @@
 
 
 ###  Preparing git repository
-
-When preparing the git Repository please use the proper directory structure.   
+When preparing the git repository, please use the proper directory structure.   
 
 ```
 ├── cim
@@ -32,22 +31,22 @@ When preparing the git Repository please use the proper directory structure.
     ├── favicon.ico
 ```        
 
-The `cim` directory contains login templates and messages. Within the `extension-resources` folder any of the following folders can be added:
+#### CIM
+The `cim` directory contains login templates and messages. Within the `extension-resources` folder, you can add any of the following folders:
 
-  - Email templates: contains templates for emails.
-  - Messages: contains key-value messages in multiple languages.
-  - Static: contains js and css, images and other static resources.
-  - Templates: contains templates displayed in the frontend.
-  
-The `access` directory contains template sets used to change look and feel of your web applications and mobile clients. Refer to the Access component 
-documentation to learn more about switching the template set per client and contents of a particular template set. The name of the directory is resolved as the 
-name of the particular template set. If the template cannot be found in the directory of the chosen set, the content will be served from the `default` directory.
-The `messages` subdirectory contains message bundles that will be loaded by the Access Engine application. Please note that there is a single messages location
-only for all template sets.  
+  - Email templates: templates for emails.
+  - Messages: key-value messages in multiple languages.
+  - Static: js and CSS, images, and other static resources.
+  - Templates: templates displayed in the frontend.
 
-The `delegation` directory contains resources that allow to customize web experience in DABP. The following resources can be customized:
+#### Access
+The `access` directory contains template sets used to change your web applications and mobile clients' look and feel. Refer to the Access component documentation to learn more about switching the template set per client and the contents of a particular template set. The name of the directory is resolved as the name of the specific template set. If the template cannot be found in the chosen set's directory, the content will be served from the `default` directory.
+The `messages` subdirectory contains message bundles that the Access Engine application will load. Please note that there is one folder for `messages` that are used by all template sets.  
 
-  - Translations: full translations file is required, please refer to [the example](translation.json)
+#### Delegation
+The `delegation` directory contains resources that allow customizing the web experience in DABP. You can customize the following resources:
+
+  - Translations: key-value messages in multiple languages. Please refer to [the example](translation.json)
   - Logo: use `logo.png` file
   - Favicon: use `favicon.ico` file
   - Application theme: use `palette.json` file, [more information available here](https://material-ui.com/customization/theming/)
@@ -61,9 +60,9 @@ The `delegation` directory contains resources that allow to customize web experi
     | Field|Description   |
     |---|---|
     |  **Remote location** | Define the remote location to clone the Git Repository. Only https:// is supported.   | 
-    |  **No authentication required** | If this option is enabled, username and password are not mandatory and the Git Repository will be public. This option is disabled by default which means that the Git Repository is private and protected by a username and password.
+    |  **No authentication required** | If this option is enabled, username and password are not mandatory, and the Git Repository will be public. This option is disabled by default which means that the Git Repository is private and protected by a username and password.
     |**Username**| The username for the git repository.|
-    |**Password**| The password for the git repository. Instead of a password a GitHub personal access token can be generated here: [Personal access tokens](https://github.com/settings/tokens). |
+    |**Password**| The password for the git repository. Instead of using a password, you can generate a GitHub personal access token here: [Personal access tokens](https://github.com/settings/tokens). |
 
 2. Click [Next: select reference]. (*The form has been validated and stored.*) 
 
@@ -73,9 +72,9 @@ The `delegation` directory contains resources that allow to customize web experi
 ![Selectareference](./images/Selectareference.png)
 
 6. In the 'Select a branch' or 'Select a tag' field, all the available remote tags (when working in a staging or production environment) and branches (when working in a development or testing environment) can be selected. The first tag or branch in the list will be preselected.
-7. When the correct tag or branch has been selected, click [Save]. 
-   *The branch or tag is stored and sychronization will happen automatically*.
-8. After saving, the overview page will be displayed:
+7. When the correct tag or branch is selected, click [Save]. 
+   *The branch or tag is stored, and synchronization will happen automatically*.
+8. After saving, the overview page is displayed:
 
 ![ERS1](./images/ers1.png)
 
@@ -84,16 +83,16 @@ The overview page shows the following information:
 | Field|Description   |
 |---|---|
 |  **Clone URL** | The remote URL.| 
-|  **Authentication** | The authentication method, for example 'basic'.|
-|**Username**| The username if the authentication method is "Username and password".|
+|  **Authentication** | The authentication method, for example, 'basic'.|
+|**Username**| The username, only required if the authentication method is "Username and password".|
 |**Branch or Tag**| The selected branch or tag. |
 |**Last checked**| The last time the resources have been fetched from the remote repository.|
 
 #### Edit connection   
-To edit the Git repository connection click [Edit connection]. 
+To edit the Git repository connection, click [Edit connection]. 
 
 #### Change reference
-To change the reference click [Change reference].
+To change the reference, click [Change reference].
 
 ### Synchronize
 
@@ -101,9 +100,9 @@ To synchronize a Git Repository, click [Synchronize] in the overview page:
 
 ![ERS1](./images/ers1.png)
 
-- During synchronization the external resources (html/css/images) are fetched from the selected Git repository and stored on the server. 
-- After synchronization the templates have been uploaded and can be tested, for example by loading the login page.
+- During synchronization, the external resources (HTML/CSS/images) are fetched from the selected Git repository and stored on the server. 
+- After synchronization, the templates are uploaded to your environment. You can now start testing the templates, for example, by loading the login page.
 
 !!!important 
-    On the production environment changes in the templates will only be visible after restarting CIM. Please ask your contact within Onegini.
+    Changes in the templates will only be visible on the production environment after clearing the CIM cache (or restarting the application). Please ask your contact within Onegini.
 
