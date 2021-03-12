@@ -16,7 +16,7 @@ In this guide, we will assume the Onegini Identity Cloud is available under `htt
 The API requires authentication using OIDC. Make sure you add a valid access token to the request header.
 
 The person report for a person with a given identifier (`referenceId`) can be received by
-doing a GET request to `https://dabp.onegini.com/delegate/api/v2/people/{referenceId}/report`.
+doing a GET request to `https://dabp.onegini.com/delegation/api/v2/people/{referenceId}/report`.
 
 Person report is meant to be used only by external systems and not directly by logged-in users.
 To achieve this, the external system should be enrolled in the access component as a client and should request a dedicated scope `dabp_person_report` when obtaining the token.
@@ -29,14 +29,14 @@ There are two scenarios when the report is requested:
 
 To support both scenarios and keep the information about user activity, generation of the report will update person last activity date by default.
 If you want to use the report for the second scenario (not related to user activity) please execute the request with additional parameter `skipUpdatingActivity=true`
-ie `https://dabp.onegini.com/delegate/api/v2/people/{referenceId}/report?skipUpdatingActivity=true`
+ie `https://dabp.onegini.com/delegation/api/v2/people/{referenceId}/report?skipUpdatingActivity=true`
 
 
 ### Example
 
 Example request call
 ```
-curl --location --request GET 'https://dabp.onegini.com/delegate/api/v2/people/eb82d9a9-bba5-4bbb-a9fc-508ce6f8705c/report' \
+curl --location --request GET 'https://dabp.onegini.com/delegation/api/v2/people/eb82d9a9-bba5-4bbb-a9fc-508ce6f8705c/report' \
 --header 'Content: application/json' \
 --header 'Authorization: Bearer  <access token>' \
 --header 'Content-Type: application/json'
@@ -45,46 +45,31 @@ curl --location --request GET 'https://dabp.onegini.com/delegate/api/v2/people/e
 Example response from the server
 ```
 {
- "groups": [
-    {
-      "id": "2374b2db-e690-4f3a-89e0-ccd5aaf6c601",
-      "name": "Intermediary A",
-      "policies": [
+    "groups": [
         {
-          "id": "77195a4e-c610-4716-b790-721a5fdde1e6", 
-          "name": "Pension"
-        },
-        {
-          "id": "6fbe9789-ee84-46eb-9234-2d2d711a0328", 
-          "name": "Insurance"
+            "id": "c95bfd21-79b5-46d5-9a9d-07b971df3db0",
+            "name": "ROOT",
+            "attributes": [
+                {
+                    "name": "main",
+                    "value": "true"
+                },
+                {
+                    "name": "pl",
+                    "value": "no"
+                }
+            ],
+            "policies": [
+                {
+                    "name": "role_superuser"
+                },
+                {
+                  "id": "77195a4e-c610-4716-b790-721a5fdde1e6",
+                  "name": "Pension"
+                },
+            ]
         }
-      ],
-      "attributes": [
-        {
-          "name": "salesforceId",
-          "value": "12345"
-        }
-      ]
-    },
-    {
-      "id": "2374b2db-e690-4f3a-89e0-ccd5aaf6c601",
-      "name": "Intermediary B",
-      "policies": [
-        {
-          "name:" "role_superuser"
-        },
-        {
-          "id": "77195a4e-c610-4716-b790-721a5fdde1e6",
-          "name": "Pension"
-        },
-        {
-          "id": "6fbe9789-ee84-46eb-9234-2d2d711a0328",
-          "name": "Insurance"
-        }
-      ],
-      "attributes": []
-    }
-  ]
+    ]
 }
 ```
 
