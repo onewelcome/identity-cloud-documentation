@@ -1,10 +1,14 @@
 # Creating policy via API
-In this guide, we will assume the DABP is available under the URL: `https://dabp.onegini.com`.
-The API is protected with OIDC, so to make a successful request, you need to provide an access token.
-Please note that the access token must be linked to a person who has the "Add/edit/delete policies" permission.
+Policies can get created either [through the UI](../functional/create-policy-via-ui.md) or through the API.
+This page is describing how the API is used.
 
 ## How to create a policy
-To create a policy a POST request must be sent to `https://dabp.onegini.com/api/v2/policies` with a proper request body
+In this guide, we will assume Onegini Identity Cloud is available under the URL: `https://dabp.onegini.com`.
+The API is protected with OIDC, so you need to provide an access token to make a successful request.
+Please note that the access token must be linked to a person who has the "Add/edit/delete policies" permission 
+on the root group. The root group is the top-level group.
+
+To create a policy a POST request must be sent to `https://dabp.onegini.com/delegation/api/v2/policies` with a proper request body
 ```
 {
     "name":"SELL_LIFE_INSURANCE"
@@ -15,7 +19,7 @@ To create a policy a POST request must be sent to `https://dabp.onegini.com/api/
 ## Example request using curl
 
 ```
-curl --location --request POST 'https://dabp.onegini.com/api/v2/policies' \
+curl --location --request POST 'https://dabp.onegini.com/delegation/api/v2/policies' \
 --header 'Content: application/json' \
 --header 'Authorization: Bearer  <access token>' \
 --header 'Content-Type: application/json' \
@@ -26,114 +30,113 @@ curl --location --request POST 'https://dabp.onegini.com/api/v2/policies' \
 
 
 ## OpenAPI specification
-Here is the detailed description of the create policies endpoint in the openapi format
+Here is the detailed description of the create policies endpoint in the OpenApi format:
 ``` 
-"/api/v2/policies": {
-      "post": {
-        "tags": [
-          "Policy API"
-        ],
-        "summary": "Adds a policy",
-        "description": "'POLICY_MANAGE' permission on the root group is required",
-        "operationId": "createPolicy",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreatePolicyRequest"
-              }
+"/delegation/api/v2/policies": {
+  "post": {
+    "tags": [
+      "Policy API"
+    ],
+    "summary": "Adds a policy to the system, and links it with the root group",
+    "description": "'POLICY_MANAGE' permission on the root group is required",
+    "operationId": "createPolicy",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "#/components/schemas/CreateOrUpdatePolicyRequest"
+          }
+        }
+      },
+      "required": true
+    },
+    "responses": {
+      "403": {
+        "description": "Forbidden",
+        "content": {
+          "*/*": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
             }
-          },
-          "required": true
-        },
-        "responses": {
-          "400": {
-            "description": "Invalid 'Onegini-Tenant-ID' header",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "example": "Failed to read 'Onegini-Tenant-ID' header. It should be a proper UUID identifier of a tenant."
-                }
-              }
+          }
+        }
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "content": {
+          "*/*": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
             }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
+          }
+        }
+      },
+      "400": {
+        "description": "Invalid 'Onegini-Tenant-ID' header",
+        "content": {
+          "text/plain": {
+            "schema": {
+              "example": "Failed to read 'Onegini-Tenant-ID' header. It should be a proper UUID identifier of a tenant."
             }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
+          }
+        }
+      },
+      "404": {
+        "description": "Not Found",
+        "content": {
+          "*/*": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
             }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
+          }
+        }
+      },
+      "405": {
+        "description": "Method Not Allowed",
+        "content": {
+          "*/*": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
             }
-          },
-          "405": {
-            "description": "Method Not Allowed",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
+          }
+        }
+      },
+      "409": {
+        "description": "Conflict",
+        "content": {
+          "*/*": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
             }
-          },
-          "409": {
-            "description": "Conflict",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "201": {
-            "description": "A policy was added successfully",
-            "content": {
-              "json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PolicyDto"
-                }
-              }
+          }
+        }
+      },
+      "201": {
+        "description": "A policy was added successfully",
+        "content": {
+          "json": {
+            "schema": {
+              "$ref": "#/components/schemas/PolicyDto"
             }
           }
         }
       }
     }
+  }
+}
 ```
 Schema specification:
 ```
 "CreatePolicyRequest": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Policy name"
-          }
-        }
-      },
-
+  "required": [
+    "name"
+  ],
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Policy name"
+    }
+  }
+}
 ```
