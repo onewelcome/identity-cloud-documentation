@@ -12,30 +12,30 @@ Permissions are DABP specific and should not be used by external applications.
 However, a special policy, `role_superuser`, will be added to report on a group level if the person has any permission within the group.
 
 ## Get Person Report via API
-In this guide, we will assume the DABP is available under `https://dabp.onegini.com` url.
+In this guide, we will assume the Onegini Identity Cloud is available under `https://dabp.onegini.com` url.
 The API requires authentication using OIDC. Make sure you add a valid access token to the request header.
 
 The person report for a person with a given identifier (`referenceId`) can be received by
-doing a GET request to: `https://dabp.onegini.com/api/v2/people/{referenceId}/report`.
+doing a GET request to: `https://dabp.onegini.com/delegate/api/v2/people/{referenceId}/report`.
 
 Person report is meant to be used only by external systems and not directly by logged in users.
 To achieve this, the external system should be enrolled in the access component as a client, and should request a dedicated scope `dabp_person_report` when obtaining the token.
 This token should be then provided when requesting the person report.
 
-There are two scenarios when the report is requested
+There are two scenarios when the report is requested:
 * when the user is logged in to the external system and it needs to check user policies (so linked with real user activity)
 * when external system does some synchronization work and needs to check some user information (so not linked with real user activity)
 
 To support both scenarios and keep the information about user activity, generation of the report will update person last activity date by default.
 If you want to use the report for the second scenario (not related to user activity) please execute the request with additional parameter `skipUpdatingActivity=true`
-ie `https://dabp.onegini.com/api/v2/people/{referenceId}/report?skipUpdatingActivity=true`
+ie `https://dabp.onegini.com/delegate/api/v2/people/{referenceId}/report?skipUpdatingActivity=true`
 
 
 ### Example
 
 Example request call
 ```
-curl --location --request GET 'https://dabp.onegini.com/api/v2/people/eb82d9a9-bba5-4bbb-a9fc-508ce6f8705c/report' \
+curl --location --request GET 'https://dabp.onegini.com/delegate/api/v2/people/eb82d9a9-bba5-4bbb-a9fc-508ce6f8705c/report' \
 --header 'Content: application/json' \
 --header 'Authorization: Bearer  <access token>' \
 --header 'Content-Type: application/json'
