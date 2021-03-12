@@ -76,3 +76,201 @@ Example response from the server
 In the example response, we can see that group `Intermediary A` has an additional attribute called `salesforceId`.
 Also in group `Intermediary B` user has at least one DABP privilege assigned as an additional policy `role_superuser` is added.
 Please note that `role_superuser` is an artificial policy, so it does not have an ID and cannot be accessed by API or UI.
+
+## OpenAPI specification
+Following OpenApi 3.0 specification snippet describes the endpoint:
+
+```
+"get": {
+  "tags": [
+    "Person API"
+  ],
+  "summary": "Returns a person report",
+  "description": "Person report contains information about groups person is member of, and his policies inside those groups",
+  "operationId": "getReport",
+  "parameters": [
+    {
+      "name": "referenceId",
+      "in": "path",
+      "description": "Identifier of the person in the identity provider",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "skipUpdatingActivity",
+      "in": "query",
+      "required": false,
+      "schema": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  ],
+  "responses": {
+    "403": {
+      "description": "Forbidden",
+      "content": {
+        "*/*": {
+          "schema": {
+            "$ref": "#/components/schemas/ErrorResponse"
+          }
+        }
+      }
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "content": {
+        "*/*": {
+          "schema": {
+            "$ref": "#/components/schemas/ErrorResponse"
+          }
+        }
+      }
+    }
+    "404": {
+      "description": "Not Found",
+      "content": {
+        "*/*": {
+          "schema": {
+            "$ref": "#/components/schemas/ErrorResponse"
+          }
+        }
+      }
+    },
+    "405": {
+      "description": "Method Not Allowed",
+      "content": {
+        "*/*": {
+          "schema": {
+            "$ref": "#/components/schemas/ErrorResponse"
+          }
+        }
+      }
+    },
+    "409": {
+      "description": "Conflict",
+      "content": {
+        "*/*": {
+          "schema": {
+            "$ref": "#/components/schemas/ErrorResponse"
+          }
+        }
+      }
+    },
+    "200": {
+      "description": "Report returned successfully",
+      "content": {
+        "json": {
+          "schema": {
+            "$ref": "#/components/schemas/PersonReport"
+          }
+        }
+      }
+    }
+  }
+}
+}
+```
+
+Schema specification:
+
+```
+"PersonReport": {
+  "type": "object",
+  "properties": {
+    "groups": {
+      "type": "array",
+      "description": "List of group and group policies user has access to",
+      "items": {
+        "$ref": "#/components/schemas/PersonReportGroupInfo"
+      }
+    }
+  }
+},
+"PersonReportGroupInfo": {
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Group ID",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string",
+      "description": "Group name"
+    },
+    "attributes": {
+      "type": "array",
+      "description": "List of group attributes",
+      "items": {
+        "$ref": "#/components/schemas/GroupAttribute"
+      }
+    },
+    "policies": {
+      "type": "array",
+      "description": "List of policies in the group that person is connected to",
+      "items": {
+        "$ref": "#/components/schemas/PersonReportGroupPolicy"
+      }
+    }
+  },
+  "description": "List of group and group policies user has access to"
+},
+"GroupAttribute": {
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Attribute name"
+    },
+    "value": {
+      "type": "string",
+      "description": "Attribute value"
+    }
+  },
+  "description": "List of group attributes"
+},
+"PersonReportGroupPolicy": {
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "ID of the policy connected to person. The field is excluded for artificial policies",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string",
+      "description": "Policy name"
+    }
+  },
+  "description": "List of policies in the group that person is connected to"
+},
+"ErrorResponse": {
+  "required": [
+    "code",
+    "message"
+  ],
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer",
+      "description": "DABP error code",
+      "format": "int32"
+    },
+    "message": {
+      "type": "string",
+      "description": "Error message"
+    },
+    "details": {
+      "type": "array",
+      "description": "Error details",
+      "items": {
+        "type": "string",
+        "description": "Error details"
+      }
+    }
+  }
+}
+```
