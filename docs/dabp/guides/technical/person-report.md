@@ -45,31 +45,46 @@ curl --location --request GET 'https://dabp.onegini.com/delegation/api/v2/people
 Example response from the server
 ```
 {
-    "groups": [
+ "groups": [
+    {
+      "id": "2374b2db-e690-4f3a-89e0-ccd5aaf6c601",
+      "name": "Intermediary A",
+      "policies": [
         {
-            "id": "c95bfd21-79b5-46d5-9a9d-07b971df3db0",
-            "name": "ROOT",
-            "attributes": [
-                {
-                    "name": "main",
-                    "value": "true"
-                },
-                {
-                    "name": "pl",
-                    "value": "no"
-                }
-            ],
-            "policies": [
-                {
-                    "name": "role_superuser"
-                },
-                {
-                  "id": "77195a4e-c610-4716-b790-721a5fdde1e6",
-                  "name": "Pension"
-                },
-            ]
+          "id": "77195a4e-c610-4716-b790-721a5fdde1e6", 
+          "name": "Pension"
+        },
+        {
+          "id": "6fbe9789-ee84-46eb-9234-2d2d711a0328", 
+          "name": "Insurance"
         }
-    ]
+      ],
+      "attributes": [
+        {
+          "name": "salesforceId",
+          "value": "12345"
+        }
+      ]
+    },
+    {
+      "id": "2374b2db-e690-4f3a-89e0-ccd5aaf6c601",
+      "name": "Intermediary B",
+      "policies": [
+        {
+          "name:" "role_superuser"
+        },
+        {
+          "id": "77195a4e-c610-4716-b790-721a5fdde1e6",
+          "name": "Pension"
+        },
+        {
+          "id": "6fbe9789-ee84-46eb-9234-2d2d711a0328",
+          "name": "Insurance"
+        }
+      ],
+      "attributes": []
+    }
+  ]
 }
 ```
 
