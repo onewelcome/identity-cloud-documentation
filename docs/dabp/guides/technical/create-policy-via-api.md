@@ -128,7 +128,7 @@ Here is the detailed description of the create policies endpoint in the OpenApi 
 ```
 Schema specification:
 ```
-"CreatePolicyRequest": {
+"CreateOrUpdatePolicyRequest": {
   "required": [
     "name"
   ],
@@ -137,6 +137,33 @@ Schema specification:
     "name": {
       "type": "string",
       "description": "Policy name"
+    }
+  },
+  "description": "Data to update the policy with"
+},
+"ErrorResponse": {
+  "required": [
+    "code",
+    "message"
+  ],
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer",
+      "description": "DABP error code",
+      "format": "int32"
+    },
+    "message": {
+      "type": "string",
+      "description": "Error message"
+    },
+    "details": {
+      "type": "array",
+      "description": "Error details",
+      "items": {
+        "type": "string",
+        "description": "Error details"
+      }
     }
   }
 }
