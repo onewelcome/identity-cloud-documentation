@@ -1,5 +1,5 @@
 # Creating policies via API
-Policies can get created either [through the UI](../functional/create-policy-via-ui.md) or through the API.
+Policies can get created either [through the UI](../functional/manage-policy-via-ui.md) or through the API.
 This page is describing how the API is used.
 
 ## How to create a policy

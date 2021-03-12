@@ -14,7 +14,7 @@ nav:
           - 'Protected data in Single Page Apps': single-sign-on/protected-data-openid-connect-access-tokens.md
       - 'Client environment embedding (implementation)':
           - 'OAuth vs OpenID Connect': oauth-vs-oidc.md
-          - 'Responsibilities of external system connected to DABP': dabp/guides/external-systems-responsibilities.md
+          - 'Responsibilities of external system connected to DABP': dabp/guides/technical/external-systems-responsibilities.md
   - 'Products':
       - 'Customer Service': products/customer-service.md
       - 'Delegated administration':
