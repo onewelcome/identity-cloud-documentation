@@ -46,7 +46,7 @@ To add/remove a policy to a group you should select the group that you want to a
 After clicking on the desired group a modal window with group information will appear. Click on the vertical ellipsis button and select `Edit group`.
 Now you can select which policies can be assigned to the group.
 
-![edit group dialog](../img/edit-group-dialog.png)
+![edit group dialog](../../img/edit-group-dialog.png)
 
 After selecting the required policies click save to confirm your choice.
 
@@ -55,7 +55,7 @@ To manage users' policies open the user details modal, click the vertical ellips
 This will switch the modal to the edit mode where you will be able to change the user policies.
 Please note that you can only assign policies that are linked to the group in which you are editing a person.
 
-![edit person dialog](../img/edit-person.png)
+![edit person dialog](../../img/edit-person.png)
 
 Click save to confirm your choices.
 

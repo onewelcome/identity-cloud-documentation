@@ -6,7 +6,7 @@ This means that DABP does not provide any security mechanics for external system
 It's the responsibility of the external system to use information about groups and policies assigned to a person to perform all the security-related actions.
 From the external system perspective, DABP can be considered as a system that only stores configuration related to user privileges in the external system. 
 
-The external system will receive the policy information in a `claim` that is provided by the Identity Provider. An example of this claim can be found in the [Person report](./person-report.md#Example). 
+The external system will receive the policy information in a `claim` that is provided by the Identity Provider. An example of this claim can be found in the [Person report](person-report.md#Example). 
 
 ## Keeping configuration up to date
 DABP exposes an API that allows manipulation of policies, groups, and users.

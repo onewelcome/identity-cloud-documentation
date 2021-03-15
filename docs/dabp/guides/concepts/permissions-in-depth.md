@@ -1,8 +1,8 @@
 # In-depth view on permissions
-A permission represents the rights/privileges a person has in the DABP tool and can be assigned to a person.
-Permissions are strictly linked to the DABP system and are not exposed outside of DABP and have no meaning for external systems. 
+Permissions represent the rights/privileges a person has in the DABP and can be assigned to a person.
+Permissions are strictly linked to the DABP system and are not exposed outside of DABP, and have no meaning for external systems. 
 
-In total are there 6 permissions:
+In total, there are 6 permissions:
 
 - **Invite/remove group members** enables the user to add, edit, and delete members of the group, and its subgroups.
 - **Assign permissions to group members** enables the user to add, edit, and delete permissions of group members.
@@ -10,12 +10,15 @@ In total are there 6 permissions:
 - **Add/edit/delete groups** enables the user to add, edit, and delete subgroups
 - **Assign policies to groups** enables the user to add, edit, and delete policies on a group level.
 - **Add/edit/delete policies** enables the user to add, edit, and delete policies to the system.
+This permission can be assigned only to members of the root group.
 
-If a person has any permissions for any (sub)group we refer to that user as a superuser.
-If a person has all permissions on the root level we refer to that user as an administrator.
+If a person has any permissions for any (sub)group, we refer to that user as a superuser.
+If a person has all permissions on the root level, we refer to that user as an administrator.
 
 ## Permission inheritance
-Permissions are inherited within groups. This means that if a user was invited to DABP to join `group A` with permissions to `Invite/remove group members`, and `Add/edit/delete groups`, then they will have those permissions for every subgroup of `group A`.
+Permissions are inherited within groups. 
+This means that if a user was invited to DABP to join `group A` with any permissions then they will also have 
+those permissions for every subgroup of `group A`.
 
 ## Managing permissions of other users
 A user that has the `Invite/remove group members` permission can add and remove users from that group.
@@ -37,6 +40,6 @@ For example:
 To manage user permissions open the user details modal, click the vertical ellipsis and choose "Change membership".
 This will switch the modal to the edit mode where you will be able to change user permissions.
 
-![edit person dialog](../img/edit-person.png)
+![edit person dialog](../../img/edit-person.png)
 
 Click save to confirm your choices.
