@@ -3,17 +3,18 @@
 You need to create a policy before you can assign it to groups and members.
 Policies can be created on the "Policies" page or via the [Create Policy API](../technical/create-policy-via-api.md). 
 
-To manage policies, you must be an administrator with the `Add/edit/delete policies` permission on the root group. 
+To manage policies, you must be an user with the `Add/edit/delete policies` permission on the root group. 
 That is the top-level group. 
 The "Policies" page is available under "Settings" when you have this permission.
 
 ![Policies page](../../img/policies-page.png)
 
 ## Create policies
-*For technical documentation, see here [how to create a new policy via the API](../technical/create-policy-via-api.md).*
+*For technical documentation, see [How to create a new policy via the API](../technical/create-policy-via-api.md).*
 
 You can create a new policy using the "New Policy" button on the page. You have to give the policy a unique name.
-A new policy is automatically added to the root group. Therefore a member of the root group can assign it to other groups.
+A new policy is automatically added to the root group. 
+Thus a superuser with the permission `Assign policies to group members` on the root level can assign it to other groups.
 
 ## Edit policies
 You can edit policies by clicking on policy on the policy overview. 

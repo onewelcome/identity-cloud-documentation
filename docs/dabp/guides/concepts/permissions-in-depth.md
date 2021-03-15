@@ -10,9 +10,9 @@ In total, there are 6 permissions:
 - **Add/edit/delete groups** enables the user to add, edit, and delete subgroups
 - **Assign policies to groups** enables the user to add, edit, and delete policies on a group level.
 - **Add/edit/delete policies** enables the user to add, edit, and delete policies to the system.
-This permission can also get on members of the root group.
+This permission can be assigned only to members of the root group.
 
-If a person has any permissions for any (sub-)group, we refer to that user as a superuser.
+If a person has any permissions for any (sub)group, we refer to that user as a superuser.
 If a person has all permissions on the root level, we refer to that user as an administrator.
 
 ## Permission inheritance
