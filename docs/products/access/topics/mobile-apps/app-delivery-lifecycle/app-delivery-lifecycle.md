@@ -48,8 +48,8 @@ application configuration archive will contain all these details. Which makes th
 
 ### Redirect URL
 
-This is the primary URI to which the end-users are redirected after they have successfully logged in. The `additional redirect URLs` are not exported. See the [App Configuration](../app-configuration/app-configuration.md#creating-a-new-application) 
-in order to change the redirect URI for an already deployed application. Since the redirect URL is set globally for the application, when building old application versions that relying on an old redirect URI, you might run into problems. It is a known version export limitation.
+This is the primary URL to which the end-users are redirected after they have successfully logged in. The `additional redirect URLs` are not exported. See the [App Configuration](../app-configuration/app-configuration.md#creating-a-new-application) 
+in order to change the redirect URL for an already deployed application. Since the redirect URL is set globally for the application, you may run into problems when building old application versions that rely on the old redirect URL. This is a known version export limitation.
 
 ## SDK Integration
 
