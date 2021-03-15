@@ -1,29 +1,29 @@
 # Manage policies
 
-A policy needs first to get created before it can get assigned to groups and members.
-This can be done on the "Policies"   page. 
+You need to create a policy before you can assign it to groups and members.
+Policies can be created on the "Policies" page or via the [Create Policy API](../technical/create-policy-via-api.md). 
 
 To manage policies, you must be an administrator with the `Add/edit/delete policies` permission on the root group. 
-That is the top-level group 
-The "Policies" page will be available under "Settings" when you have this permission.
+That is the top-level group. 
+The "Policies" page is available under "Settings" when you have this permission.
 
 ![Policies page](../../img/policies-page.png)
 
 ## Create policies
 *For technical documentation, see here [how to create a new policy via the API](../technical/create-policy-via-api.md).*
 
-You can create a new policies using the "New Policy" button on the page. You have to give the policy a unique name.
-New policies is automatically added to the root group.
+You can create a new policy using the "New Policy" button on the page. You have to give the policy a unique name.
+A new policy is automatically added to the root group. Therefore a member of the root group can assign it to other groups.
 
 ## Edit policies
-Policies can get edited by choosing the policy on the list. 
-You can here click on the vertical ellipsis button and select "Edit policy".
+You can edit policies by clicking on policy on the policy overview. 
+You can then click on the vertical ellipsis button and select "Edit policy".
 
-Please note that users with the policy can lose access to applications when you change the policy.
+Please note: By editing a policy, users with that policy assigned might lose access to your applications when you change the policy. This only happens when you rely on the name and not the ID of a policy.
 
 ## Delete policies 
-Policies can get delete by clicking on the delete icon in the list of policies.
+You can delete policies by clicking on the delete icon in the list of policies.
 Alternatively, you can delete policies by selecting the policy and choose "Delete policy" under the vertical ellipsis menu.
 
 Please note that the policy will be removed from all groups and members when a policy is deleted.
-This might cause the users to lose access to applications. 
+This might cause the users to lose access to your applications. 
