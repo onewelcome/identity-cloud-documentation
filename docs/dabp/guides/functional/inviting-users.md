@@ -3,7 +3,7 @@ To invite a person to a group in DABP you must have the `Invite/remove group mem
 For example, the screen below shows the button "New user" that can be used to invite a user to the active group, in this case, a group named `sub2`. 
 In this scenario, `sub2` is a subgroup of the group `test_group_for_docs`.
 
-![new-user-button](../img/new-user-button.png)
+![new-user-button](../../img/new-user-button.png)
 
 
 ##Inviting a new person
