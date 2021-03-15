@@ -46,6 +46,11 @@ base uri will be used in the SDK configuration archive.
 An application should be able to identify itself towards Onegini Access. This is done by sending the application version, platform and identifier. The
 application configuration archive will contain all these details. Which makes the archive platform, application and version specific.
 
+### Redirect URL
+
+This is the primary URI to which the end-users are redirected after they have successfully logged in. The `additional redirect URLs` are not exported. See the [App Configuration](../app-configuration/app-configuration.md#creating-a-new-application) 
+in order to change the redirect URI for an already deployed application. Since the redirect URL is set globally for the application, when building old application versions that relying on an old redirect URI, you might run into problems. It is a known version export limitation.
+
 ## SDK Integration
 
 Once the application developer has received the application configuration archive, a test build can be made using the Onegini SDK. As the application signature
