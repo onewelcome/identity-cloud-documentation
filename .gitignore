@@ -35,6 +35,7 @@ site
 .idea/**/uiDesigner.xml
 .idea/markdown-navigator.xml
 .idea/markdown-navigator-enh.xml
+.idea/aws.xml
 
 # Gradle
 .idea/**/gradle.xml
