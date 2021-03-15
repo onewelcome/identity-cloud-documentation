@@ -2,7 +2,7 @@
 Permissions represent the rights/privileges a person has in the DABP and can be assigned to a person.
 Permissions are strictly linked to the DABP system and are not exposed outside of DABP, and have no meaning for external systems. 
 
-In total, are there 6 permissions:
+In total, there are 6 permissions:
 
 - **Invite/remove group members** enables the user to add, edit, and delete members of the group, and its subgroups.
 - **Assign permissions to group members** enables the user to add, edit, and delete permissions of group members.
