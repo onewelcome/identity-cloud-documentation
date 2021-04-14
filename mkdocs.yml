@@ -19,6 +19,7 @@ nav:
       - 'Customer Service': products/customer-service.md
       - 'Delegated administration':
           - 'Introduction': dabp/index.md
+          - 'Release notes': dabp/release-notes/index.md
           - 'Concepts':
               - 'In-depth view on permissions': dabp/guides/concepts/permissions-in-depth.md
               - 'In-depth view on policies': dabp/guides/concepts/policies-in-depth.md
