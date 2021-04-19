@@ -8,11 +8,11 @@ this REST service.
 The Scope Verification Service endpoint accepts POST requests with `application/json` or `application/json;charset=UTF-8` as the content-type header. Optionally
 it can be protected with basic authentication. The request body is a json object containing the following properties:
 
-| Property        | Example                                                               | Description
-|-----------------|-----------------------------------------------------------------------|--------------------------------------------
-| account_id      | `MyAccount`                                                           | Unique identifier of the account
-| user_id         | `xxxyyy`                                                              | User identifier as issued by the (external) identity provider
-| scopes          | `[{"id": "read", "service_endpoint": "https://service.example.com"}]` | An array containing scopes to be verified
+| Property          | Example                                                               | Description
+|-------------------|-----------------------------------------------------------------------|--------------------------------------------
+| user_id           | `onegini-user-1234`                                                   | Unique identifier of the user
+| external_identity | `external-identity-abcd`                                              | Identifier of the user as issued by the identity provider during authentication
+| scopes            | `[{"id": "read", "service_endpoint": "https://service.example.com"}]` | An array containing scopes to be verified
 
 The endpoint is expected to return `200 OK` status code along with json object with the following properties:
 
@@ -30,8 +30,8 @@ Content-Type: application/json;charset=UTF-8
 Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
 
 {
-  "account_id": "MyAccount",
-  "user_id": "xxxyyy",
+  "user_id": "onegini-user-1234",
+  "external_identity": "external-identity-abcd",
   "scopes": [
       {"id": "read", "service_endpoint": "https://readservice.example.com"}, 
       {"id": "write", "service_endpoint": "https://writeservice.example.com"}
