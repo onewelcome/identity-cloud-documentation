@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-    onegini-build: onegini/onegini-build@1
+    onegini-build: onegini/onegini-build@2
 
 workflows:
   version: 2
