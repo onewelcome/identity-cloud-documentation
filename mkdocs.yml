@@ -159,9 +159,7 @@ nav:
               - 'Onegini Access events': products/access/appendix/access-events.md
               - 'Responsible disclosure policy': products/access/appendix/responsible-disclosure-policy.md
               - 'Deprecation': products/access/appendix/deprecation.md
-          - 'Release notes':
-              - 'Introduction': products/access/release-notes/index.md
-              - '1.x': products/access/release-notes/1.x.md
+          - 'Release notes': products/access/release-notes/index.md
       - Self-styling:
           - 'Introduction': self-styling/index.md
           - 'Frontend styling': self-styling/configuration-page.md
