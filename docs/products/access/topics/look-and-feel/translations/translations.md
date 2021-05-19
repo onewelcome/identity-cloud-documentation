@@ -23,7 +23,7 @@ If only a single locale is supported this locale is seen as the default so only 
 
 For parametrized messages use the `{n}` notation. To use for example the first provided parameter in your message: `You have {0} attempts left`.
 
-> *Note*: The translation are cached in Onegini Access engine to limit database queries. Therefore it can take some time before a change in a translation has effect. The time to live for this cache can be configured via property: [`Message cache TTL`](../../technical-app-management/cache-config/cache-config.md).
+> *Note*: The translation are cached in Onegini Access engine. Therefore, it can take some time before a change in a translation has effect. The time to live for this cache can be configured via the cache configuration in the admin console.
 
 ## Adding translations
 

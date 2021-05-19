@@ -16,7 +16,7 @@ This endpoint requires authentication with [valid API client credentials](../top
 | Parameter            | Required | Example value | Description
 |----------------------|----------|---------------|---------------------------------------------------------------------------------------------------------
 | token                | yes      | 24CAD1DA628B360B7EF85C30E423D0AB0FC0DCF8C7EB8CAD9640DBABE43910F9 | The value of the access token
-| refresh_user_details | no       |  true         | The properties of the `user_details` object from the [user info endpoint](../topics/general-app-config/identity-providers/identity-providers.md#configure-user-info-endpoint) are [cached](../topics/technical-app-management/cache-config/cache-config.md) after the first request. Use this parameter to force fetching the user details again from the user info endpoint. Performance may decrease when you add this parameter to every request.  
+| refresh_user_details | no       |  true         | The properties of the `user_details` object from the [user info endpoint](../topics/general-app-config/identity-providers/identity-providers.md#configure-user-info-endpoint) are cached after the first request. Use this parameter to force fetching the user details again from the user info endpoint. Performance may decrease when you add this parameter to every request.  
 
 
 The introspection response object described in [paragraph 2.2](https://tools.ietf.org/html/rfc7662#section-2.2) of the token introspection specification is extended in our implementation with a number of custom parameters:

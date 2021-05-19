@@ -20,7 +20,7 @@ This endpoint accepts the following request parameter(s)
 
 | Parameter            | Required | Example value | Description
 |----------------------|----------|---------------|---------------------------------------------------------------------------------------------------------
-| refresh_user_details | no       |  true         | The values of the claims from the [user info endpoint](../../topics/general-app-config/identity-providers/identity-providers.md#configure-user-info-endpoint) are [cached](../../topics/technical-app-management/cache-config/cache-config.md) after the first request. Use this parameter to force fetching the user details again from the user info endpoint. Performance may decrease when you add this parameter to every request.  
+| refresh_user_details | no       |  true         | The values of the claims from the [user info endpoint](../../topics/general-app-config/identity-providers/identity-providers.md#configure-user-info-endpoint) are cached after the first request. Use this parameter to force fetching the user details again from the user info endpoint. Performance may decrease when you add this parameter to every request.  
 
 
 **Example request**

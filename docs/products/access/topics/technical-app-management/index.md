@@ -8,4 +8,3 @@ The technical application management topic guides are focused on the technical s
 * [CORS configuration](cors-support/cors-support.md)
 * [SAML Service Provider configuration](idp-saml-sp-config/idp-saml-sp-config.md)
 * [Onegini Extension Engine](extension-engine/extension-engine-properties.md)
-* [Cache configuration](cache-config/cache-config.md)
