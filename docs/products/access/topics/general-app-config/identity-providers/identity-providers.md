@@ -158,7 +158,7 @@ The reference implementation of this API is provided by CIM. Refer to CIM docume
 * Username: username that shall be used when accessing API
 * Password: password that shall be used when accessing API
 
-The calls to the API are cached. The TTL of this cache can be configured as described in [Cache Configuration](../../technical-app-management/cache-config/cache-config.md)
+The calls to the API are cached. The TTL of this cache can be configured via the admin console.
 
 ## Attribute mapping
 
