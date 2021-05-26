@@ -6,6 +6,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 
 ## Release date: 2021-05-26
 * Fixed issue with internal communications with other Onegini services
+* DABP's browser title is now translatable
 
 ## Release date: 2021-04-28
 * Removing a users last membership will now not remove users identity in CIM
