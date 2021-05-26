@@ -4,6 +4,10 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2021-05-26
+* Fixed an issue with internal communications with other Onegini services
+* The browser title is now customizable
+
 ## Release date: 2021-04-28
 * Removing a users last membership will now not remove users identity in CIM
 * Fixed failed login with external IdP (such as AzureAD)
