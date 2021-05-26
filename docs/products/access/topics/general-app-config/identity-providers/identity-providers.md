@@ -41,7 +41,11 @@ Depending on which integration(s) are enabled, the configuration requirements ch
 | Storage API Password            | `password`                      | Storage API                 | The password of the Storage API.
 | Configuration API Username      | `configuration_api_username`    | Configuration API           | The username of the Configuration API.
 | Configuration API Password      | `password`                      | Configuration API           | The password of the Configuration API.
- 
+
+In order to ensure backwards compatibility between the Access and dependent services that rely on the `sub` claim returned as part of the JWT or the ID Token,
+configure to use the external identity as an account identifier. Please refer
+to [general system configuration page documentation](../../technical-app-management/general-config/general-config.md) for more details.
+
 ## Configure a SAML Identity Provider
 
 ![Add saml IdP](img/add-saml-idp.png)
@@ -154,7 +158,7 @@ The reference implementation of this API is provided by CIM. Refer to CIM docume
 * Username: username that shall be used when accessing API
 * Password: password that shall be used when accessing API
 
-The calls to the API are cached. The TTL of this cache can be configured as described in [Cache Configuration](../../technical-app-management/cache-config/cache-config.md)
+The calls to the API are cached. The TTL of this cache can be configured via the admin console.
 
 ## Attribute mapping
 

@@ -11,6 +11,7 @@ Onegini Identity Cloud for Developers describes the platform architecture, topic
 
 Read about the new features of the Onegini Identity Cloud in our platform updates:
 
+* [May 2021](https://blog.onegini.com/onegini-identity-cloud-platform-update-may-2021-0)
 * [February 2021](https://blog.onegini.com/onegini-identity-cloud-platform-update-february-2021)
 * [November 2020](https://blog.onegini.com/onegini-identity-cloud-platform-update-november-2020)
 * [August 2020](https://blog.onegini.com/onegini-identity-cloud-platform-update-august-2020)

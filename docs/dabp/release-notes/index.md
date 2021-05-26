@@ -7,6 +7,11 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ## Release date: 2021-05-26
 * Fixed issue with internal communications with other Onegini services
 
+## Release date: 2021-04-28
+* Removing a users last membership will now not remove users identity in CIM
+* Fixed failed login with external IdP (such as AzureAD)
+* Align error message for validation when phone number is rejected in CIM
+
 ## Release date: 2021-04-14
 * After removing a user from a group, if he is no longer of any group his account will be removed from CIM
 * Translation fixes and improvements
