@@ -4,6 +4,11 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2021-05-28
+* Extending the Delegation-API with endpoints for managing policies on members
+* Extending the Delegation-API with endpoints for managing permissions on groups and members
+* Extending the Delegation-API with endpoints for deleting a person
+
 ## Release date: 2021-05-26
 * Fixed an issue with internal communications with other Onegini services
 * The browser title is now customizable
