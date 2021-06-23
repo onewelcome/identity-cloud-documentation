@@ -78,8 +78,11 @@
       "GROUP_MEMBER_MANAGE": "Invite/\u200Bremove group members",
       "GROUP_MANAGE": "Add/\u200Bedit/\u200Bdelete groups",
       "GROUP_POLICY_MANAGE": "Assign policies to groups",
+      "GROUP_RESOURCE_MANAGE": "Assign resources to groups",
       "PERSON_POLICY_MANAGE": "Assign policies to group members",
+      "PERSON_RESOURCE_MANAGE": "Assign resources to group members",
       "POLICY_MANAGE": "Add/\u200Bedit/\u200Bdelete policies",
+      "RESOURCE_MANAGE": "Add/\u200Bedit/\u200Bdelete resources and resource types",
       "PERMISSION_MANAGE": "Assign permissions to group members"
     },
     "select": "Select: ",

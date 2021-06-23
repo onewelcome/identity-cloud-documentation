@@ -2,14 +2,17 @@
 Permissions represent the rights/privileges a person has in the DABP and can be assigned to a person.
 Permissions are strictly linked to the DABP system and are not exposed outside of DABP, and have no meaning for external systems. 
 
-In total, there are 6 permissions:
+In total, there are 9 permissions:
 
 - **Invite/remove group members** enables the user to add, edit, and delete members of the group, and its subgroups.
 - **Assign permissions to group members** enables the user to add, edit, and delete permissions of group members.
 - **Assign policies to group members** enables the user to add, edit, and delete policies of group members.
+- **Assign resources to group members** enables the user to add, edit, and delete resources of group members.
 - **Add/edit/delete groups** enables the user to add, edit, and delete subgroups
 - **Assign policies to groups** enables the user to add, edit, and delete policies on a group level.
+- **Assign resources to groups** enables the user to add, edit, and delete resources on a group level.
 - **Add/edit/delete policies** enables the user to add, edit, and delete policies to the system.
+- **Add/edit/delete resources** enables the user to add, edit, and delete resources and resource types to the system.
 This permission can be assigned only to members of the root group.
 
 If a person has any permissions for any (sub)group, we refer to that user as a superuser.
