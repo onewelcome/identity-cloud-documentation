@@ -33,6 +33,7 @@ nav:
           - 'How to - Technical':
               - 'How to create a new policy via the API': dabp/guides/technical/create-policy-via-api.md
               - 'Person report': dabp/guides/technical/person-report.md
+              - 'Non-personal requests': dabp/guides/technical/non-personal-requests.md
               - 'Responsibilities of the external system connected to DABP': dabp/guides/technical/external-systems-responsibilities.md
       - 'Identity & Single Sign-On': products/identity-single-sign-on.md
       - 'Mobile Identity & Access':
