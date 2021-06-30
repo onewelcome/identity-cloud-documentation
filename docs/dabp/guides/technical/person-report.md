@@ -1,6 +1,6 @@
 # Person Report
 The Person Report is a record describing all groups a person is a member of.
-This includes all policies he has been assigned to in those groups.
+This includes all policies, resources and resource privileges he has been assigned to in those groups.
 
 The report can be fetched via an API call.
 The details can also be returned as JWT claim (OIDC) and as SAML attribute.

@@ -23,11 +23,13 @@ nav:
           - 'Concepts':
               - 'In-depth view on permissions': dabp/guides/concepts/permissions-in-depth.md
               - 'In-depth view on policies': dabp/guides/concepts/policies-in-depth.md
+              - 'In-depth view on resources': dabp/guides/concepts/resources-in-depth.md
           - 'How to - Functional':
               - 'Inviting users in DABP': dabp/guides/functional/inviting-users.md
               - 'Managing subgroups - Best practices': dabp/guides/functional/subgroups-best-practices.md
               - 'How and when to use custom attributes on groups': dabp/guides/functional/group-attributes.md
               - 'Manage policies': dabp/guides/functional/manage-policy-via-ui.md
+              - 'Manage resources': dabp/guides/functional/manage-resource-via-ui.md
           - 'How to - Technical':
               - 'How to create a new policy via the API': dabp/guides/technical/create-policy-via-api.md
               - 'Person report': dabp/guides/technical/person-report.md
