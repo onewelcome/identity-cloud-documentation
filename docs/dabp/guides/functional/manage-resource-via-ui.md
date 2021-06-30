@@ -4,7 +4,7 @@ You need to create a resource before you can assign it to groups and members.
 Before you can create a resource, you must [Create resource types via API](../technical/create-resource-type-via-api.md)
 Resources can be created on the "Resources" page or via the [Create Resource API](../technical/create-resource-via-api.md). 
 
-To manage resources, you must be an user with the `Add/edit/delete resources` permission on the root group. 
+To manage resources, you must be an user with the `Add/edit/delete resources and resource types` permission on the root group. 
 That is the top-level group. 
 The "Resources" page is available under "Settings" when you have this permission.
 
@@ -13,7 +13,7 @@ The "Resources" page is available under "Settings" when you have this permission
 ## Create resources
 *For technical documentation, see [How to create a new resource via the API](../technical/create-resource-via-api.md).*
 
-You can create a new resource using the "New Resource" button on the page. You have to give the resource a unique name.
+You can create a new resource using the "New Resource" button on the page. You have to select resource type and give the resource a unique name.
 A new resource is automatically added to the root group. 
 Thus a superuser with the permission `Assign resources to group members` on the root level can assign it to other groups.
 

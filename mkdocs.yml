@@ -32,6 +32,8 @@ nav:
               - 'Manage resources': dabp/guides/functional/manage-resource-via-ui.md
           - 'How to - Technical':
               - 'How to create a new policy via the API': dabp/guides/technical/create-policy-via-api.md
+              - 'How to create a new resource type via the API': dabp/guides/technical/create-resource-type-via-api.md
+              - 'How to create a new resource via the API': dabp/guides/technical/create-resource-via-api.md
               - 'Person report': dabp/guides/technical/person-report.md
               - 'Non-personal requests': dabp/guides/technical/non-personal-requests.md
               - 'Responsibilities of the external system connected to DABP': dabp/guides/technical/external-systems-responsibilities.md

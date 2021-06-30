@@ -44,7 +44,7 @@ Also, Adding a resource to a group does **not** assign it to all the group membe
 ### Removing 
 Removing a resource from a parent will result in the removal of the resource for all subgroups and members because the allowed resources are restricted by the resources assigned to the parent group.
 
-## Assigning or removing policies to a group
+## Assigning or removing resources to a group
 To add/remove a resource to a group you should select the group that you want to assign resource to on the group list screen.
 After clicking on the desired group a modal window with group information will appear. Click on the vertical ellipsis button and select `Edit group`.
 Now you can select which resources can be assigned to the group.
@@ -53,7 +53,7 @@ Now you can select which resources can be assigned to the group.
 
 After selecting the required resources click save to confirm your choice.
 
-## Assigning or removing policies to a person
+## Assigning or removing resources to a person
 To manage users' resources open the user details modal, click the vertical ellipsis and choose "Change membership".
 This will switch the modal to the edit mode where you will be able to change the user resources.
 Please note that you can only assign resources that are linked to the group in which you are editing a person.

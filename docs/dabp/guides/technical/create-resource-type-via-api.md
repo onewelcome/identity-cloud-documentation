@@ -150,5 +150,14 @@ Schema specification:
             }
           }
         }
+      },
+      "CreatePrivilegeDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "description": "List of attached privileges"
       }
 ```
