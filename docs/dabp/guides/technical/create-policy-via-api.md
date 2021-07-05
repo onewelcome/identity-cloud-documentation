@@ -5,8 +5,9 @@ This page is describing how the API is used.
 ## How to create a policy
 In this guide, we will assume Onegini Identity Cloud is available under the URL: `https://dabp.onegini.com`.
 The API is protected with OIDC, so you need to provide an access token to make a successful request.
-Please note that the access token must be linked to a person who has the `Add/edit/delete policies` permission 
-on the root group. The root group is the top-level group.
+Please note that the access token must be either:
+- linked to a person who has the `Add/edit/delete policies` permission on the root group. The root group is the top-level group.
+- a machine token with `write` scope. For more information about machine tokens see [non personal requests](non-personal-requests.md)
 
 To create a policy a POST request must be sent to `https://dabp.onegini.com/delegation/api/v2/policies` with a proper request body
 ```

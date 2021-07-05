@@ -2,39 +2,48 @@
 A resource represents the fine-grained access or privileges a user has outside Delegated Administration. 
 For example, the resource can represent a portfolio for a specific reseller.
 It can represent a portfolio of, for instance, mortgages for a specific reseller when a resource is linked to a policy for mortgages.
-Each resource has a specific type which describes if resource is linked with a policy, and what kind of permissions user may have on the resource.
+Each resource has a specific resource type.
+Resource types define if resources of that type require a policy, and what kind of privileges user may have on the resource.
+Resource type does not need to be configured with policy. If there is no policy on a resource type, then resource can be assigned to groups and members regardless of the policies configured in that group.
+There can be multiple resources of the same type.
+Resource types privileges represent what kind of access a user should have on the resource when they're linked together. 
+For example a resource type can specify 3 privileges: `read`, `create`, `update`. When a resource of that type is assigned to user, he will get one of those privileges.
+DABP does not use this information internally, it is the responsibility of the external system to verify that user has correct privileges on a resource when granting access to resource.
 
 ## Relation between groups, persons, policies and resources
 Both groups and persons can have resources assigned to it. The difference is that a person can only have resources assigned that are also assigned to a group.
 This means that assigning resources to a person is a contextual operation.
 Let's take this scenario:
 
-- There are 2 resources `Life insurance portfolio` and `Car insurance portfolio`. 
-- There are  2 groups `Life` and `All products`.
-- There is a policy `Sell life insurance` linked to the `Life` and `All products` groups. 
-- Resource `Life insurance portfolio` is linked to group `Life` and `All products`.
-- Resource `Life insurance portfolio` is linked to policy `Sell life insurance`.
-- Resource `Car insurance portfolio` is linked only to group `All products`
-- Resource `Car insurance portfolio` is not linked to any policy.
-- A user `John Doe` is a member of both groups. 
+- There is resource type `Insurance` with list of privileges `read`, `write`. This type is linked with `Sell insurance` policy
+- There is resource type `Mortgage` with list of privileges `sell`, `extend`. This type is linked with `Sell mortgage` policy
+- There is resource type `Unrestricted` with list of privileges `read`, `write`. This type is not linked any policy
+- There is a resource `Life insurance portfolio` of type `Insurance`. 
+- There is a resource `Mortgage portfolio` of type `Mortgage`. 
+- There is a resource `Client contact infos` of type `Unrestricted`. 
+- There are 3 groups `Organization Life`, `Organization Mortgage` and `Cooperation`.
+- Policy `Sell insurance` linked to the `Organization Life` and `Cooperation` groups. 
+- Policy `Sell mortgage` linked to the `Organization Mortgage` and `Cooperation` groups. 
+- Resource `Life insurance portfolio` is linked to group `Organization Life` and `Cooperation`.
+- Resource `Mortgage portfolio` is linked to group `Organization Mortgage` and `Cooperation`.
+- Resource `Client contact infos` is linked only to group `Cooperation`.
+- A user `John Doe` is a member of all groups. 
 
 
-| Groups                | `Life insurance portfolio` | `Car insurance portfolio` |
-| :-------------------- | :-------------------: | :------------------: |
-| **All products**      |      ✅       |    ✅     |
-| **Life** 				|      ✅       |    ❌     |
+| Groups                | `Life insurance portfolio` | `Mortgage portfolio` | `Client contact infos` |
+| :-------------------- | :-------------------:  |:------------------: |:------------------: |
+| **Cooperation**      |      ✅       |     ✅     | ✅     |
+| **Organization Life** 	|      ✅       |     ❌     | ✅     |
+| **Organization Mortgage** |      ❌      |      ✅     | ✅     |
 
+`Life insurace portfolio` cannot be added to `Organization Mortgage` group because `Sell insurance` policy is not linked to `Organization Mortgage` group.
+`Mortgage portfolio` cannot be added to `Organization Life` group because `Sell mortgage` policy is not linked to `Organization Life` group.
+`Client contact infos` can be added to any group as it has no policy restrictions.
+John Doe can have access to `Life insurance portfolio` in `Cooperation` and `Organization Life` if he has `Sell insurance` policy in those groups.
+John Doe can have access to `Mortgage portfolio` in `Cooperation` and `Organization Mortgage` if he has `Sell mortgage` policy in those groups.
+John Doe can have access to `Client contact infos` in all the groups regardless of the policies he has.
 
-When you will view the details of `John Doe` you will see that he is a member of multiple groups.
-The "Change membership" button is available for each group. 
-You will be able to add the `Life insurance porfolio` resource to the user for both groups if the user has the `Sell life insurance` policy.
-You will be able to add the `Car insurance portfolio` only for the `All products` group no matter of the policies attached to the user.
-
-Linking a user with a resource for one group does not mean he has access to the same resources in other groups linked to that resource.
-It's perfectly fine to link the user to `Life insurance portfolio` in group `Life` and do not link him with this resource in another group.
-It is the responsibility of the external system to verify if a user has the required resources for the required group.
-
-## The hierarchal relationship between groups, subgroups, and resources
+## The hierarchical relationship between groups, subgroups, and resources
 It is not possible to assign more resources to a subgroup than its parent. This means that the DABP tool enforces that a superuser can only assign resources to groups if the parent also has that resource. 
 
 ### Adding resource to a group
@@ -58,10 +67,12 @@ To manage users' resources open the user details modal, click the vertical ellip
 This will switch the modal to the edit mode where you will be able to change the user resources.
 Please note that you can only assign resources that are linked to the group in which you are editing a person.
 
-
-//TODO update screenshot
 ![edit person dialog](../../img/edit-person.png)
 
+When you click it, you can assign resources to member in the group. Assigning resources requires to select a privilege. By default, a `No access` privilege is selected.
+Linking a user with a resource for one group does not mean he has access to the same resources in other groups linked to that resource.
+It's perfectly fine to link the user to `Life insurance portfolio` in group `Life products` and do not link him with this resource in another group.
+It is the responsibility of the external system to verify if a user has the required resources for the required group.
 Click save to confirm your choices.
 
 If you have the permission to `Assign resources to group members` you **can assign resources that are not assigned to you**.
