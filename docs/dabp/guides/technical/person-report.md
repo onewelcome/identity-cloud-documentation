@@ -1,13 +1,10 @@
 # Person Report
 
-The Person Report is a record describing all groups a person is a member of. This includes all policies, resources and resource privileges he has been assigned to in those groups.
-
-The report can be fetched via an API call. The details can also be returned as JWT claim (OIDC) and as SAML attribute.
+The Person Report is a record describing all group memberships of a user and connected authorizations. This includes all policies, resources, and resource privileges he has been assigned to in those groups. The report can be fetched via an API call. The details can also be returned as JWT claim (OIDC) and as SAML attribute.
 
 ## Person Report and Permissions
 
-While a person report can be used by applications to check a person's rights/privileges or answer authorization questions, it does not
-include [DABP permissions](../concepts/permissions-in-depth.md). Permissions are DABP specific and should not be used by external applications.
+While a person report can be used by applications to check a person's rights/privileges or answer authorization questions, it does not include [DABP permissions](../concepts/permissions-in-depth.md). Permissions are DABP specific and should not be used by external applications.
 
 However, a special policy, `role_superuser`, will be added to report on a group level if the person has any permission within the group.
 
@@ -16,12 +13,9 @@ However, a special policy, `role_superuser`, will be added to report on a group 
 In this guide, we will assume the Onegini Identity Cloud is available under `https://dabp.onegini.com` url. The API requires authentication using OIDC. Make
 sure you add a valid access token to the request header.
 
-The person report for a person with a given identifier (`referenceId`) can be received by doing a GET request
-to `https://dabp.onegini.com/delegation/api/v2/people/{referenceId}/report`.
+The person report for a person with a given identifier (`referenceId`) can be received by doing a GET request to `https://dabp.onegini.com/delegation/api/v2/people/{referenceId}/report`.
 
-Person report is meant to be used only by external systems and not directly by logged-in users. To achieve this, the external system should be enrolled in the
-access component as a client and should request a dedicated scope `dabp_person_report` when obtaining the token. This token should be then provided when
-requesting the person report.
+Person report is meant to be used only by external systems and not directly by logged-in users. To achieve this, the external system should be enrolled in the access component as a client and should request a dedicated scope `dabp_person_report` when obtaining the token. This token should be then provided when requesting the person report.
 
 There are two scenarios when the report is requested:
 
