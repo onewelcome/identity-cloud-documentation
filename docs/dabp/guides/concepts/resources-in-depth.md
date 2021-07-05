@@ -50,17 +50,17 @@ Adding a resource to a group does **not** assign this resource to all subgroups,
 Removing a resource from a parent will result in the removal of the resource for all subgroups and members because the allowed resources are restricted by the resources assigned to the parent group.
 
 ## Assigning or removing resources to a group
-To add/remove a resource to a group you should select the group that you want to assign resource to on the group list screen. After clicking on the desired group a modal window with group information will appear. Click on the vertical ellipsis button and select `Edit group`. Now you can select which resources can be assigned to the group.
+To add/remove a resource to a group, you need the permission `Assign resources to groups`. If you have this permission, you should select the group you want to assign this resource too. After clicking on the desired group, a modal window with group information will appear. Click on the vertical ellipsis button and select `Edit group`. Now you can select which resources can be assigned to the group.
 
 ![edit group dialog](../../img/edit-group-dialog.png)
 
 After selecting the required resources click save to confirm your choice.
 
-## Assigning or removing resources to a person
-To manage users' resources open the user details modal, click the vertical ellipsis and choose "Change membership". This will switch the modal to the edit mode where you will be able to change the user resources. Please note that you can only assign resources that are linked to the group in which you are editing a person.
+## Assigning or removing resources to a user
+To manage users' resources, you need the permission `Assign resources to group members`. If you have this permission, open the user details modal, click the vertical ellipsis and choose "Change membership". This will switch the modal to the edit mode, where you will be able to change the user's resources. Please note that you can only assign resources also linked to the group in which you are editing a person.
 
 ![edit person dialog](../../img/edit-person.png)
 
-When you click it, you can assign resources to member in the group. Assigning resources requires to select a privilege. By default, a `No access` privilege is selected. Linking a user with a resource for one group does not mean he has access to the same resources in other groups linked to that resource. It's perfectly fine to link the user to `Life insurance portfolio` in group `Life products` and do not link him with this resource in another group. It is the responsibility of the external system to verify if a user has the required resources for the required group. Click save to confirm your choices.
+When you click it, you can assign resources to a member in the group. Assigning resources requires to select a privilege. By default, the `No access` privilege is selected. Linking a user with a resource for one group does not mean he has access to the same resources in other groups linked to that resource. It's perfectly fine to link the user to `Life insurance portfolio` in group `Life products` and do not link him with the same resource in another group. It is the responsibility of the external system to verify if a user has the required resources for the required group. Click save to confirm your choices.
 
 If you have the permission to `Assign resources to group members` you **can assign resources that are not assigned to you**.
