@@ -1,5 +1,5 @@
 # Creating resource type via API
-Resource types can only be created via API as they should not change after initial setup of the platform.
+`Resource types` can only be created via API as they should not change after initial setup of the platform.
 
 ## How to create a resource type
 In this guide, we will assume Onegini Identity Cloud is available under the URL: `https://dabp.onegini.com`.
@@ -8,9 +8,7 @@ Please note that the access token must be either:
 - linked to a person who has the `Add/edit/delete resources and resource types` permission on the root group. The root group is the top-level group.
 - a machine token with `write` scope. For more information about machine tokens see [non personal requests](non-personal-requests.md)  
 
-Resource type can be linked to a policy. If a resource type is linked to policy, then all resources of that type can be assigned only to groups/members if they also have this policy assigned.
-You can think that a policy on a resource type acts as a filter to whom a resources of this type will be available.
-If resource type is created without a policy id, then all resources of this type will be available to all groups and members 
+You can link a resource type to a policy. If you do that, you can only assign resources of that type to groups/members if they also have this policy assigned. In that sense, a policy on a resource type acts as a filter to whom resources of this type will be available. If you create a resource type without a linked policy id, then all resources of this type will be available to all groups and members. 
 
 To create a resource type a POST request must be sent to `https://dabp.onegini.com/delegation/api/v2/resource-types` with a proper request body
 ```
