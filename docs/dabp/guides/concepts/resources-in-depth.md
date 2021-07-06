@@ -48,6 +48,7 @@ Adding a resource to a group does **not** assign this resource to all subgroups,
 
 ### Removing 
 Removing a resource from a parent will result in the removal of the resource for all subgroups and members because the allowed resources are restricted by the resources assigned to the parent group.
+This members of the group and all subgroups will lose access to those resources.
 
 ## Assigning or removing resources to a group
 To add/remove a resource to a group, you need the permission `Assign resources to groups`. If you have this permission, you should select the group you want to assign this resource too. After clicking on the desired group, a modal window with group information will appear. Click on the vertical ellipsis button and select `Edit group`. Now you can select which resources can be assigned to the group.

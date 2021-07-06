@@ -19,7 +19,8 @@ Thus a superuser with the permission `Assign resources to group members` on the 
 
 ## Edit resources
 You can edit resources by clicking on resource on the resource overview. 
-You can then click on the vertical ellipsis button and select "Edit resource".
+You can then click on the vertical ellipsis button and select "Edit resource". 
+Only the resource name can be changed. If you need to change resource type, you need to create new resource with correct type and delete the old one.
 
 Please note: By editing a resource, users with that resource assigned might lose access to your applications when you change the resource. This only happens when you rely on the name and not the ID of a resource.
 
