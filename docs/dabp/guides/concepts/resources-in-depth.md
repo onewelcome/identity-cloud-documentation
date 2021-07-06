@@ -13,7 +13,6 @@ Resources can be assigned both to a group and to a user. First, the resource nee
 - There is resource type `Insurance` with list of privileges `read`, `write`. This type is linked with `Sell insurance` policy.
 - There is resource type `Mortgage` with list of privileges `sell`, `extend`. This type is linked with `Sell mortgage` policy.
 - There is resource type `Unrestricted` with list of privileges `read`, `write`. This type is not linked any policy.
-- All resource types have `read` privilege assigned.
 - There is a resource `Life insurance portfolio` of type `Insurance`. 
 - There is a resource `Mortgage portfolio` of type `Mortgage`. 
 - There is a resource `Client contact infos` of type `Unrestricted`. 
@@ -36,9 +35,9 @@ This result in:
 - The `Life insurace portfolio` cannot be added to `Organization Mortgage` group because `Sell insurance` policy is not linked to `Organization Mortgage` group.
 - The `Mortgage portfolio` cannot be added to `Organization Life` group because `Sell mortgage` policy is not linked to `Organization Life` group.
 - `Client contact info` can be added to any group as it has no policy restrictions.
-- A superuser can assign the resource `Life insurance portfolio` with the `read` privilege to John Doe in `Cooperation` and `Organization Life` if he has `Sell insurance` policy in those groups.
-- A superuser can assign the resource `Mortgage portfolio` with the `read` privilege to John Doe in `Cooperation` and `Organization Mortgage` if he has `Sell mortgage` policy in those groups.
-- A superuser can assign the resource `Client contact info` with the `read` privilege to John Doe in all the groups regardless of the policies he has.
+- A superuser can assign the resource `Life insurance portfolio` with `read` or `write` privilege to John Doe in `Cooperation` and `Organization Life` if he has `Sell insurance` policy in those groups.
+- A superuser can assign the resource `Mortgage portfolio` with `read` or `extend` privilege to John Doe in `Cooperation` and `Organization Mortgage` if he has `Sell mortgage` policy in those groups.
+- A superuser can assign the resource `Client contact info` with `read` or `write` privilege to John Doe in all the groups regardless of the policies he has.
 
 ## The hierarchical relationship between groups, subgroups, and resources
 It is not possible to assign more resources to a subgroup than its parent. This means that the DABP tool enforces that a superuser can only assign resources to groups if the parent also has that resource. 
@@ -51,7 +50,7 @@ Removing a resource from a parent will result in the removal of the resource for
 This members of the group and all subgroups will lose access to those resources.
 
 ## Assigning or removing resources to a group
-To add/remove a resource to a group, you need the permission `Assign resources to groups`. If you have this permission, you should select the group you want to assign this resource too. After clicking on the desired group, a modal window with group information will appear. Click on the vertical ellipsis button and select `Edit group`. Now you can select which resources can be assigned to the group.
+To add/remove a resource to a group, you need the permission `Assign resources to groups`. If you have this permission, you should select the group you want to assign this resource to. After clicking on the desired group, a modal window with group information will appear. Click on the vertical ellipsis button and select `Edit group`. Now you can select which resources can be assigned to the group.
 
 ![edit group dialog](../../img/edit-group-dialog.png)
 
