@@ -8,6 +8,7 @@ nav:
       - 'Platform architecture':
           - 'Mobile Identity & Access': architecture/mobile-identity-access.md
           - 'Identity & Single Sign-On': architecture/identity-single-sign-on.md
+          - 'Interfaces': architecture/interfaces.md
   - 'Topic guides':
       - 'Third party identity providers': identity-providers.md
       - 'Single sign-on (SSO)':
