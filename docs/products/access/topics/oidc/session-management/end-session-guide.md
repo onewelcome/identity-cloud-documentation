@@ -5,6 +5,12 @@ in the [OpenID Connect configuration](../../web-clients/web-client-configuration
 
 ## Configuration
 
+
+### Delete access/refresh tokens on logout
+When enabled, This will delete any access tokens and refresh tokens for a given session when the End-Session endpoint is called. It is advised to use this when
+using the client authentication method `PKCE`. Note: If a client enables [SAML SLO](../../technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md#slo-enabled)
+and does not use refresh tokens, the tokens will be removed regardless of this setting.
+
 ### Post Logout Redirect URIs
 
 After hitting the end session endpoint, you most likely would like your RP to be redirected back to one of your own pages. You can configure one 

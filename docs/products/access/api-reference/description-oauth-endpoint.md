@@ -201,12 +201,12 @@ For more information, see [Authentication Methods documentation](../topics/authe
 Use this endpoint to revoke tokens. The Onegini Access will immediately make them invalid, but clients or resource servers will not receive a 
 notification. When the resource server requests token introspection for the token, the response does indicate that this token is no longer valid.
 
-Endpoint: `POST /oauth/revoke`
+Endpoint: `POST /oauth/revoke` or `POST /oauth/v1/revoke`
 
 Example request:
 
 ```http
-POST /oauth/revoke HTTP/1.1
+POST /oauth/v1/revoke HTTP/1.1
 Host: server.example.com
 Authorization: Basic ZXhhbXBsZUFwcDp0aGVTZWNyZXRUaGF0QmVsb25nc1RvVGhlRXhhbXBsZUFwcA==
 Content-Type: application/x-www-form-urlencoded
