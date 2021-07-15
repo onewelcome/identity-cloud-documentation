@@ -271,6 +271,7 @@ configuration.
 | ID TOKEN CREATED                                            | ID Token was created.
 | ID TOKEN INVALID CONFIGURATION                              | Failed to create ID Token due to invalid OpenID Connect configuration.
 | OPENID SESSION LOGOUT SUCCESS                               | The OpenID session was ended and all clients were logged out.
+| OPENID SESSION LOGOUT TOKENS DELETED                        | The access/refresh tokens associated with this session were deleted when the session ended.
 | OPENID SESSION LOGOUT CONFIRM PAGE SHOWN                    | A confirm page is shown when trying to end the OpenID session.
 | OPENID SESSION LOGOUT FAILURE REJECTED                      | An attempt to end OpenID session failed because the user has rejected the confirmation.
 | OPENID SESSION LOGOUT FAILURE                               | An attempt to end OpenID session failed.
