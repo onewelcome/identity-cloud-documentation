@@ -29,7 +29,7 @@ Example: `ABCDE12345.com.company.app`
 3. Use the configurator to inject the config
 4. Build your app and sign it using the selected signing certificate
 
-![Flowchart for pre calculated app signature](images/app-delivery-lifecycle-2021.svg)
+![Flowchart for pre calculated app signature](img/app-delivery-lifecycle-2021.svg)
 
 ### Application signature calculated from the app binary
 
@@ -42,7 +42,7 @@ Previous versions of the Onegini SDKs require the final app build to calculate i
 5. Use the Onegini calculator to get the actual signature
 6. Configure the actual signature in the Onegini Access
 
-![Flowchart for app signature calculated later](images/app-delivery-lifecycle-old.svg)
+![Flowchart for app signature calculated later](img/app-delivery-lifecycle-old.svg)
 
 #### Application signature during development
 
@@ -90,11 +90,10 @@ You can attach a certificate to an application when editing or creating the appl
 select the certificates you have previously uploaded. Check the [certificates section](../../../appendix/administration/oauth-config.md#certificates) for
 instructions to upload certificates.
 
-### Base URI
+### Onegini Access base URI
 
-The Onegini Access base URI is the URI all requests towards the Onegini Access start with. Typically, this is the host name of the
-Onegini Access. This value can be configured using a Docker Compose environment variable `TOKEN_SERVER_COMMON/ENGINE-BASE-URI`. More information on how to
-set this variable and its possible values can be found in the [properties section](../../../configuration/properties.md#endpoints).
+Onegini Access base URI is the URI all requests towards Onegini Access start with. Typically, this is the host name of Onegini Access. This value can be
+configured via the admin console in System &rightarrow; General &rightarrow; Engine base urls.
 
 ### Resource gateway
 
