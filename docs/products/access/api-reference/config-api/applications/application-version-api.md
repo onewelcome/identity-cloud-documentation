@@ -148,8 +148,8 @@ JSON body parameters:
 |------------------------------------------|----------|--------------------------------------|------------------------------------------------------------------------------------
 | version_name                             | yes      | 1.0.0                                | Unique version name for this Application and platform.
 | status                                   | yes      | LOGIN_ONLY                           | Defines usage of this Application version. Values are DISABLED, LOGIN_ONLY and LOGIN_REGISTRATION. 
-| application_signature                    | yes      | abdc                                 | Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.
-| integrity_check                          | no       | NONE                                 | Indicates if a full application integrity check is performed on mobile device. Available values are `FULL` and `NONE`. Default and recommended value is `FULL`.
+| application_signature                    | yes      | "abdc"                               | (DEPRECATED, use `application_signatures`) Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.
+| application_signatures                   | yes      | ["abdc", "defg"]                     | Signature(s) that are used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.| integrity_check                          | no       | NONE                                 | Indicates if a full application integrity check is performed on mobile device. Available values are `FULL` and `NONE`. Default and recommended value is `FULL`.
 | tampering_protection_enabled             | no       | true                                 | Flag to enable tampering protection. Defaults to `false`.
 | payload_encryption_enabled               | no       | true                                 | Flag to enable payload encryption. Defaults to `false`.
 | push_messaging_configuration_id          | no       | d10fe35f-ebb5-42bb-a81f-62a7034a68fb | Unique identifier of the push messaging configuration for this Application version.
@@ -167,7 +167,7 @@ Content-Type: application/json
 
 {
   "version_name": "1.0.0",
-  "application_signature": "abdc",
+  "application_signatures": ["abdc", "defg"],
   "tampering_protection_enabled": false,
   "payload_encryption_enabled": true,
   "status": "LOGIN_REGISTRATION",
@@ -214,7 +214,8 @@ JSON body parameters:
 | Param                            | Required | Example           | Description                                                                  
 |----------------------------------|----------|-------------------|---------------------------------------------------------------------
 | version_name                     | yes      | 1.0.1             | Unique version name for this Application and platform.
-| application_signature            | yes      | abdc              | Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.
+| application_signature            | yes      | "abdc"            | (DEPRECATED, use `application_signatures`) Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.
+| application_signatures           | yes      | ["abdc", "defg"]  | Signature(s) that are used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.
 | status                           | no       | LOGIN_ONLY        | Defines usage of this Application version. Values are DISABLED, LOGIN_ONLY and LOGIN_REGISTRATION.
 
 Example request:
@@ -226,7 +227,7 @@ Content-Type: application/json
 
 {
   "version_name": "3.0.1",
-  "application_signature": "abdc",
+  "application_signatures": ["abdc"],
   "status": "DISABLED"
 }
 ```
@@ -268,8 +269,8 @@ Only the fields that are sent in the request will be changed.
 | Param                                    | Required | Example                              | Description                                                                  
 |------------------------------------------|----------|--------------------------------------|---------------------------------------------------------------------
 | status                                   | no       | LOGIN_ONLY                           | Defines usage of this Application version. Values are DISABLED, LOGIN_ONLY and LOGIN_REGISTRATION.
-| application_signature                    | no       | abdc                                 | Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. If specified, it cannot be empty. Not returned on GET.
-| integrity_check                          | no       | NONE                                 | Indicates if a full application integrity check is performed on mobile device. Available values are `FULL` and `NONE`.
+| application_signatures                   | no       | abdc"                                | (DEPRECATED, use `application_signatures`) Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.
+| application_signatures                   | no       | ["abdc", "defg"]                     | Signature(s) that ARE used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. If specified, it cannot be empty. Not returned on GET.| integrity_check                          | no       | NONE                                 | Indicates if a full application integrity check is performed on mobile device. Available values are `FULL` and `NONE`.
 | payload_encryption_enabled               | no       | true                                 | Flag to enable payload encryption. It can be updated only if the SDK supports JWT authentication.
 | push_messaging_configuration_id          | no       | d10fe35f-ebb5-42bb-a81f-62a7034a68fb | Unique identifier of the push messaging configuration for this Application version. Use empty value to clear the field.
 | framework                                | no       | CORDOVA                              | For Android only. Set to `CORDOVA` when you send push messages to an Android app that is using Cordova. The actual push message will be sent via FCM for Cordova.
@@ -285,7 +286,7 @@ Host: onegini.example.com
 Content-Type: application/json
 
 {
-  "application_signature": "123456789012345678901234567890AB",
+  "application_signatures": ["123456789012345678901234567890AB"],
   "status": "LOGIN_REGISTRATION"
 }
 ```

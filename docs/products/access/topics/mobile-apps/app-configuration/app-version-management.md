@@ -20,36 +20,55 @@ be managed.
 
 Click on the `Add App version` button to create an App version from scratch. Click on the `Clone App version` button to create an App version with the same configuration as an existing version.
 
-The `Version` fields need to be filled with the version identifier. The version identifier is a free format input field. Both numeric and textual input are accepted. It 
-is advised to use numeric values to see the relation between versions in terms of which is the latest.
+The `Version` fields need to be filled with a version identifier of the mobile app for that platform. The version identifier is a free format text field. It is
+advised to use [semantic versioning](https://semver.org/) to see the relation between versions in terms of which is the latest.
 
-The status field has three options:
+The `Status` defines whether the Onegini Access accepts requests from app installations for this version. The status field has three options:
 
-1. `Enabled`: this version of the application is allowed to register itself as a new application installation on Onegini Access and existing application installations can be used.
-2. `Login enabled, registration disabled`: only applications that already had registered before can keep using Onegini Access without upgrading.
-3. `Disabled`: completely disable the usage of a specific version. For example when a version configuration is created for future usage or the version contains some issue which requires it to be disabled. Or when a version is very old and customers are not allowed to use it anymore.
+1. `Enabled`: this version of the application can register itself as a new application installation on the Onegini Access and existing application
+   installations can be used.
+2. `Login enabled, registration disabled`: only applications that already had registered before can keep using the Onegini Access without upgrading. New
+   registrations for this app version are denied.
+3. `Disabled`: completely disable the usage of a specific version. For example, when a version configuration is created for future usage, the version contains a
+   severe issue which requires it to be disabled, or when a version is so outdated that customers cannot use it anymore.
 
-The application sends a signature to prove that is the version it pretends to be. This signature is set in the `Application signature` field. An app developer will
-deliver this Application signature as described in the [App delivery lifecycle topic](../app-delivery-lifecycle/app-delivery-lifecycle.md#final-steps). When the application is in
-development mode any value can be filled in as an Application signature because this value is ignored in development mode. When tampering detection is enabled the Application signature has to be hexadecimal 
-formatted and be 32, 48 or 64 characters long. When an Application signature contains a `|`, this indicates that multiple architectures are supported. Every architecture requires a different Application signature.
-The rules (when tampering protection is enabled) apply on all Application signatures separated by the `|` individually. So the following Application signature is not valid: 
-`12345|ABCDEF1234567890ABCDEF1234567890` because the first part does not have the correct size.
+### Security settings
 
->**Note:** For security reasons the secret will never be shown after it has been saved. You must enter a (new) secret when you clone an existing App version.
+#### Application signature
 
-To prevent tampering with the application, for example via byte code manipulation, the `Tampering protection` checkbox should be checked. With tampering 
-protection the application has to prove its identity to Onegini Access frequently.
+The application sends a signature with every request to the Onegini Access to prove that it is a genuine app installation. An app developer will deliver
+application signatures as described in the [App delivery lifecycle topic](../app-delivery-lifecycle/app-delivery-lifecycle.md#final-steps). Application
+signatures are sometimes referred to as Application thumbprints or Application secrets. Configure their values in the `Application signatures` fields.
 
-For the communication of sensitive information TLS/SSL might not be sufficient. The `Payload encryption` feature adds an additional layer of encryption. To use
-payload encryption a Onegini Security Proxy installation is required. Enabling `Payload encryption` without Onegini Security Proxy does not have any effect.
+The `Integrity level` defines the strictness of the verification of the application signature. When level `Full` is configured, the application signature must
+match a checksum on the device. The values of the configured application signature are not verified when the integrity level is `None`.
+Level `None` is only recommended for development purposes.
 
-The `Integrity level` indicates if full application integrity check is performed. The value `Full` is using secure element of the device and is recommended way of checking app integrity. 
-To prevent sudden upgrades of the applications after binary changes default behaviour can be changed  to `None`. By doing so, we change the way of application integrity calculation on the device.   
+> **Note:** The integrity level is only used for Onegini's Android SDK 11+ and iOS SDK 10+. Earlier versions use the settings for Development mode and
+> Tampering protection.
+To prevent tampering with the application, for example via byte code manipulation, `Tampering protection` checkbox should be enabled. With tampering protection
+the application has to prove its identity to the Onegini Access in a more strict way.
+
+When tampering protection is enabled the Application signature has to be a hexadecimal formatted string of 32, 48 or 64 characters. When an Application
+signature contains a `|`, it indicates that it supports multiple architectures, e.g. 32 and 64 bit. Each architecture returns a unique signature for the same
+mobile app version. These parts are combined via the `|` into a single application signature. When tampering protection is enabled, the validation rules apply
+on all parts of the Application signature separated by the `|` individually. For example, the application signature `12345|ABCDEF1234567890ABCDEF1234567890` is
+not valid because the first part does not have the correct size.
+
+> **Note:** Development mode and Tampering protection are used for mobile apps with Onegini's Android SDK 10 or lower and iOS SDK 9 or lower. Newer Onegini
+> versions use the Integrity level.
+
+#### Payload encryption
+
+For the communication of sensitive information TLS/SSL might not be sufficient. The `Payload encryption` feature adds a layer of encryption to the request and
+response. When an attacker is able to compromise the TLS transport layer, they cannot read the contents of the messages because their payload will be encrypted
+as well. An installation of the Onegini Security Proxy is required to use payload encryption. Enabling `Payload encryption` without the
+Onegini Security Proxy does not have any effect.   
 
 ### Configure mobile authentication
 
->**Note:** The mobile authentication configuration is only available if the mobile authentication feature is enabled on system level.
+> **Note:** The mobile authentication configuration is only available when the mobile authentication feature is enabled on system level.
+
 
 #### Configure push messaging
 
@@ -69,7 +88,7 @@ This option is only visible for iOS. This specifies whether the production or de
 
 This option is only visible for iOS. The badge is the number of unread notifications for an app shown on top of the app icon. When this setting is enabled, it will update the badge with the number of pending push authentications when the push message is sent.
 
->**Note:** This setting is only present for iOS because an iOS application does not get started until the user clicks on the notification while the android application is started in the background as soon as the notification is received by the device.
+> **Note:** This setting is only present for iOS because an iOS application does not get started until the user clicks on the notification while the android application is started in the background as soon as the notification is received by the device.
 
 ![iOS app icon with badge](img/ios-badge.png)
 
@@ -99,8 +118,8 @@ makes the current application version unusable.
 
 ## Prevent new installation usage of the application
 
-To prevent new application installations of an outdated version the version can be disabled for new registrations. This can be achieved by editing a version 
-and set the Status to `Login enabled, registration disabled`. Users will be prompted to upgrade via the app store when using the application for the first time. 
-Users that already used the application before won't notice any disturbance. After upgrading or downgrading from an application version which is disabled, the user
-can use the application again without having to register again.
+To prevent new application installations of an outdated version the version can be disabled for new registrations. This can be achieved by editing a version and
+set the Status to `Login enabled, registration disabled`. Users will be prompted to upgrade via the app store when using the application for the first time.
+Users that already used the application before won't notice any disturbance. After upgrading or downgrading from an application version which is disabled, the
+user can use the application again without having to register again.
 
