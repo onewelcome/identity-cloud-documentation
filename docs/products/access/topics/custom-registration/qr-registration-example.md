@@ -67,10 +67,8 @@ to Onegini Access.
 
 
 ### Example String sent to SDK
-```json
-{
-    "identifier": "e2048242-085f-4210-93ff-84df1fcd8ce2"
-}
+```
+"e2048242-085f-4210-93ff-84df1fcd8ce2"
 ```
 
 
