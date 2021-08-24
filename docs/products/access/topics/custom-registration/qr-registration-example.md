@@ -75,7 +75,7 @@ to Onegini Access.
 ### Example Script
 ```js
 function execute(requestPayload){
-    var identifier = JSON.parse(requestPayload).identifier;
+    var identifier = requestPayload;
     var userId = CACHE.fetch(identifier);
     LOG.info("retrieved from cache: {}", userId);
 
