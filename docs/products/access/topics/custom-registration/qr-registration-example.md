@@ -67,17 +67,15 @@ to Onegini Access.
 
 
 ### Example String sent to SDK
-```json
-{
-    "identifier": "e2048242-085f-4210-93ff-84df1fcd8ce2"
-}
+```
+"e2048242-085f-4210-93ff-84df1fcd8ce2"
 ```
 
 
 ### Example Script
 ```js
 function execute(requestPayload){
-    var identifier = JSON.parse(requestPayload).identifier;
+    var identifier = requestPayload;
     var userId = CACHE.fetch(identifier);
     LOG.info("retrieved from cache: {}", userId);
 
