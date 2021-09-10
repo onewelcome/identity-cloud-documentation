@@ -31,7 +31,6 @@ Navigate to the single-tenant documentation site on [docs-single-tenant.onegini.
 
 * Identity & Single Sign-On
 * Token Server, Security Proxy, and Extension Engine
-* Mobile SDKs
 * Customer Service
 
 Contact [Onegini Support](https://support.onegini.com/) if you are not sure whether you are on the single-tenant or multi-tenant version of the Onegini Identity
