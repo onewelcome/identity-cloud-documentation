@@ -4,6 +4,25 @@ This section contains release notes for Onegini Access.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2021-09-14
+
+### Features
+
+* Added the ability to delete access and refresh tokens when using the [End-session endpoint](../topics/oidc/session-management/end-session-guide.md) for OpenID
+  Connect. This is enabled by default for clients with the authentication method `PKCE`. Refer to the  
+  [OpenID Connect configuration](../topics/oidc/configuration/configuration.md) for more information
+* Added the [token revocation endpoint](../api-reference/description-oauth-endpoint.md#revoke-token-endpoint) to
+  the [OpenID Connect discovery endpoint](../api-reference/oidc/discovery.md).
+* Improved the [integrity check](../topics/mobile-apps/app-delivery-lifecycle/app-delivery-lifecycle.md) for mobile apps. This improved integrity check is
+  required for new mobile apps introduced to the Google Play Store after August 1st, 2021. The existing apps, both running on Android and iOS, will continue to
+  work without any changes. Still, it is recommended to plan an update of the Onegini SDK and use the improved integrity check.
+
+### Bug fixes
+
+* The OpenID End-session endpoint did not properly handle encoded parameters when it was called via HTTP POST. This prevented users from being redirected back
+  to the website after logout. This has been fixed.
+* Several endpoints for Mobile Authentication returned responses in a different format than documented. These responses have been fixed.
+
 ## Release date: 2021-05-10
 
 ### Features
