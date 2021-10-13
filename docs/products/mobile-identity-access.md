@@ -6,7 +6,6 @@ Android and iOS. The mobile SDKs are responsible for making secure requests towa
 ## Android
 
 * [Android SDK documentation](https://docs-single-tenant.onegini.com/msp/stable/android-sdk/)
-* [Android SDK API reference](https://docs-single-tenant.onegini.com/msp/stable/android-sdk/javadocs/index.html)
 * [Android example app](https://github.com/Onegini/android-example-app)
 
 ## iOS

@@ -118,6 +118,9 @@ nav:
                   - 'Introduction': products/access/topics/dum-report/index.md
                   - 'DUM Engine Configuration': products/access/topics/dum-report/dum-engine-configuration.md
               - 'OneSee security events': products/access/topics/aws/onesee-events.md
+          - 'Mobile SDKs':
+                - 'Android SDK': 'https://docs.onegini.com/projects/android-sdk/en/stable/'
+                - 'iOS SDK': 'https://docs-single-tenant.onegini.com/msp/stable/ios-sdk/'
           - 'API Reference':
               - 'Introduction': products/access/api-reference/index.md
               - 'OAuth endpoints': products/access/api-reference/description-oauth-endpoint.md
