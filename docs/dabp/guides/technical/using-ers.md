@@ -1,6 +1,6 @@
 # Using Customer Self Styling for customizing looks and behaviour of DABP
 
-Look and some behaviour can be customized by using [Customer Self Styling](../../../self-styling/index.md)
+Look & feel and some behaviour can be customized by using [Customer Self Styling](../../../self-styling/index.md)
 The base folder in the git repository for DABP should be named `delegation`.
 
 ## Changing look and feel
@@ -18,9 +18,10 @@ DABP supports multiple languages, thus translation files should be stored in git
 
 ## Using translations to change invite email texts
 
-By default when one user invites another to use DABP, details of the inviting users are provided in the invitation email. Since DABP allows you to invite users
-in the automated way by API, there are no inviting user details for the email. In that case a `system automation` account data will be put in the email. Email
-address and display name of this account can be changed using the translation file. Please provide such entry in the translation file to change default values:
+By default, when one user invites another to use DABP, the details of the inviting users are provided in the invitation email. DABP also allows users 
+to be invited in an automated fashion using the API. In this context, there is no user details of the inviter for the email. In this scenario, some 
+pre-defined `system automation` data will be used in the email. The Email address and display name of this account can be changed using the translation
+file. You'll need to provide an entry in the translation file to overwrite default values:
 
 ```json
 {
