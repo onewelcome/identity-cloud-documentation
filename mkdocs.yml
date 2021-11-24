@@ -21,8 +21,8 @@ nav:
       - 'Messaging service':
           - 'Introduction': messaging-service/index.md
           - 'Configuration':
-              - 'SMS Gateway configuration': messaging-service/sms-config.md
-              - 'E-mail Gateway configuration': messaging-service/email-config.md
+              - 'SMS gateway configuration': messaging-service/sms-config.md
+              - 'Email gateway configuration': messaging-service/email-config.md
           - 'API Reference': messaging-service/outgoing-api-spec.md
       - 'Delegated administration':
           - 'Introduction': dabp/index.md
