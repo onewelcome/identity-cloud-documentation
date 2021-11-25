@@ -30,7 +30,7 @@ an HTTP POST request. An example request body that will be sent, will look like:
 ```json
 {
   "fromAddress": "service@onewelcome.com",
-  "toAddres": "john.doe@example.org",
+  "toAddress": "john.doe@example.org",
   "ccAddresses": [
     "john.doe+1@example.org",
     "joes.friend@example.org"
