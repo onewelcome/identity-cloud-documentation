@@ -45,8 +45,16 @@ One, two, {{key}}. {{#i18n}}message.key{{/i18n}}!
 
 Template parameters:
 
-```properties
-key=three
+```json
+{
+  "message": {
+    //...
+    "parameters": {
+      "key": "three"
+    },
+    //...
+  }
+}
 ```
 
 Messages.properties content:
