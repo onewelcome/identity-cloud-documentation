@@ -6,7 +6,7 @@ The *Messaging service* is functionality within the *OneWelcome Identity Cloud* 
 or email. The Messaging service serves as a notification gateway for other OneWelcome products to unify the configuration of the notification channels.
 
 The Messaging service can send out SMS and emails with the data directly embedded in the request, or can use templates from [*Customer
-Self-Styling*](../self-styling/index.md). Using templates gives you the option to adjust the look of the notifications.
+Self-Styling*](../self-styling/index.md). Using templates gives you the option to adjust the look and feel of notifications.
 
 Expected structure in Customer Self-Styling is:
 

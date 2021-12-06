@@ -1,12 +1,12 @@
 # Email gateway configuration
 
-The Messaging service supports 3 ways of sending email messages out of the box:
+The Messaging service supports 3 ways of sending email messages out of the box, by integrating with:
 
-- By integrating with the OneWelcome email gateway
-- By integrating with an SMTP server
-- By integrating with a custom API
+- The OneWelcome email gateway
+- A SMTP server
+- A custom API
 
-## OneWelcome email gateway integration configuration
+## OneWelcome email gateway configuration
 
 The OneWelcome email gateway is the default integration, as all necessary elements are hosted by OneWelcome. To use this email gateway, you need to specify the
 sender email address, sender name and reply-to address. Be aware that OneWelcome only allows _verified_ sender email addresses and domains.
@@ -17,7 +17,7 @@ Please [contact support](https://onewelcome.atlassian.net/servicedesk/customer/p
 If you don't want to use OneWelcome's email gateway, you can configure any other SMTP server to send out emails.
 
 Apart from the sender address, sender name and reply-to address, you need to specify the hostname (or IP address) and port on which SMTP server is accessible.
-You can also specify whether the connection should be marked as secure, and authentication details if they're required.
+You can also specify whether the connection should be marked as secure and authentication details if they're required.
 
 ## Custom API configuration
 
