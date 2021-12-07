@@ -24,7 +24,7 @@ an HTTP POST request. An example request body that will be sent, will look like:
 
 ## E-mail REST integration
 
-If you choose the Custom API integration option for your email gateway, the Messaging service will forward the actual message to the specified endpoint by doing
+If you choose the Custom API integration option for your email gateway, the Messaging service will forward the actual email to the specified endpoint by doing
 an HTTP POST request. An example request body that will be sent, will look like:
 
 ```json

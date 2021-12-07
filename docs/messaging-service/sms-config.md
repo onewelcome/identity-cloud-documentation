@@ -1,16 +1,16 @@
 # SMS gateway configuration
 
-Messaging service supports 2 ways of sending SMS messages out of the box:
+Messaging service supports 2 ways of sending SMS messages out of the box, by integrating with:
 
-- By integrating with the [CM.com SMS gateway](https://www.cm.com/sms/)
-- By integrating with a custom API
+- The [CM.com SMS gateway](https://www.cm.com/sms/)
+- A custom API
 
-## CM.com integration configuration
+## CM.com configuration
 
 The default integration for the Messaging service is with CM.com. CM.com requires
 a [product token](https://www.cm.com/app/docs/en/api/business-messaging-api/1.0/index#integration-authentication) to send SMS messages via its gateway.
-Please [contact support](https://onewelcome.atlassian.net/servicedesk/customer/portals) to obtain a product token from CM.com if you do not have one. To use it,
-this product token must be specified in the configuration screen.
+Please [contact support](https://onewelcome.atlassian.net/servicedesk/customer/portals) to obtain a product token from CM.com if you do not have one already. 
+To be able to use it, the product token must be specified in the configuration screen.
 
 You can also specify the default sender, which will be used as a sender of the SMS message when the request to send the message does not contain a sender. This
 default sender can be a phone number, a short code or the name of the sender.
