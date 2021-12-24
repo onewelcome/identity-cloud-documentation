@@ -28,7 +28,7 @@ The OpenAPI specification of the web hook can be found [here](./customize-token-
 
 ## Web Hook configuration
 
-Before the web hook can be used a few configuration steps are required. Firstly, you need to provide the details about where the web hook API endpoint
+Before the web hook can be used a few configuration steps are required. First, you need to provide the details about where the web hook API endpoint
 can be reached, including the authentication details. Once that's available, you should be able to link the just-defined web hook instance
 to your client.
 

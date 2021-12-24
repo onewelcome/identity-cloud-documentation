@@ -1,20 +1,20 @@
 # Customize User Details Web Hook
 
 The user details customization web hook is meant to be identity-centric, meaning that it should only focus on user-related information.
-Access control is not its part.
+Modifying access control is out of scope of its responsibilities.
 
 To get a better understanding please consider the following scenarios:
 
-1. There is another service being source of user-related information. The returned attributes are complementary to what is provided by the
+1. There is another service that is a source of user-related information. The returned attributes are complementary to what is provided by the
 configured identity provider instance.
 2. The client expects certain claims to be provided in sophisticated format (regardless if it related to the claim name or how the value is
 represented).
 3. There is a need for dynamic (based on given factors/state) reduction of some of the user-related information that will be provided to the
 clients.
 
-## Web Hook specification
+## The web hook specification
 
-The web hook implementor receives multiple attributes, such as:
+The web hook input parameters include:
 
 - identity of the user
 - set of requested scopes
@@ -40,7 +40,7 @@ The OpenAPI specification of the web hook can be found [here](./customize-user-d
 
 ## Web Hook configuration
 
-Before the web hook can be used, a few configuration steps are required. First, you need to provide the details about where the web hook API
+Before the web hook can be used a few configuration steps are required. First, you need to provide the details about where the web hook API
 can be reached, including the authentication details. Once that's available, you should be able to link the just-defined web hook instance
 to your client.
 
