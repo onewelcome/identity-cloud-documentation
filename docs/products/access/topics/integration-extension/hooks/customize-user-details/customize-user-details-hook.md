@@ -1,7 +1,7 @@
 # Customize User Details Web Hook
 
 The user details customization web hook is meant to be identity-centric, meaning that it should only focus on user-related information.
-Modifying access control is out of scope of its responsibilities.
+Modifying access control is out of scope.
 
 To get a better understanding please consider the following scenarios:
 
