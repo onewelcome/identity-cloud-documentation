@@ -1,26 +1,26 @@
 # Customize Token Web Hook
 
-The customize token web hook is meant allow access control manipulation. The hook allows reducing scopes that are associated with
+Customize Token Web Hook enables access control manipulation. The hook allows reducing scopes that are associated with
 the grant that gets created as part of the flow in which it gets executed.
 
 To get a better understanding please consider a scenario where the scopes are used to represent active subscriptions. Their validity changes
-over time therefore we want to give implementors possibility to actively validate and reduce ones that are not available for the given
+over time therefore we want to give implementors possibility to actively validate and remove ones that are not available for the given
 user/client at a given moment.
 
 ## Web Hook specification
 
-The web hook implementor receives multiple attributes, such as:
+The web hook input parameters include:
 
 - identity of the user (if present)
 - information about the client who was used to request the token
 - set of requested scopes
 
-Based on the above information the web hook is allowed to reduce the scopes.
+Based on the above information the web hook is allowed to remove an arbitrary number of the scopes.
 
-In case all requested scopes are reduced the Access Service will reject either, the authorization or the token flow.
+In case all requested scopes are removed the Access Service will fail either the authorization or the token flow.
 
-The web hook is executed before any access grant (authorization code or token) is created. This way, we can ensure the access to potentially
-forbidden resources will not be possible, also after refreshing the token.
+The web hook is executed before any access grant or token is created. This ensures that the access to potentially
+forbidden resources is not possible, also after refreshing the token.
 
 ## API Contract
 
@@ -28,7 +28,7 @@ The OpenAPI specification of the web hook can be found [here](./customize-token-
 
 ## Web Hook configuration
 
-Before the web hook can be used, a few configuration steps are required. First, you need to provide the details about where the web hook API
+Before the web hook can be used a few configuration steps are required. Firstly, you need to provide the details about where the web hook API endpoint
 can be reached, including the authentication details. Once that's available, you should be able to link the just-defined web hook instance
 to your client.
 
@@ -48,6 +48,6 @@ Once done, save the configuration and proceed to your client configuration page.
 
 ### Updating client configuration
 
-The Customize Token web hook can be configured with any OAuth client type. Depending on your choice navigate to `Configuration` ->
+Customize Token web hook can be configured with any OAuth client type. Depending on your choice navigate to `Configuration` ->
 `App Configuration` -> `Applications` or `Configuration` -> `Web clients` respectively. The web hook configuration is available in the
 `Scopes` section.
