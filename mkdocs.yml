@@ -109,6 +109,10 @@ nav:
               - 'Integration and extension':
                   - 'Introduction': products/access/topics/integration-extension/index.md
                   - 'Configure Scope Verification Service': products/access/topics/integration-extension/scope-verification/scope-verification.md
+                  - 'Web Hooks':
+                        - 'Introduction': products/access/topics/integration-extension/hooks/index.md
+                        - 'User Details Customization': products/access/topics/integration-extension/hooks/customize-user-details/customize-user-details-hook.md
+                        - 'Token Customization': products/access/topics/integration-extension/hooks/customize-token/customize-token-hook.md
               - 'Look and Feel':
                   - 'Introduction': products/access/topics/look-and-feel/index.md
                   - 'Templates': products/access/topics/look-and-feel/templates/templates.md

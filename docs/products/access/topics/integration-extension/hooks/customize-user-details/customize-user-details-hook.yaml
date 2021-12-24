@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: User Details Customization Hook
+  description: User Details Customization Hook
+  version: 1.0.0
+servers:
+  - url: /
+paths:
+  /v1/customize-user-details:
+    post:
+      tags:
+        - user-details-customization-hook
+      operationId: customize
+      description: Customize the attributes of a user.
+      security:
+        - basicAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDetailsCustomizationRequest'
+      responses:
+        200:
+          description: Returns customized claims.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDetailsCustomizationResponse'
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+  schemas:
+    UserDetailsCustomizationRequest:
+      type: object
+      description: The attributes of a user.
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+        scopes:
+          type: array
+          description: The scopes of the user.
+          items:
+            type: string
+        claims:
+          type: object
+          additionalProperties: true
+          description: The claims of a user.
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique ID of a user.
+    UserDetailsCustomizationResponse:
+      type: object
+      description: The customized user claims.
+      properties:
+        claims:
+          type: object
+          additionalProperties: true
+          description: The claims of a user.
+      example:
+        claims:
+          basicClaim: example value
+          complexClaim:
+            userDefinedProperty1: userDefinedValue1
+            userDefinedProperty2: userDefinedValue2

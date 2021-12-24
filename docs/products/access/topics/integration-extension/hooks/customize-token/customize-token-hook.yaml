@@ -1,0 +1,84 @@
+openapi: 3.0.3
+info:
+  title: Token Customization Hook
+  description: A hook that is executed just before the authorization grant is created (authorization call, refresh token)
+  version: 1.0.0
+servers:
+  - url: /
+paths:
+  /v1/customize-token:
+    post:
+      tags:
+        - customize-token-hook
+      operationId: customize-token
+      description: This webhook is meant primarily for scopes reduction that occurs before the authorization grant creation. The scopes verification is done proactively on every Authorization and Refresh Token flows, making it is possible to reduce scopes that should not be granted (for example, due to license or account expiration).
+      security:
+        - basicAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomizeTokenRequest'
+      responses:
+        200:
+          description: Successful response that informs Access Service about scopes to be excluded from the authorization grant
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomizeTokenResponse'
+        401:
+          description: Response to be returned when API credentials are invalid
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+  schemas:
+    CustomizeTokenRequest:
+      type: object
+      description: Data representing the user that is requesting the authorization and also scopes that were requested.
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+        client:
+          $ref: '#/components/schemas/Client'
+        scopes:
+          type: array
+          description: The scopes that are requested for the authorization grant.
+          example:
+            - sim_read
+            - name
+            - openid
+            - read
+          items:
+            type: string
+      required: ['client', 'scopes']
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "fb6239f6-2j3j-4jj5-997-092999923h"
+          description: The identifier of a user provided by the identity provider.
+      required: ['id']
+    Client:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "ad731534-b319-4760-ac0e-31c872c6fb7c"
+          description: The id of the client that the authorization grant has been requested by.
+      required: ['id']
+    CustomizeTokenResponse:
+      type: object
+      description: Reduced set of scopes, the returned list can only be a subset of the one communicated in the request.
+      properties:
+        reducedScopes:
+          type: array
+          description: The reduced set of scopes.<br/>Restrictions<ul><<li>if set contains scopes that don't exist then these scopes are ignored</li><li>li>if the set is empty all requested scopes are removed, the authorization request is rejected</li></ul>
+          example:
+            - sim_read
+            - name
+          items:
+            type: string
