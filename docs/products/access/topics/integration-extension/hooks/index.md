@@ -4,5 +4,5 @@ Web Hooks are meant to make the Access service extendable by allowing their impl
 
 This topic guides covers the following subjects:
 
-* [Customize Token Web Hook](customize-token/customize-token-hook.md)
+* [Customize Token Web Hook](customize-access-token/customize-access-token-hook.md)
 * [Customize User Details Web Hook](customize-user-details/customize-user-details-hook.md)

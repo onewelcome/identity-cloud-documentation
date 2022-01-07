@@ -112,7 +112,7 @@ nav:
                   - 'Web Hooks':
                         - 'Introduction': products/access/topics/integration-extension/hooks/index.md
                         - 'User Details Customization': products/access/topics/integration-extension/hooks/customize-user-details/customize-user-details-hook.md
-                        - 'Token Customization': products/access/topics/integration-extension/hooks/customize-token/customize-token-hook.md
+                        - 'Access Token Customization': products/access/topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md
               - 'Look and Feel':
                   - 'Introduction': products/access/topics/look-and-feel/index.md
                   - 'Templates': products/access/topics/look-and-feel/templates/templates.md
@@ -203,23 +203,4 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/Onegini
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/onegini/
-    - icon: fontawesome/brands/vimeo
-      link: https://vimeo.com/onegini
-
-markdown_extensions:
-  - admonition
-  - codehilite:
-      linenums: true
-  - pymdownx.details
-  - toc:
-      permalink: true
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-plugins:
-  - search
-  - redirects:
-      redirect_maps:
+      link: https://www.linkedin.com/compa
