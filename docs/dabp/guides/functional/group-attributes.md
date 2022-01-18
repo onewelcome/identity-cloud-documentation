@@ -10,6 +10,9 @@ Attributes can be helpful in a wide range of scenarios:
     * any kind of metadata related to the group that is needed for an external system or users of DABP (e.g. Chamber of Commerce number)
 3. The API exposes an endpoint that allows you to search for a group with a specified attribute
 
+If you don't want to use attributes you can disable showing them in the UI by going to `Settings -> Customizations` and toggling `Show attributes of group` option.
+Be aware that only administrators of the system can change this setting.
+
 ## Adding attributes to group
 Attributes can be added to the group from the Group Details dialog.
 Use `+ Add custom attribute` button to add a new attribute. You will need to specify a key (name) of the attribute and its value.
