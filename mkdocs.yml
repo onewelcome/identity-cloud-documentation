@@ -18,6 +18,12 @@ nav:
           - 'Responsibilities of external system connected to DABP': dabp/guides/technical/external-systems-responsibilities.md
   - 'Products':
       - 'Customer Service': products/customer-service.md
+      - 'Messaging service':
+          - 'Introduction': messaging-service/index.md
+          - 'Configuration':
+              - 'SMS gateway configuration': messaging-service/sms-config.md
+              - 'Email gateway configuration': messaging-service/email-config.md
+          - 'API Reference': messaging-service/outgoing-api-spec.md
       - 'Delegated administration':
           - 'Introduction': dabp/index.md
           - 'Release notes': dabp/release-notes/index.md
