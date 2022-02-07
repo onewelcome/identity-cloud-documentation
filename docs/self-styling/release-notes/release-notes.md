@@ -1,3 +1,28 @@
+## 1.9.0
+### Improvements
+* New UI for configuring repository connection
+* Added timezone information on the `Last synchronisation`
+* Added `Synchronisation mode` configuration option.
+
+## 1.8.0
+### Improvements
+* Better integration into the console-ui
+### Bug fixes
+* Fix for git sync error status code
+
+## 1.7.1
+### Bug fixes
+* Fix for configuration synchronisation API call from UI (axios) where an empty request body was used.
+
+## 1.7.0
+### Improvements
+* Branches that were configured and then deleted can now be updated
+* Spring boot and other dependency updates
+
+## 1.6.0
+### Improvements
+* Updated the front-end to be compatible with tenant selection from the console-ui
+* The console-ui sidebar is now passed to the parent micro-frontend for display
 
 ## 1.5.0
 ### Improvements
@@ -27,7 +52,7 @@
 
 ### Improvements
 * When changing a tag or branch, the call to synchronize the templates is done without waiting for it in the Reference screen.
-* In the overview screen there is a notification when the synchronization of the templates is finished or if it failed.
+* In the overview screen there is a notification when the synchronisation of the templates is finished or if it failed.
 
 
 ## 1.0.0
