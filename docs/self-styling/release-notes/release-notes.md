@@ -1,7 +1,7 @@
 ## 1.9.0
 ### Improvements
 * New UI for configuring repository connection
-* Added timezone information on the `Last synchronization`
+* Added timezone information on the `Last synchronisation`
 * Added `Synchronisation mode` configuration option.
 
 ## 1.8.0
@@ -12,7 +12,7 @@
 
 ## 1.7.1
 ### Bug fixes
-* Fix for configuration synchronization API call from UI (axios) where an empty request body was used.
+* Fix for configuration synchronisation API call from UI (axios) where an empty request body was used.
 
 ## 1.7.0
 ### Improvements
@@ -52,7 +52,7 @@
 
 ### Improvements
 * When changing a tag or branch, the call to synchronize the templates is done without waiting for it in the Reference screen.
-* In the overview screen there is a notification when the synchronization of the templates is finished or if it failed.
+* In the overview screen there is a notification when the synchronisation of the templates is finished or if it failed.
 
 
 ## 1.0.0

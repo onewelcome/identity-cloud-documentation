@@ -71,15 +71,16 @@ The `delegation` directory contains resources that allow customizing the web exp
 
 ### Select reference
 
-1. After completing the steps under [Create Git repository connection](#create-git-repository-connection), the *Synchronization*-window opens: <br> <br>
+1. After completing the steps under [Create Git repository connection](#create-git-repository-connection), the *synchronisation* window opens: <br> <br>
 ![Page to select a reference](./images/selectreference.png)
+
    | Field                          | Description
    |--------------------------------|------------
-   | **Synchronisation mode**       | Allows selecting synchronization mode. Development mode allows selecting branches and tags from the configured repository, but does not cache the data. Production mode allows selecting tags only, but caching is enabled.
+   | **Synchronisation mode**       | Allows selecting synchronisation mode. Development mode allows selecting branches and tags from the configured repository, but does not cache the data. Production mode allows selecting tags only, but caching is enabled.
    | **Reference**                  | Branch or tag from which templates will be fetched
 
 2. When the correct tag or branch is selected, click [Save]. 
-   *The branch or tag is stored, and synchronization will happen automatically*.
+   *The branch or tag is stored, and synchronisation will happen automatically*.
 3. After saving, the overview page is displayed:
 
 ![Customer Self Styling overview page](./images/ers1.png)
@@ -107,8 +108,8 @@ To synchronize a Git Repository, click [Synchronize] in the overview page:
 
 ![Customer Self Styling overview page](./images/ers1.png)
 
-- During synchronization, the external resources (HTML/CSS/images) are fetched from the selected Git repository and stored on the server. 
-- After synchronization, the templates are uploaded to your environment. You can now start testing the templates, for example, by loading the login page.
+- During synchronisation, the external resources (HTML/CSS/images) are fetched from the selected Git repository and stored on the server. 
+- After synchronisation, the templates are uploaded to your environment. You can now start testing the templates, for example, by loading the login page.
 
 !!!important 
     Changes in the templates will only be visible on the production environment after clearing the CIM cache (or restarting the application). Please ask your contact within Onegini.
