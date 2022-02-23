@@ -1,8 +1,8 @@
-# Onegini identity cloud documentation
+# OneWelcome identity cloud documentation
 [![Documentation Status](https://readthedocs.com/projects/onegini-onegini-public-docs-parent/badge/?version=latest&token=c64f387fcc48becb6c9e51883f501ebf351e220e3fb2a39a720f28f24b68ddb6)](https://onegini-onegini-public-docs-parent.readthedocs-hosted.com/en/latest/?badge=latest)
 [![CircleCI](https://circleci.com/gh/onewelcome/onegini-identity-cloud-documentation.svg?style=shield&circle-token=da0ab243507ef3ff36818c6931eef1d6f256b77c)](https://circleci.com/gh/onewelcome/onegini-identity-cloud-documentation)
 
-Public docs for the Onegini identity cloud on readthedocs.
+Public docs for the OneWelcome identity cloud on readthedocs.
 
 ## Documentation strategy
 We aim to provide documentation on a platform-level and no longer on a product-level. As we believe that clients and prospects need functional information to discover (new) features. We should explain the concepts that we use and point (potential) customers to the proper place to configure a feature. 

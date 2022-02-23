@@ -1,6 +1,6 @@
 # OAuth 2.0 and OpenID Connect Overview
 
-To decide which authentication flow is best for you based on the type of application that you are building, you first need to understand OAuth 2.0 and OpenID Connect and how you can implement these two flows using the Onegini Identity Cloud.
+To decide which authentication flow is best for you based on the type of application that you are building, you first need to understand OAuth 2.0 and OpenID Connect and how you can implement these two flows using the OneWelcome Identity Cloud.
 
 ## OAuth 2.0 vs OpenID Connect
 
@@ -15,7 +15,7 @@ OAuth 2.0 is a standard that apps use to provide client applications with access
 
 The OAuth 2.0 spec has four important roles:
 
-- The "*authorization server*" — The server that issues the access token. In this case the Onegini Identity Cloud is the authorization server.
+- The "*authorization server*" — The server that issues the access token. In this case the OneWelcome Identity Cloud is the authorization server.
 - The "*resource owner*" — Normally your application's end user that grants permission to access the resource server with an access token
 - The "*client*" — The application that requests the access token and then passes it to the resource server
 - The "*resource server*" — Accepts the access token and must verify that it's valid. In this case this is your application back-end.
@@ -23,19 +23,19 @@ The OAuth 2.0 spec has four important roles:
 Other important terms:
 
 - An OAuth 2.0 "*grant*" is the authorization given (or "granted") to the client by the user. Examples of grants are "authorization code" and "client credentials". Each OAuth grant has a corresponding flow, explained below.
-- The "*access token*" is issued by the authorization server (Onegini Identity Cloud) in exchange for the grant.
+- The "*access token*" is issued by the authorization server (OneWelcome Identity Cloud) in exchange for the grant.
 - The "*refresh token*" is an optional token that is exchanged for a new access token if the access token has expired.
 
 The usual OAuth 2.0 grant flow looks like this:
 
 1. Client requests authorization from the resource owner (usually the user).
-2. If the user gives authorization, the client passes the authorization grant to the authorization server (Onegini Identity Cloud).
+2. If the user gives authorization, the client passes the authorization grant to the authorization server (OneWelcome Identity Cloud).
 3. If the grant is valid, the authorization server returns an access token, possibly alongside a refresh and/or ID token.
 4. The client now uses that access token to access the resource server.
 
 > **Note:** For a deeper dive into OAuth 2.0, see the [OAuth 2.0 spec](https://tools.ietf.org/html/rfc6749).
 
-At the core of both OAuth 2.0 and its OpenID Connect extension is the authorization server. Each authorization server has a unique issuer URI and its own signing key for tokens to keep a proper boundary between security domains. In the context of this guide, The Onegini Identity Cloud is your authorization server.
+At the core of both OAuth 2.0 and its OpenID Connect extension is the authorization server. Each authorization server has a unique issuer URI and its own signing key for tokens to keep a proper boundary between security domains. In the context of this guide, The OneWelcome Identity Cloud is your authorization server.
 
 The authorization server also acts as an OpenID Connect Provider, which means you can request [ID tokens](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) in addition to [access tokens](https://tools.ietf.org/html/rfc6749#section-1.4) from the authorization server endpoints.
 
@@ -45,7 +45,7 @@ OpenID Connect is an authentication standard built on top of OAuth 2.0. It adds 
 
 Although OpenID Connect is built on top of OAuth 2.0, the [OpenID Connect specification](https://openid.net/connect/) uses somewhat different terms for the roles in the flows:
 
-- The "*OpenID provider*" — The authorization server that issues the ID token. In this case the Onegini Identity Cloud is the OpenID provider.
+- The "*OpenID provider*" — The authorization server that issues the ID token. In this case the OneWelcome Identity Cloud is the OpenID provider.
 - The "*end user*" — Whose information is contained in the ID token
 - The "*relying party*" — The client application that requests the ID token
 - The "*ID token*" is issued by the OpenID Provider and contains information about the end user in the form of claims.

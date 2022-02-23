@@ -10,7 +10,7 @@ However, a special policy, `role_superuser`, will be added to report on a group 
 
 ## Get Person Report via API
 
-In this guide, we will assume the Onegini Identity Cloud is available under `https://dabp.onegini.com` url. The API requires authentication using OIDC. Make
+In this guide, we will assume the OneWelcome Identity Cloud is available under `https://dabp.onegini.com` url. The API requires authentication using OIDC. Make
 sure you add a valid access token to the request header.
 
 The person report for a person with a given identifier (`referenceId`) can be received by doing a GET request to `https://dabp.onegini.com/delegation/api/v2/people/{referenceId}/report`.

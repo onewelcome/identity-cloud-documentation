@@ -1,10 +1,10 @@
-site_name: Onegini Identity Cloud for Developers
-site_description: 'Documentation of the Onegini Identity Cloud: architecture, concepts, functional descriptions and the APIs explained.'
-repo_url: https://github.com/Onegini/onegini-identity-cloud-documentation
+site_name: OneWelcome Identity Cloud for Developers
+site_description: 'Documentation of the OneWelcome Identity Cloud: architecture, concepts, functional descriptions and the APIs explained.'
+repo_url: https://github.com/onewelcome/onegini-identity-cloud-documentation
 
 nav:
   - 'Introduction': index.md
-  - 'Onegini Identity Cloud':
+  - 'OneWelcome Identity Cloud':
       - 'Platform architecture':
           - 'Mobile Identity & Access': architecture/mobile-identity-access.md
           - 'Identity & Single Sign-On': architecture/identity-single-sign-on.md
@@ -175,7 +175,7 @@ nav:
               - 'Extension Points':
                   - 'Introduction': products/access/appendix/api-rest-services/index.md
                   - 'REST Scope Verification Service': products/access/appendix/api-rest-services/scope-verification-service.md
-              - 'Onegini Access events': products/access/appendix/access-events.md
+              - 'OneWelcome Access events': products/access/appendix/access-events.md
               - 'Responsible disclosure policy': products/access/appendix/responsible-disclosure-policy.md
               - 'Deprecation': products/access/appendix/deprecation.md
           - 'Release notes': products/access/release-notes/index.md
@@ -183,7 +183,7 @@ nav:
           - 'Introduction': self-styling/index.md
           - 'Frontend styling': self-styling/configuration-page.md
           - 'Release notes': self-styling/release-notes/release-notes.md
-copyright: "Onegini B.V."
+copyright: "OneWelcome B.V."
 
 extra_css:
   - stylesheets/extra.css
@@ -207,6 +207,6 @@ extra:
   manifest: 'manifest.webmanifest'
   social:
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/Onegini
+      link: https://twitter.com/OneWelcome
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/compa
+      link: https://www.linkedin.com/company/onewelcome/
