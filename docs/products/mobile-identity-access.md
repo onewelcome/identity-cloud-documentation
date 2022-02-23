@@ -20,7 +20,7 @@ Android and iOS. The mobile SDKs are responsible for making secure requests towa
 
 ## Server components
 
-Are you looking for the documentation on OAuth, OpenID Connect, or Mobile Authentication? These topics are covered in this section of the Onegini Identity Cloud
+Are you looking for the documentation on OAuth, OpenID Connect, or Mobile Authentication? These topics are covered in this section of the OneWelcome Identity Cloud
 developer documentation.
 
 ## Single-tenant server components:

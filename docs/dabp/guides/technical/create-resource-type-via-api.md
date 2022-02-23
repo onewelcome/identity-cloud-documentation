@@ -2,7 +2,7 @@
 `Resource types` can only be created via API as they should not change after initial setup of the platform.
 
 ## How to create a resource type
-In this guide, we will assume Onegini Identity Cloud is available under the URL: `https://dabp.onegini.com`.
+In this guide, we will assume OneWelcome Identity Cloud is available under the URL: `https://dabp.onegini.com`.
 The API is protected with OIDC, so you need to provide an access token to make a successful request.
 Please note that the access token must be either:
 - linked to a person who has the `Add/edit/delete resources and resource types` permission on the root group. The root group is the top-level group.

@@ -6,7 +6,7 @@ The Mobile Identity & Access solution provides you with all the required feature
 
 ### Mobile security
 
-Mobile security has been a complex and investment-heavy feature. Not to mention the constant maintenance and development work required to keep up with ever-evolving online security threats. Onegini Identity Cloud offers banking-grade mobile security without hassle.
+Mobile security has been a complex and investment-heavy feature. Not to mention the constant maintenance and development work required to keep up with ever-evolving online security threats. OneWelcome Identity Cloud offers banking-grade mobile security without hassle.
 
 ![Architecture overview](./img/overview-mobile-identity-access.png)
 

@@ -33,6 +33,7 @@ site
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
+.idea/markdown.xml
 .idea/markdown-navigator.xml
 .idea/markdown-navigator-enh.xml
 .idea/aws.xml

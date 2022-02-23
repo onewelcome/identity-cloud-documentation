@@ -1,4 +1,4 @@
-The Onegini Identity cloud has several different (programming) interfaces that are used by clients to customize our solution or integrate our platform into their software. This paragraph explains how Onegini manages these interfaces when releasing new software versions. The general rule is that customers should have the least possible impact when Onegini releases new software versions.  
+The OneWelcome Identity Cloud has several different (programming) interfaces that are used by clients to customize our solution or integrate our platform into their software. This paragraph explains how Onegini manages these interfaces when releasing new software versions. The general rule is that customers should have the least possible impact when Onegini releases new software versions.  
 
 Everything explained below is to make sure that there are no disruptions due to changes made to the software by Onegini when a new software version is deployed. 
 
@@ -16,7 +16,7 @@ Onegini distinguishes different types of interfaces. For each of these interface
 
 ## Templates
 
-The Onegini Identity cloud uses templates to render the UI in the end-users’ browser. These templates can be modified by either customers or our Professional Services department. To guarantee backwards compatibility on a template version, Onegini will: 
+The OneWelcome Identity Cloud uses templates to render the UI in the end-users’ browser. These templates can be modified by either customers or our Professional Services department. To guarantee backwards compatibility on a template version, Onegini will: 
 
 - not rename templates 
 - not rename or remove variables used in templates to fill them with user specific data 
@@ -26,7 +26,7 @@ Onegini can introduce new templates or new variables, or translations to existin
 
 ## APIs
 
-The Onegini Identity cloud exposes many APIs that allow customers to fully integrate our platform in their software. This also means that Onegini will improve / change these APIs. To guarantee backwards compatibility APIs are versioned and for stable versions we will: 
+The OneWelcome Identity Cloud exposes many APIs that allow customers to fully integrate our platform in their software. This also means that Onegini will improve / change these APIs. To guarantee backwards compatibility APIs are versioned and for stable versions we will: 
 
 - not rename or remove fields in the API request or response 
 - not add or remove required fields / parameters in the API request 
@@ -35,4 +35,4 @@ Onegini may introduce new parameters or fields in an API request or response, as
 
 ## SDKs
 
-The Onegini Identity Cloud has several (mobile) SDKs. These SDKs make it more convenient to integrate your software with our platform. All SDKs are versioned according to the Semantic versioning scheme ([https://semver.org](https://semver.org/)). This means that breaking changes will only be introduced in new major versions of the SDKs. 
+The OneWelcome Identity Cloud has several (mobile) SDKs. These SDKs make it more convenient to integrate your software with our platform. All SDKs are versioned according to the Semantic versioning scheme ([https://semver.org](https://semver.org/)). This means that breaking changes will only be introduced in new major versions of the SDKs. 
