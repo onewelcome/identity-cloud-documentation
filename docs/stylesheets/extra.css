@@ -1,122 +1,275 @@
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Italic.eot');
-  src: url('../fonts/Montserrat-Italic.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Montserrat-Italic.woff2') format('woff2'),
-  url('../fonts/Montserrat-Italic.woff') format('woff'),
-  url('../fonts/Montserrat-Italic.ttf') format('truetype'),
-  url('../fonts/Montserrat-Italic.svg#Montserrat-Italic') format('svg');
+  font-family: 'Red Hat Display';
+  src: url('../fonts/subset-RedHatDisplay-Italic.eot');
+  src: local('Red Hat Display It'), local('RedHatDisplay-Italic'),
+  url('../fonts/subset-RedHatDisplay-Italic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatDisplay-Italic.woff2') format('woff2'),
+  url('../fonts/subset-RedHatDisplay-Italic.woff') format('woff'),
+  url('../fonts/subset-RedHatDisplay-Italic.ttf') format('truetype'),
+  url('../fonts/subset-RedHatDisplay-Italic.svg#RedHatDisplay-Italic') format('svg');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Light.eot');
-  src: url('../fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Montserrat-Light.woff2') format('woff2'),
-  url('../fonts/Montserrat-Light.woff') format('woff'),
-  url('../fonts/Montserrat-Light.ttf') format('truetype'),
-  url('../fonts/Montserrat-Light.svg#Montserrat-Light') format('svg');
-  font-weight: 300;
+  font-family: 'Red Hat Display';
+  src: url('../fonts/subset-RedHatDisplay-Black.eot');
+  src: local('Red Hat Display Black'), local('RedHatDisplay-Black'),
+  url('../fonts/subset-RedHatDisplay-Black.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatDisplay-Black.woff2') format('woff2'),
+  url('../fonts/subset-RedHatDisplay-Black.woff') format('woff'),
+  url('../fonts/subset-RedHatDisplay-Black.ttf') format('truetype'),
+  url('../fonts/subset-RedHatDisplay-Black.svg#RedHatDisplay-Black') format('svg');
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Bold.eot');
-  src: url('../fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Montserrat-Bold.woff2') format('woff2'),
-  url('../fonts/Montserrat-Bold.woff') format('woff'),
-  url('../fonts/Montserrat-Bold.ttf') format('truetype'),
-  url('../fonts/Montserrat-Bold.svg#Montserrat-Bold') format('svg');
+  font-family: 'Red Hat Display';
+  src: url('../fonts/subset-RedHatDisplay-BoldItalic.eot');
+  src: local('Red Hat Display Bold It'), local('RedHatDisplay-BoldItalic'),
+  url('../fonts/subset-RedHatDisplay-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatDisplay-BoldItalic.woff2') format('woff2'),
+  url('../fonts/subset-RedHatDisplay-BoldItalic.woff') format('woff'),
+  url('../fonts/subset-RedHatDisplay-BoldItalic.ttf') format('truetype'),
+  url('../fonts/subset-RedHatDisplay-BoldItalic.svg#RedHatDisplay-BoldItalic') format('svg');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('../fonts/subset-RedHatDisplay-Bold.eot');
+  src: local('Red Hat Display Bold'), local('RedHatDisplay-Bold'),
+  url('../fonts/subset-RedHatDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatDisplay-Bold.woff2') format('woff2'),
+  url('../fonts/subset-RedHatDisplay-Bold.woff') format('woff'),
+  url('../fonts/subset-RedHatDisplay-Bold.ttf') format('truetype'),
+  url('../fonts/subset-RedHatDisplay-Bold.svg#RedHatDisplay-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Regular.eot');
-  src: url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Montserrat-Regular.woff2') format('woff2'),
-  url('../fonts/Montserrat-Regular.woff') format('woff'),
-  url('../fonts/Montserrat-Regular.ttf') format('truetype'),
-  url('../fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+  font-family: 'Red Hat Display';
+  src: url('../fonts/subset-RedHatDisplay-Medium.eot');
+  src: local('Red Hat Display Medium'), local('RedHatDisplay-Medium'),
+  url('../fonts/subset-RedHatDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatDisplay-Medium.woff2') format('woff2'),
+  url('../fonts/subset-RedHatDisplay-Medium.woff') format('woff'),
+  url('../fonts/subset-RedHatDisplay-Medium.ttf') format('truetype'),
+  url('../fonts/subset-RedHatDisplay-Medium.svg#RedHatDisplay-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('../fonts/subset-RedHatDisplay-BlackItalic.eot');
+  src: local('Red Hat Display Black It'), local('RedHatDisplay-BlackItalic'),
+  url('../fonts/subset-RedHatDisplay-BlackItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatDisplay-BlackItalic.woff2') format('woff2'),
+  url('../fonts/subset-RedHatDisplay-BlackItalic.woff') format('woff'),
+  url('../fonts/subset-RedHatDisplay-BlackItalic.ttf') format('truetype'),
+  url('../fonts/subset-RedHatDisplay-BlackItalic.svg#RedHatDisplay-BlackItalic') format('svg');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('../fonts/subset-RedHatDisplay-MediumItalic.eot');
+  src: local('Red Hat Display Medium It'), local('RedHatDisplay-MediumItalic'),
+  url('../fonts/subset-RedHatDisplay-MediumItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatDisplay-MediumItalic.woff2') format('woff2'),
+  url('../fonts/subset-RedHatDisplay-MediumItalic.woff') format('woff'),
+  url('../fonts/subset-RedHatDisplay-MediumItalic.ttf') format('truetype'),
+  url('../fonts/subset-RedHatDisplay-MediumItalic.svg#RedHatDisplay-MediumItalic') format('svg');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('../fonts/subset-RedHatDisplay-Regular.eot');
+  src: local('Red Hat Display'), local('RedHatDisplay-Regular'),
+  url('../fonts/subset-RedHatDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatDisplay-Regular.woff2') format('woff2'),
+  url('../fonts/subset-RedHatDisplay-Regular.woff') format('woff'),
+  url('../fonts/subset-RedHatDisplay-Regular.ttf') format('truetype'),
+  url('../fonts/subset-RedHatDisplay-Regular.svg#RedHatDisplay-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-/* open-sans-300 - latin */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Red Hat Mono';
+  src: url('../fonts/subset-RedHatMono-SemiBoldItalic.eot');
+  src: local('Red Hat Mono SemiBold Italic'), local('RedHatMono-SemiBoldItalic'),
+  url('../fonts/subset-RedHatMono-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatMono-SemiBoldItalic.woff2') format('woff2'),
+  url('../fonts/subset-RedHatMono-SemiBoldItalic.woff') format('woff'),
+  url('../fonts/subset-RedHatMono-SemiBoldItalic.ttf') format('truetype'),
+  url('../fonts/subset-RedHatMono-SemiBoldItalic.svg#RedHatMono-SemiBoldItalic') format('svg');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Mono';
+  src: url('../fonts/subset-RedHatMono-BoldItalic.eot');
+  src: local('Red Hat Mono Bold Italic'), local('RedHatMono-BoldItalic'),
+  url('../fonts/subset-RedHatMono-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatMono-BoldItalic.woff2') format('woff2'),
+  url('../fonts/subset-RedHatMono-BoldItalic.woff') format('woff'),
+  url('../fonts/subset-RedHatMono-BoldItalic.ttf') format('truetype'),
+  url('../fonts/subset-RedHatMono-BoldItalic.svg#RedHatMono-BoldItalic') format('svg');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Mono';
+  src: url('../fonts/subset-RedHatMono-Regular.eot');
+  src: local('Red Hat Mono Regular'), local('RedHatMono-Regular'),
+  url('../fonts/subset-RedHatMono-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatMono-Regular.woff2') format('woff2'),
+  url('../fonts/subset-RedHatMono-Regular.woff') format('woff'),
+  url('../fonts/subset-RedHatMono-Regular.ttf') format('truetype'),
+  url('../fonts/subset-RedHatMono-Regular.svg#RedHatMono-Regular') format('svg');
+  font-weight: normal;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Mono';
+  src: url('../fonts/subset-RedHatMono-Medium.eot');
+  src: local('Red Hat Mono Medium'), local('RedHatMono-Medium'),
+  url('../fonts/subset-RedHatMono-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatMono-Medium.woff2') format('woff2'),
+  url('../fonts/subset-RedHatMono-Medium.woff') format('woff'),
+  url('../fonts/subset-RedHatMono-Medium.ttf') format('truetype'),
+  url('../fonts/subset-RedHatMono-Medium.svg#RedHatMono-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Mono';
+  src: url('../fonts/subset-RedHatMono-Bold.eot');
+  src: local('Red Hat Mono Bold'), local('RedHatMono-Bold'),
+  url('../fonts/subset-RedHatMono-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatMono-Bold.woff2') format('woff2'),
+  url('../fonts/subset-RedHatMono-Bold.woff') format('woff'),
+  url('../fonts/subset-RedHatMono-Bold.ttf') format('truetype'),
+  url('../fonts/subset-RedHatMono-Bold.svg#RedHatMono-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Mono';
+  src: url('../fonts/subset-RedHatMono-LightItalic.eot');
+  src: local('Red Hat Mono Light Italic'), local('RedHatMono-LightItalic'),
+  url('../fonts/subset-RedHatMono-LightItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatMono-LightItalic.woff2') format('woff2'),
+  url('../fonts/subset-RedHatMono-LightItalic.woff') format('woff'),
+  url('../fonts/subset-RedHatMono-LightItalic.ttf') format('truetype'),
+  url('../fonts/subset-RedHatMono-LightItalic.svg#RedHatMono-LightItalic') format('svg');
   font-weight: 300;
-  src: local(''),
-  url('../fonts/open-sans-v18-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/open-sans-v18-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-regular - latin */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-  url('../fonts/open-sans-v18-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/open-sans-v18-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-700 - latin */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local(''),
-  url('../fonts/open-sans-v18-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/open-sans-v18-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-700italic - latin */
-@font-face {
-  font-family: 'Open Sans';
   font-style: italic;
-  font-weight: 700;
-  src: local(''),
-  url('../fonts/open-sans-v18-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/open-sans-v18-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
 }
 
-/* open-sans-800 - latin */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Red Hat Mono';
+  src: url('../fonts/subset-RedHatMono-SemiBold.eot');
+  src: local('Red Hat Mono SemiBold'), local('RedHatMono-SemiBold'),
+  url('../fonts/subset-RedHatMono-SemiBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatMono-SemiBold.woff2') format('woff2'),
+  url('../fonts/subset-RedHatMono-SemiBold.woff') format('woff'),
+  url('../fonts/subset-RedHatMono-SemiBold.ttf') format('truetype'),
+  url('../fonts/subset-RedHatMono-SemiBold.svg#RedHatMono-SemiBold') format('svg');
+  font-weight: 600;
   font-style: normal;
-  font-weight: 800;
-  src: local(''),
-  url('../fonts/open-sans-v18-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/open-sans-v18-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
 }
 
-/* open-sans-800italic - latin */
 @font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 800;
-  src: local(''),
-  url('../fonts/open-sans-v18-latin-800italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/open-sans-v18-latin-800italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-family: 'Red Hat Mono';
+  src: url('../fonts/subset-RedHatMono-Light.eot');
+  src: local('Red Hat Mono Light'), local('RedHatMono-Light'),
+  url('../fonts/subset-RedHatMono-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatMono-Light.woff2') format('woff2'),
+  url('../fonts/subset-RedHatMono-Light.woff') format('woff'),
+  url('../fonts/subset-RedHatMono-Light.ttf') format('truetype'),
+  url('../fonts/subset-RedHatMono-Light.svg#RedHatMono-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'Red Hat Mono';
+  src: url('../fonts/subset-RedHatMono-MediumItalic.eot');
+  src: local('Red Hat Mono Medium Italic'), local('RedHatMono-MediumItalic'),
+  url('../fonts/subset-RedHatMono-MediumItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatMono-MediumItalic.woff2') format('woff2'),
+  url('../fonts/subset-RedHatMono-MediumItalic.woff') format('woff'),
+  url('../fonts/subset-RedHatMono-MediumItalic.ttf') format('truetype'),
+  url('../fonts/subset-RedHatMono-MediumItalic.svg#RedHatMono-MediumItalic') format('svg');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Mono';
+  src: url('../fonts/subset-RedHatMono-Italic.eot');
+  src: local('Red Hat Mono Italic'), local('RedHatMono-Italic'),
+  url('../fonts/subset-RedHatMono-Italic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/subset-RedHatMono-Italic.woff2') format('woff2'),
+  url('../fonts/subset-RedHatMono-Italic.woff') format('woff'),
+  url('../fonts/subset-RedHatMono-Italic.ttf') format('truetype'),
+  url('../fonts/subset-RedHatMono-Italic.svg#RedHatMono-Italic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 
 :root {
-
+  --brand-color-midnight-blue: rgba(15, 15, 30, 1);
+  --brand-color-burning-orange: rgba(255, 121, 42, 1);
+  --brand-color-shady-grey: rgba(245, 248, 248, 1);
+  --md-text-font: "Red Hat Display";
+  --md-code-font: "Red Hat Mono";
   /* Primary color shades */
-  --md-primary-fg-color: #EB4D00;
-  --md-primary-fg-color--light: #EB4D0000;
-  --md-primary-fg-color--dark: #EB4D00;
+  --md-default-fg-color: var(--brand-color-midnight-blue);
+  --md-default-bg-color: #ffffff;
+  --md-primary-fg-color: var(--brand-color-burning-orange);
+  --md-primary-fg-color--light: #FF792A00;
+  --md-primary-fg-color--dark: var(--brand-color-burning-orange);
   --md-primary-bg-color: hsla(0, 0%, 100%, 1);
   --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
-  --md-text-link-color: #EB4D00;
+  --md-text-link-color: var(--brand-color-burning-orange);
 
   /* Accent color shades */
-  --md-accent-fg-color: #EB4D00;
-  --md-accent-fg-color--transparent: #EB4D0025;
+  --md-accent-fg-color: var(--brand-color-burning-orange);
+  --md-accent-fg-color--transparent: #FF792A25;
   --md-accent-bg-color: hsla(0, 0%, 100%, 1);
   --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
 }
@@ -124,45 +277,47 @@
 :root > * {
 
   /* Code block color shades */
-  --md-code-bg-color: hsla(0, 0%, 96%, 1);
-  --md-code-fg-color: hsla(200, 18%, 26%, 1);
+  --md-code-bg-color: var(--brand-color-shady-grey);
+  --md-code-fg-color: var(--brand-color-midnight-blue);
+  --md-default-fg-color--light: rgba(15, 15, 30, 0.5);
 
   /* Footer */
-  --md-footer-bg-color: #000000;
+  --md-footer-bg-color: var(--brand-color-midnight-blue);
   --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
   --md-footer-fg-color: hsla(0, 0%, 100%, 1);
   --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
   --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
 }
 
-body, input {
-  font-family: "Open Sans", sans-serif;
+body, input, button {
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, button {
-  font-family: Montserrat, sans-serif;
-  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .md-typeset h1 {
   font-weight: 700;
-  color: #000000;
+  color: var(--brand-color-midnight-blue);
 }
 
 .md-typeset h2, .md-typeset h3 {
-  font-weight: bold;
-  color: #000000;
+  font-weight: 700;
+  color: var(--brand-color-midnight-blue);
 }
 
 .md-typeset h4, .md-typeset h5, .md-typeset h6 {
-  color: #EB4D00;
+  color: var(--brand-color-burning-orange);
 }
 
 .md-typeset table:not([class]) th {
-  font-family: Montserrat, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #EB4D00;
+  font-weight: 700;
+  background-color: var(--brand-color-burning-orange);
+}
+
+.md-header {
+  background-color: var(--brand-color-midnight-blue);
 }
 
 .md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg,
@@ -170,8 +325,12 @@ h1, h2, h3, h4, button {
   width: auto;
 }
 
+.md-search__input::placeholder {
+  color: #ffffff;
+  opacity: 0.9;
+}
+
 .reading-time {
-  color: rgba(0, 0, 0, 0.75);
-  font-weight: lighter;
+  color: #003b5e;
   font-size: 0.8em;
 }
