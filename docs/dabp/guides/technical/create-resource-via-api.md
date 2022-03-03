@@ -13,12 +13,14 @@ Please note that the access token must be either:
 To create a resource a POST request must be sent to `https://dabp.onegini.com/delegation/api/v2/resources` with a proper request body
 ```
 {
-    "name":"SELL_LIFE_INSURANCE"
+    "name":"SELL_LIFE_INSURANCE",
+    "externalId": "uuid_123",
     "resourceTypeId": <id of existing resource type>
 }
 ```
 
-Due to hierarchical nature of resources all new resources will automatically get added to the root group (so they can be assigned to other groups later). 
+Due to hierarchical nature of resources all new resources will automatically get added to the root group (so they can be assigned to 
+other groups later). 
 
 ## Example request using curl
 
@@ -29,6 +31,7 @@ curl --location --request POST 'https://dabp.onegini.com/delegation/api/v2/resou
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name":"SELL_LIFE_INSURANCE"
+    "externalId": "uuid_123"
     "resourceTypeId": "6a021283-73fd-430d-b0b7-cd42524dde6f"
 }'
 ```
@@ -43,7 +46,7 @@ Here is the detailed description of the create policies endpoint in the OpenApi 
           "Resource API"
         ],
         "summary": "Creates resource",
-        "description": "Creates resource with a name and a resource type",
+        "description": "Creates resource with a name, externalId and a resource type",
         "operationId": "createResource",
         "requestBody": {
           "content": {
@@ -130,6 +133,7 @@ Schema specification:
 ```
 "CreateResourceRequest": {
         "required": [
+          "externalId",
           "name",
           "resourceTypeId"
         ],
@@ -139,11 +143,15 @@ Schema specification:
             "type": "string",
             "description": "Name of the resource"
           },
+          "externalId": {
+            "type": "string",
+            "description": "External identifier of the resource"
+          },
           "resourceTypeId": {
             "type": "string",
             "description": "ID of the resource type it is attached to",
             "format": "uuid"
           }
         }
-      }
+      },
 ```

@@ -8,14 +8,17 @@ Please note that the access token must be either:
 - linked to a person who has the `Add/edit/delete resources and resource types` permission on the root group. The root group is the top-level group.
 - a machine token with `write` scope. For more information about machine tokens see [non personal requests](non-personal-requests.md)  
 
-You can link a resource type to a policy. If you do that, you can only assign resources of that type to groups/members if they also have this policy assigned. In that sense, a policy on a resource type acts as a filter to whom resources of this type will be available. If you create a resource type without a linked policy id, then all resources of this type will be available to all groups and members. 
+You can link a resource type to a policy. If you do that, you can only assign resources of that type to groups/members if they also have 
+this policy assigned. In that sense, a policy on a resource type acts as a filter to whom resources of this type will be available. If you 
+create a resource type without a linked policy id, then all resources of this type will be available to all groups and members. 
 
 To create a resource type a POST request must be sent to `https://dabp.onegini.com/delegation/api/v2/resource-types` with a proper request body
 ```
 {
     "name": "Life portfolio type",
-    "policyId": <policy id needed to access resources of this type [optional]>
-    "availablePrivileges": ["read", "update"]
+    "policyId": <policy id needed to access resources of this type [optional]>,
+    "availablePrivileges": ["read", "update"],
+    "multiValue": <true|false Information if multiple resources of this type can be assigned to single member of the group [optional]>
 }
 ```
 
@@ -47,15 +50,25 @@ Here is the detailed description of the create policies endpoint in the OpenApi 
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateOrUpdateResourceTypeRequest"
+                "$ref": "#/components/schemas/CreateResourceTypeRequest"
               }
             }
           },
           "required": true
         },
         "responses": {
-          "405": {
-            "description": "Method Not Allowed",
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
             "content": {
               "*/*": {
                 "schema": {
@@ -84,16 +97,6 @@ Here is the detailed description of the create policies endpoint in the OpenApi 
               }
             }
           },
-          "400": {
-            "description": "Invalid 'Onegini-Tenant-ID' header",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "example": "Failed to read 'Onegini-Tenant-ID' header. It should be a proper UUID identifier of a tenant."
-                }
-              }
-            }
-          },
           "409": {
             "description": "Conflict",
             "content": {
@@ -104,8 +107,8 @@ Here is the detailed description of the create policies endpoint in the OpenApi 
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
+          "405": {
+            "description": "Method Not Allowed",
             "content": {
               "*/*": {
                 "schema": {
@@ -126,7 +129,7 @@ Here is the detailed description of the create policies endpoint in the OpenApi 
 ```
 Schema specification:
 ```
-"CreateOrUpdateResourceTypeRequest": {
+"CreateResourceTypeRequest": {
         "required": [
           "name"
         ],
@@ -147,6 +150,10 @@ Schema specification:
             "items": {
               "$ref": "#/components/schemas/CreatePrivilegeDto"
             }
+          },
+          "multiValue": {
+            "type": "boolean",
+            "description": "Information if multiple resources of this type can be assigned to single member of the group"
           }
         }
       },
