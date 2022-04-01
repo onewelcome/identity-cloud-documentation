@@ -8,7 +8,7 @@ The base folder in the git repository for DABP should be named `delegation`.
 You can change the colors, theme and favicon of the application by providing proper files in git repository configured in the Self Styling application.
 Supported files:
 
-- palette.json - to customize theme of the application
+- palette.json - to customize theme of the application. Check out our [example palete.json file](./palette-example.md) and [Material UI docs](https://mui.com/customization/palette/) to learn more.
 - logo.svg - to customize logo of the application
 - favicon.ico - to customize favicon of the application
 - translation.json - to change the texts used in the application and emails
