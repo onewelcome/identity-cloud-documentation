@@ -1,6 +1,6 @@
 # Example palette.json for DABP
 
-DABP uses Material UI themes for its styling. Check out the [Material UI palette docs] (https://mui.com/customization/palette/) to learn more. The only customizations allowed are changing colours.
+DABP uses Material UI themes for its styling. Check out the [Material UI palette docs](https://mui.com/customization/palette/) to learn more. The only customizations allowed are changing colours.
 
 The example below shows the most common customization options. A comment is added to explain where the colour is used.
 ```json
