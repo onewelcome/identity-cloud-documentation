@@ -1,7 +1,8 @@
 # Web client configuration
 
-Web clients are often websites or portals that run on a server and use OAuth for authentication. They need to be configured via the admin console. This section
-describes the steps related to configuration of these web clients.
+Web clients are often websites or portals that run on a server and use OAuth for authentication. 
+They may also be used for standalone applications installed on end user computers if they require OAuth authorization.
+They need to be configured via the admin console. This section describes the steps related to configuration of these web clients.
 
 ## Creating a Web Client
 
@@ -9,7 +10,7 @@ In order to create a new web client, Go to the `Configuration` tab of the admini
 On the overview that is shown you can see all the existing web clients.
 
 >**Note:**
->  **Web clients** are meant for web servers. In this case you or a trusted party is managing the hardware on which this web client runs.
+>  **Web clients** are meant for web servers or fat clients. In this case you or a trusted party is managing the hardware on which this web client runs.
 We also reference these as static OAuth clients.
 
 To add a new web client, click on the add button. The following form will appear:
@@ -42,7 +43,7 @@ Fill all the mandatory fields (marked with `*` on the form). The other fields ar
 | Additional audiences              | no       | aud2, https://example.com | A set of case sensitive strings that identifies the audience of the issued access token besides the resource gateways. It is used to populate the `aud` claim in a JWT access token.
 | Default scopes                    | no       |                     | The scopes that are assigned to an authorization request if no scopes are requested. If no scopes are requested by the web client in the authorization request and no defaults specified Onegini Access will fail the request.
 | Additional scopes                 | no       |                     | The scopes the web client is allowed to request apart from the default scopes. The default scopes are also counted as scopes that can be requested by a web client.
-| Identity provider                 | depends  | myIdp               | The identity provider used when a user authenticates for this web client. See the [Identity Provider configuration topic](../general-app-config/identity-providers/identity-providers.md).
+| Identity provider                 | depends  | myIdp               | The identity provider used when a user authenticates for this web client. Normally, this should be a browser based identity provider, but for scenarios where custom registration is used it may be also a custom api based identity provider. See the [Identity Provider configuration topic](../general-app-config/identity-providers/identity-providers.md).
 | Additional Identity provider(s)   | no       | addIdp1, addIdp2    | Additional identity providers that can be used when a user authenticates with this application. A primary must be specified if additional are entered.
 | Logo URI                          | no       |                     | URI of the logo for this web client, it can be used in for example the consent screen.
 | Public base URI                   | no       |                     | When the client has the deprecated Grant type `Validate access token`, it has some URI where it can be reached on. This should be the URI that all paths for calls to this client should start with.
