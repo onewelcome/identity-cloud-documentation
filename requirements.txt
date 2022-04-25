@@ -1,4 +1,4 @@
 mkdocs==1.2.4
 mkdocs-redirects==1.0.3
-mkdocs-material==8.2.5
+mkdocs-material==8.2.10
 mkdocs-drawio-exporter==0.8.0
