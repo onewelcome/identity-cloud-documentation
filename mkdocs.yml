@@ -45,6 +45,7 @@ nav:
               - 'Non-personal requests': dabp/guides/technical/non-personal-requests.md
               - 'Responsibilities of the external system connected to DABP': dabp/guides/technical/external-systems-responsibilities.md
               - 'Using Customer Self Styling for changing looks and behaviour of DABP': dabp/guides/technical/using-ers.md
+              - 'Example palette.json': dabp/guides/technical/palette-example.md
       - 'Identity & Single Sign-On': products/identity-single-sign-on.md
       - 'Mobile Identity & Access':
           - 'Introduction': products/mobile-identity-access.md
