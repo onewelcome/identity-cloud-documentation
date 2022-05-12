@@ -4,6 +4,18 @@ This section contains release notes for Onegini Access.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: NEXT RELEASE
+
+### Features
+* In the authentication response, we now indicate which external IDP was used by the end-user to authenticate. E.g. when a user uses Digid, we fill the `acr` with `urn:com:onegini:saml:idp-alias:digid`.
+
+### Improvement
+* It's now impossible to configure an API based custom authenticator with the PCKE grant type.
+
+### Bug fixes
+* We aligned the `exp` value in our token introspection endpoint with the RFC 7662. It now is an integer timestamp, measured in the number of seconds
+since January 1 1970 UTC. To use this new value, please switch to the v2 of our token introspection endpoint.
+
 ## Release date: 2021-09-14
 
 ### Features
