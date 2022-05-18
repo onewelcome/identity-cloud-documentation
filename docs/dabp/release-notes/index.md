@@ -4,7 +4,7 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
-## Release date: NEXT RELEASE
+## Release date: 2022-05-18
 
 ### Features
 * We extended the [Person Report](../guides/technical/person-report.md) to also include policies on subgroups. This way, consuming applications know which user has access to which groups and no longer need to be aware of the hierarchy.
