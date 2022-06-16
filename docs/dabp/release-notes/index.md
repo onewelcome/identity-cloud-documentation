@@ -4,22 +4,43 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2022-05-18
+
+### Features
+* We extended the [Person Report](../guides/technical/person-report.md) to also include policies on subgroups. This way, consuming applications know which user has access to which groups and no longer need to be aware of the hierarchy.
+
+### Improvements
+* It's now possible to manually overwrite the county code for mobile phone numbers. This allows inviting users outside of Europe. 
+* We improved our internal logging regarding status syncs between our IdP and DABP.
+
 ## Release date: 2021-05-28
+
+### Features
 * Extending the Delegation-API with endpoints for managing policies on members
 * Extending the Delegation-API with endpoints for managing permissions on groups and members
 * Extending the Delegation-API with endpoints for deleting a person
 
 ## Release date: 2021-05-26
-* Fixed an issue with internal communications with other Onegini services
+
+### Features
 * The browser title is now customizable
 
+### Bugs
+* Fixed an issue with internal communications with other Onegini services
+
 ## Release date: 2021-04-28
+
+### Improvements
 * Removing a users last membership will now not remove users identity in CIM
 * Fixed failed login with external IdP (such as AzureAD)
 * Align error message for validation when phone number is rejected in CIM
 
 ## Release date: 2021-04-14
+
+### Features
 * After removing a user from a group, if he is no longer of any group his account will be removed from CIM
+
+### Improvements
 * Translation fixes and improvements
 * Minor UI improvements
 
