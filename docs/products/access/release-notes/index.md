@@ -4,7 +4,7 @@ This section contains release notes for Onegini Access.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
-## Release date: NEXT RELEASE
+## Release date: 2022-06-09
 
 ### Features
 * In the authentication response, we now indicate which external IDP was used by the end-user to authenticate. E.g. when a user uses Digid, we fill the `acr` with `urn:com:onegini:saml:idp-alias:digid`.
