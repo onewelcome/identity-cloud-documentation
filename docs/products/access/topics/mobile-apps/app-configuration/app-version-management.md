@@ -49,6 +49,8 @@ Level `None` is only recommended for development purposes.
 To prevent tampering with the application, for example via byte code manipulation, `Tampering protection` checkbox should be enabled. With tampering protection
 the application has to prove its identity to the Onegini Access in a more strict way.
 
+> **Note:** Tampering protection option for iOS SDK 11+ is deprecated. Use Integrity level FULL and use a new App Signature (App ID) calculated from TeamID and BundleID instead of the one created from the calculator. For more info check [here](https://developer.onewelcome.com/ios/sdk/application-integrity).
+
 When tampering protection is enabled the Application signature has to be a hexadecimal formatted string of 32, 48 or 64 characters. When an Application
 signature contains a `|`, it indicates that it supports multiple architectures, e.g. 32 and 64 bit. Each architecture returns a unique signature for the same
 mobile app version. These parts are combined via the `|` into a single application signature. When tampering protection is enabled, the validation rules apply
