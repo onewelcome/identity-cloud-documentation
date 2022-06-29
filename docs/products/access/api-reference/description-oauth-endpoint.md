@@ -128,6 +128,21 @@ Supported formats for the `language` parameter:
 
 Example use case: the registration flow for the application should present all screens in the same language.
 
+#### hook_context_custom_param.*
+
+This parameter can be used to populate a `contextCustomParams` key value map in the [Onegini Customize Access Token Web Hook](https://docs.onegini.com/products/access/topics/integration-extension/hooks/customize-access-token/customize-access-token-hook/).
+
+Example value: `hook_context_custom_param.key1=val1&hook_context_custom_param.key2=val2&hook_context_custom_param.key2=val3`
+
+This example shows the ability to pass multiple keys: `key1` and `key2`, and multiple values for a single key: `key2` has values `val2` and `val3`. The `contextCustomParams` key value map, for above example value, will have entries:
+
+| Key   | Value             |
+|-------|-------------------|
+| key1  | ["val1"]          |
+| key2  | ["val2", "val3"]  |
+
+Example use-case: integration with `delegated consent` product managed by the `Vinegar` team. 
+
 ### Authorization error extensions
 
 Apart from the standard error parameters provided by the OAuth specification, in some error scenarios additional parameters are returned. These parameters are
