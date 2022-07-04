@@ -130,7 +130,7 @@ Example use case: the registration flow for the application should present all s
 
 #### hook_context_custom_param.*
 
-This parameter can be used to populate a `contextCustomParams` key value map in the [Onegini Customize Access Token Web Hook](https://docs.onegini.com/products/access/topics/integration-extension/hooks/customize-access-token/customize-access-token-hook/).
+This parameter can be used to populate a `contextCustomParams` key value map in the [Onegini Customize Access Token Web Hook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md).
 
 Example value: `hook_context_custom_param.key1=val1&hook_context_custom_param.key2=val2&hook_context_custom_param.key2=val3`
 
@@ -141,7 +141,7 @@ This example shows the ability to pass multiple keys: `key1` and `key2`, and mul
 | key1  | ["val1"]          |
 | key2  | ["val2", "val3"]  |
 
-Example use-case: integration with `delegated consent` product managed by the `Vinegar` team. 
+Example use-case: providing context like 'on_behalf_of', 'on_behalf_of_type' to make integrating with a `Externalised Authorisation` product possible.
 
 ### Authorization error extensions
 
