@@ -14,7 +14,7 @@ The web hook input parameters include:
 - identity of the user (if present)
 - information about the client who was used to request the token
 - set of requested scopes
-- hook context (optional [custom parameters](././././api-reference/description-oauth-endpoint.md)), i.e.: 'on_behalf_of', 'on_behalf_of_type' when integrating with a `Externalised Authorisation` product  
+- hook context (optional [custom parameters](../api-reference/description-oauth-endpoint.md)), i.e.: 'on_behalf_of', 'on_behalf_of_type' when integrating with a `Externalised Authorisation` product  
 
 Based on the above information the web hook is allowed to remove an arbitrary number of the scopes and return additional claims.
 
