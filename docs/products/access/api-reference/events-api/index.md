@@ -13,7 +13,7 @@ It requires an API client with the scope `onegini_api_events` (Events API).
 
 ### Search for events
 
-* Endpoint: `/api/v1/events`
+* Endpoint: `oauth/api/v1/events`
 * Method: GET
 
 Pagination specific request parameters:
