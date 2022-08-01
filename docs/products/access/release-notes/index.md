@@ -4,6 +4,20 @@ This section contains release notes for Onegini Access.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2022-07-06
+
+### Improvement
+* Removed support for the deprecated algorithms `RSA1_5` and `RSA_OAEP`.
+* The generated `Server Public Key` is now visible as text on the mobile app's configuration page.
+
+### Improvement
+* Fixed an issue that caused exceptions when making calls to our caching database.
+
+## Release date: 2022-06-29
+
+### Features
+* It is now possible to add an [extra param `hook_context_custom_param.*`](../api-reference/description-oauth-endpoint.md) to the authorization endpoint. This param is then available in the [Onegini Customize Access Token Web Hook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md) as context.
+
 ## Release date: 2022-06-09
 
 ### Features
