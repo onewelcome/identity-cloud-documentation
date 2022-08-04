@@ -23,8 +23,9 @@ When `Mobile authentication` is not visible, you must enable it as a feature in 
 ## Configuration for Callback endpoints
 
 The configuration for Callback endpoints serves two purposes:
-1. Restrictions: if the option `Only allow preconfigured Callback URLs` is enabled in the Mobile config, the mobile authentication will only succeed when the 
-callback URL in the request matches one of the preconfigured Callback URLs.
+
+1. Restrictions: if the option `Only allow preconfigured Callback URLs` is enabled in the Mobile config, the mobile authentication will only
+   succeed when the callback URL in the request matches one of the preconfigured Callback URLs.
 2. Authentication: configuration of the credentials for basic authentication on the callback endpoint.
 
 ![Callback Config](img/mobile-config-callback-config.png)

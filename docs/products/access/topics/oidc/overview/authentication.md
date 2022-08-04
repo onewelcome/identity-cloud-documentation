@@ -4,13 +4,15 @@ This page describes the authentication flows to obtain an ID token and/or an acc
 
 ## Authorization Code Flow
 The Authorization code flow is an extension of the OAuth 2.0 authorization code flow. 
-1. The Relying Party (RP) obtains the Authorization Code from the 
-[authorization endpoint](../../../api-reference/description-oauth-endpoint.md#authorization-endpoint) using a front-channel (e.g. via a web browser). 
-2. The RP exchanges this code at the [token endpoint](../../../api-reference/description-oauth-endpoint.md#token-endpoint) for an access token and/or an ID 
-token. An RP that is capable of storing secrets securely will do this via the back-channel, with an authenticated request to the token endpoint. RPs that cannot store 
-secrets securely, e.g. a single page app in the browser, will call the token endpoint, and use [Proof Key for Code Exchange](https://tools.ietf.org/html/rfc7636) 
-(PKCE).
- 
+
+1. The Relying Party (RP) obtains the Authorization Code from the
+   [authorization endpoint](../../../api-reference/description-oauth-endpoint.md#authorization-endpoint) using a front-channel (e.g. via a
+   web browser).
+2. The RP exchanges this code at the [token endpoint](../../../api-reference/description-oauth-endpoint.md#token-endpoint) for an access
+   token and/or an ID token. An RP that is capable of storing secrets securely will do this via the back-channel, with an authenticated
+   request to the token endpoint. RPs that cannot store secrets securely, e.g. a single page app in the browser, will call the token
+   endpoint, and use [Proof Key for Code Exchange](https://tools.ietf.org/html/rfc7636) (PKCE).
+
 In order to obtain the ID Token in this flow, make sure the web client has the grant type `Authorization Code` and the scope `openid` configured. Create an
  OAuth authorization request with the [scope](scopes-and-claims.md) `openid`.
  

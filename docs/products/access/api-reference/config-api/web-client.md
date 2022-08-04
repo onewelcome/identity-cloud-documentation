@@ -384,9 +384,9 @@ One of the following responses will be returned, containing a JSON object with a
 
 Some fields are references to other parts in the configuration of Onegini Access. This API can only refer to existing identifiers for the following:
 
-  * Resource gateways
-  * Identity Providers (both primary and additional)
-  * Scopes (both default and additional)
-  * Template Set
+* Resource gateways
+* Identity Providers (both primary and additional)
+* Scopes (both default and additional)
+* Template Set
 
 When an unknown identifier is passed, this API returns an HTTP status code 400 with error code invalid_request.
