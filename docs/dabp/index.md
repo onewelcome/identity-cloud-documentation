@@ -3,9 +3,9 @@ Our Delegated Administration for Business Partners (DABP) tool lets you assign j
 
 It works as follows:
 
-1.  You (the administrator) create an account for a distribution partner (a superuser) and assign products to their account.
-2.  The superuser then creates accounts for each relevant employee to give them access to your system (the users).
-3.  The superuser will set up different roles with corresponding access authorizations and responsibilities, and assign them to the users.
+1. You (the administrator) create an account for a distribution partner (a superuser) and assign products to their account.
+2. The superuser then creates accounts for each relevant employee to give them access to your system (the users).
+3. The superuser will set up different roles with corresponding access authorizations and responsibilities, and assign them to the users.
 
 This system allows your distribution partners to take care of their own user management, assign duties and responsibilities and keep up with internal changes (employees leaving, getting promoted, getting certified, reorganizations, etc.). This will significantly lighten the load on your B2B support center.
 

@@ -9,9 +9,10 @@ They need to be configured via the admin console. This section describes the ste
 In order to create a new web client, Go to the `Configuration` tab of the administration console and click the `Web Clients` tab.
 On the overview that is shown you can see all the existing web clients.
 
->**Note:**
->  **Web clients** are meant for web servers or fat clients. In this case you or a trusted party is managing the hardware on which this web client runs.
-We also reference these as static OAuth clients.
+!!! Note
+
+    **Web clients** are meant for web servers or fat clients. In this case you or a trusted party is managing the hardware on which this web client runs.
+    We also reference these as static OAuth clients.
 
 To add a new web client, click on the add button. The following form will appear:
 
