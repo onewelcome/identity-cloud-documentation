@@ -42,8 +42,8 @@ Cache-Control: no-store
 Pragma: no-cache
 
 {
-   "transaction_id": "123123"   //something unique, should be passed with complete step
-   "data": "12349876"           // e.g. a challenge code.
+   "transaction_id": "123123",   //something unique, should be passed with complete step
+   "data": "12349876",           // e.g. a challenge code.
    "status": 2000
 }
 ```
