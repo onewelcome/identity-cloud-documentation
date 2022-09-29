@@ -48,7 +48,7 @@ Pragma: no-cache
 }
 ```
 
-In the event of an error in the Access Service, one of the following [error codes](#token-server-error-codes) will be returned.
+In the event of an error in the Access Service, one of the following [error codes](#server-error-codes) will be returned.
 
 It is up to the scripts executed by the XE to determine if the request was successful or not when everything looks fine for the Access Service. For all these
 scenarios, a 200 OK JSON response returned to the SDK which contains:
@@ -111,10 +111,11 @@ Pragma: no-cache
 }
 ```
 
-In the event of an error in the Access Service, one of the following [error codes](#token-server-error-codes) will be returned.
+In the event of an error in the Access Service, one of the following [error codes](#server-error-codes) will be returned.
 
 Additional error code for this endpoint:
 
+## Server error codes
 | Status code | Error code      | Description                                           |
 |-------------|-----------------|-------------------------------------------------------|
 | 400         | invalid_scope   | The requested scope is invalid, unknown or malformed. |
