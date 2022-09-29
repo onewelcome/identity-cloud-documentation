@@ -1,4 +1,4 @@
-# Custom Registration v1
+# Custom Registration v2
 
 ## Authentication
 
