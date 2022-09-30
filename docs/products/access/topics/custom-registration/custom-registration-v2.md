@@ -47,13 +47,13 @@ Cache-Control: no-store
 Pragma: no-cache
 
 {
-   "transaction_id": "123123"   //something unique, should be passed with complete step
-   "data": "12349876"           // e.g. a challenge code.
-   "status": 2000
+   "transaction_id": "123123",   //something unique, should be passed with complete step
+   "data": "12349876",           // e.g. a challenge code.
+   "status": 2000,
 }
 ```
 
-In the event of an error in the Access Service, one of the following [error codes](#token-server-error-codes) will be returned.
+In the event of an error in the Access Service, one of the following [error codes](#server-error-codes) will be returned.
 
 It is up to the scripts executed by the XE to determine if the request was successful or not when everything looks fine for the Access Service. For all these
 scenarios, a 200 OK JSON response returned to the SDK which contains:
@@ -94,7 +94,7 @@ Content-Type: application/json
      eyJpc3Mi[...omitted for brevity...].
      cC4hiUPo[...omitted for brevity...]",
   "transaction_id": "123123",
-  "profile_id": "123efg"
+  "profile_id": "123efg",
   "data": "{\"custom_json_key\":\"custom_ json data\"}",      //optional, e.g. challenge code response
   "scope": ["read", "write"],
 }
@@ -121,7 +121,7 @@ Pragma: no-cache
 ```
 
 In the event of an error in the Access Service, one of the following error codes will be returned:
-
+## Server error codes
 | Status code | Error code             | Description                                                                                                                   |
 |-------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | 400         | invalid_request        | Missing required parameter or the request is not correctly formatted.                                                         |

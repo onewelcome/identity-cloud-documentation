@@ -85,7 +85,7 @@ Authentication: Basic Y2xpZW50OnNlY3JldA==
 
 {
   "transaction_id": "123123",
-  "profile_id": "123efg"
+  "profile_id": "123efg",
   "data": "{\"custom_json_key\":\"custom_ json data\"}",      //optional, e.g. challenge code response
   "scope": ["read", "write"],
 }
