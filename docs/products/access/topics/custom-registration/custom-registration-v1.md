@@ -131,3 +131,13 @@ scenarios, a `200 OK` JSON response returned to the SDK which contains:
 | `profile_id`    | Profile Id of the user                                                                                    |
 | `data`          | Raw response coming from the script engine.                                                               |
 | `status`        | Status indicating whether the request was successful. See [status codes](#extension-engine-status-codes). |
+
+## Extension engine status codes
+| Param                        | Value  |
+|------------------------------|--------|
+| `VALID_STATUS_MIN`           | 2000   |
+| `VALID_STATUS_MAX`           | 2999   |
+| `RETRY_STATUS_MIN`           | 4000   |
+| `RETRY_STATUS_MAX`           | 4999   |
+| `UNRECOVERABLE_STATUS_MIN`   | 5000   |
+| `UNRECOVERABLE_STATUS_MAX`   | 5999   |
