@@ -104,6 +104,8 @@ Pragma: no-cache
         "token_type": "bearer",
         "access_token": "8A5AB83A3C6B7AAC41471C1205167A35E0F9281ED277EE2FDE6E8DE30972936D",
         "refresh_token": "8CAE26B2B8E8EC18B4D432886448C7F99B558063C517BA41F30966B37C104983",
+        "secondary_refresh_token": "8CAE26B2B8E8EC18B4D432886448C7F99B554063C517BA41F30916B57C104983",
+        "token_id": "FDS2FDSC1EWS",
         "expires_in": 3600,
         "profile_id": "abc123"
     },
@@ -124,14 +126,18 @@ Additional error code for this endpoint:
 It is up to the script's execution in the XE to determine if the request was successful or not when everything looks fine for the Access Service. For all these
 scenarios, a `200 OK` JSON response returned to the SDK which contains:
 
-| Param           | Description                                                                                               |
-|-----------------|-----------------------------------------------------------------------------------------------------------|
-| `access_token`  | Access token generated after successful completion of step.                                               |
-| `refresh_token` | Refresh token generated after successful completion of step.                                              |
-| `profile_id`    | Profile Id of the user                                                                                    |
-| `data`          | Raw response coming from the script engine.                                                               |
-| `status`        | Status indicating whether the request was successful. See [status codes](#extension-engine-status-codes). |
-
+| Param                     | Description                                                                                               |
+|---------------------------|-----------------------------------------------------------------------------------------------------------|
+| `access_token`            | Access token generated after successful completion of step.                                               |
+| `refresh_token`           | Refresh token generated after successful completion of step.                                              |
+| `secondary_refresh_token` | Secondary refresh token.                                                                                  |
+| `expires_in`              | Time until expiration                                                                                     |
+| `token_type`              | Token type                                                                                                |
+| `id_token`                | Token Id if the scope doesn't have openId                                                                 |
+| `profile_id`              | Profile Id of the user if the client type is not STATIC                                                   |
+| `data`                    | Raw response coming from the script engine.                                                               |
+| `status`                  | Status indicating whether the request was successful. See [status codes](#extension-engine-status-codes). |
+                                                                                                                                                                       
 ## Extension engine status codes
 | Param                        | Value  |
 |------------------------------|--------|
