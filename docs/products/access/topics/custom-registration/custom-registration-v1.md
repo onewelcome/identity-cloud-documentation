@@ -129,7 +129,7 @@ scenarios, a `200 OK` JSON response returned to the SDK which contains:
 | Param                     | Description                                                                                               |
 |---------------------------|-----------------------------------------------------------------------------------------------------------|
 | `access_token`            | Access token generated after successful completion of step.                                               |
-| `refresh_token`           | Refresh token generated after successful completion of step.                                              |
+| `refresh_token`           | Refresh token generated after successful completion of step and client has them enabled.                  |
 | `secondary_refresh_token` | Secondary refresh token.                                                                                  |
 | `expires_in`              | Time until expiration                                                                                     |
 | `token_type`              | Token type                                                                                                |
