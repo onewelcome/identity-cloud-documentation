@@ -3,7 +3,7 @@
 ## Authentication
 
 This endpoint requires the client to provide the Client Authentication in the form of a PrivateKeyJWT 
-(`urn:ietf:params:oauth:client-assertion-type:jwt-bearer`) assertion.
+(`urn:ietf:params:oauth:client-assertion-type:jwt-bearer`) assertion, for more info read [authentication methods](../../topics/authentication-methods/authentication-methods.md).
 
 ## Init Step
 The Init Step is only used for the `TWO_STEP` flow. The `ONE_STEP` flow uses the Complete Step.
