@@ -15,9 +15,9 @@ This returns configuration of a given Scope.
 
 Path parameters:
 
-| Param | Required | Description
-|-------|----------|--------------------------------
-| scope | yes      | Unique identifier of the Scope. 
+| Param | Required | Description                     |
+|-------|----------|---------------------------------|
+| scope | yes      | Unique identifier of the Scope. |
 
 Example request:
 
@@ -59,15 +59,15 @@ This creates a Scope from scratch
 
 JSON body parameters:
 
-| Param                        | Required | Example                       | Description
-|------------------------------|----------|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| scope_id                     | yes      | "openid"                      |  Scope identifier. At most 20 characters: letters (a-z, A-Z), digits (0-9), underscores (_) and hyphens (-) permitted.
-| authentication_level         | no       | 0                             |  Authentication level. If not provided defaults to 0. The Required authentication level of the user. If the Authentication level doesn't match, the user will be redirected to the configured authentication server.
-| usage_limit                  | no       | 0                             |  Usage limit. If not provided defaults to 0. The number of times an Access token for this Scope can be used. When the value is 0, the Access token usage is unlimited.
-| service_endpoint             | no       | "https://onegini.example.com" |  Service endpoint. If not provided defaults to null.
-| verification_failed_endpoint | no       | "https://onegini.example.com" |  Verification failed endpoint. If not provided defaults to null.
-| persistent_consent           | no       | true                          |  Persistent consent. If not provided defaults to false. When true, the user has to give Consent for this Scope during only the first Authorization request. When false, the User has to give Consent for every Authorization request with this Scope.
-| descriptions                 | no       | { "en": "openid" }            |  Descriptions. If not provided, no descriptions will be stored.
+| Param                        | Required | Example                       | Description                                                                                                                                                                                                                                          |
+|------------------------------|----------|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| scope_id                     | yes      | "openid"                      | Scope identifier. At most 20 characters: letters (a-z, A-Z), digits (0-9), underscores (_) and hyphens (-) permitted.                                                                                                                                |
+| authentication_level         | no       | 0                             | Authentication level. If not provided defaults to 0. The Required authentication level of the user. If the Authentication level doesn't match, the user will be redirected to the configured authentication server.                                  |
+| usage_limit                  | no       | 0                             | Usage limit. If not provided defaults to 0. The number of times an Access token for this Scope can be used. When the value is 0, the Access token usage is unlimited.                                                                                |
+| service_endpoint             | no       | "https://onegini.example.com" | Service endpoint. If not provided defaults to null.                                                                                                                                                                                                  |
+| verification_failed_endpoint | no       | "https://onegini.example.com" | Verification failed endpoint. If not provided defaults to null.                                                                                                                                                                                      |
+| persistent_consent           | no       | true                          | Persistent consent. If not provided defaults to false. When true, the user has to give Consent for this Scope during only the first Authorization request. When false, the User has to give Consent for every Authorization request with this Scope. |
+| descriptions                 | no       | { "en": "openid" }            | Descriptions. If not provided, no descriptions will be stored.                                                                                                                                                                                       |
 
 Example request:
 
@@ -103,24 +103,24 @@ Some fields can be updated after creating a Scope
 
 Path parameters:
 
-| Param | Required | Description
-|-------|----------|---------------------------------
-| scope | yes      | Unique identifier of the Scope.
+| Param | Required | Description                      |
+|-------|----------|----------------------------------|
+| scope | yes      | Unique identifier of the Scope.  |
 
 
 JSON body parameters:
 
 Fields that are sent in the request will be changed to new value. Fields that are not sent will be reset to default values.
 
-| Param                        | Required | Example                       | Description
-|------------------------------|----------|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| scope_id                     | yes      | "openid"                      |  Scope identifier. At most 20 characters: letters (a-z, A-Z), digits (0-9), underscores (_) and hyphens (-) permitted.
-| authentication_level         | no       | 0                             |  Authentication level. If not provided defaults to 0. The Required authentication level of the user. If the Authentication level doesn't match, the user will be redirected to the configured authentication server.
-| usage_limit                  | no       | 0                             |  Usage limit. If not provided defaults to 0. The number of times an Access token for this Scope can be used. When the value is 0, the Access token usage is unlimited.
-| service_endpoint             | no       | "https://onegini.example.com" |  Service endpoint. If not provided defaults to null.
-| verification_failed_endpoint | no       | "https://onegini.example.com" |  Verification failed endpoint. If not provided defaults to null.
-| persistent_consent           | no       | true                          |  Persistent consent. If not provided defaults to false. When true, the user has to give Consent for this Scope during only the first Authorization request. When false, the User has to give Consent for every Authorization request with this Scope.
-| descriptions                 | no       | { "en": "openid" }            |  Descriptions. If not provided, no descriptions will be stored.
+| Param                        | Required | Example                       | Description                                                                                                                                                                                                                                          |
+|------------------------------|----------|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| scope_id                     | yes      | "openid"                      | Scope identifier. At most 20 characters: letters (a-z, A-Z), digits (0-9), underscores (_) and hyphens (-) permitted.                                                                                                                                |
+| authentication_level         | no       | 0                             | Authentication level. If not provided defaults to 0. The Required authentication level of the user. If the Authentication level doesn't match, the user will be redirected to the configured authentication server.                                  |
+| usage_limit                  | no       | 0                             | Usage limit. If not provided defaults to 0. The number of times an Access token for this Scope can be used. When the value is 0, the Access token usage is unlimited.                                                                                |
+| service_endpoint             | no       | "https://onegini.example.com" | Service endpoint. If not provided defaults to null.                                                                                                                                                                                                  |
+| verification_failed_endpoint | no       | "https://onegini.example.com" | Verification failed endpoint. If not provided defaults to null.                                                                                                                                                                                      |
+| persistent_consent           | no       | true                          | Persistent consent. If not provided defaults to false. When true, the user has to give Consent for this Scope during only the first Authorization request. When false, the User has to give Consent for every Authorization request with this Scope. |
+| descriptions                 | no       | { "en": "openid" }            | Descriptions. If not provided, no descriptions will be stored.                                                                                                                                                                                       |
 
 Example request:
 
@@ -159,9 +159,9 @@ This removes a Scope.
 
 Path parameters:
 
-| Param | Required | Description
-|-------|----------|--------------------------------
-| scope | yes      | Unique identifier of the Scope.
+| Param | Required | Description                      |
+|-------|----------|----------------------------------|
+| scope | yes      | Unique identifier of the Scope.  |
 
 
 Example request:
@@ -184,10 +184,10 @@ Pragma: no-cache
 
 One of the following responses will be returned, containing a JSON object with an error code, a message and details about the error.
 
-| HTTP status | Error code                       | Message
-|-------------|----------------------------------|---------------------------------------------------------------------------------------------------------
-| 400         | invalid_request                  | One or more parameters is missing or incorrect. The details contain the missing or incorrect parameters.
-| 401         | unauthorized                     | Provide valid credentials to get access to the API.
-| 403         | forbidden                        | Operation is not allowed for the current user.
-| 404         | not_found                        | Scope configuration cannot be found 
-| 409         | conflict                         | The Scope already exists
+| HTTP status | Error code                       | Message                                                                                                  |
+|-------------|----------------------------------|----------------------------------------------------------------------------------------------------------|
+| 400         | invalid_request                  | One or more parameters is missing or incorrect. The details contain the missing or incorrect parameters. |
+| 401         | unauthorized                     | Provide valid credentials to get access to the API.                                                      |
+| 403         | forbidden                        | Operation is not allowed for the current user.                                                           |
+| 404         | not_found                        | Scope configuration cannot be found                                                                      |
+| 409         | conflict                         | The Scope already exists                                                                                 |
