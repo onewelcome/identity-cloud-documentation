@@ -22,8 +22,8 @@ JSON body parameters:
 |---------|-----------|--------------------------------------------------------------------------------------|
 | `data`  | no        | Raw registration request data which will be provided to the Onegini Extension Engine |
 
-This endpoint requires valid API client credentials provided via basic authentication or via url encoded form.
-It requires the API Client have the `User Registration` scope.
+This endpoint requires valid API client credentials provided via basic authentication. It requires the API Client have
+the `User Registration` scope.
 
 Example request using `ExampleId` for the identity provider id:
 
