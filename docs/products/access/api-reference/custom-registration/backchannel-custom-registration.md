@@ -1,7 +1,5 @@
 # Custom Registration Backchannel Communication API
 
-### Backchannel Communication
-
 With a [custom API Identity Provider](../../topics/custom-registration/index.md), you may wish to execute some logic or store some data that
 will be utilized
 during user registration via a server that is outside the scope of a mobile application. You can use this endpoint to execute a custom
