@@ -2,7 +2,7 @@
 
 ## Authentication
 
-These endpoints require HTTP Basic Authentication or url encoded form with the Client Credentials of the Client that
+These endpoints require HTTP Basic Authentication with the Client Credentials of the Client that
 triggers the Custom Registration.
 
 ## Init Request
