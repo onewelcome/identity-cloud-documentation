@@ -6,6 +6,13 @@ This endpoint requires the client to provide the Client Authentication in the fo
 (`urn:ietf:params:oauth:client-assertion-type:jwt-bearer`) assertion, for more info
 read [authentication methods](../../topics/authentication-methods/authentication-methods.md).
 
+This API has specific demands for the PrivateKeyJWT authentication:
+
+* The JWT must be signed with algorithm `ES256`.
+* Its key identifier must be present as `kid` in the header of the JWT.
+* The signature is verified. Configure the public key or the JWKs endpoint in
+  the [client configuration](../../topics/web-clients/web-client-configuration.md).
+
 ## Init Step
 
 The Init Step is only used for the `TWO_STEP` flow. The `ONE_STEP` flow uses the Complete Step.
@@ -15,8 +22,6 @@ Endpoint: `POST /oauth/v2/custom-registration/{idp}/init`
 | Parameter | Description                  |
 |-----------|------------------------------|
 | `idp`     | Identity provider identifier |
-
-!!! info
 
 JSON body parameters:
 
@@ -62,11 +67,11 @@ In the event of an error in the Access Service, one of the following [error code
 It is up to the scripts executed by the Extension Engine to determine if the request was successful or not when everything looks fine for
 the Access Service. For all these scenarios, a 200 OK JSON response returned to the SDK which contains:
 
-| Param            | Description                                                                                              |
-|------------------|----------------------------------------------------------------------------------------------------------|
-| `transaction_id` | Generated in **Init step**. For TWO_STEP, ensures same transaction                                       |
-| `data`           | Raw response coming from the script engine                                                               |
-| `status`         | Status indicating whether the request was successful. See [status codes](#extension-engine-status-codes) |
+| Param            | Description                                                                                                          |
+|------------------|----------------------------------------------------------------------------------------------------------------------|
+| `transaction_id` | Generated in the **Init step**. For TWO_STEP, this transaction identifier ensures that the same transaction is used. |
+| `data`           | Raw response coming from the script engine.                                                                          |
+| `status`         | Status indicating whether the request was successful. See [status codes](#extension-engine-status-codes).            |
 
 ## Complete Step
 
@@ -134,15 +139,13 @@ In the event of an error in the Access Service, one of the following error codes
 | 400         | invalid_request        | Missing required parameter or the request is not correctly formatted.                                                         |
 | 400         | invalid_request        | Client authentication missing or not supported                                                                                |
 | 400         | invalid_scope          | The requested scope is invalid, unknown or malformed.                                                                         |
-| 400         | invalid_profile        | The specified profile is invalid.                                                                                             |
 | 400         | invalid_transaction    | The transaction is invalid or has expired                                                                                     |
 | 400         | invalid_client         | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). |
 | 403         | idp_disabled           | The specified IdP is disabled.                                                                                                |
 | 404         | invalid_idp_identifier | The specified IdP does not exist.                                                                                             |
 
-It is up to the scripts execution in the XE to determine if the request was successful or not when everything looks fine for the Access
-Service. For all these
-scenarios, a `200 OK` JSON response is returned to the SDK which contains:
+It is up to the scripts execution in the Extension Engine to determine if the request was successful or not when everything looks fine for
+the Access Service. For all these scenarios, a `200 OK` JSON response is returned to the SDK which contains:
 
 | Param                     | Description                                                                                               |
 |---------------------------|-----------------------------------------------------------------------------------------------------------|
