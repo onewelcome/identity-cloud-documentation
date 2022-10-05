@@ -129,7 +129,7 @@ In the event of an error in the Access Service, one of the following error codes
 | 400         | invalid_request        | Missing required parameter or the request is not correctly formatted.                                                         |
 | 400         | invalid_request        | Client authentication missing or not supported                                                                                |
 | 400         | invalid_scope          | The requested scope is invalid, unknown or malformed.                                                                         |
-| 400         | invalid_profile        | The specified profile is invalid.                                                                                             |
+| 400         | invalid_profile        | Provided profile id is not valid for the specified client.                                                                    |
 | 400         | invalid_transaction    | The transaction is invalid or has expired                                                                                     |
 | 400         | invalid_client         | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). |
 | 403         | idp_disabled           | The specified IdP is disabled.                                                                                                |
