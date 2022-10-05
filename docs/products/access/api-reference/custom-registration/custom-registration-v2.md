@@ -133,7 +133,6 @@ Pragma: no-cache
 In the event of an error in the Access Service, one of the following error codes will be returned:
 
 ## Server error codes
-
 | Status code | Error code             | Description                                                                                                                   |
 |-------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | 400         | invalid_request        | Missing required parameter or the request is not correctly formatted.                                                         |
