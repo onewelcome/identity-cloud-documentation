@@ -149,7 +149,10 @@ nav:
                   - 'Introduction': products/access/api-reference/mobile-authentication/index.md
                   - 'API version 4': products/access/api-reference/mobile-authentication/mobile-authentication-v4.md
                   - 'API version 3': products/access/api-reference/mobile-authentication/mobile-authentication-v3.md
-              - 'Custom Registration Backchannel': products/access/api-reference/backchannel-custom-registration.md
+              - Custom Registration:
+                  - 'Backchannel': products/access/api-reference/custom-registration/backchannel-custom-registration.md
+                  - 'API version 2': products/access/api-reference/custom-registration/custom-registration-v2.md
+                  - 'API version 1': products/access/api-reference/custom-registration/custom-registration-v1.md
               - 'Admin API':
                   - 'Introduction': products/access/api-reference/admin-api/index.md
                   - 'API Client': products/access/api-reference/admin-api/api-client.md
