@@ -117,6 +117,7 @@ In the event of an error in the Access Service, one of the following [error code
 Additional error code for this endpoint:
 
 ## Server error codes
+
 | Status code | Error code             | Description                                                           |
 |-------------|------------------------|-----------------------------------------------------------------------|
 | 400         | invalid_request        | Missing required parameter or the request is not correctly formatted. |
@@ -125,7 +126,6 @@ Additional error code for this endpoint:
 | 400         | invalid_client         | Not a valid client.                                                   |
 | 400         | invalid_transaction    | The transaction is invalid or has expired                             |
 | 400         | invalid_scope          | The requested scope is invalid, unknown or malformed.                 |
-
 
 It is up to the script's execution in the Extension Engine to determine if the request was successful or not when everything looks fine for
 the Access Service. For all these scenarios, a `200 OK` JSON response returned to the SDK which contains:
