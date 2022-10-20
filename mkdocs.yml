@@ -117,9 +117,9 @@ nav:
                   - 'Introduction': products/access/topics/integration-extension/index.md
                   - 'Configure Scope Verification Service': products/access/topics/integration-extension/scope-verification/scope-verification.md
                   - 'Web Hooks':
-                        - 'Introduction': products/access/topics/integration-extension/hooks/index.md
-                        - 'User Details Customization': products/access/topics/integration-extension/hooks/customize-user-details/customize-user-details-hook.md
-                        - 'Access Token Customization': products/access/topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md
+                      - 'Introduction': products/access/topics/integration-extension/hooks/index.md
+                      - 'User Details Customization': products/access/topics/integration-extension/hooks/customize-user-details/customize-user-details-hook.md
+                      - 'Access Token Customization': products/access/topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md
               - 'Look and Feel':
                   - 'Introduction': products/access/topics/look-and-feel/index.md
                   - 'Templates': products/access/topics/look-and-feel/templates/templates.md
@@ -130,8 +130,8 @@ nav:
                   - 'DUM Engine Configuration': products/access/topics/dum-report/dum-engine-configuration.md
               - 'OneSee security events': products/access/topics/aws/onesee-events.md
           - 'Mobile SDKs':
-                - 'Android SDK': 'https://docs.onegini.com/projects/android-sdk/en/stable/'
-                - 'iOS SDK': 'https://docs-single-tenant.onegini.com/msp/stable/ios-sdk/'
+              - 'Android SDK': 'https://developer.onewelcome.com/android/android-sdk/'
+              - 'iOS SDK': 'https://docs-single-tenant.onegini.com/msp/stable/ios-sdk/'
           - 'API Reference':
               - 'Introduction': products/access/api-reference/index.md
               - 'OAuth endpoints': products/access/api-reference/description-oauth-endpoint.md
@@ -149,7 +149,10 @@ nav:
                   - 'Introduction': products/access/api-reference/mobile-authentication/index.md
                   - 'API version 4': products/access/api-reference/mobile-authentication/mobile-authentication-v4.md
                   - 'API version 3': products/access/api-reference/mobile-authentication/mobile-authentication-v3.md
-              - 'Custom Registration Backchannel': products/access/api-reference/backchannel-custom-registration.md
+              - Custom Registration:
+                  - 'Backchannel': products/access/api-reference/custom-registration/backchannel-custom-registration.md
+                  - 'API version 2': products/access/api-reference/custom-registration/custom-registration-v2.md
+                  - 'API version 1': products/access/api-reference/custom-registration/custom-registration-v1.md
               - 'Admin API':
                   - 'Introduction': products/access/api-reference/admin-api/index.md
                   - 'API Client': products/access/api-reference/admin-api/api-client.md
@@ -190,7 +193,6 @@ extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
-  - https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js
   - javascripts/reading-time.js
   - javascripts/mermaid-config.js
   - javascripts/mermaid-custom-loader.js
@@ -211,3 +213,11 @@ extra:
       link: https://twitter.com/OneWelcome
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/onewelcome/
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

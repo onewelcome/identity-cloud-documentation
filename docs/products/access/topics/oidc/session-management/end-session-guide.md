@@ -25,21 +25,23 @@ can configure a Front-Channel logout URI in the admin console. This URI will be 
 `GET` request towards a particular URI. This is most commonly used to help with Single Logout (SLO) in the Relying Party's application(s).
 
 
-## Diagram of flow
-**RP logout + Front Channel (3 RPs)**
-![RP logout + Front Channel (3 RPs)](img/FrontChannel.png)
+## Flow diagram
+
+![RP logout + Front Channel (3 Relying Parties)](img/FrontChannel.png)  
+_RP logout + Front Channel (3 Relying Parties)_
 
 The steps described below occur only once the session has already been established at the RP and OP.
 
 1. End user wishes to logout and clicks a logout link for RP1 (or any of them).
 2. User agent triggers the end session url on the OP
-  * It should be triggered with at least an `id_token_hint` and optionally a `post_logout_redirect_uri`. It should be included if the User Agent wishes 
-to redirect to a specific URI after a successful logout.
-3. OP invalidates its own session which links to all three RP's in it. 
+    * It should be triggered with at least an `id_token_hint` and optionally a `post_logout_redirect_uri`. It should be included if the User
+      Agent wishes to redirect to a specific URI after a successful logout.
+3. OP invalidates its own session which links to all three RP's in it.
 4. OP generates a logout page that contains an iFrame for each RP that was in that particular session and returns it to the User Agent.
-5. User Agent renders the logout page which triggers requests to the RPs to invalidate the sessions. RP's should have a reachable URIs which trigger an end in
-the session on the RP.
+5. User Agent renders the logout page which triggers requests to the RPs to invalidate the sessions. RP's should have a reachable URIs which
+   trigger an end in the session on the RP.
 6. Each RP receives the request independently, destroys its own session, and clean up cookies/storage
-7. User Agent displays a successfully logged out page or has redirected to another page based on the `post_logout_redirect_uri` that was specified in step 1.
+7. User Agent displays a successfully logged out page or has redirected to another page based on the `post_logout_redirect_uri` that was
+   specified in step 1.
 
 To see an example of the html, refer to the [End Session API](../../../api-reference/oidc/session-management/end-session.md#front-channel-logout-support).
