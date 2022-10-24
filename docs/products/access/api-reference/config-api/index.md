@@ -14,4 +14,5 @@ It requires an API client with the scope `onegini_api_config` (Config API).
 * [Applications](applications/index.md)
     * [Application versions](applications/application-version-api.md)
 * [Identity Providers](identity-provider-api.md)
+* [Scopes](scope.md)
 * [Web Client](web-client.md)

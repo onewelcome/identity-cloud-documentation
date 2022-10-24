@@ -2,7 +2,7 @@
 
 This allows the creation of new Scopes via a REST API. It can be utilized in scripts to add many scopes at once, edit or delete them.
 
-All endpoints are protected with API client using either Client Secret Basic authentication method. It requires an API client with the scope `onegini_api_config` (Config API).
+All endpoints are protected with API client credentials (either client secret basic or private key JWT depending on the client [authentication method](../../topics/authentication-methods/authentication-methods.md)). It requires an API client with the scope `onegini_api_config` (Config API).
 
 ## Endpoints
 
@@ -23,7 +23,7 @@ Example request:
 
 ```http
 GET /api/v1/configuration/scopes/openid HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 ```
 
 Example success response:
@@ -73,7 +73,7 @@ Example request:
 
 ```http
 POST /api/v1/configuration/scopes HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 Content-Type: application/json
 {
   "scope_id": "insurance"
@@ -117,8 +117,8 @@ Fields that are sent in the request will be changed to new value. Fields that ar
 | scope_id                     | yes      | "openid"                      | Scope identifier. At most 20 characters: letters (a-z, A-Z), digits (0-9), underscores (_) and hyphens (-) permitted.                                                                                                                                |
 | authentication_level         | no       | 0                             | Authentication level. If not provided defaults to 0. The Required authentication level of the user. If the Authentication level doesn't match, the user will be redirected to the configured authentication server.                                  |
 | usage_limit                  | no       | 0                             | Usage limit. If not provided defaults to 0. The number of times an Access token for this Scope can be used. When the value is 0, the Access token usage is unlimited.                                                                                |
-| service_endpoint             | no       | "https://onegini.example.com" | Service endpoint. If not provided defaults to null.                                                                                                                                                                                                  |
-| verification_failed_endpoint | no       | "https://onegini.example.com" | Verification failed endpoint. If not provided defaults to null.                                                                                                                                                                                      |
+| service_endpoint             | no       | "https://onewelcome.example.com" | Service endpoint. If not provided defaults to null.                                                                                                                                                                                                  |
+| verification_failed_endpoint | no       | "https://onewelcome.example.com" | Verification failed endpoint. If not provided defaults to null.                                                                                                                                                                                      |
 | persistent_consent           | no       | true                          | Persistent consent. If not provided defaults to false. When true, the user has to give Consent for this Scope during only the first Authorization request. When false, the User has to give Consent for every Authorization request with this Scope. |
 | descriptions                 | no       | { "en": "openid" }            | Descriptions. If not provided, no descriptions will be stored.                                                                                                                                                                                       |
 
@@ -126,7 +126,7 @@ Example request:
 
 ```http
 PATCH /api/v1/configuration/scopes/insurance HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 Content-Type: application/json
 
 {
@@ -168,7 +168,7 @@ Example request:
 
 ```http
 DELETE /api/v1/configuration/scopes/insurance HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 ```
 
 Example success response:
