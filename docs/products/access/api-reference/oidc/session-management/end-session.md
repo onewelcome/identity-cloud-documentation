@@ -4,7 +4,7 @@ Endpoint: `GET /oauth/v1/logout?post_logout_redirect_uri=https://postlogout.exam
 
 ## Parameters
 
-Refer to the [RP Initiated Logout](https://openid.net/specs/openid-connect-session-1_0.html#RPLogout) for more detail on the parameters. We have provided a 
+Refer to the [RP Initiated Logout](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) for more detail on the parameters. We have provided a 
 brief description below:
 
 | Parameter                     | Required     |                Description                                                                                      
