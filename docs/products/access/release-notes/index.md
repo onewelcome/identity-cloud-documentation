@@ -36,18 +36,16 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ## Release date: 2022-08-29
 
 ### Features
-* Support for custom registration for Web Clients.
+* Support for custom registration for Web clients.
 
 ## Improvements
 * Reduced the number of calls to our caching database for templates.
-
 
 ## Release date: 2022-08-16
 
 ## Improvements
 * We introduced a `v2` of the token introspection endpoint to comply with RFP7662 for the `exp` attribute.
 * We now make a SAML SLO request succeed even without a session, based on SpNameQualifier in the SAML metadata.
-
 
 ## Release date: 2022-07-06
 
