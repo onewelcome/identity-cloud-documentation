@@ -1,8 +1,53 @@
 # Release notes
 
-This section contains release notes for Onegini Access.
+This section contains release notes for OneWelcome Access.
 
-In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
+In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
+
+## Release date: 2022-12-01
+
+### Features
+* Next to an instance in the EU, we also released an instance in the US.
+
+## Release date: 2022-11-30
+
+### Improvements
+* We improved the performance and stability of the application.
+
+## Release date: 2022-11-11
+
+### Improvements
+* We improved the performance caused by clients with multiple redirectUris.
+* We improved the performance of the Events page for customers with mobile devices.
+
+## Release date: 2022-11-01
+
+### Bug fixes
+* Fixed a bug where Access tokens were not revoked after a logout request if the session was created based on a cookie.
+
+## Release date: 2022-10-11
+
+### Features
+* Added an API to delete all tokens for a specific user per type.
+
+### Bug fixes
+* Fixed an issue where token introspection showed claims with the value `null`. These are now hidden. 
+
+## Release date: 2022-08-29
+
+### Features
+* Support for custom registration for Web Clients.
+
+## Improvements
+* Reduced the number of calls to our caching database for templates.
+
+
+## Release date: 2022-08-16
+
+## Improvements
+* We introduced a `v2` of the token introspection endpoint to comply with RFP7662 for the `exp` attribute.
+* We now make a SAML SLO request succeed even without a session, based on SpNameQualifier in the SAML metadata.
+
 
 ## Release date: 2022-07-06
 
