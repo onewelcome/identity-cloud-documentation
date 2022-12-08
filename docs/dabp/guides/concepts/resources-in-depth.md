@@ -1,4 +1,5 @@
 # In-depth view on resources
+
 A `resource` represents the fine-grained access or privileges a user has outside Delegated Administration. For example, it can be a 
 portfolio of, for instance, mortgages for a specific reseller when a resource is linked to a policy for mortgages. Each resource has a 
 particular resource type.
@@ -16,6 +17,7 @@ DABP does not use this information internally, it is the responsibility of the e
 on a resource when granting access to resource.
 
 ## Relation between groups, persons, policies and resources
+
 Resources can be assigned both to a group and to a user. First, the resource needs to be assigned to a group. If the resources are not 
 available for the group, you cannot assign them to members of that group. Secondly, if the resource type is connected to a policy, the 
 policy also needs to be assigned to the member and the group. If that is the case, you can assign the resource together with a specific 
@@ -43,6 +45,7 @@ privilege to a member. This means that assigning resources to a person is a cont
 | **Organization Mortgage** |      ❌      |      ✅     | ✅     |
 
 This result in:
+
 - The `Life insurace portfolio` cannot be added to `Organization Mortgage` group because `Sell insurance` policy is not linked to `Organization Mortgage` group.
 - The `Mortgage portfolio` cannot be added to `Organization Life` group because `Sell mortgage` policy is not linked to `Organization Life` group.
 - `Client contact info` can be added to any group as it has no policy restrictions.
@@ -51,20 +54,24 @@ This result in:
 - A superuser can assign the resource `Client contact info` with `read` or `write` privilege to John Doe in all the groups regardless of the policies he has.
 
 ## The hierarchical relationship between groups, subgroups, and resources
+
 It is not possible to assign more resources to a subgroup than its parent. This means that the DABP tool enforces that a superuser can only
 assign resources to groups if the parent also has that resource. 
 
 ### Adding resource to a group
+
 Adding a resource to a group does **not** assign this resource to all subgroups, it only makes it possible to assign this resource also to 
 the subgroups. Also, Adding a resource to a group does **not** assign it to all the group members, it only makes it possible to assign the 
 resource to the group members.
 
 ### Removing 
+
 Removing a resource from a parent will result in the removal of the resource for all subgroups and members because the allowed resources 
 are restricted by the resources assigned to the parent group. This means that members of the group and all subgroups will lose access to 
 those resources.
 
 ## Assigning or removing resources to a group
+
 To add/remove a resource to a group, you need the permission `Assign resources to groups`. If you have this permission, you should select 
 the group you want to assign this resource to. After clicking on the desired group, a modal window with group information will appear.
 Click on the vertical ellipsis button and select `Edit group`. Now you can select which resources can be assigned to the group.
@@ -74,9 +81,10 @@ Click on the vertical ellipsis button and select `Edit group`. Now you can selec
 After selecting the required resources click save to confirm your choice.
 
 ## Assigning or removing resources to a user
+
 To manage users' resources, you need the permission `Assign resources to group members`. If you have this permission, open the user details 
 modal, click the vertical ellipsis and choose "Change membership". This will switch the modal to the edit mode, where you will be able to 
-change the user's resources. Please note that you can only assign resources also linked to the group in which you are editing a person.
+change the user's resources. You can only assign resources also linked to the group in which you are editing a person.
 
 ![edit person dialog](../../img/edit-person.png)
 

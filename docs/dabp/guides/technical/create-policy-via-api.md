@@ -1,26 +1,31 @@
 # Creating policies via API
+
 Policies can get created either [through the UI](../functional/manage-policy-via-ui.md) or through the API.
 This page is describing how the API is used.
 
 ## How to create a policy
+
 In this guide, we will assume OneWelcome Identity Cloud is available under the URL: `https://dabp.onegini.com`.
 The API is protected with OIDC, so you need to provide an access token to make a successful request.
-Please note that the access token must be either:
+
+The access token must be either:
+
 - linked to a person who has the `Add/edit/delete policies` permission on the root group. The root group is the top-level group.
 - a machine token with `write` scope. For more information about machine tokens see [non personal requests](non-personal-requests.md)
 
 To create a policy a POST request must be sent to `https://dabp.onegini.com/delegation/api/v2/policies` with a proper request body
-```
+
+```json
 {
     "name":"SELL_LIFE_INSURANCE"
 }
 ```
 
-All new policies will automatically get added to the root group. 
+All new policies will automatically get added to the root group.
 
 ## Example request using curl
 
-```
+```shell
 curl --location --request POST 'https://dabp.onegini.com/delegation/api/v2/policies' \
 --header 'Content: application/json' \
 --header 'Authorization: Bearer  <access token>' \
@@ -30,10 +35,11 @@ curl --location --request POST 'https://dabp.onegini.com/delegation/api/v2/polic
 }'
 ```
 
-
 ## OpenAPI specification
+
 Here is the detailed description of the create policies endpoint in the OpenApi format:
-``` 
+
+```json
 "/delegation/api/v2/policies": {
   "post": {
     "tags": [
@@ -127,8 +133,10 @@ Here is the detailed description of the create policies endpoint in the OpenApi 
   }
 }
 ```
+
 Schema specification:
-```
+
+```json
 "CreateOrUpdatePolicyRequest": {
   "required": [
     "name"

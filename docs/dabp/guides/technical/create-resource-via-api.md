@@ -1,17 +1,23 @@
 # Creating resource via API
+
 Resources can get created either [through the UI](../functional/manage-resource-via-ui.md) or through the API.
 To create a resource you first need to [create a resource type via api](./create-resource-type-via-api.md).
 This page is describing how the resource API is used.
 
 ## How to create a resource
+
 In this guide, we will assume OneWelcome Identity Cloud is available under the URL: `https://dabp.onegini.com`.
 The API is protected with OIDC, so you need to provide an access token to make a successful request.
-Please note that the access token must be either:
-- linked to a person who has the `Add/edit/delete resource and resource types` permission on the root group. The root group is the top-level group.
+
+The access token must be either:
+
+- linked to a person who has the `Add/edit/delete resource and resource types` permission on the root group. The root group is the top-level
+  group.
 - a machine token with `write` scope. For more information about machine tokens see [non personal requests](non-personal-requests.md)
 
 To create a resource a POST request must be sent to `https://dabp.onegini.com/delegation/api/v2/resources` with a proper request body
-```
+
+```json
 {
     "name":"SELL_LIFE_INSURANCE",
     "externalId": "uuid_123",
@@ -19,12 +25,12 @@ To create a resource a POST request must be sent to `https://dabp.onegini.com/de
 }
 ```
 
-Due to hierarchical nature of resources all new resources will automatically get added to the root group (so they can be assigned to 
-other groups later). 
+Due to hierarchical nature of resources all new resources will automatically get added to the root group (so they can be assigned to
+other groups later).
 
 ## Example request using curl
 
-```
+```shell
 curl --location --request POST 'https://dabp.onegini.com/delegation/api/v2/resources' \
 --header 'Content: application/json' \
 --header 'Authorization: Bearer  <access token>' \
@@ -36,10 +42,11 @@ curl --location --request POST 'https://dabp.onegini.com/delegation/api/v2/resou
 }'
 ```
 
-
 ## OpenAPI specification
+
 Here is the detailed description of the create policies endpoint in the OpenApi format:
-``` 
+
+```json
 "/delegation/api/v2/resources": {
       "post": {
         "tags": [
@@ -129,8 +136,10 @@ Here is the detailed description of the create policies endpoint in the OpenApi 
       }
     }
 ```
+
 Schema specification:
-```
+
+```json
 "CreateResourceRequest": {
         "required": [
           "externalId",
