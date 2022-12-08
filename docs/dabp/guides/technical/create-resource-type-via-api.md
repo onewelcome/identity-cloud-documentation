@@ -1,19 +1,26 @@
 # Creating resource type via API
+
 `Resource types` can only be created via API as they should not change after initial setup of the platform.
 
 ## How to create a resource type
+
 In this guide, we will assume OneWelcome Identity Cloud is available under the URL: `https://dabp.onegini.com`.
 The API is protected with OIDC, so you need to provide an access token to make a successful request.
-Please note that the access token must be either:
-- linked to a person who has the `Add/edit/delete resources and resource types` permission on the root group. The root group is the top-level group.
-- a machine token with `write` scope. For more information about machine tokens see [non personal requests](non-personal-requests.md)  
 
-You can link a resource type to a policy. If you do that, you can only assign resources of that type to groups/members if they also have 
-this policy assigned. In that sense, a policy on a resource type acts as a filter to whom resources of this type will be available. If you 
-create a resource type without a linked policy id, then all resources of this type will be available to all groups and members. 
+The access token must be either:
 
-To create a resource type a POST request must be sent to `https://dabp.onegini.com/delegation/api/v2/resource-types` with a proper request body
-```
+- linked to a person who has the `Add/edit/delete resources and resource types` permission on the root group. The root group is the
+  top-level group.
+- a machine token with `write` scope. For more information about machine tokens see [non personal requests](non-personal-requests.md)
+
+You can link a resource type to a policy. If you do that, you can only assign resources of that type to groups/members if they also have
+this policy assigned. In that sense, a policy on a resource type acts as a filter to whom resources of this type will be available. If you
+create a resource type without a linked policy id, then all resources of this type will be available to all groups and members.
+
+To create a resource type a POST request must be sent to `https://dabp.onegini.com/delegation/api/v2/resource-types` with a proper request
+body
+
+```json
 {
     "name": "Life portfolio type",
     "policyId": <policy id needed to access resources of this type [optional]>,
@@ -24,7 +31,7 @@ To create a resource type a POST request must be sent to `https://dabp.onegini.c
 
 ## Example request using curl
 
-```
+```shell
 curl --location --request POST 'http://dabp.onegini.com/delegation/api/v2/resource-types' \
 --header 'Authorization: Bearer <access token>' \
 --header 'Content-Type: application/json' \
@@ -34,10 +41,11 @@ curl --location --request POST 'http://dabp.onegini.com/delegation/api/v2/resour
 }
 ```
 
-
 ## OpenAPI specification
+
 Here is the detailed description of the create policies endpoint in the OpenApi format:
-``` 
+
+```json
 "/delegation/api/v2/resource-types": {
       "post": {
         "tags": [
@@ -127,8 +135,10 @@ Here is the detailed description of the create policies endpoint in the OpenApi 
       }
     }
 ```
+
 Schema specification:
-```
+
+```json
 "CreateResourceTypeRequest": {
         "required": [
           "name"
