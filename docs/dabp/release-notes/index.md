@@ -4,6 +4,16 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2022-12-20
+
+### Features
+* The API to manage the group-resource relationship now also supports the PATCH method, to make it easier to add a resource to a group.
+
+## Release date: 2022-11-18
+
+### Features
+* We added a feature to search for groups based on a custom attribute.
+
 ## Release date: 2022-05-18
 
 ### Features

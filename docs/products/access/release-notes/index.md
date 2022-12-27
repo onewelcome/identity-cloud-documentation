@@ -4,6 +4,12 @@ This section contains release notes for OneWelcome Access.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date: 2022-12-15
+
+### Bug fixes
+* Fixed a bug where the introspection endpoint returned a `rpSet` claim instead of user attributes.
+* We now also remove the Mobile push message capabilities for users that remove their last mobile device. 
+
 ## Release date: 2022-12-01
 
 ### Features
