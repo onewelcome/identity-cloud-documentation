@@ -84,7 +84,7 @@ Create a JSON formatted payload with the required (and optional) claims. These c
 | `exp`   |	**Required**. The token expiration time in seconds since January 1, 1970 UTC (UNIX timestamp), for example, `1684119459`. This claim fails the request if the expiration time is more than one hour in the future or if the token is already expired.	| Integer |
 | `iss`   | **Required**. The issuer of the token. This value must be the same as the `client_id` of the application that you are accessing. |	String |
 | `sub`	 | **Required**. The subject of the token. This value must be the same as the `client_id` of the application that you are accessing. | String |
-| `jti`   |	**Optional**. The unique token identifier. If you specify this parameter, the token can only be used once. As a result, subsequent token requests won't succeed. | String |
+| `jti`   |	**Optional**. The unique token identifier. If you specify this parameter, the token can only be used once. As a result, subsequent token requests won't succeed. Is **Required** for [OIDC](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) flows | String |
 | `iat`   |	**Optional**. When the token was issued in seconds since January 1, 1970 UTC (UNIX timestamp), for example, *1674119459*. If specified, it must be a time before the request is received.	| Integer |
 
 This can result in:
