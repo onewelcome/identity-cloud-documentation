@@ -5,18 +5,23 @@ Android and iOS. The mobile SDKs are responsible for making secure requests towa
 
 ## Android
 
-* [Android SDK documentation](https://docs-single-tenant.onegini.com/msp/stable/android-sdk/)
-* [Android example app](https://github.com/Onegini/android-example-app)
+* [Android SDK documentation](https://developer.onewelcome.com/android/sdk)
+* [Android example app](https://github.com/onewelcome/example-app-android)
 
 ## iOS
 
-* [iOS SDK documentation](https://docs-single-tenant.onegini.com/msp/stable/ios-sdk/)
-* [iOS example app](https://github.com/Onegini/ios-example-app-swift/tree/master)
+* [iOS SDK documentation](https://developer.onewelcome.com/ios/sdk)
+* [iOS example app](https://github.com/onewelcome/example-app-ios)
 
 ## Cordova
 
-* [Cordova plugin](https://docs-single-tenant.onegini.com/msp/stable/cordova-plugin/)
-* [Cordova example app](https://github.com/Onegini/cordova-example-app)
+* [Cordova plugin](https://developer.onewelcome.com/cordova/plugin)
+* [Cordova example app](https://github.com/onewelcome/example-app-cordova)
+
+## Flutter 
+
+* [Flutter plugin](https://developer.onewelcome.com/flutter/plugin)
+* [Flutter example app](https://github.com/onewelcome/example-app-flutter)
 
 ## Server components
 
@@ -25,6 +30,5 @@ developer documentation.
 
 ## Single-tenant server components:
 
-* [Token Server](https://docs-single-tenant.onegini.com/msp/stable/token-server/)
 * [Security Proxy](https://docs-single-tenant.onegini.com/msp/stable/security-proxy/)
 * [Extension Engine](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/)
