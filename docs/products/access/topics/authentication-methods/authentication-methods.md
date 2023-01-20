@@ -1,5 +1,5 @@
 # Client authentication methods
-Client authentication allows an OAuth/OIDC client application to prove its identity to the OneWelcome Mobile Identity & Access solution. The simplest way to do this for confidential clients is by using `OAuth Basic Authentication`. Public clients should use `PKCE` as they cannot protect the secret. For companies that require a more secure 
+Client authentication allows an OAuth/OIDC client application to prove its identity to the OneWelcome Mobile Identity & Access solution. The simplest way to do this for confidential clients is by using `OAuth Basic Authentication`. Public clients should use `PKCE` as they cannot protect the secret. Companies that require a more secure way of client authentication should be using the `private_key_jwt` method.
 
 ## Client Types
 
@@ -23,7 +23,7 @@ OAuth 2.0 defines basic authentication as:
 
 An example:
 
-```
+```http
 POST /oauth/v1/token HTTP/1.1
 Host: token.customerdomain.com
 Authorization: Basic c2VjcmV0X2FwcDpnYWJpdWdicmVzb2hhZWJob2llcmJnb3dpYWJoYW9oYmE=
@@ -44,7 +44,7 @@ A [private key JWT](https://tools.ietf.org/html/rfc7523) replaces the client sec
 
 An example:
 
-```
+```http
 POST /oauth/v1/token HTTP/1.1
 Host: token.customerdomain.com
 Content-Type: application/x-www-form-urlencoded
@@ -57,7 +57,7 @@ grant_type=client_credentials
 
 If you decode the token, it has the following header and payload:
 
-```
+```json
 {
   "alg": "HS256"
 }
@@ -82,14 +82,14 @@ Create a JSON formatted payload with the required (and optional) claims. These c
 |-------|---------------------------|------|
 | `aud`   |	**Required**. The URL of the resource that you're trying to access using the JWT to authenticate. For example: _https://customerdomain.com/oauth_ | String |
 | `exp`   |	**Required**. The token expiration time in seconds since January 1, 1970 UTC (UNIX timestamp), for example, `1684119459`. This claim fails the request if the expiration time is more than one hour in the future or if the token is already expired.	| Integer |
-| `iss`   | **Required**. The issuer of the token. This value must be the same as the `client_id` of the application that you are accessing. |	String |
-| `sub`	 | **Required**. The subject of the token. This value must be the same as the `client_id` of the application that you are accessing. | String |
+| `iss`   | **Required**. This MUST contain the `client_id` of the OAuth Client. |	String |
+| `sub`	  | **Required**. This MUST contain the `client_id` of the OAuth Client. | String |
 | `jti`   |	**Optional**. The unique token identifier. If you specify this parameter, the token can only be used once. As a result, subsequent token requests won't succeed. Is **Required** for [OIDC](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) flows | String |
 | `iat`   |	**Optional**. When the token was issued in seconds since January 1, 1970 UTC (UNIX timestamp), for example, *1674119459*. If specified, it must be a time before the request is received.	| Integer |
 
 This can result in:
 
-```
+```json
 {
   "sub": "0862EE05F4602FF63F76D99944816144A2192F73B21B8CCEAD76CC39857CDCAD",
   "aud": "https://customerdomain.com/oauth",
@@ -146,7 +146,7 @@ java -jar json-web-key-generator.jar -t EC -c P-256 -i 1 -u sig -S -x
 
 The result will be similar to this:
  
-```
+```json
 {
     "keys": [
         {
@@ -186,3 +186,12 @@ A client must include the following parameters in a token request when using the
 | `client_assertion_type` | A type of client_assertion. Its value must be `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. | String |
 | `client_assertion`      | The signed JWT that we created in the steps above. |
 | `grant_type`.           | Type of the grant used, for example, `client_credentials` |
+
+#### Making a request to other protected endpoints
+
+[Bearer Token authentication](https://www.rfc-editor.org/rfc/rfc6750) should be used to send the `PrivateKeyJWT` to other endpoints.
+The client must send this JWT token in the Authorization header when making requests to protected resources:
+
+```http
+Authorization: Bearer <token>
+``` 
