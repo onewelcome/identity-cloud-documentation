@@ -131,7 +131,7 @@ nav:
               - 'OneSee security events': products/access/topics/aws/onesee-events.md
           - 'Mobile SDKs':
               - 'Android SDK': 'https://developer.onewelcome.com/android/android-sdk/'
-              - 'iOS SDK': 'https://docs-single-tenant.onegini.com/msp/stable/ios-sdk/'
+              - 'iOS SDK': 'https://developer.onewelcome.com/ios/sdk'
           - 'API Reference':
               - 'Introduction': products/access/api-reference/index.md
               - 'OAuth endpoints': products/access/api-reference/description-oauth-endpoint.md
