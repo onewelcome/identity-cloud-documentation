@@ -53,7 +53,7 @@ Fill all the mandatory fields (marked with `*` on the form). The other fields ar
 
 Additional information about the configuration of a [Pin policy](../../general-app-config/pin-policy/pin-policy.md), a [Resource gateway](../../general-app-config/resource-gateway/resource-gateway.md), [Scopes](../../general-app-config/scopes/scopes.md) and an [Identity provider](../../general-app-config/identity-providers/identity-providers.md) can be found in separate chapters.
 Utilizing `Additional Identity provider(s)` is handled by the SDK. Refer to the 
-[iOS SDK](https://docs-single-tenant.onegini.com/msp/stable/ios-sdk/topics/identity-providers.html) or [Android SDK](https://docs-single-tenant.onegini.com/msp/stable/android-sdk/reference/onegini-identity-provider.html) documentation for help with adding support for multiple Identity Providers.
+[iOS SDK](https://developer.onewelcome.com/ios/sdk/identity-providers) or [Android SDK](https://developer.onewelcome.com/android/android-sdk/user-registration) documentation for help with adding support for multiple Identity Providers.
 
 All mobile applications are an [OpenID Connect](../../oidc/overview/overview.md) Relying Party. A separate page is shown for the [OpenID Relying Party configuration](../../oidc/configuration/configuration.md#openid-connect-relying-party-configuration) after creating or updating the application.
 

@@ -98,7 +98,7 @@ Example value: `external_idp_custom_param.key1=val1&external_idp_custom_param.ke
 
 This example shows the ability to pass multiple keys: `key1` and `key2`, and multiple values for a single key: `key2` has values `val2` and `val3`.
 
-Example use cases are described in the [extension custom parameters topic guide](https://docs-single-tenant.onegini.com/cim/stable//idp/topic-guides/extension-custom-parameters.html).
+Example use cases are described in the [extension custom parameters topic guide](https://docs-single-tenant.onegini.com/cim/stable/idp/topic-guides/extension-custom-parameters.html).
 
 #### app_view
 
