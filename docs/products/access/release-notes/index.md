@@ -19,7 +19,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 * For [Custom registration events](../appendix/access-events.md#custom-registration-audit-events), we now log the `Client id` to make it easier to correlate the events to an client or mobile device.
 
 ### Bugs
-* While adding a mobile authentication type "SMS" the `SMS sender id` always returned a validation error in the UI. This is now fixed.
+* While adding a mobile authentication type "SMS", the `SMS sender id` always returned a validation error in the UI. This is now fixed.
 
 ## Release date: 2023-01-11
 
