@@ -7,7 +7,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ## Release date: 2023-01-24
 
 ### Features
-* The end-users is now redirected to the `post-logout-url` after a OIDC logout request, even when the provided ID token is recently expired or there is no active session for that client.
+* The end-user is now redirected to a whitelisted `post-logout-url` after a OIDC logout request, even when the provided ID token is recently expired or there is no active session for that client.
 
 ### Bugs 
 * The [Device API](../api-reference/end-user/device-v4.md) now returns a timestamp for `lastLogin`.
