@@ -4,6 +4,28 @@ This section contains release notes for OneWelcome Access.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date: 2023-01-24
+
+### Features
+* The end-user is now redirected to a whitelisted `post-logout-url` after a OIDC logout request, even when the provided ID token is recently expired or there is no active session for that client.
+
+### Bugs 
+* The [Device API](../api-reference/end-user/device-v4.md) now returns a timestamp for `lastLogin`.
+* The `removeScopes` feature in the [Customize Access Token Web Hook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md) will now be respected when used together with [Custom registration](../topics/custom-registration/index.md).
+
+## Release date: 2023-01-18
+
+### Improvements
+* For [Custom registration events](../appendix/access-events.md#custom-registration-audit-events), we now log the `Client id` to make it easier to correlate the events to a client or mobile device.
+
+### Bugs
+* While adding a mobile authentication type "SMS", the `SMS sender id` always returned a validation error in the UI. This is now fixed.
+
+## Release date: 2023-01-11
+
+### Features
+* We introduced a new `Tulip` Identity Provider Type.
+
 ## Release date: 2022-12-15
 
 ### Bug fixes
