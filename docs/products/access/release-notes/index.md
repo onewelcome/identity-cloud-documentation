@@ -13,7 +13,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 * The [Device API](../api-reference/end-user/device-v4.md) now returns a timestamp for `lastLogin`.
 * The `removeScopes` feature in the [Customize Access Token Web Hook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md) will now be respected when used together with [Custom registration](../topics/custom-registration/index.md).
 
-## Release date: 2023-01-24
+## Release date: 2023-01-18
 
 ### Improvements
 * For [Custom registration events](../appendix/access-events.md#custom-registration-audit-events), we now log the `Client id` to make it easier to correlate the events to an client or mobile device.
