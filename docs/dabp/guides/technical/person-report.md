@@ -87,7 +87,18 @@ Example response from the server
         }
       ],
       "attributes": [],
-      "resources": []
+      "resources": [
+       {
+           "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+           "name": "string",
+           "externalId": "123456",
+           "privilege": "read",
+           "resourceType": {
+             "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+             "name": "home insurance",
+           }
+         }
+      ]
     }
   ]
 }
@@ -281,10 +292,28 @@ Schema specification:
           "privilege": {
             "type": "string",
             "description": "Privilege assigned to person on the resource"
+          },
+          "resourceType": {
+            "$ref": "#/components/schemas/ResourceTypeBasicDto"
           }
         },
         "description": "List of resources in the group that person is connected to"
       },
+ "ResourceTypeBasicDto": {
+  "type": "object",
+  "properties": {
+   "id": {
+    "type": "string",
+    "description": "Identifier of the resource type",
+    "format": "uuid"
+   },
+   "name": {
+    "type": "string",
+    "description": "Resource type name"
+   }
+  },
+  "description": "Resource type"
+ },
 "GroupAttribute": {
   "type": "object",
   "properties": {
