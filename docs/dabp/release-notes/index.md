@@ -4,6 +4,11 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2023-01-26
+
+### Features
+* We extended the [Person Report](../guides/technical/person-report.md) to also include the `ResourceTypes` for `resources`.
+
 ## Release date: 2022-12-20
 
 ### Features
