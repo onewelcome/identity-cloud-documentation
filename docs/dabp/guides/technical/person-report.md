@@ -75,7 +75,7 @@ Example response from the server
       "name": "Intermediary B",
       "policies": [
         {
-          "name:" "role_superuser"
+          "name": "role_superuser"
         },
         {
           "id": "77195a4e-c610-4716-b790-721a5fdde1e6",
@@ -88,16 +88,16 @@ Example response from the server
       ],
       "attributes": [],
       "resources": [
-       {
-           "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-           "name": "string",
-           "externalId": "123456",
-           "privilege": "read",
-           "resourceType": {
-             "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-             "name": "home insurance",
-           }
-         }
+        {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",   
+          "name": "string",
+          "externalId": "123456",
+          "privilege": "read", 
+          "resourceType": {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "name": "home insurance"
+          }
+        }
       ]
     }
   ]
@@ -302,15 +302,15 @@ Schema specification:
  "ResourceTypeBasicDto": {
   "type": "object",
   "properties": {
-   "id": {
-    "type": "string",
-    "description": "Identifier of the resource type",
-    "format": "uuid"
-   },
-   "name": {
-    "type": "string",
-    "description": "Resource type name"
-   }
+    "id": {
+      "type": "string",
+      "description": "Identifier of the resource type",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string",
+      "description": "Resource type name"
+    }
   },
   "description": "Resource type"
  },
