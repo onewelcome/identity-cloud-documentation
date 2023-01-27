@@ -48,6 +48,14 @@ components:
           type: object
           additionalProperties: true
           description: The claims of a user.
+        contextCustomParams:
+          type: object
+          nullable: true
+          additionalProperties:
+            type: array
+            items:
+              type: string
+          description: "Hook context optional custom parameters, i.e. : 'on_behalf_of', 'on_behalf_of_type'"
     User:
       type: object
       properties:
