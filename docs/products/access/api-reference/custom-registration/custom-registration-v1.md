@@ -70,12 +70,12 @@ Endpoint: `POST /oauth/custom-registration/{idp}/complete`
 
 JSON body parameters:
 
-| Param            | Required                                | Description                                                                        |
-|------------------|-----------------------------------------|------------------------------------------------------------------------------------|
-| `transaction_id` | yes (`TWO_STEP`) otherwise optional     | Generated in **Init step**. For `TWO_STEP`, ensures same transaction               |
-| `data`           | no                                      | Raw registration request data which will be provided to the Extension Engine       |
-| `scope`          | no                                      | An array of scopes. If none are specified the default scopes are granted.          |
-
+| Param                     | Required                             | Description                                                                                                         |
+|---------------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| `transaction_id`          | yes (`TWO_STEP`) otherwise optional  | Generated in **Init step**. For `TWO_STEP`, ensures same transaction                                                |
+| `data`                    | no                                   | Raw registration request data which will be provided to the Extension Engine                                        |
+| `scope`                   | no                                   | An array of scopes. If none are specified the default scopes are granted                                            |
+| `hookContextCustomParams` | no                                   | A map of custom web hooks context parameters used in [Web Hooks](../../topics/integration-extension/hooks/index.md) |
 Example request:
 
 ```http
@@ -87,7 +87,10 @@ Authentication: Basic Y2xpZW50OnNlY3JldA==
 {
   "transaction_id": "123123",
   "data": "{\"custom_json_key\":\"custom_ json data\"}",      //optional, e.g. challenge code response
-  "scope": ["read", "write"]
+  "scope": ["read", "write"],
+  "hookContextCustomParams": {      //optional
+     "on_behalf_of" : ["user"]
+  }
 }
 ```
 
