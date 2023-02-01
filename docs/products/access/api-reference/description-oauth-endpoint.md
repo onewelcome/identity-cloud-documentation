@@ -130,7 +130,7 @@ Example use case: the registration flow for the application should present all s
 
 #### hook_context_custom_param.*
 
-This parameter can be used to populate a `contextCustomParams` key value map in the [Onegini Customize Access Token Web Hook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md).
+This parameter can be used to populate a `contextCustomParams` key value map in the [Access Token Web Hook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md) and [User Details Web Hook](../topics/integration-extension/hooks/customize-user-details/customize-user-details-hook.md).
 
 Example value: `hook_context_custom_param.key1=val1&hook_context_custom_param.key2=val2&hook_context_custom_param.key2=val3`
 

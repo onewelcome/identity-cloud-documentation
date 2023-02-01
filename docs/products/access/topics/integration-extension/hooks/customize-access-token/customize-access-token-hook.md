@@ -37,7 +37,10 @@ The example request and response for this hook may look as follows:
     "json": {
       "user": {"id": "myUserId22700111101"},
       "client": {"id": "client"},
-      "scopes": ["profile", "email"]
+      "scopes": ["profile", "email"],
+      "contextCustomParams": {
+        "on_behalf_of" : ["user"]
+      }
     }
   }
 },
