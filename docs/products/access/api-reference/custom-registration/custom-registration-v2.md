@@ -83,14 +83,14 @@ Endpoint: `POST /oauth/v2/custom-registration/{idp}/complete`
 
 JSON body parameters:
 
-| Param                      | Required                                | Description                                                                                                                                                  |
-|----------------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `client_assertion_type`    | yes                                     | The type of the client assertion that is part of the request, currently the only supported value is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer` |
-| `client_assertion`         | yes                                     | Client assertion in the form of a JWT signed by the client's private key                                                                                     |
-| `transaction_id`           | yes (`TWO_STEP`) otherwise optional     | Generated in **Init step**. For `TWO_STEP`, ensures same transaction                                                                                         |
-| `data`                     | no                                      | Raw registration request data which will be provided to the Extension Engine                                                                                 |
-| `scope`                    | no                                      | An array of scopes. If none are specified the default scopes are granted.                                                                                    |
-| `hookContextCustomParams`  | no                                      | A map of custom web hooks context parameters used in [Web Hooks](../../topics/integration-extension/hooks/index.md)                                          |
+| Param                        | Required                                | Description                                                                                                                                                  |
+|------------------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `client_assertion_type`      | yes                                     | The type of the client assertion that is part of the request, currently the only supported value is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer` |
+| `client_assertion`           | yes                                     | Client assertion in the form of a JWT signed by the client's private key                                                                                     |
+| `transaction_id`             | yes (`TWO_STEP`) otherwise optional     | Generated in **Init step**. For `TWO_STEP`, ensures same transaction                                                                                         |
+| `data`                       | no                                      | Raw registration request data which will be provided to the Extension Engine                                                                                 |
+| `scope`                      | no                                      | An array of scopes. If none are specified the default scopes are granted.                                                                                    |
+| `hook_context_custom_params` | no                                      | A map of custom web hooks context parameters used in [Web Hooks](../../topics/integration-extension/hooks/index.md)                                          |
 
 Example request:
 
@@ -107,7 +107,7 @@ Content-Type: application/json
   "transaction_id": "123123",
   "data": "{\"custom_json_key\":\"custom_ json data\"}",      //optional, e.g. challenge code response
   "scope": ["read", "write"],
-  "hookContextCustomParams": {      //optional
+  "hook_context_custom_params": {      //optional
      "on_behalf_of" : ["user"]
   }
 }

@@ -141,7 +141,7 @@ This example shows the ability to pass multiple keys: `key1` and `key2`, and mul
 | key1  | ["val1"]          |
 | key2  | ["val2", "val3"]  |
 
-Example use-case: providing context like 'on_behalf_of', 'on_behalf_of_type' to make integrating with a `Externalised Authorisation` product possible.
+Example use-case: providing context like 'on_behalf_of', 'on_behalf_of_type' to make integrating with a `Externalized Authorization` product possible.
 
 ### Authorization error extensions
 
