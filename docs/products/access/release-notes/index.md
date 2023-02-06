@@ -7,7 +7,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ## Release date: 2023-02-06
 
 ### Features
-* Added support for [custom parameters](../api-reference/description-oauth-endpoint.md#hook_context_custom_param) in the [Customize User Details Web Hook](..topics/integration-extension/hooks/customize-user-details/customize-user-details-hook.md).
+* Added support for [custom parameters](../api-reference/description-oauth-endpoint.md#hook_context_custom_param) in the [Customize User Details Web Hook](../topics/integration-extension/hooks/customize-user-details/customize-user-details-hook.md).
 * [Custom Registration](../topics/custom-registration/index.md) scripts now can also access [custom parameters](../api-reference/description-oauth-endpoint.md#hook_context_custom_param), this makes it possible for the script to execute different logic based on the provided params.
 
 ### Improvements
