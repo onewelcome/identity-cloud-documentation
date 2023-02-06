@@ -4,6 +4,19 @@ This section contains release notes for OneWelcome Access.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date: 2023-02-06
+
+### Features
+* Added support for [custom parameters](../api-reference/description-oauth-endpoint.md#hook_context_custom_param) in the [Customize User Details Web Hook](..topics/integration-extension/hooks/customize-user-details/customize-user-details-hook.md).
+* [Custom Registration](../topics/custom-registration/index.md) scripts now can also access [custom parameters](../api-reference/description-oauth-endpoint.md#hook_context_custom_param), this makes it possible for the script to execute different logic based on the provided params.
+
+### Improvements
+* For the IDP type `Tulip`, we now send all the requested scopes (default, optional, and the scopes in the IDP config) to the IDP in the authentication request.
+* We improved the performance of Silent authentication requests (`prompt=none`) towards an IDP of the type `Tulip`.
+
+### Bugs
+* Fixed an issue where some SAML AuthnResponses were rejected when SAML artifact binding was configured with an IDP of the type `CIM`.
+
 ## Release date: 2023-01-24
 
 ### Features
