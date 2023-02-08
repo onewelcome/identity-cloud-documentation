@@ -4,6 +4,11 @@ This section contains release notes for OneWelcome Access.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date: 2023-02-08
+
+### Bugs
+* Fixed an issue where requests towards a configured SAML IDP (e.g. `CIM`) failed when a single user-agent initiated multiple authentication requests for the same client.
+
 ## Release date: 2023-02-06
 
 ### Features
@@ -13,9 +18,6 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ### Improvements
 * For the IDP type `Tulip`, we now send all the requested scopes (default, optional, and the scopes in the IDP config) to the IDP in the authentication request.
 * We improved the performance of Silent authentication requests (`prompt=none`) towards an IDP of the type `Tulip`.
-
-### Bugs
-* Fixed an issue where requests towards a configured SAML IDP (e.g. CIM) failed when a single user-agent initiated multiple authentication requests for the same client.
 
 ## Release date: 2023-01-24
 
