@@ -12,7 +12,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 
 ### Improvements
 * Next to the Group name, the group id is also available in the email template that is sent when a user is added to a group. 
-* When using an external IDP (link AzureAD) for employees, the `dabp_user_manager` now also has the *Assign permissions to group members* permission.
+* When using an external IDP (e.g. AzureAD) for employees, the `dabp_user_manager` now also has the *Assign permissions to group members* permission.
 
 ## Release date: 2023-01-26
 
