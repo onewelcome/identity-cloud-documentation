@@ -7,7 +7,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ## Release date: 2023-02-16
 
 ### Bugs
-Fixed an issue where a user was not always logged out when they had two sessions, one based on [Cookie based authentication](https://docs-single-tenant.onegini.com/cim/stable/idp/authentication/saml/cookie-based-authentication.html), and a 'regular' authentication.
+* Fixed an issue where a user was not always logged out when they had two sessions, one based on [Cookie based authentication](https://docs-single-tenant.onegini.com/cim/stable/idp/authentication/saml/cookie-based-authentication.html), and a 'regular' authentication.
 
 ## Release date: 2023-02-08
 
