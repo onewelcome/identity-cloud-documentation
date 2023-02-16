@@ -4,6 +4,16 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2023-02-16
+
+### Features
+* We now redirect an end-user to the URL they requested after they authenticated. 
+* It is now possible to specify which `idp` should be used for authentication using a URL param.
+
+### Improvements
+* Next to the Group name, the group id is also available in the email template that is sent when a user is added to a group. 
+* When using an external IDP (e.g. AzureAD) for employees, the `dabp_user_manager` now also has the *Assign permissions to group members* permission.
+
 ## Release date: 2023-01-26
 
 ### Features
