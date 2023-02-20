@@ -1,6 +1,6 @@
 # Delegated Administration for Business Partners
 
-Delegated Administration for Business Partners ([DABP](../../../../dabp/index.md)) keeps information about group memberships, permissions,
+Delegated Administration for Business Partners ([DABP](../../../../dabp/index.md)) keeps information about group memberships, permissions, resources,
 and policies. Applications can use this information to provide fine-grained access to data. Applications can obtain this information via the
 OneWelcome's OAuth and OpenID Connect endpoints.
 
