@@ -53,6 +53,10 @@ components:
             - read
           items:
             type: string
+        userClaims:
+          type: object
+          additionalProperties: true
+          description: All available user-related claims.
         contextCustomParams:
           type: object
           nullable: true
