@@ -18,11 +18,11 @@ This returns the details of a specific Application version.
 
 Path parameters:
 
-| Param          | Required | Description                                                                  
-|----------------|----------|------------------------------------------------------------------------------
-| appId          | yes      | Unique identifier of the Application.
-| platform       | yes      | Platform for this Application version. Valid options are `android` and `ios`.
-| versionName    | yes      | Unique version name for this Application and platform.
+| Param          | Required | Description                                                                   |
+|----------------|----------|-------------------------------------------------------------------------------|
+| appId          | yes      | Unique identifier of the Application.                                         |
+| platform       | yes      | Platform for this Application version. Valid options are `android` and `ios`. |
+| versionName    | yes      | Unique version name for this Application and platform.                        |
 
 Example request:
 
@@ -65,10 +65,10 @@ This returns a list of all Application versions for a given platform.
 
 Path parameters:
 
-| Param          | Required | Description                                                                  
-|----------------|----------|------------------------------------------------------------------------------
-| appId          | yes      | Unique identifier of the Application.
-| platform       | yes      | Platform for this Application version. Valid options are `android` and `ios`.
+| Param          | Required | Description                                                                   |
+|----------------|----------|-------------------------------------------------------------------------------|
+| appId          | yes      | Unique identifier of the Application.                                         |
+| platform       | yes      | Platform for this Application version. Valid options are `android` and `ios`. |
 
 Example request:
 
@@ -137,26 +137,27 @@ This creates an Application version from scratch.
 
 Path parameters:
 
-| Param          | Required | Description                                                                  
-|----------------|----------|------------------------------------------------------------------------------
-| appId          | yes      | Unique identifier of the Application.
-| platform       | yes      | Platform for this Application version. Valid options are `android` and `ios`.
+| Param          | Required | Description                                                                   |
+|----------------|----------|-------------------------------------------------------------------------------|
+| appId          | yes      | Unique identifier of the Application.                                         |
+| platform       | yes      | Platform for this Application version. Valid options are `android` and `ios`. |
 
 JSON body parameters:
 
-| Param                                    | Required | Example                              | Description                                                                  
-|------------------------------------------|----------|--------------------------------------|------------------------------------------------------------------------------------
-| version_name                             | yes      | 1.0.0                                | Unique version name for this Application and platform.
-| status                                   | yes      | LOGIN_ONLY                           | Defines usage of this Application version. Values are DISABLED, LOGIN_ONLY and LOGIN_REGISTRATION. 
-| application_signature                    | yes      | "abdc"                               | (DEPRECATED, use `application_signatures`) Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.
-| application_signatures                   | yes      | ["abdc", "defg"]                     | Signature(s) that are used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.| integrity_check                          | no       | NONE                                 | Indicates if a full application integrity check is performed on mobile device. Available values are `FULL` and `NONE`. Default and recommended value is `FULL`.
-| tampering_protection_enabled             | no       | true                                 | Flag to enable tampering protection. Defaults to `false`.
-| payload_encryption_enabled               | no       | true                                 | Flag to enable payload encryption. Defaults to `false`.
-| push_messaging_configuration_id          | no       | d10fe35f-ebb5-42bb-a81f-62a7034a68fb | Unique identifier of the push messaging configuration for this Application version.
-| framework                                | no       | CORDOVA                              | For Android only. Set to `CORDOVA` when you send push messages to an Android app that is using Cordova. The actual push message will be sent via FCM for Cordova.
-| use_apns_development_environment_enabled | no       | false                                | For iOS only. When set to `true` the push messages will be sent to the APNS development environment.
-| send_badge_number_enabled                | no       | true                                 | For iOS only. When set to `true` the number of unhandled push authentications are sent with the push request.
-| application_bundle_identifier            | depends  | com.example.myApp                    | For iOS only. Unique identifier for an Application. Its value can be found in the Apple developer console. Required for iOS push messaging configurations.
+| Param                                    | Required | Example                              | Description                                                                                                                                                                                                                                                       |
+|------------------------------------------|----------|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| version_name                             | yes      | 1.0.0                                | Unique version name for this Application and platform.                                                                                                                                                                                                            |
+| status                                   | yes      | LOGIN_ONLY                           | Defines usage of this Application version. Values are DISABLED, LOGIN_ONLY and LOGIN_REGISTRATION.                                                                                                                                                                |
+| application_signature                    | yes      | "abdc"                               | (DEPRECATED, use `application_signatures`) Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET. |
+| application_signatures                   | yes      | ["abdc", "defg"]                     | Signature(s) that are used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.                                        |
+| integrity_check                          | no       | NONE                                 | Indicates if a full application integrity check is performed on mobile device. Available values are `FULL` and `NONE`. Default and recommended value is `FULL`.                                                                                                   |
+| tampering_protection_enabled             | no       | true                                 | Flag to enable tampering protection. Defaults to `false`.                                                                                                                                                                                                         |
+| payload_encryption_enabled               | no       | true                                 | Flag to enable payload encryption. Defaults to `false`.                                                                                                                                                                                                           |
+| push_messaging_configuration_id          | no       | d10fe35f-ebb5-42bb-a81f-62a7034a68fb | Unique identifier of the push messaging configuration for this Application version.                                                                                                                                                                               |
+| framework                                | no       | CORDOVA                              | For Android only. Set to `CORDOVA` when you send push messages to an Android app that is using Cordova. The actual push message will be sent via FCM for Cordova.                                                                                                 |
+| use_apns_development_environment_enabled | no       | false                                | For iOS only. When set to `true` the push messages will be sent to the APNS development environment.                                                                                                                                                              |
+| send_badge_number_enabled                | no       | true                                 | For iOS only. When set to `true` the number of unhandled push authentications are sent with the push request.                                                                                                                                                     |
+| application_bundle_identifier            | depends  | com.example.myApp                    | For iOS only. Unique identifier for an Application. Its value can be found in the Apple developer console. Required for iOS push messaging configurations.                                                                                                        |
 
 Example request:
 
@@ -203,20 +204,20 @@ settings for payload encryption, tampering protection or push configuration.
 
 Path parameters:
 
-| Param               | Required | Description                                                                  
-|---------------------|----------|------------------------------------------------------------------------------
-| appId               | yes      | Unique identifier of the Application.
-| platform            | yes      | Platform for this Application version. Valid options are `android` and `ios`.
-| originalVersionName | yes      | Unique version name for this Application and platform that is being cloned.
+| Param               | Required | Description                                                                   |
+|---------------------|----------|-------------------------------------------------------------------------------|
+| appId               | yes      | Unique identifier of the Application.                                         |
+| platform            | yes      | Platform for this Application version. Valid options are `android` and `ios`. |
+| originalVersionName | yes      | Unique version name for this Application and platform that is being cloned.   |
 
 JSON body parameters:
 
-| Param                            | Required | Example           | Description                                                                  
-|----------------------------------|----------|-------------------|---------------------------------------------------------------------
-| version_name                     | yes      | 1.0.1             | Unique version name for this Application and platform.
-| application_signature            | yes      | "abdc"            | (DEPRECATED, use `application_signatures`) Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.
-| application_signatures           | yes      | ["abdc", "defg"]  | Signature(s) that are used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.
-| status                           | no       | LOGIN_ONLY        | Defines usage of this Application version. Values are DISABLED, LOGIN_ONLY and LOGIN_REGISTRATION.
+| Param                            | Required | Example           | Description                                                                                                                                                                                                                                                                                   |
+|----------------------------------|----------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| version_name                     | yes      | 1.0.1             | Unique version name for this Application and platform.                                                                                                                                                                                                                                        |
+| application_signature            | no       | "abdc"            | DEPRECATED (use `application_signatures`)                                                                                                                                                                                                                                                     |
+| application_signatures           | no       | ["abdc", "defg"]  | Signature(s) that are used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET. If not specified, all signatures are copied from original version. |
+| status                           | no       | LOGIN_ONLY        | Defines usage of this Application version. Values are DISABLED, LOGIN_ONLY and LOGIN_REGISTRATION.                                                                                                                                                                                            |
 
 Example request:
 
@@ -256,27 +257,28 @@ Some fields can be updated after creating an Application version.
 
 Path parameters:
 
-| Param          | Required | Description                                                                  
-|----------------|----------|------------------------------------------------------------------------------
-| appId          | yes      | Unique identifier of the Application.
-| platform       | yes      | Platform for this Application version. Valid options are `android` and `ios`.
-| versionName    | yes      | Unique version name for this Application and platform.
+| Param          | Required | Description                                                                   |
+|----------------|----------|-------------------------------------------------------------------------------|
+| appId          | yes      | Unique identifier of the Application.                                         |
+| platform       | yes      | Platform for this Application version. Valid options are `android` and `ios`. |
+| versionName    | yes      | Unique version name for this Application and platform.                        |
 
 JSON body parameters:
 
 Only the fields that are sent in the request will be changed.
 
-| Param                                    | Required | Example                              | Description                                                                  
-|------------------------------------------|----------|--------------------------------------|---------------------------------------------------------------------
-| status                                   | no       | LOGIN_ONLY                           | Defines usage of this Application version. Values are DISABLED, LOGIN_ONLY and LOGIN_REGISTRATION.
-| application_signatures                   | no       | abdc"                                | (DEPRECATED, use `application_signatures`) Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET.
-| application_signatures                   | no       | ["abdc", "defg"]                     | Signature(s) that ARE used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. If specified, it cannot be empty. Not returned on GET.| integrity_check                          | no       | NONE                                 | Indicates if a full application integrity check is performed on mobile device. Available values are `FULL` and `NONE`.
-| payload_encryption_enabled               | no       | true                                 | Flag to enable payload encryption. It can be updated only if the SDK supports JWT authentication.
-| push_messaging_configuration_id          | no       | d10fe35f-ebb5-42bb-a81f-62a7034a68fb | Unique identifier of the push messaging configuration for this Application version. Use empty value to clear the field.
-| framework                                | no       | CORDOVA                              | For Android only. Set to `CORDOVA` when you send push messages to an Android app that is using Cordova. The actual push message will be sent via FCM for Cordova.
-| use_apns_development_environment_enabled | no       | false                                | For iOS only and requires a push messaging configuration to be set. When set to `true` the push messages will be sent to the APNS development environment.
-| send_badge_number_enabled                | no       | true                                 | For iOS only and requires a push messaging configuration to be set. When set to `true` the number of unhandled push authentications are sent with the push request.
-| application_bundle_identifier            | depends  | com.example.myApp                    | For iOS only and requires a push messaging configuration to be set. Unique identifier for an Application. Its value can be found in the Apple developer console. Required for iOS push messaging configurations. Use empty value to clear the field.
+| Param                                    | Required | Example                              | Description                                                                                                                                                                                                                                                       |
+|------------------------------------------|----------|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| status                                   | no       | LOGIN_ONLY                           | Defines usage of this Application version. Values are DISABLED, LOGIN_ONLY and LOGIN_REGISTRATION.                                                                                                                                                                |
+| application_signatures                   | no       | abdc"                                | (DEPRECATED, use `application_signatures`) Signature that is used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. Not returned on GET. |
+| application_signatures                   | no       | ["abdc", "defg"]                     | Signature(s) that ARE used to authenticate the Application version. Has [restrictions](../../../topics/mobile-apps/app-configuration/app-version-management.md) when tampering protection is enabled. If specified, it cannot be empty. Not returned on GET.      |
+| integrity_check                          | no       | NONE                                 | Indicates if a full application integrity check is performed on mobile device. Available values are `FULL` and `NONE`.                                                                                                                                            |
+| payload_encryption_enabled               | no       | true                                 | Flag to enable payload encryption. It can be updated only if the SDK supports JWT authentication.                                                                                                                                                                 |
+| push_messaging_configuration_id          | no       | d10fe35f-ebb5-42bb-a81f-62a7034a68fb | Unique identifier of the push messaging configuration for this Application version. Use empty value to clear the field.                                                                                                                                           |
+| framework                                | no       | CORDOVA                              | For Android only. Set to `CORDOVA` when you send push messages to an Android app that is using Cordova. The actual push message will be sent via FCM for Cordova.                                                                                                 |
+| use_apns_development_environment_enabled | no       | false                                | For iOS only and requires a push messaging configuration to be set. When set to `true` the push messages will be sent to the APNS development environment.                                                                                                        |
+| send_badge_number_enabled                | no       | true                                 | For iOS only and requires a push messaging configuration to be set. When set to `true` the number of unhandled push authentications are sent with the push request.                                                                                               |
+| application_bundle_identifier            | depends  | com.example.myApp                    | For iOS only and requires a push messaging configuration to be set. Unique identifier for an Application. Its value can be found in the Apple developer console. Required for iOS push messaging configurations. Use empty value to clear the field.              |
 
 Example request:
 
@@ -313,11 +315,11 @@ This endpoint produces a ZIP file with the configuration that is needed by the O
 
 Path parameters:
 
-| Param          | Required | Description                                                                  
-|----------------|----------|------------------------------------------------------------------------------
-| appId          | yes      | Unique identifier of the Application.
-| platform       | yes      | Platform for this Application version. Valid options are `android` and `ios`.
-| versionName    | yes      | Unique version name for this Application and platform.
+| Param          | Required | Description                                                                   |
+|----------------|----------|-------------------------------------------------------------------------------|
+| appId          | yes      | Unique identifier of the Application.                                         |
+| platform       | yes      | Platform for this Application version. Valid options are `android` and `ios`. |
+| versionName    | yes      | Unique version name for this Application and platform.                        |
 
 
 Example Request:
@@ -343,10 +345,10 @@ In the event of an error, one of the [generic error codes](#error-codes) will be
 
 One of the following responses will be returned, containing a JSON object with an error code, a message and details about the error.
 
-| HTTP status | Error code                       | Message 
-|-------------|----------------------------------|-------------------------------------------------------------------------------------
-| 400         | invalid_request                  | One or more parameters is missing or incorrect. The details contain the missing or incorrect parameters.
-| 401         | unauthorized                     | Provide valid credentials to get access to the API.
-| 403         | forbidden                        | Operation is not allowed for the current user. 
-| 404         | not_found                        | Mobile App, Platform, or Version cannot be found
-| 409         | conflict                         | An application version with the same appId, platform, and version already exists.
+| HTTP status | Error code                       | Message                                                                                                  |
+|-------------|----------------------------------|----------------------------------------------------------------------------------------------------------|
+| 400         | invalid_request                  | One or more parameters is missing or incorrect. The details contain the missing or incorrect parameters. |
+| 401         | unauthorized                     | Provide valid credentials to get access to the API.                                                      |
+| 403         | forbidden                        | Operation is not allowed for the current user.                                                           |
+| 404         | not_found                        | Mobile App, Platform, or Version cannot be found                                                         |
+| 409         | conflict                         | An application version with the same appId, platform, and version already exists.                        |
