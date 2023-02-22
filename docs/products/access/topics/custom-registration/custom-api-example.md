@@ -17,7 +17,7 @@ function execute(requestPayload) {
 ```
 
 #### Complete Script
-The complete script requires a `user` object with an `id` property defined to be returned.
+The complete script requires a `user` object with an `id` property defined to be returned. Property `amr` is optional. 
 
 ```js
 function execute(requestPayload) {
@@ -25,7 +25,8 @@ function execute(requestPayload) {
   return {
     status: 2000,
     user: {
-      id: userId
+      id: userId,
+      amr: ["mfa", "pwd"]
     }
   };
 }
@@ -49,8 +50,8 @@ function execute(requestPayload) {
 ## Status Codes
 When writing a custom script, these status code ranges should be used.
 
-| Status | Description                                 
-|--------|------------------------------------------------------------------------------------
-| 2xxx   | Success                                     
-| 4xxx   | Failed, user can try again                                                         
-| 5xxx   | Failed, cleanup actions should be triggered and user must start at beginning again 
+| Status | Description                                                                        |
+|--------|------------------------------------------------------------------------------------|
+| 2xxx   | Success                                                                            |
+| 4xxx   | Failed, user can try again                                                         |
+| 5xxx   | Failed, cleanup actions should be triggered and user must start at beginning again |
