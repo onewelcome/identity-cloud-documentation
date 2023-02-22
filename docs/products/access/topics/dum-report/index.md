@@ -4,8 +4,7 @@ Delegated Administration for Business Partners ([DABP](../../../../dabp/index.md
 and policies. Applications can use this information to provide fine-grained access to data. Applications can obtain this information via the
 OneWelcome's OAuth and OpenID Connect endpoints.
 
-DABP can respond with a v2 or a legacy v1 version of the report. This depends on your [web client configuration](../web-clients/web-client-configuration.md)
-for the `Group permissions version` field. It will default to v2.
+To add the DABP person report to OneWelcome's OAuth and OpenID Connect endpoints, you need to edit the [web client configuration](../web-clients/web-client-configuration.md). In the `DABP integration` section, you can activate this feature, and via the `Group permissions version` field, you can specify the version. V2 will be used by default.
 
 ## Person report v2
 
@@ -16,7 +15,7 @@ claim `urn:onegini.com:oidc:group_policies` in:
 * [Userinfo](../../api-reference/oidc/user-info.md) response
 * [Token introspection](../../api-reference/token-introspection.md) response
 
-It will never be returned in the access token for v2.
+It will never be returned in the [JWT access token](../tokens/access-token.md#json-web-token-jwt) for v2.
 
 The format of this claim is a JSON object.
 
@@ -88,15 +87,15 @@ This format should not be used for new implementations.
 
 The legacy DABP person report is returned via the claim `group_permissions` in:
 
-* JWT access token. It will not be present if the access token will become too large to be used as bearer
+* [JWT access token](../tokens/access-token.md#json-web-token-jwt). It will **not** be present if the access token becomes too large to be used as a bearer
   token.
 * [ID token](../tokens/id-token.md)
 * [Userinfo](../../api-reference/oidc/user-info.md) response
 * [Token introspection](../../api-reference/token-introspection.md) response
 
-The format of this claim is a string. This string can be parsed to a JSON object.
+The format of this claim in the JWT Access token is a string. This string can be parsed to a JSON object.
 
-Example of this claim in the access token:
+Example of this claim in the JWT access token:
 
 ```json
 {
@@ -104,7 +103,7 @@ Example of this claim in the access token:
 }
 ```
 
-In the ID token, User Info, and Token Introspection, It will be returned as standard JSON as part of the response embedded within the
+In the ID token, Userinfo, and Token Introspection, It will be returned as standard JSON as part of the response embedded within the
 `"urn:onegini.com:oidc:group_policies"` claim. The internal json structure differs from the v2 format. (json key of `group_permissions` for 
 v1 vs `groups` for v2).
 
