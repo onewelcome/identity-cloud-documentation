@@ -105,7 +105,7 @@ Example of this claim in the JWT access token:
 
 In the ID token, Userinfo, and Token Introspection, It will be returned as standard JSON as part of the response embedded within the
 `"urn:onegini.com:oidc:group_policies"` claim. The internal json structure differs from the v2 format. (json key of `group_permissions` for 
-v1 vs `groups` for v2).
+v1 vs `groups` for v2). Note that `permissions` has also been dropped in the v2 format.
 
 Example of v1 json
 
