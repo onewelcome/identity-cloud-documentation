@@ -4,6 +4,21 @@ This section contains release notes for OneWelcome Access.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-02-27
+
+### Improvement
+* Added support for setting [AMR](https://www.rfc-editor.org/rfc/rfc8176.html) when using [custom registration](../topics/custom-registration/index.md)
+  * Requires the [Extension Engine](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/release-notes/2.x.html) `2.5.0` and above.
+
+## Release date: 2023-02-21
+
+### Improvement
+* All available user-related claims are now accessible in the [Access Token Webhook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md)
+
+### Bugs
+* Cloning a [mobile app](../topics/mobile-apps/index.md) via the [Application version API](../api-reference/config-api/applications/application-version-api.md) works again
+* The [User Details Customization hook](../topics/integration-extension/hooks/customize-user-details/customize-user-details-hook.md) is no longer cleared when editing a [web client configuration](../topics/web-clients/index.md) in the Admin console UI
+
 ## Release date: 2023-02-16
 
 ### Bugs

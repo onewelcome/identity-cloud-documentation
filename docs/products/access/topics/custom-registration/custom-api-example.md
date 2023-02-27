@@ -17,7 +17,8 @@ function execute(requestPayload) {
 ```
 
 #### Complete Script
-The complete script requires a `user` object with an `id` property defined to be returned. Property `amr` is optional. 
+The complete script requires a `user` object with an `id` property defined to be returned. Property `amr` is optional (requires 
+extension-engine `2.5.0` or greater. 
 
 ```js
 function execute(requestPayload) {
