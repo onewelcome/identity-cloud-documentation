@@ -4,6 +4,18 @@ This section contains release notes for OneWelcome Access.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-03-08
+
+### Features
+* Added support for `client_secret_post` authentication on calls to the `/token` endpoint for IDPs of the type Tulip or OAuth.
+
+### Improvement
+* [Mapped user attributes](../topics/general-app-config/identity-providers/identity-providers.md#attribute-mapping) are now also accessible in the [Access Token Webhook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md).
+* Improved the caching of the default templates and messages.
+
+### Bugs
+* For IDPs of the type Tulip, Access now responds with a `HTTP 410` when Tulip responds with a `invalid_scope` error.
+
 ## Release date 2023-02-27
 
 ### Improvement
