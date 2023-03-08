@@ -14,7 +14,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 * Improved the caching of the default templates and messages.
 
 ### Bugs
-* For IDPs of the type Tulip, Access now responds with a `HTTP 410` when Tulip responds with a `invalid_scope` error.
+* When a Web client requests scopes in an authentication request which are not known in the connected IDP of the type Tulip, we now forward the error to the requesting client.
 
 ## Release date 2023-02-27
 
