@@ -2,6 +2,10 @@
 
 This section contains release notes for OneWelcome Access.
 
+We are releasing OneWelcome Access on a 1-3 weekly basis. A release does not require downtime and will occur during European business hours. 
+
+The releases are backward compatible. However, we will extend the API contract (adding new fields to a JSON object). If breaking changes are required in the API, a new API version is created, and the old version will be deprecated. Customers will have six months to migrate to the new API version. 
+
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
 ## Release date 2023-03-08
