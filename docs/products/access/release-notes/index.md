@@ -8,6 +8,16 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-03-31
+
+### Improvement
+* We now support the `client_id` parameter combined with the `post-logout-url` for the OIDC logout endpoint.
+* We improved the error handling for all `OAuth` and `Tulip` type IDPs.
+
+### Bug
+* Not all claims in the ID token were forwarded for Identity Providers of the type `Tulip`. This has been fixed.
+* We solved an issue where a `null` value in the Hook response caused an error. 
+
 ## Release date 2023-03-08
 
 ### Features
