@@ -4,6 +4,15 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2023-03-31
+
+### Features
+* We introduced a new feature to indicate which users are a superuser within a group. This feature can be enabled via a feature flag in the settings menu.
+* Searching for a user on an email address is now possible. For searching email addresses, we use the prefix search algorithm, which allows you to search for the beginning portion of the email address.
+
+### Bugs
+* We fixed a bug where a user's status was not visible on the first loading of the application. 
+
 ## Release date: 2023-02-16
 
 ### Features
