@@ -8,6 +8,34 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+
+## Release date 2023-05-10
+
+### Improvements
+* We now allow `HEAD` requests to the authorization URL.
+
+### Bugs
+* Fixed a bug where some cache values did not expire on time.
+
+## Release date 2023-05-05
+
+### Bugs
+* Fixed an issue where a request to a SAML IDP timed-out before the web session expired. This can happen when users have to go through an registration process at the IDP.
+
+## Release date 2023-05-03
+
+### Features
+* Performance improvements
+* Added experimental support for a new way to connect to the `Tulip` type of IDP.
+
+### Improvements
+* Removed support for `RSA1_5` and `RSA_OAEP` as encryption algrithms.
+
+## Release date 2023-04-25
+
+### Bugs
+* Fixed a bug that prevented updating the SAML SP configuration.
+
 ## Release date 2023-04-18
 
 ### Bugs
