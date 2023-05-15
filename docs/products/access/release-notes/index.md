@@ -17,9 +17,6 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ### Bugs
 * Fixed a bug where some cache values did not expire on time.
 
-### Bugs
-* Fixed an issue where a request to a SAML IDP timed-out before the web session expired. This can happen when users have to go through an registration process at the IDP.
-
 ## Release date 2023-05-05
 
 ### Bugs
