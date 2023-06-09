@@ -120,7 +120,7 @@ The `TokenIntrospectionRequestExecutor` was used to execute the actual HTTP Requ
 @Service
 public class TokenIntrospectionRequestExecutor {
   private static final String TOKEN = "token";
-  private static final String ENDPOINT_INTROSPECT = "/api/v1/token/introspect";
+  private static final String ENDPOINT_INTROSPECT = "/api/v2/token/introspect";
 
   @Resource
   private TokenServerConfig tokenServerConfig;

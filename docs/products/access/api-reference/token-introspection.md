@@ -8,7 +8,7 @@ This endpoint implements token introspection according to [RFC 7662 - OAuth 2.0 
 
 Endpoint:
 ```http
-POST /oauth/api/v1/token/introspect
+POST /oauth/api/v2/token/introspect
 ```
 
 This endpoint requires authentication with [valid API client credentials](../topics/technical-app-management/api-configuration/api-configuration.md). It accepts the following request parameter(s):
@@ -41,7 +41,7 @@ The introspection response object described in [paragraph 2.2](https://tools.iet
 
 Example token introspection request:
 ```http
-POST /oauth/api/v1/token/introspect HTTP/1.1
+POST /oauth/api/v2/token/introspect HTTP/1.1
 Host: onegini.example.com
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
@@ -60,7 +60,7 @@ Content-Type: application/json
   "scope": "read",
   "client_id": "D4CFB02DA92C083934665000199A09DE793C97F94C9714DE3D38C3E5D2985494",
   "token_type": "bearer",
-  "exp": 3060,
+  "exp": 1686258829,
   "iat": 1504011352,
   "nbf": 1504011352,
   "sub": "TestClientUserId",

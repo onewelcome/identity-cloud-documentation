@@ -7,7 +7,7 @@ one.
 
 ## Network configuration
 
-A resource gateway uses the `/oauth/api/v1/token/introspect` endpoint of Onegini Access for token introspection.
+A resource gateway uses the `/oauth/api/v2/token/introspect` endpoint of Onegini Access for token introspection.
  
 The network configuration should be adjusted to allow communication to this endpoint. Especially network traffic from the resource gateway to Onegini Access 
 must not be blocked by firewalls.
