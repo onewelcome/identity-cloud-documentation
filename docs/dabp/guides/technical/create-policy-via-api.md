@@ -80,11 +80,11 @@ Here is the detailed description of the create policies endpoint in the OpenApi 
         }
       },
       "400": {
-        "description": "Invalid 'Onegini-Tenant-ID' header",
+        "description": "Invalid 'Tenant-Id' header",
         "content": {
           "text/plain": {
             "schema": {
-              "example": "Failed to read 'Onegini-Tenant-ID' header. It should be a proper UUID identifier of a tenant."
+              "example": "Failed to read 'Tenant-Id' header. It should be a proper UUID identifier of a tenant."
             }
           }
         }
