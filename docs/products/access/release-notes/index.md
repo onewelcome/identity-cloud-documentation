@@ -9,6 +9,37 @@ The releases are backward compatible. However, we will extend the API contract (
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
 
+## Release date 2023-06-22
+
+### Features
+* We now support forwarding a logout request, initiated in Onewelcome Access, towards an IDP of the type Tulip. 
+
+### Bugs
+* We fixed an issue where the admin panel showed different values for a configured client for a limited time after an update of the configuration
+* We added the `sub` claim to the Token Introspection response for Client Credentials grants to become compliant with [RFC7523](https://datatracker.ietf.org/doc/html/rfc7523#section-3).
+
+## Release date 2023-06-05
+
+### Improvements
+* We now filter disabled external IDPs when the mobile SDK requests the client configuration.
+
+## Release date 2023-06-02
+
+### Improvements
+* We now allow a scope name to be 255 characters.
+* We introduced a new configuration to set the minimum time frame for allowing multiple `Access Tokens` for a given user and client to coexist.
+
+## Release date 2023-05-30
+
+### Features
+* Added support for privateKeyJWT client authentication for the `Tulip` type IDP.
+* Added support for the App2Web feature for the `Tulip` type IDP.
+
+## Release date 2023-05-18
+
+### Improvements
+* We now also support colons `:` in the name of scopes.
+
 ## Release date 2023-05-10
 
 ### Improvements
