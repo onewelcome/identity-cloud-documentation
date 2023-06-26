@@ -4,6 +4,46 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2023-06-20
+
+### Improvements
+* We added a CSP header to prevent the app from being loaded in an iframe.
+* We added an HSTS header.
+
+## Release date: 2023-06-16
+
+### Improvements
+* Group policies and resources are now also presented to users without "manage group permissions".
+
+## Release date: 2023-06-13
+
+### Bugs
+* We no longer delete the cached names of a person when the person was updated without a name change. 
+
+## Release date: 2023-06-09
+
+### Bugs
+* We no longer send the `AuthorizationMemberResourceAssignmentsChangedEvent` if resources are not changed.
+
+## Release date: 2023-06-01
+
+### Improvements
+* We improved the performance of the application by caching more data.
+
+## Release date: 2023-05-17
+
+### Improvements
+* We improved the performance of the `superusers` endpoint for setups with a lot of super users.
+
+### Bugs
+* We resolved a bug where an authentication dialog was shown during the logout flow.
+
+## Release date: 2023-04-12
+
+### Improvements
+* We no longer send two emails ("invite" and "user added to group") when a new user is added.
+* Added an error message to explain what goes wrong when added a user with invalid characters in the name.
+
 ## Release date: 2023-03-31
 
 ### Features
