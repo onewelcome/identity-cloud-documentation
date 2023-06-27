@@ -4,6 +4,11 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2023-06-27
+
+### Bugs
+* We fixed the validation of M2M tokens used to access the APIs.  
+
 ## Release date: 2023-06-20
 
 ### Improvements
