@@ -7,7 +7,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ## Release date: 2023-06-27
 
 ### Bugs
-* We fixed validation of JWT AccessTokens that were issued for `client_credentials` grant.  
+* We fixed the validation of M2M tokens used to access the APIs.  
 
 ## Release date: 2023-06-20
 
