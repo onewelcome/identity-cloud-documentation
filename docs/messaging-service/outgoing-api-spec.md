@@ -51,3 +51,7 @@ an HTTP POST request. An example request body that will be sent, will look like:
 }
 
 ```
+
+## Timeouts 
+
+When interacting with external APIs, we have implemented a maximum timeout of 5 seconds for the requests. This timeout is designed to protect our service by ensuring that it remains responsive and reliable. By enforcing this limit, we minimize the risk of prolonged delays or failures caused by slow or unresponsive API endpoints. Implementing timeouts on external calls is a recommended practice for any application, as it helps safeguard against performance issues or unavailability of the API. By proactively setting a timeout, we can maintain our service's overall stability and responsiveness, enhancing the user experience for our customers.
