@@ -138,20 +138,20 @@ POST /api/v1/configuration/idps
 Host: onegini.example.com
 Content-Type: application/json
 {
-   "id":"tulip-insurcar",
-   "name":"Tulip Insurcar Idp",
-   "type":"TULIP",
-   "client_id":"oauth2CustomerApp",
-   "issuer_uri":"https://insurgroup-edge.iwelcome.com/insurcar/login/oauth2/v1",
-   "end_session_enabled":true,
-   "scopes":"openid",
-   "integrations":[
+   "id": "tulip-brand",
+   "name": "Tulip Brand",
+   "type": "TULIP",
+   "client_id": "oauth2CustomerApp",
+   "issuer_uri": "https://tulip.onewelcome.com/brand/login/oauth2/v1",
+   "end_session_enabled": true,
+   "scopes": "openid",
+   "integrations": [
       "APP_TO_WEB",
       "UDH_API"
    ],
-   "tulip_api_client_id":"accessIntegration",
-   "tulip_api_base_url":"https://insurgroup-edge.iwelcome.com/insurcar",
-   "tulip_api_access_scope":"iwelcome:segment:insurgroup"
+   "tulip_api_client_id": "accessIntegration",
+   "tulip_api_base_url": "https://tulip-api.onewelcome.com/brand",
+   "tulip_api_access_scope": "iwelcome:segment:brand"
 }
 ```
 
