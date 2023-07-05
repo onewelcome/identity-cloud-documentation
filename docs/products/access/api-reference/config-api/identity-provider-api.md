@@ -166,9 +166,9 @@ Content-Type: application/json
   "id": "oauth-idp",
   "name": "OAuth Identity Provider",
   "client_id": "oauth2CustomerApp",
-  "authorization_url": "https://onegini.test.onegini.com/oauth/v1/authorize",
-  "token_url": "https://onegini.test.onegini.com/oauth/v1/token",
-  "profile_url": "https://onegini.test.onegini.com/oauth/v1/userinfo",
+  "authorization_url": "https://example.com/oauth/v1/authorize",
+  "token_url": "https://example.com/oauth/v1/token",
+  "profile_url": "https://example.com/oauth/v1/userinfo",
   "scopes": "openid profile email"
 }
 ```
