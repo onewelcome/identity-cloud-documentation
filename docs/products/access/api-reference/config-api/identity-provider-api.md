@@ -114,7 +114,7 @@ JSON body parameters:
 | default                      | all          | no       | Specify whether an Identity Provider is default. <br/> Default value: `false`.                                                                                                                                          |
 | issuer_uri                   | TULIP        | yes      | Uri of the issuer. This URI will be used to read the OpenID Connect configuration.                                                                                                                                      |
 | client_id                    | TULIP, OAUTH | yes      | Client identifier.                                                                                                                                                                                                      |
-| secret                       | TULIP, OAUTH | depends  | Client secret. <br/> Required if client authentication method is `client_secret_basic` or `client_secret_post`                                                                                                          |
+| client_secret                | TULIP, OAUTH | depends  | Client secret. <br/> Required if client authentication method is `client_secret_basic` or `client_secret_post`                                                                                                          |
 | client_authentication_method | TULIP, OAUTH | no       | Client authentication method. <br/> Supported values: `private_key_jwt`, `client_secret_basic`, `client_secret_post`. <br/> Default value is `private_key_jwt`.                                                         |
 | scopes                       | TULIP, OAUTH | no       | Space-separated scopes.                                                                                                                                                                                                 |
 | end_session_enabled          | TULIP        | no       | Specify whether End Session integration is enabled for this Identity Provider. <br/> Default value: `false`.                                                                                                            |
@@ -138,11 +138,11 @@ POST /api/v1/configuration/idps
 Host: onegini.example.com
 Content-Type: application/json
 {
-   "id": "tulip-brand",
-   "name": "Tulip Brand",
+   "id": "tulip-idp",
+   "name": "Tulip Idp",
    "type": "TULIP",
    "client_id": "oauth2CustomerApp",
-   "issuer_uri": "https://tulip.onewelcome.com/brand/login/oauth2/v1",
+   "issuer_uri": "https://tulip.onewelcome.com/segment/login/oauth2/v1",
    "end_session_enabled": true,
    "scopes": "openid",
    "integrations": [
@@ -150,8 +150,8 @@ Content-Type: application/json
       "UDH_API"
    ],
    "tulip_api_client_id": "accessIntegration",
-   "tulip_api_base_url": "https://tulip-api.onewelcome.com/brand",
-   "tulip_api_access_scope": "iwelcome:segment:brand"
+   "tulip_api_base_url": "https://tulip-api.onewelcome.com/segment",
+   "tulip_api_access_scope": "iwelcome:segment:example"
 }
 ```
 
