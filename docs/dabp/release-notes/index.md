@@ -9,6 +9,9 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ### Improvements
 * We added two new message keys to show a description of policies and permissions on the "Add user" screens. 
 
+### Bugs
+* We fixed an issue where emails were not sent when the inviter had no first name or last name registered in the IDP.
+
 ## Release date: 2023-06-30
 
 ### Bugs
