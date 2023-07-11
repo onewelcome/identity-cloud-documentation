@@ -16,6 +16,9 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ### Improvements
 * We introduced caching for Tulip's JWKS endpoint, so the certificates are no longer fetched during every authentication.
 
+### Bugs
+* Fixed a bug that caused calls to the [ConfigAPI](../api-reference/config-api/identity-provider-api.md) to fail when the Authenication Method was set to PrivateKeyJWT. 
+
 ## Release date 2023-06-22
 
 ### Features
