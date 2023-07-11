@@ -29,11 +29,6 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ### Improvements
 * We have expanded the details of the log events published by Access when handling OIDC/OAuth callbacks fails.  
 
-## Release date: 2023-06-27
-
-### Bugs
-* We fixed the validation of M2M tokens used to access the APIs.  
-
 ## Release date 2023-06-22
 
 ### Features
