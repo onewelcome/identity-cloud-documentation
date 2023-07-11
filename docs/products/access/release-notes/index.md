@@ -11,7 +11,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ## Release date 2023-07-11
 
 ### Features
-* We extended the [ConfigAPI](../api-reference/config-api/identity-provider-api.md) with the option to manage IDPs of the type `Tulip`.
+* We extended the [ConfigAPI](../api-reference/config-api/identity-provider-api.md) with the option to create IDPs of the type `Tulip` and `OAuth`.
 
 ### Improvements
 * We introduced caching for Tulip's JWKS endpoint, so the certificates are no longer fetched during every authentication.
