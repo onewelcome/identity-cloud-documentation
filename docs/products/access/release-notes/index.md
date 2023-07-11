@@ -19,6 +19,21 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ### Bugs
 * Fixed a bug that caused calls to the [ConfigAPI](../api-reference/config-api/identity-provider-api.md) to fail when the Authenication Method was set to PrivateKeyJWT. 
 
+## Release date: 2023-06-30
+
+### Bugs
+* We fixed the support for key rotation for clients authenticating with PrivateKeyJWT.  
+
+## Release date: 2023-06-29
+
+### Improvements
+* We have expanded the details of the log events published by Access when handling OIDC/OAuth callbacks fails.  
+
+## Release date: 2023-06-27
+
+### Bugs
+* We fixed the validation of M2M tokens used to access the APIs.  
+
 ## Release date 2023-06-22
 
 ### Features
