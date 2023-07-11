@@ -4,6 +4,11 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2023-07-10
+
+### Improvements
+* We added two new message keys to show a description of policies and permissions on the "Add user" screens. 
+
 ## Release date: 2023-06-30
 
 ### Bugs
