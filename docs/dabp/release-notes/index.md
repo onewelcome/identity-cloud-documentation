@@ -4,15 +4,13 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
-## Release date: 2023-06-30
-
-### Bugs
-* We fixed the support for key rotation for clients authenticating with PrivateKeyJWT.  
-
-## Release date: 2023-06-29
+## Release date: 2023-07-10
 
 ### Improvements
-* We have expanded the details of the log events published by Access when handling OIDC/OAuth callbacks fails.  
+* We added two new message keys to show a description of policies and permissions on the "Add user" screens. 
+
+### Bugs
+* We fixed an issue where emails were not sent when the inviter had no first name or last name registered in the IDP.
 
 ## Release date: 2023-06-27
 
