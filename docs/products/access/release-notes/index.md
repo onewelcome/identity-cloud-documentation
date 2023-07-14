@@ -8,6 +8,11 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-07-14
+
+### Improvements
+* We simplified the App2Web integration between Access and Tulip.
+
 ## Release date 2023-07-11
 
 ### Features
