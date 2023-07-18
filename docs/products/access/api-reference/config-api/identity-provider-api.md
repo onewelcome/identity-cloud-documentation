@@ -185,6 +185,35 @@ Location: /api/v1/configuration/idps/tulip-insurcar
 
 The success response body is empty.
 
+### Delete Identity Provider
+
+This removes an Identity Provider.
+
+* Endpoint: `/api/v1/configuration/idps/{id}`
+* Method: DELETE
+
+Path parameters:
+
+| Param     | Required | Description                                 |
+|-----------|----------|---------------------------------------------|
+| id        | yes      | Unique identifier for an Identity Provider. |
+
+Example request:
+
+```http
+DELETE /api/v1/configuration/idps/oneginiidp HTTP/1.1
+Host: onegini.example.com
+```
+
+Example success response:
+
+```http
+HTTP/1.1 204 NO CONTENT
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-store
+Pragma: no-cache
+```
+
 ## Error codes
 
 One of the following responses will be returned, containing a JSON object with an error code, a message and details about the error.
