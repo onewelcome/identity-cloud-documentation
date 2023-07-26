@@ -7,7 +7,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ## Release date: 2023-07-26
 
 ### Bugs
-* The deprecated `/delegation/api/v1/persons/{referenceId}/report` endpoint now also accepts token authentication (required scope `dabp_person_report`). 
+* The deprecated `/delegation/api/v1/persons/{referenceId}/report` and `/delegation/api/v1/persons/{referenceId}/report-omit-identity` endpoints now also accepts token authentication (required scope `dabp_person_report`). 
 
 ## Release date: 2023-07-10
 
