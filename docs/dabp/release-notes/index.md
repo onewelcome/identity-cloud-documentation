@@ -4,6 +4,11 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2023-07-26
+
+### Bugs
+* The deprecated `/delegation/api/v1/persons/{referenceId}/report` endpoint now also accepts token authentication (required scope `dabp_person_report`). 
+
 ## Release date: 2023-07-10
 
 ### Improvements
