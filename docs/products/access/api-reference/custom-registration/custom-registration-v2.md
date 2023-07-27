@@ -83,14 +83,15 @@ Endpoint: `POST /oauth/v2/custom-registration/{idp}/complete`
 
 JSON body parameters:
 
-| Param                        | Required                                | Description                                                                                                                                                  |
-|------------------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `client_assertion_type`      | yes                                     | The type of the client assertion that is part of the request, currently the only supported value is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer` |
-| `client_assertion`           | yes                                     | Client assertion in the form of a JWT signed by the client's private key                                                                                     |
-| `transaction_id`             | yes (`TWO_STEP`) otherwise optional     | Generated in **Init step**. For `TWO_STEP`, ensures same transaction                                                                                         |
-| `data`                       | no                                      | Raw registration request data which will be provided to the Extension Engine                                                                                 |
-| `scope`                      | no                                      | An array of scopes. If none are specified the default scopes are granted.                                                                                    |
-| `hook_context_custom_params` | no                                      | A map of custom web hooks context parameters used in [Web Hooks](../../topics/integration-extension/hooks/index.md)                                          |
+| Param                        | Required                            | Description                                                                                                                                                                                               |
+|------------------------------|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `client_assertion_type`      | yes                                 | The type of the client assertion that is part of the request, currently the only supported value is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`                                              |
+| `client_assertion`           | yes                                 | Client assertion in the form of a JWT signed by the client's private key                                                                                                                                  |
+| `transaction_id`             | yes (`TWO_STEP`) otherwise optional | Generated in **Init step**. For `TWO_STEP`, ensures same transaction                                                                                                                                      |
+| `data`                       | no                                  | Raw registration request data which will be provided to the Extension Engine                                                                                                                              |
+| `scope`                      | no                                  | An array of scopes. If none are specified the default scopes are granted.                                                                                                                                 |
+| `hook_context_custom_params` | no                                  | A map of custom web hooks context parameters used in [Web Hooks](../../topics/integration-extension/hooks/index.md)                                                                                       |
+| `grant_type`                 | no                                  | Grant type that the Access Token will be bound with. <br/> If not specified, the default grant type will be used. <br/> Available values: `urn:onewelcome.com:oauth2:grant_type:stateless_authentication` |
 
 Example request:
 
@@ -152,23 +153,23 @@ In the event of an error in the Access Service, one of the following error codes
 It is up to the scripts execution in the Extension Engine to determine if the request was successful or not when everything looks fine for
 the Access Service. For all these scenarios, a `200 OK` JSON response is returned to the SDK which contains:
 
-| Param                     | Description                                                                                               |
-|---------------------------|-----------------------------------------------------------------------------------------------------------|
-| `access_token`            | Access token generated after successful completion of step.                                               |
-| `refresh_token`           | Refresh token generated after successful completion of step and client has them enabled.                  |
-| `expires_in`              | Time until expiration in seconds.                                                                         |
-| `token_type`              | Token type.                                                                                               |
-| `id_token`                | ID token with user data if the requested scope contains `openid`.                                         |
-| `data`                    | Raw response coming from the script engine.                                                               |
-| `status`                  | Status indicating whether the request was successful. See [status codes](#extension-engine-status-codes). |
+| Param           | Description                                                                                               |
+|-----------------|-----------------------------------------------------------------------------------------------------------|
+| `access_token`  | Access token generated after successful completion of step.                                               |
+| `refresh_token` | Refresh token generated after successful completion of step and client has them enabled.                  |
+| `expires_in`    | Time until expiration in seconds.                                                                         |
+| `token_type`    | Token type.                                                                                               |
+| `id_token`      | ID token with user data if the requested scope contains `openid`.                                         |
+| `data`          | Raw response coming from the script engine.                                                               |
+| `status`        | Status indicating whether the request was successful. See [status codes](#extension-engine-status-codes). |
 
 ## Extension engine status codes
 
-| Param                        | Value  |
-|------------------------------|--------|
-| `VALID_STATUS_MIN`           | 2000   |
-| `VALID_STATUS_MAX`           | 2999   |
-| `RETRY_STATUS_MIN`           | 4000   |
-| `RETRY_STATUS_MAX`           | 4999   |
-| `UNRECOVERABLE_STATUS_MIN`   | 5000   |
-| `UNRECOVERABLE_STATUS_MAX`   | 5999   |
+| Param                      | Value |
+|----------------------------|-------|
+| `VALID_STATUS_MIN`         | 2000  |
+| `VALID_STATUS_MAX`         | 2999  |
+| `RETRY_STATUS_MIN`         | 4000  |
+| `RETRY_STATUS_MAX`         | 4999  |
+| `UNRECOVERABLE_STATUS_MIN` | 5000  |
+| `UNRECOVERABLE_STATUS_MAX` | 5999  |
