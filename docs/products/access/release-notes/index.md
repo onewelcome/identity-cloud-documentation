@@ -8,6 +8,16 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-07-27
+
+### Features
+* It is now possible to [remove Identity Providers via API](../api-reference/config-api/identity-provider-api.md).
+
+### Bugs
+* We resolved a bug in the SLO request towards a Tulip type idp.
+* We resolved a bug where missing templates uploaded via self-styling caused the app the fail.
+* A `PATCH` call the the [Web Client API](../api-reference/config-api/web-client.md) resulted in the ` session_based_silent_auth` value to be overwritten with `false`.
+
 ## Release date 2023-07-14
 
 ### Improvements
