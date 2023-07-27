@@ -1,4 +1,4 @@
-mkdocs==1.4.3
+mkdocs==1.5.0
 mkdocs-redirects==1.2.1
 mkdocs-material==9.1.19
 pygments
