@@ -123,6 +123,7 @@ JSON body parameters:
 | tulip_api_client_secret      | TULIP        | depends  | Client secret for Tulip API calls. <br/> Required when `APP_TO_WEB` or `UDH_API` integration is enabled and authentication method is `client_secret_basic` or `client_secret_post`.                                     |
 | tulip_api_base_url           | TULIP        | depends  | This should be the base url of the Tulip brand without a trailing slash. UDH and App To Web will use this as a base for their urls. <br/> Required when `APP_TO_WEB` or `UDH_API` integration is enabled.               |
 | tulip_api_access_scope       | TULIP        | depends  | Space-separated scopes for the required Tulip segments e.g. `iwelcome:segment:example`. <br/> Required when `APP_TO_WEB` or `UDH_API` integration is enabled.                                                           |
+| tulip_api_used_auth_methods  | TULIP        | no       | List of Auth Methods for the App to Web integration with Tulip e.g. `["twoFA", "another"]`. <br/> Used when `APP_TO_WEB` integration is enabled.                                                                        |
 | authorization_url            | OAUTH        | yes      | Oauth authorization endpoint.                                                                                                                                                                                           |
 | token_url                    | OAUTH        | yes      | Oauth token endpoint.                                                                                                                                                                                                   |
 | profile_url                  | OAUTH        | yes      | OpenID Connect UserInfo endpoint.                                                                                                                                                                                       |
@@ -151,7 +152,11 @@ Content-Type: application/json
    ],
    "tulip_api_client_id": "accessIntegration",
    "tulip_api_base_url": "https://tulip-api.onewelcome.com/segment",
-   "tulip_api_access_scope": "iwelcome:segment:example"
+   "tulip_api_access_scope": "iwelcome:segment:example",
+    "tulip_api_used_access_methods": [
+        "twoFA",
+        "another"
+    ]
 }
 ```
 
