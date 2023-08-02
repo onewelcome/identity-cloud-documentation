@@ -8,6 +8,11 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-08-02
+
+### Bugs
+* We resolved another bug in the SLO request towards a Tulip type idp.
+
 ## Release date 2023-07-27
 
 ### Features
