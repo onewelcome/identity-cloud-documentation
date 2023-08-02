@@ -153,7 +153,7 @@ Content-Type: application/json
    "tulip_api_client_id": "accessIntegration",
    "tulip_api_base_url": "https://tulip-api.onewelcome.com/segment",
    "tulip_api_access_scope": "iwelcome:segment:example",
-    "tulip_api_used_access_methods": [
+   "tulip_api_used_access_methods": [
         "twoFA",
         "another"
     ]
