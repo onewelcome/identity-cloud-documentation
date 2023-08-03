@@ -8,6 +8,11 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-08-03
+
+### Improvements
+* We added an additional setting for the App2Web integration for the Tulip type idp that allows setting the "Used authentication methods". This is required for setups where 2FA is required on the Tulip side.
+
 ## Release date 2023-08-02
 
 ### Bugs
