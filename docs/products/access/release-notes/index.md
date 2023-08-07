@@ -6,7 +6,12 @@ We are releasing OneWelcome Access on a 1-3 weekly basis. A release does not req
 
 The releases are backward compatible. However, we will extend the API contract (adding new fields to a JSON object). If breaking changes are required in the API, a new API version is created, and the old version will be deprecated. Customers will have six months to migrate to the new API version. 
 
-In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
+In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
+
+## Release date 2023-08-07
+
+### Features
+* We have optimized how we handle our Single sign-on (SSO) experience when multiple clients use the same IdP. We decided to use the existing OneWelcome session when new clients initiate an authentication request with `prompt=none` and the `Respond to silent authentication requests based on current session state` feature is enabled for that client. Before, the request was forwarded to the configured IdP for that web client. 
 
 ## Release date 2023-08-03
 
