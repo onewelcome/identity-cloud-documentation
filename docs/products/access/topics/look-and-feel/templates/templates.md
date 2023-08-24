@@ -20,7 +20,7 @@ supported by Access see the [templates section in the appendix](../../../appendi
 ## Configuring an application-specific template set
 
 For each mobile application and web client, a template set can be configured to render screens in the look and feel of this application or web client. When no
-template set is configured for an application or web client. The default template set is used to render these screens.
+template set is configured for an application or web client, the default template set is used to render these screens.
 
 ![App template set](img/app-template-set.png)
 
