@@ -123,6 +123,7 @@ JSON body parameters:
 | tulip_api_client_secret      | TULIP        | depends  | Client secret for Tulip API calls. <br/> Required when `APP_TO_WEB` or `UDH_API` integration is enabled and authentication method is `client_secret_basic` or `client_secret_post`.                                     |
 | tulip_api_base_url           | TULIP        | depends  | This should be the base url of the Tulip brand without a trailing slash. UDH and App To Web will use this as a base for their urls. <br/> Required when `APP_TO_WEB` or `UDH_API` integration is enabled.               |
 | tulip_api_access_scope       | TULIP        | depends  | Space-separated scopes for the required Tulip segments e.g. `iwelcome:segment:example`. <br/> Required when `APP_TO_WEB` or `UDH_API` integration is enabled.                                                           |
+| tulip_api_used_auth_methods  | TULIP        | no       | List of Auth Methods for the App to Web integration with Tulip e.g. `["SMS", "another"]`. <br/> Used when `APP_TO_WEB` integration is enabled.                                                                        |
 | authorization_url            | OAUTH        | yes      | Oauth authorization endpoint.                                                                                                                                                                                           |
 | token_url                    | OAUTH        | yes      | Oauth token endpoint.                                                                                                                                                                                                   |
 | profile_url                  | OAUTH        | yes      | OpenID Connect UserInfo endpoint.                                                                                                                                                                                       |
@@ -151,7 +152,11 @@ Content-Type: application/json
    ],
    "tulip_api_client_id": "accessIntegration",
    "tulip_api_base_url": "https://tulip-api.onewelcome.com/segment",
-   "tulip_api_access_scope": "iwelcome:segment:example"
+   "tulip_api_access_scope": "iwelcome:segment:example",
+   "tulip_api_used_auth_methods": [
+        "SMS",
+        "another"
+    ]
 }
 ```
 
@@ -184,6 +189,35 @@ Location: /api/v1/configuration/idps/tulip-insurcar
 ```
 
 The success response body is empty.
+
+### Delete Identity Provider
+
+This removes an Identity Provider.
+
+* Endpoint: `/api/v1/configuration/idps/{id}`
+* Method: DELETE
+
+Path parameters:
+
+| Param     | Required | Description                                 |
+|-----------|----------|---------------------------------------------|
+| id        | yes      | Unique identifier for an Identity Provider. |
+
+Example request:
+
+```http
+DELETE /api/v1/configuration/idps/oneginiidp HTTP/1.1
+Host: onegini.example.com
+```
+
+Example success response:
+
+```http
+HTTP/1.1 204 NO CONTENT
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-store
+Pragma: no-cache
+```
 
 ## Error codes
 

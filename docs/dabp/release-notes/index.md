@@ -4,6 +4,11 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2023-08-02
+
+### Bugs
+* We fixed a bug where users without permission got stuck on a loading page. Now they get an error. 
+
 ## Release date: 2023-07-26
 
 ### Bugs

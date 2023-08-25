@@ -1,5 +1,5 @@
-mkdocs==1.4.3
+mkdocs==1.5.2
 mkdocs-redirects==1.2.1
-mkdocs-material==9.1.18
+mkdocs-material==9.1.21
 pygments
 pymdown-extensions
