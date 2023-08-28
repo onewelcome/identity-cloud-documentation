@@ -102,6 +102,7 @@ nav:
                   - 'Introduction': products/access/topics/custom-registration/index.md
                   - 'Custom API Example': products/access/topics/custom-registration/custom-api-example.md
                   - 'QR Registration Example': products/access/topics/custom-registration/qr-registration-example.md
+                  - 'Stateless Custom Registration': products/access/topics/custom-registration/stateless-custom-registration.md
               - 'End user support':
                   - 'Introduction': products/access/topics/end-user-support/index.md
                   - 'User management': products/access/topics/end-user-support/user-management/user-management.md
