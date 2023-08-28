@@ -70,13 +70,14 @@ Endpoint: `POST /oauth/custom-registration/{idp}/complete`
 
 JSON body parameters:
 
-| Param                        | Required                            | Description                                                                                                                                                                                               |
-|------------------------------|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `transaction_id`             | yes (`TWO_STEP`) otherwise optional | Generated in **Init step**. For `TWO_STEP`, ensures same transaction                                                                                                                                      |
-| `data`                       | no                                  | Raw registration request data which will be provided to the Extension Engine                                                                                                                              |
-| `scope`                      | no                                  | An array of scopes. If none are specified the default scopes are granted                                                                                                                                  |
-| `hook_context_custom_params` | no                                  | A map of custom web hooks context parameters used in [Web Hooks](../../topics/integration-extension/hooks/index.md)                                                                                       |
-| `grant_type`                 | no                                  | Grant type that the Access Token will be bound with. <br/> If not specified, the default grant type will be used. <br/> Available values: `urn:onewelcome.com:oauth2:grant_type:stateless_authentication` |
+| Param                        | Required                                | Description                                                                                                                                                                                               |
+|------------------------------|-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `transaction_id`             | yes (`TWO_STEP`) otherwise optional     | Generated in **Init step**. For `TWO_STEP`, ensures same transaction                                                                                                                                      |
+| `data`                       | no                                      | Raw registration request data which will be provided to the Extension Engine                                                                                                                              |
+| `scope`                      | no                                      | An array of scopes. If none are specified the default scopes are granted                                                                                                                                  |
+| `profile_id`                 | yes (dynamic client) otherwise optional | The profile ID of the user on the Onegini SDK, static clients can omit this                                                                                                                               |
+| `hook_context_custom_params` | no                                      | A map of custom web hooks context parameters used in [Web Hooks](../../topics/integration-extension/hooks/index.md)                                                                                       |
+| `grant_type`                 | no                                      | Grant type that the Access Token will be bound with. <br/> If not specified, the default grant type will be used. <br/> Available values: `urn:onewelcome.com:oauth2:grant_type:stateless_authentication` |
 
 Example request:
 
