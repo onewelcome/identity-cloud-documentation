@@ -17,7 +17,7 @@ application or edit an existing one. Either way, to enable stateless authenticat
 Stateless authentication requires a configured [Custom API Identity Provider](../general-app-config/identity-providers/identity-providers.md#configure-a-custom-api-identity-provider).
 
 To initiate stateless custom registration, the Complete Step request should include the `grant_type` parameter with the
-value `urn:onewelcome.com:oauth2:grant_type:stateless_authentication`.
+value `urn:onewelcome:oauth2:grant_type:stateless_authentication`.
 
 The feature can be used with both `ONE_STEP` and `TWO_STEP` flows. In both cases, the `grant_type` parameter must be provided in the Complete Step request.
 
@@ -34,7 +34,7 @@ Authentication: Basic Y2xpZW50OnNlY3JldA==
       "openid","profile"
   ],
   "profile_id": "123EXI",
-  "grant_type": "urn:onewelcome.com:oauth2:grant_type:stateless_authentication"
+  "grant_type": "urn:onewelcome:oauth2:grant_type:stateless_authentication"
 }
 ```
 
