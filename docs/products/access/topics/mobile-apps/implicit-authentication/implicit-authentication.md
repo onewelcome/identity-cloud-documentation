@@ -10,7 +10,7 @@ A resource gateway can validate an implicit access token using [token introspect
 
 ## Enable implicit authentication
 
-To enable implicit authentication for your app, first head over to `Configuration` &rightarrow; `Applications` in your Onegini Access admin.
+To enable implicit authentication for your app, first head over to `Configuration` &rightarrow; `Applications` in the OneWelcome Access admin.
 Once there you can create a new application or editing one existing. Either way, to enable implicit authentication, follow these steps.
 
 - Under OAuth settings, enable the 'User Registration' flow.
