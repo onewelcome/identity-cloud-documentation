@@ -166,6 +166,7 @@
 | TOKEN REQUEST FINGER PRINT REFRESH TOKEN RETRY COUNT EXCEEDED | The finger print refresh token used was wrong, therefore all finger print refresh tokens for this client are removed                                                                                                 |
 | TOKEN REQUEST INVALID PROFILE ID                              | Provided profile id has invalid format or is already used by other user of the client.                                                                                                                               |
 | TOKEN REQUEST IMPLICIT AUTHENTICATION ACCESS TOKEN CREATED    | An implicit authentication access token was created based on the provided client credentials, profile id and scopes.                                                                                                 |
+| TOKEN REQUEST IMPLICIT DEFAULT ACCESS TOKEN NOT FOUND         | No default access token was found for the provided profile.                                                                                                                                                          |
 | TOKEN REQUEST REFRESH TOKEN RETRY COUNT EXCEEDED              | The refresh token has been used wrongly for more than the maximum allowed retries. The refresh token is invalidated.                                                                                                 |
 | TOKEN RESPONSE GROUP PERMISSIONS EXCEEDED JWT LIMIT           | The JWT access token with the claim [`group permissions`](../topics/tokens/access-token.md#group-permissions) has exceeded the configured length of a JWT access token.                                              |
 | TOKEN REVOKE INVALID REQUEST                                  | Invalid request while revoking token (ie. malformed syntax, required parameter missing).                                                                                                                             |
@@ -317,13 +318,14 @@ This section contains events for mobile authentication
 
 ### Key enrollment audit events
 
-| Event                                  | Description                                                                                                      |
-|----------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| KEY ENROLLMENT SUCCESS                 | Successfully enrolled keys for a user.                                                                           |
-| KEY ENROLLMENT FAILURE INVALID REQUEST | Failed to process the key enrollment request because input parameters were invalid.                              |
-| KEY ENROLLMENT FAILURE DISABLED        | Failed to process the key enrollment request because the key enrollment is disabled.                             |
-| KEY ENROLLMENT FAILURE UPDATE DISABLED | Failed to perform key enrollment because the update of the keys for the key enrollment is disabled. (deprecated) |
-| KEY ENROLLMENT FAILURE INVALID TOKEN   | Failed to perform key enrollment because the access token was invalid.                                           |
+| Event                                         | Description                                                                                                      |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| KEY ENROLLMENT SUCCESS                        | Successfully enrolled keys for a user.                                                                           |
+| KEY ENROLLMENT FAILURE INVALID REQUEST        | Failed to process the key enrollment request because input parameters were invalid.                              |
+| KEY ENROLLMENT FAILURE DISABLED               | Failed to process the key enrollment request because the key enrollment is disabled.                             |
+| KEY ENROLLMENT FAILURE UPDATE DISABLED        | Failed to perform key enrollment because the update of the keys for the key enrollment is disabled. (deprecated) |
+| KEY ENROLLMENT FAILURE INVALID TOKEN          | Failed to perform key enrollment because the access token was invalid.                                           |
+| KEY ENROLLMENT FAILURE STATELESS ACCESS TOKEN | Failed to perform key enrollment because the access token that was provided was stateless.                       |
 
 ### Push enrollment audit events
 
@@ -333,6 +335,7 @@ This section contains events for mobile authentication
 | PUSH ENROLLMENT FAILURE FEATURE DISABLED           | Failed to enroll for push because the feature is disabled.                                                           |
 | PUSH ENROLLMENT FAILURE INVALID REQ                | Failed to enroll for push because the request was malformed or had missing parameters.                               |
 | PUSH ENROLLMENT FAILURE INVALID ACCESS TOKEN       | Failed to enroll for push because the access token that was provided was invalid.                                    |
+| PUSH ENROLLMENT FAILURE STATELESS ACCESS TOKEN     | Failed to enroll for push because the access token that was provided was stateless.                                  |
 | PUSH ENROLLMENT FAILURE KEYS NOT EXCHANGED         | Failed to enroll for push because the user has not yet performed key enrollment (required for push).                 |
 | PUSH ENROLLMENT FAILURE EXISTING PUSH TOKEN        | Failed to enroll for push because the push token provided is already in use by another installation of a mobile app. |
 | PUSH ENROLLMENT FAILURE USER ALREADY ENROLLED      | Failed to enroll for push because the user is already enrolled for push.                                             |
@@ -483,14 +486,17 @@ This section contains events for mobile authentication
 | CUSTOM REGISTRATION DISABLED IDENTITY PROVIDER | The specified Identity Provider is either disabled or not configured to the requesting application.                                                |
 | CUSTOM REGISTRATION INVALID IDENTITY PROVIDER  | The specified Identity Provider does not exist.                                                                                                    |
 | CUSTOM REGISTRATION INVALID SCOPE              | The scope was not correct for this ClientId.                                                                                                       |
+| CUSTOM REGISTRATION INVALID GRANT TYPE         | Provided grant type is not supported by Client.                                                                                                    |
 | CUSTOM REGISTRATION SCRIPT ERROR               | The Onegini Extension Engine encountered an error when executing the Custom API Script.                                                            |
 | CUSTOM REGISTRATION INVALID TRANSACTION        | The transaction does not exist or is expired. Also sent when Identity Provider or ClientId are different than at the time of transaction creation. |
 | CUSTOM REGISTRATION INIT SUCCESS               | The init script for this Custom API has executed with a success status.                                                                            |
 | CUSTOM REGISTRATION INIT FAILURE               | The init script for this Custom API has executed with a failure status.                                                                            |
-| CUSTOM REGISTRATION BACKCHANNEL SUCCESS        | The complete script for this Custom API has executed with a success status.                                                                        |
-| CUSTOM REGISTRATION BACKCHANNEL FAILURE        | The complete script for this Custom API has executed with a failure status.                                                                        |
-| CUSTOM REGISTRATION COMPLETE SUCCESS           | The backchannel script for this Custom API has executed with a success status.                                                                     |
-| CUSTOM REGISTRATION COMPLETE FAILURE           | The backchannel script for this Custom API has executed with a failure status.                                                                     |
+| CUSTOM REGISTRATION COMPLETE SUCCESS           | The complete script for this Custom API has executed with a success status.                                                                        |
+| CUSTOM REGISTRATION COMPLETE FAILURE           | The complete script for this Custom API has executed with a failure status.                                                                        |
+| CUSTOM REGISTRATION BACKCHANNEL SUCCESS        | The backchannel script for this Custom API has executed with a success status.                                                                     |
+| CUSTOM REGISTRATION BACKCHANNEL FAILURE        | The backchannel script for this Custom API has executed with a failure status.                                                                     |
+| STATELESS CUSTOM REGISTRATION COMPLETE SUCCESS | The complete script for this Custom API with stateless grant has executed with a success status.                                                   |
+| STATELESS CUSTOM REGISTRATION COMPLETE FAILURE | The complete script for this Custom API with stateless grant has executed with a failure status.                                                   |
 | CUSTOM REGISTRATION TRANSACTION TAMPERING      | The transaction may have been tampered as provided identity provider do not match the one in transaction.                                          |
 
 ### SAML login and logout

@@ -1,6 +1,6 @@
 # Custom Registration
 
-Onegini Access has support for user registration via Custom API Identity Providers.
+OneWelcome Access has support for user registration via Custom API Identity Providers.
 
 ## Custom API Identity Providers
 
