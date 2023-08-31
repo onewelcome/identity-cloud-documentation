@@ -12,6 +12,7 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 
 ### Features
 * We added the optional `azp` claim to the [ID Token](https://openid.net/specs/openid-connect-core-1_0.html#IDToken).
+* We introduced [stateless custom registration](../topics/custom-registration/stateless-custom-registration.md).
 
 ### Improvements
 * The `Respond to silent authentication requests based on current session state` feature now redirects to the upstream IDP in case additional `scopes` are requested, a specific `acr_value` is requested, or when `max_age` indicates that the `auth_time` needs to be refreshed.
