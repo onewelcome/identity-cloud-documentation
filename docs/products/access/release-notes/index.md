@@ -8,7 +8,7 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
-## Release date 2023-08-28
+## Release date 2023-08-31
 
 ### Features
 * We added the optional `azp` claim to the [ID Token](https://openid.net/specs/openid-connect-core-1_0.html#IDToken).
