@@ -8,6 +8,12 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-09-05
+
+### Bugs
+* Resolved an issue where clearing caches via the Admin UI did not work.
+* Resolved an issue where message keys were always cleared after 5 minutes. The TTL now follows the configured duration for static resources. 
+
 ## Release date 2023-08-31
 
 ### Features
