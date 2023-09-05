@@ -1,3 +1,7 @@
+## Release date 2023-09-05
+### Bugs
+* Fixed a bug where the Access Engine Cache was not cleared on a template synchronization.
+
 ## 1.9.0
 ### Improvements
 * New UI for configuring repository connection
