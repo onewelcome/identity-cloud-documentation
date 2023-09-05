@@ -17,9 +17,14 @@ When preparing the git repository, please use the proper directory structure.
            └── personal
 ├── access
     ├── <template-set-name>
-        ├── 
+        ├── consent.html
+        ├── error.html
+        ├── ...
     ├── default
-        ├── 
+        ├── consent.html
+        ├── error.html
+        ├── ...
+        
     ├── messages
 ├── delegation
     ├── locales
