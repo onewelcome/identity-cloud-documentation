@@ -24,7 +24,6 @@ When preparing the git repository, please use the proper directory structure.
         ├── consent.html
         ├── error.html
         ├── ...
-        
     ├── messages
 ├── delegation
     ├── locales
