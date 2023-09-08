@@ -8,6 +8,14 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-09-08
+
+### Improvements
+* Added `private_key_jwt` as `token_endpoint_auth_methods_supported` in the Discovery URL.
+* Added a new event type, `TOKEN REQUEST EXPIRED REFRESH TOKEN`, which replaces the `TOKEN REQUEST INVALID REFRESH TOKEN` event when a refresh token is expired.
+* Added a new event type, `TOKEN REQUEST FINGER PRINT EXPIRED REFRESH TOKEN`, which replaces the `TOKEN REQUEST FINGER PRINT INVALID REFRESH TOKEN` event when a refresh token is expired.
+* We started logging the length of a refresh token in the details of the `TOKEN REQUEST INVALID REFRESH TOKEN` event.  
+
 ## Release date 2023-09-05
 
 ### Bugs
