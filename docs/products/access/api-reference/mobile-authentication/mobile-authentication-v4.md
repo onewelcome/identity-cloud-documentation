@@ -8,14 +8,17 @@ This section describes the API for mobile authentication, version 4.
 
 ## API access
 
->**Note**: To access the API, mobile authentication has to be enabled on [system level](../../topics/technical-app-management/system-features-config/system-features-config.md).
+> **Note**: To access the API, mobile authentication has to be enabled
+> on [system level](../../topics/technical-app-management/system-features-config/system-features-config.md).
 
-Only authorized API clients can access this API. Its credentials need to be provided via HTTP Basic Authentication header or via url encoded form.
+Only authorized API clients can access this API. Its credentials need to be provided via HTTP Basic Authentication header or via url encoded
+form.
 The required credentials are the client id and client secret configured in the Admin console of Onegini Access.
 > **Note:** Please look in the [OAuth config](../../appendix/administration/api-config.md) section on how to configure an API client.
-> In order to allow an API client to access mobile authentication endpoints, add `Mobile authentication` to the `Valid for APIs` list in the API client configuration.
+> In order to allow an API client to access mobile authentication endpoints, add `Mobile authentication` to the `Valid for APIs` list in the
+> API client configuration.
 
-In case the provided client credentials are invalid or the client is not authorized to access the API, the errors according to 
+In case the provided client credentials are invalid or the client is not authorized to access the API, the errors according to
 [OAuth specification Error Response](https://tools.ietf.org/html/rfc6749#section-5.2) will be returned.
 
 Example request with invalid Basic Authentication header (invalid client id and client secret):
@@ -52,17 +55,19 @@ Onegini Access provides two endpoints to check the availability of mobile authen
 
 Endpoint: `GET /oauth/api/v4/authenticate/user/{user_id}/device/{device_id}/enabled`
 
-| Parameter   | Description                                                                                      |
-|-------------|--------------------------------------------------------------------------------------------------|
-| `user_id`   | Identifier of the user                                                                           |
-| `device_id` | Identifier of the device with which you wish to see what is enabled                              |
+| Parameter   | Description                                                         |
+|-------------|---------------------------------------------------------------------|
+| `user_id`   | Identifier of the user                                              |
+| `device_id` | Identifier of the device with which you wish to see what is enabled |
 
-In all scenarios a `200 OK` response is returned by the server if mobile authentication is enabled on system level. The response contains a JSON message 
-with a list of available authentication types. 
+In all scenarios a `200 OK` response is returned by the server if mobile authentication is enabled on system level. The response contains a
+JSON message
+with a list of available authentication types.
 
 When there are no authentication options for a user/deviceId pair or the user/deviceId is unknown, the endpoint will return an empty list.
 
->**Note:** A mobile authentication type is available when either its original method or its fallback method is available to authenticate with.
+> **Note:** A mobile authentication type is available when either its original method or its fallback method is available to authenticate
+> with.
 
 **Example response:**
 
@@ -86,19 +91,23 @@ Pragma: no-cache
 
 Endpoint: `GET /oauth/api/v4/authenticate/user/{user_id}/enabled`
 
-| Parameter | Description                                                                                     |
-|-----------|-------------------------------------------------------------------------------------------------|
-| `user_id` | Identifier of the user                                                                          |
+| Parameter | Description            |
+|-----------|------------------------|
+| `user_id` | Identifier of the user |
 
-In all scenarios a `200 OK` response is returned by the server if mobile authentication is enabled on system level. The response contains a JSON message with a 
-list of available authentication options for a user. Each option contains the mobile authentication types as defined via the admin console. Only the 
-applications for which the user has enrolled push authentication can handle this method. These applications are listed in `apps_enrolled_for_push`. 
-Mobile authentication that is based on SMS or OTP is not restricted to specific applications. Push based authentication types can have sms fallback configured. 
+In all scenarios a `200 OK` response is returned by the server if mobile authentication is enabled on system level. The response contains a
+JSON message with a
+list of available authentication options for a user. Each option contains the mobile authentication types as defined via the admin console.
+Only the
+applications for which the user has enrolled push authentication can handle this method. These applications are listed
+in `apps_enrolled_for_push`.
+Mobile authentication that is based on SMS or OTP is not restricted to specific applications. Push based authentication types can have sms
+fallback configured.
 This is also reflected in the JSON with the `sms_fallback_allowed` attribute.
 
 When there are no authentication options for a user or the user is unknown the endpoint will return an empty list.
 
->**Note:** A mobile authentication type is available only if its original method or its fallback method is available to authenticate with.
+> **Note:** A mobile authentication type is available only if its original method or its fallback method is available to authenticate with.
 
 **Example response:**
 
@@ -166,27 +175,30 @@ Pragma: no-cache
 
 ## Mobile authentication initialization
 
-Mobile authentication can be initialized by an asynchronous API call to Onegini Access. For most mobile authentication types (push, OTP) the portal will be informed of the authentication result via a callback.
+Mobile authentication can be initialized by an asynchronous API call to Onegini Access. For most mobile authentication types (push, OTP) the
+portal will be informed of the authentication result via a callback.
 
 #### Request
 
 Endpoint: `POST /oauth/api/v4/authenticate/user`
 
-The request must contain a body which is `application/x-www-form-urlencoded;charset=UTF-8` encoded. The parameters required depend on the type of authentication requested. Note that if a fallback is used for the mobile authentication type, and this fallback is of a different type, then its required parameters should also be present.
+The request must contain a body which is `application/x-www-form-urlencoded;charset=UTF-8` encoded. The parameters required depend on the
+type of authentication requested. Note that if a fallback is used for the mobile authentication type, and this fallback is of a different
+type, then its required parameters should also be present.
 
-| Parameter      | Req'd PUSH | Req'd OTP | Req'd SMS | Description                                                                                                                                                                                                                                                                                                                                                                                                                                
-|----------------|------------|-----------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| type           | Yes        | Yes       | Yes       | The name of the mobile authentication type as defined via admin panel. Example: no_pin, pin, etc. Each push based mobile authentication type may contain a fallback strategy which is used when the original authentication method is not available for a user.
-| user_id        | Yes        | No        | Yes       | Identifier of the user. Must NOT be present for OTP.
-| device_id      | Yes        | No        | No        | Identifier of the device you wish to initiate the push on.
-| callback_uri   | Yes        | Yes       | No        | Uri on which the portal wants to receive the result of the authentication. When a callback uri whitelist is used, the callback uri should be on the whitelist.
-| message        | Yes        | Yes       | Yes       | The message to display in the authentication request. This message may ONLY be omitted if default messages have been specified for the mobile authentication type. NOTE: Max allowed length is 155 by default. If using SMS, please refer to the [SMS topic guide](../../topics/mobile-apps/mobile-authentication/mobile-authentication.md#sms) for requirements around the format of the message.
-| signing_data   | No         | No        | No        | The data which will be signed if the mobile authentication type has transaction signing enabled (only available for push). This data will be delivered to the device in encrypted format. If transaction signing is not enabled for the type, this field will be ignored.
-| secure_message | No         | No        | No        | Sensitive message which will be encrypted and delivered to the device with HTTPS
-| phone_number   | No         | No        | Yes       | Phone number to be used in SMS authentication process using the international notation. Example: `+15055551234`
-| language_code  | No         | No        | No        | The language code is used to look up translations for messages defined in the admin console. If no message is specified, the language code is used to match to a configured default message. When no default message is found for the specified language code, English will be used. Examples of language codes: nl, fr, en, de (lowercase). This is also used in combination with ip_address and/or user agent to help construct those messages in the correct language.  
-| ip_address     | No         | No        | No        | The IP address where the initialization request originates. This will be used by the geolocation service to look up location data to be included in the message to the SDK for additional context. 
-| user_agent     | No         | No        | No        | The raw user agent string of the device/application where the initialization request originates. This will be included in the message to the SDK for additional context. 
+| Parameter      | Req'd PUSH | Req'd OTP | Req'd SMS | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|----------------|------------|-----------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type           | Yes        | Yes       | Yes       | The name of the mobile authentication type as defined via admin panel. Example: no_pin, pin, etc. Each push based mobile authentication type may contain a fallback strategy which is used when the original authentication method is not available for a user.                                                                                                                                                                                                           |
+| user_id        | Yes        | No        | Yes       | Identifier of the user. Must NOT be present for OTP.                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| device_id      | Yes        | No        | No        | Identifier of the device you wish to initiate the push on.                                                                                                                                                                                                                                                                                                                                                                                                                |
+| callback_uri   | Yes        | Yes       | No        | Uri on which the portal wants to receive the result of the authentication. When a callback uri whitelist is used, the callback uri should be on the whitelist.                                                                                                                                                                                                                                                                                                            |
+| message        | Yes        | Yes       | Yes       | The message to display in the authentication request. This message may ONLY be omitted if default messages have been specified for the mobile authentication type. NOTE: Max allowed length is 155 by default. If using SMS, please refer to the [SMS topic guide](../../topics/mobile-apps/mobile-authentication/mobile-authentication.md#sms) for requirements around the format of the message.                                                                        |
+| signing_data   | No         | No        | No        | The data which will be signed if the mobile authentication type has transaction signing enabled (only available for push). This data will be delivered to the device in encrypted format. If transaction signing is not enabled for the type, this field will be ignored.                                                                                                                                                                                                 |                                                                      | 
+| secure_message | No         | No        | No        | Sensitive message which will be encrypted and delivered to the device with HTTPS                                                                                                                                                                                                                                                                                                                                                                                          |
+| phone_number   | No         | No        | Yes       | Phone number to be used in SMS authentication process using the international notation. Example: `+15055551234`                                                                                                                                                                                                                                                                                                                                                           |
+| language_code  | No         | No        | No        | The language code is used to look up translations for messages defined in the admin console. If no message is specified, the language code is used to match to a configured default message. When no default message is found for the specified language code, English will be used. Examples of language codes: nl, fr, en, de (lowercase). This is also used in combination with ip_address and/or user agent to help construct those messages in the correct language. |
+| ip_address     | No         | No        | No        | The IP address where the initialization request originates. This will be used by the geolocation service to look up location data to be included in the message to the SDK for additional context.                                                                                                                                                                                                                                                                        |
+| user_agent     | No         | No        | No        | The raw user agent string of the device/application where the initialization request originates. This will be included in the message to the SDK for additional context.                                                                                                                                                                                                                                                                                                  |
 
 **Example push request:**
 
@@ -223,15 +235,16 @@ type=otp&callback_uri=https%3A%2F%2Fwww.myportal.com%2Fcallback&message=Please%2
 
 #### Response
 
-When the mobile authentication server was able to successfully initialize the mobile authentication request, a `200 OK` response is received containing several parameters, depending on the type of authentication initialized.
+When the mobile authentication server was able to successfully initialize the mobile authentication request, a `200 OK` response is received
+containing several parameters, depending on the type of authentication initialized.
 
-| Parameter      | PUSH | OTP | SMS | Description
-|----------------|------|-----|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| transaction_id | Yes  | Yes | Yes | A UUID that can be used to fetch the mobile authentication result, for example after having received a callback.
-| auth_method    | Yes  | Yes | Yes | A description of which method was used. This information can be useful in case the fallback strategy was triggered and the authentication method is different than the expected one.
-| time_to_live   | Yes  | Yes | Yes | The time to live of the mobile authentication request, in milliseconds. After expiry, an unanswered mobile authentication request is considered closed and unsuccessful.
-| otp            | No   | Yes | No  | The OTP code that the portal can deliver to the SDK via some method (for example a QR code). This code is then used to authenticate. Care should be taken not to leak this code to other parties.
-| device         | Yes  | No  | No  | The device object contains details about the device the mobile authentication request was sent to. The `name` contains the device name that the user gave to his/her device. The `platform` is the device platform and can either have the values `ios` or `android`.
+| Parameter      | PUSH | OTP | SMS | Description                                                                                                                                                                                                                                                           |
+|----------------|------|-----|-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| transaction_id | Yes  | Yes | Yes | A UUID that can be used to fetch the mobile authentication result, for example after having received a callback.                                                                                                                                                      |
+| auth_method    | Yes  | Yes | Yes | A description of which method was used. This information can be useful in case the fallback strategy was triggered and the authentication method is different than the expected one.                                                                                  |
+| time_to_live   | Yes  | Yes | Yes | The time to live of the mobile authentication request, in milliseconds. After expiry, an unanswered mobile authentication request is considered closed and unsuccessful.                                                                                              |
+| otp            | No   | Yes | No  | The OTP code that the portal can deliver to the SDK via some method (for example a QR code). This code is then used to authenticate. Care should be taken not to leak this code to other parties.                                                                     |
+| device         | Yes  | No  | No  | The device object contains details about the device the mobile authentication request was sent to. The `name` contains the device name that the user gave to his/her device. The `platform` is the device platform and can either have the values `ios` or `android`. |
 
 **Example push success result:**
 
@@ -267,14 +280,18 @@ Pragma: no-cache
 }
 ```
 
+When the mobile authentication server was able to successfully send out an authentication request to the user, a 200 OK response is received
+containing a
+transaction id, which is a UUID. Based on this transaction id, the portal can correlate incoming authentication results.
 
-When the mobile authentication server was able to successfully send out an authentication request to the user, a 200 OK response is received containing a 
-transaction id, which is a UUID. Based on this transaction id, the portal can correlate incoming authentication results. 
-
-The returned object also contains information about the authentication method which was actually used (`push` or `sms`) plus the time to live for the 
-transaction (in milliseconds). This information can be useful in situations where for some reason PUSH authentication failed, but in the initial request the
-portal has also provided the user's phone number, and the Onegini Access was able to fallback on sending a code via SMS. For push, the portal can show 
-instructions to open the mobile app, and it should wait for the result on the callback uri. For SMS, the portal should display an input field to enter the one
+The returned object also contains information about the authentication method which was actually used (`push` or `sms`) plus the time to
+live for the
+transaction (in milliseconds). This information can be useful in situations where for some reason PUSH authentication failed, but in the
+initial request the
+portal has also provided the user's phone number, and the Onegini Access was able to fallback on sending a code via SMS. For push, the
+portal can show
+instructions to open the mobile app, and it should wait for the result on the callback uri. For SMS, the portal should display an input
+field to enter the one
 time code, and verify this code with the Onegini Access when the user submits the form.
 
 **Example failure result:**
@@ -293,13 +310,16 @@ Pragma: no-cache
 
 ## Mobile authentication result
 
-Once the user has completed authentication, the portal must be informed of the results. This is done via a callback from the Onegini Access to the portal, and a subsequent request to fetch the mobile authentication results.
+Once the user has completed authentication, the portal must be informed of the results. This is done via a callback from the Onegini Access
+to the portal, and a subsequent request to fetch the mobile authentication results.
 
-**Note:** This section does not apply to SMS mobile authentication types. Please refer to the SMS endpoints section for completing an SMS mobile authentication request.
+**Note:** This section does not apply to SMS mobile authentication types. Please refer to the SMS endpoints section for completing an SMS
+mobile authentication request.
 
 ### Callback
 
-Once authentication has occurred (or failed), the Onegini Access calls the endpoint provided by the portal during the mobile authentication initialization step (specifically, the `callback_uri` field).
+Once authentication has occurred (or failed), the Onegini Access calls the endpoint provided by the portal during the mobile authentication
+initialization step (specifically, the `callback_uri` field).
 
 Endpoint: `POST <callback_uri>`
 
@@ -325,14 +345,15 @@ The portal should send a "204 No Content" response on the callback.
 
 ### Fetch authentication result
 
-When the callback has been received by the portal, this means that the mobile authentication request has been completed and the results can be retrieved.
+When the callback has been received by the portal, this means that the mobile authentication request has been completed and the results can
+be retrieved.
 
 Endpoint `GET /oauth/api/v4/authenticate/transaction/{transaction_id}`
 
 | Parameter        | Description                                                 |
 |------------------|-------------------------------------------------------------|
 | `transaction_id` | transaction identifier returned in authentication init step |
- 
+
 **Example request:**
 
 ```http
@@ -344,28 +365,28 @@ Content-Type: application/x-www-form-urlencoded
 
 The response will contain a JSON object with the following parameters:
 
-| Parameter                      | Description                                                                                                                                                                                                                                       |
-|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `callback_uri`                 | The callback uri used in the authentication request and where the callback was sent to.                                                                                                                                                           |
-| `transaction_id`               | The identifier of the mobile authentication transaction.                                                                                                                                                                                          |
-| `timestamp`                    | Timestamp of the moment the authentication request was sent.                                                                                                                                                                                      |
-| `user_id`                      | The identifier of the user that has answered the authentication request.                                                                                                                                                                          |
-| `is_authenticated`             | The authentication result. Equal to `true` if the user has been authenticated or `false` otherwise.                                                                                                                                               |
-| `authentication_method`        | The authentication method used to answer the authentication request. This can be useful in the event of a fallback.                                                                                                                               |
-| `used_authentication_attempts` | Number of attempts used to authenticate with the method (only provided for `PUSH_WITH_PIN`).                                                                                                                                                      |
-| `signature`                    | The cryptographic signature of the `signing_data` (data that needed to be signed by the user, provided on initialization request by the portal). Only included for transaction signing.                                                           |
-| `user_public_key`              | The public key used to sign the `signing_data` (data that needed to be signed by the user, provided on initialization request by the portal). The public key is PEM encoded (e.g. base64 with linebreaks). Only included for transaction signing. |
-| `signature_verified`           | The result of the signature. True when the signature was verified using the user's public key, and false when the signature was unable to be verified. Only included for transaction signing.                                                     |                                                      
-| `not_authenticated_reason`     | The reason of not authenticating the user. Only included when the user failed to become authenticated with no possibility for another try (after callback was sent). It contains `reason` and `description` labels (see the not authenticated example response below)  |
+| Parameter                      | Description                                                                                                                                                                                                                                                           |
+|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `callback_uri`                 | The callback uri used in the authentication request and where the callback was sent to.                                                                                                                                                                               |
+| `transaction_id`               | The identifier of the mobile authentication transaction.                                                                                                                                                                                                              |
+| `timestamp`                    | Timestamp of the moment the authentication request was sent.                                                                                                                                                                                                          |
+| `user_id`                      | The identifier of the user that has answered the authentication request.                                                                                                                                                                                              |
+| `is_authenticated`             | The authentication result. Equal to `true` if the user has been authenticated or `false` otherwise.                                                                                                                                                                   |
+| `authentication_method`        | The authentication method used to answer the authentication request. This can be useful in the event of a fallback.                                                                                                                                                   |
+| `used_authentication_attempts` | Number of attempts used to authenticate with the method (only provided for `PUSH_WITH_PIN`).                                                                                                                                                                          |
+| `signature`                    | The cryptographic signature of the `signing_data` (data that needed to be signed by the user, provided on initialization request by the portal). Only included for transaction signing.                                                                               |
+| `user_public_key`              | The public key used to sign the `signing_data` (data that needed to be signed by the user, provided on initialization request by the portal). The public key is PEM encoded (e.g. base64 with linebreaks). Only included for transaction signing.                     |
+| `signature_verified`           | The result of the signature. True when the signature was verified using the user's public key, and false when the signature was unable to be verified. Only included for transaction signing.                                                                         |                                                      
+| `not_authenticated_reason`     | The reason of not authenticating the user. Only included when the user failed to become authenticated with no possibility for another try (after callback was sent). It contains `reason` and `description` labels (see the not authenticated example response below) |
 
 The following table shows possible not authenticated reasons:
 
-| `reason`          | `description`                       |
-|-------------------|-------------------------------------|
-| failed_to_send    | Push message failed to be sent      |
-| invalid_request   | Invalid push authentication request |
-| not_accepted      | User rejected push                  |
-| invalid_answer    | Invalid push answer                 |
+| `reason`        | `description`                       |
+|-----------------|-------------------------------------|
+| failed_to_send  | Push message failed to be sent      |
+| invalid_request | Invalid push authentication request |
+| not_accepted    | User rejected push                  |
+| invalid_answer  | Invalid push answer                 |
 
 **Example authenticated response:**
 
@@ -423,7 +444,8 @@ In the event of an error, one of these [error codes](#error-codes) will be retur
 
 ## SMS endpoints
 
-While mobile authentication with SMS is initialized using the same endpoint as other types, the completion of the request differs in that the user must submit their SMS code to the portal. The Onegini Access therefore provides two endpoints for this purpose.
+While mobile authentication with SMS is initialized using the same endpoint as other types, the completion of the request differs in that
+the user must submit their SMS code to the portal. The Onegini Access therefore provides two endpoints for this purpose.
 
 ### Verify SMS code
 
@@ -431,12 +453,12 @@ The portal can verify a user's SMS code using the following endpoint.
 
 Endpoint: `POST /oauth/api/v4/authenticate/user/{user_id}/sms`
 
-| Parameter  | Description            |
-|------------|------------------------|
-| `user_id`  | Identifier of the user |
+| Parameter | Description            |
+|-----------|------------------------|
+| `user_id` | Identifier of the user |
 
 The request body must be `application/x-www-form-urlencoded;charset=UTF-8` encoded and contain the following parameters:
- 
+
 | Parameter        | Description                                                                          |
 |------------------|--------------------------------------------------------------------------------------|
 | `transaction_id` | Transaction identifier returned during the mobile authentication initialization step |
@@ -469,14 +491,14 @@ Pragma: no-cache
 **Example error response:**
 
 ```http
-HTTP/1.1 400 Bad request
+HTTP/1.1 404 Not Found
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, must-revalidate
 Pragma: no-cache
  
 {
-  "error": "invalid_verification_code",
-  "error_description": "The verification code is invalid."
+  "error_code": "3003",
+  "description": "Failed to authenticate, verification code invalid"
 }
 ```
 
@@ -486,15 +508,15 @@ The following endpoint can be used to resend an SMS verification code in case th
 
 Endpoint `POST /oauth/api/v4/authenticate/user/{user_id}/sms/resend`
 
-| Parameter  | Description            |
-|------------|------------------------|
-| `user_id`  | Identifier of the user |
+| Parameter | Description            |
+|-----------|------------------------|
+| `user_id` | Identifier of the user |
 
 The request body must be `application/x-www-form-urlencoded;charset=UTF-8` encoded and contain the following parameters:
 
-| Path variable    | Description                                                                             |
-|------------------|-----------------------------------------------------------------------------------------|
-| `transaction_id` | The identifier of the authentication transaction.                                       |
+| Path variable    | Description                                       |
+|------------------|---------------------------------------------------|
+| `transaction_id` | The identifier of the authentication transaction. |
 
 **Example request:**
 
@@ -507,31 +529,31 @@ Content-Type: application/x-www-form-urlencoded
 transaction_id=5927555c-d40c-408d-8149-b3db671e14cc
 ```
 
-A `204 No Content` is returned when the SMS was successfully resent. 
+A `204 No Content` is returned when the SMS was successfully resent.
 
 ## Error codes
 
-| Error code | Http status code | Description                                                            |
-|------------|------------------|------------------------------------------------------------------------|
-| 3002       | 503              | Failed to initiate authentication, failed to send sms                  |
-| 3004       | 404              | Failed to authenticate, invalid transaction id                         |
-| 3005       | 404              | Failed to authenticate, invalid user id                                |
-| 3006       | 403              | Resend limit reached.                                                  |
+| Error code | Http status code | Description                                           |
+|------------|------------------|-------------------------------------------------------|
+| 3002       | 503              | Failed to initiate authentication, failed to send sms |
+| 3004       | 404              | Failed to authenticate, invalid transaction id        |
+| 3005       | 404              | Failed to authenticate, invalid user id               |
+| 3006       | 403              | Resend limit reached.                                 |
 
 ## Error codes
 
-| Error code | Http status code | Description                                                            
-|------------|------------------|------------------------------------------------------------------------
-| 1000       | 404              | Mobile authentication disabled                                         
-| 1001       | 404              | No authentication possibilities for user or user not found             
-| 1002       | 503              | Failed to initiate authentication at authentication provider           
-| 1003       | 400              | One of the requests parameters is invalid or missing                   
-| 1005       | 400              | Failed to initiate authentication, message content too long            
-| 1006       | 404              | Failed to fetch authentication message                                 
-| 3000       | 404              | SMS authentication disabled                                            
-| 3001       | 400              | Invalid input params, phone number is missing                          
-| 3002       | 503              | Failed to initiate authentication, failed to send SMS                  
-| 3003       | 404              | Failed to authenticate, verification code invalid                      
-| 3004       | 404              | Failed to authenticate, invalid transaction id                         
-| 3005       | 404              | Failed to initiate authentication, Mobile authentication type not found 
-| 4000       | 404              | Failed to initiate authentication, Failed to initiate authentication, authentication properties not found
+| Error code | Http status code | Description                                                                                               |
+|------------|------------------|-----------------------------------------------------------------------------------------------------------|
+| 1000       | 404              | Mobile authentication disabled                                                                            |
+| 1001       | 404              | No authentication possibilities for user or user not found                                                |
+| 1002       | 503              | Failed to initiate authentication at authentication provider                                              |
+| 1003       | 400              | One of the requests parameters is invalid or missing                                                      |
+| 1005       | 400              | Failed to initiate authentication, message content too long                                               |
+| 1006       | 404              | Failed to fetch authentication message                                                                    |
+| 3000       | 404              | SMS authentication disabled                                                                               |
+| 3001       | 400              | Invalid input params, phone number is missing                                                             |
+| 3002       | 503              | Failed to initiate authentication, failed to send SMS                                                     |
+| 3003       | 404              | Failed to authenticate, verification code invalid                                                         |
+| 3004       | 404              | Failed to authenticate, invalid transaction id                                                            |
+| 3005       | 404              | Failed to initiate authentication, Mobile authentication type not found                                   |
+| 4000       | 404              | Failed to initiate authentication, Failed to initiate authentication, authentication properties not found |
