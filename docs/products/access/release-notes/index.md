@@ -8,6 +8,21 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-09-27
+
+### Features
+* We added a new `experimental feature` to connect to a new IDP type: ID Broker. This is a new component that supports federated authentication towards external identity schemes. 
+* We added a new `Map assertion attributes` feature for SAML IDPs. This feature enables mapping all attributes in the SAML assertion from the external IDP to claims in the ID Token. Via Attribute mapping, you can limit this mapping to only include specific claims. If you have enabled the User Info integration, the assertion attributes will be overwritten if they have the same name.
+
+### Improvements
+* We improved the mapping of "expected error responses" from OAuth/OIDC IdP types, e.g. the `login_required` error is now mapped to this event `AUTHN REQUEST LOGIN REQUIRED` and no longer to `IDP OAUTH RECEIVED ERROR`. 
+* We improved our production roll-out process. 
+* We now also support a `.` character in the name of a scope.
+
+### Bugs
+* The length was limited to 20 characters when managing scopes via the API. We now aligned this to 255, which was already possible via the UI.
+* We now support the new `urn:onewelcome:oauth2:grant_type:stateless_authentication` grant during the registration of a Mobile device. 
+
 ## Release date 2023-09-13
 
 ### Improvements
