@@ -8,6 +8,17 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-10-09
+
+### Features
+* We added a new configuration item to Web clients. Specifying the Refresh Token validity from when the token is issued is now possible. We also clarified that the old config referred to the max lifetime, calculated from when the first access token was issued. Now, both validities can be configured. 
+* If an account gets blocked or deleted from an IdP of the type CIM, we now clear all active tokens and remove all registered devices.
+
+## Release date 2023-09-28
+
+### Features
+* The new `Map assertion attributes` feature for SAML IDPs, now also maps the attributes in the SAML assertion from the external IDP to claims in the UserInfo endpoint.
+
 ## Release date 2023-09-27
 
 ### Features
