@@ -5,7 +5,7 @@ supports multiple integrations with identity providers out of the box. Custom in
 
 Go to `Configuration` and then to `Identity providers` to configure identity providers in the admin console.
 
-## General configurationgit
+## General configuration
 
 ![Add IdP](img/add-idp.png)
 
