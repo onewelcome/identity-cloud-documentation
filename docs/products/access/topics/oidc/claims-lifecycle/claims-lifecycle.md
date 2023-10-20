@@ -64,7 +64,7 @@ This section aims to explain and visualise how Access deals with user claims/att
         5. The User Object is populated with all the claims returned by the User Info API. If a given claim already exists in the User
            Object, it will be overwritten with the claim from the User Info source, which is considered more recent.
         6. If a User Details Customisation Web Hook is configured for a requesting OAuth client/OIDC Relying Party, proceed to
-           to [#4.6.](#4.6.).
+           to [#5](#5.).
         7. [User Details Customization Web Hook](https://docs.onegini.com/products/access/topics/integration-extension/hooks/customize-user-details/customize-user-details-hook/)
            is executed. The hook implementation is provided with all available user information, as well as contextual details about the ID
            token being created.
