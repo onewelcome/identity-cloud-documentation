@@ -92,7 +92,7 @@ supported ones.
 
 > **Note:** The SLO enabled checkbox is available in the form if and only
 >
-the [SAML Service Provider Configuration `SLO enabled`](../../technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md#slo-enabled)
+> the [SAML Service Provider Configuration `SLO enabled`](../../technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md#slo-enabled)
 > is enabled.
 
 By default only the user id of the user is mapped based on the name id available in the SAML assertion. By adding an attribute mapping more

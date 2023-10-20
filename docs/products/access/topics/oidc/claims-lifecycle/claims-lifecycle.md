@@ -14,13 +14,13 @@ This section aims to explain and visualise how Access deals with user claims/att
         1. Once authenticated, the OIDC Provider redirects back to Access with the authorisation code and Access exchanges the code for the
            AccessToken / IDToken pair. The IDToken is the primary source of information about the user. An internal User Object is created
            and populated with all the user claims available in the IDToken. In addition to the user attributes, the AMR and ACR claims are
-           also stored in the User Object.
+           also stored in the User Object. _Note_ If the Identity Provider is of type Tulip, Access only reads the AMR and ACR claims from
+           the ID Token.
         2. If the IdentityProvider is of type Tulip, it is likely that a User Data Enhancer (UDH) API integration is configured. If this is
            the case, the user claims are requested via another API call from UDH, Access passes the user identifier (subject) and a set of
            scopes requested by the client. Otherwise, the User Object is persisted (see #2.a.5).
         3. The UDH response is mapped to a UserInfo standard format.
-        4. The User Object is populated with any claims returned by the UDH service. If a given claim already exists in the user object,
-           it's overwritten with the one coming from UDH, which is considered more recent.
+        4. The User Object is populated with any claims returned by the UDH service.
     2. If the underlying IdentityProvider is of SAML type (e.g. CIM), Access redirects the user to the defined SAML Identity Provider with
        SAML AuthnRequest (whether it is a redirect or a POST call depends on the integration characteristic).
         1. Access processes the SAML AuthnResponse.
