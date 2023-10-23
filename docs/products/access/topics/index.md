@@ -5,12 +5,12 @@ In the topic guides the key topics and concepts are described at a fairly high l
 ## Client authentication methods
 
 The [client authentication methods](authentication-methods/authentication-methods.md) topic guides describe the various ways clients can authenticate when they
-call the APIs of Onegini Access.
+call the APIs of OneWelcome Access.
 
 ## General client application configuration
 
 The [general client application configuration](general-app-config/index.md) topic guides are focused on configuration which is shared over multiple client
-applications. This includes both mobile as web applications using Onegini Access.
+applications. This includes both mobile as web applications using OneWelcome Access.
 
 ## Mobile applications
 
@@ -22,7 +22,7 @@ The [web clients](web-clients/index.md) topic guides are focused on configuratio
 
 ## OpenID Connect
 
-The [OpenID Connect](oidc/index.md) topic guides cover Onegini Access as an OpenID Connect Provider.
+The [OpenID Connect](oidc/index.md) topic guides cover OneWelcome Access as an OpenID Connect Provider.
 
 ## Custom Authenticators
 
@@ -44,10 +44,10 @@ and its infrastructure.
 
 ## Integration and extension
 
-The [integration and extension](integration-extension/index.md) topic guides are focused on how to utilize the default Onegini Access extension points to
+The [integration and extension](integration-extension/index.md) topic guides are focused on how to utilize the default OneWelcome Access extension points to
 integrate it in the existing application landscape of an organization.
 
 ## Look and feel
 
-Some of the functionality of Onegini Access can be accessed via a web browser. The [look and feel](look-and-feel/index.md) topic guides are focused on how to
+Some of the functionality of OneWelcome Access can be accessed via a web browser. The [look and feel](look-and-feel/index.md) topic guides are focused on how to
 adapt the pages to your requirements.

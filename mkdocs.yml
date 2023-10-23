@@ -86,6 +86,7 @@ nav:
                   - 'OpenID Connect overview': products/access/topics/oidc/overview/overview.md
                   - 'Authentication': products/access/topics/oidc/overview/authentication.md
                   - 'Scopes and claims': products/access/topics/oidc/overview/scopes-and-claims.md
+                  - 'Claims lifecycle': products/access/topics/oidc/claims-lifecycle/claims-lifecycle.md
                   - 'Configuration': products/access/topics/oidc/configuration/configuration.md
                   - 'ID Token Encryption': products/access/topics/oidc/id-token-encryption/id-token-encryption.md
                   - 'Session Management':
