@@ -11,13 +11,13 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 ## Release date 2023-10-30
 
 ### Features
-* We now support more [`acr` values](../topics/oidc/overview/scopes-and-claims.md#acr) for non-CIM-type IdPs. These `acr_values` are also exposed in the Discovery Endpoint.
+* We now support more [`acr` values](../topics/oidc/overview/scopes-and-claims.md#acr). These `acr_values` are also exposed in the [Discovery Endpoint](../api-reference/oidc/discovery.md)
 * We added [configuration](../topics/technical-app-management/session-config/session-config.md) to configure the SSO Session on a tenant level. This allows customers to set the default length and the maximum length of an SSO session.
 * The user details cache (used for the ID Token and the userinfo endpoint) can now be cleared automatically if the connected IdP sends Events.
 
 ### Improvements
 * Extended the token revocation events with a `User ID`.
-* * Improved error logging in [web hooks](../topics/integration-extension/hooks/index.md)
+* Improved error logging in [web hooks](../topics/integration-extension/hooks/index.md)
 
 ### Bugs
 * Ensure the `acr` value is not lost when a specific attribute mapping is configured for an IdP.
