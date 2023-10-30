@@ -64,21 +64,24 @@ All supported values are exposed via the [Discovery API](../../../api-reference/
 
 For CIM IdP, only a single ACR value can be specified. Sending multiple values will result in a `Bad Request` error.
 
-#### OAuth
+Access may return an ACR with a value that is higher than the authentication level that was requested.
+
+#### OAuth/OIDC
 
 For OAuth-based identity providers (e.g. Tulip, Identity Broker), requested ACR values are forwarded upstream to the configured identity
 provider.
 
-Supported ACR values from IdP OpenID configuration are exposed via the [Discovery API](../../../api-reference/oidc/discovery.md). However,
-Access does not validate provided ACR values and allows those not in OpenID configuration.
+Supported ACR values from IdP OpenID configuration are exposed via the [Discovery API](../../../api-reference/oidc/discovery.md).
+In case of multiple IdPs, the `acr_values_supported` field will contain a superset of ACR values supported by all IdPs.
+It means not all IdP types support all ACR values listed in the Discovery endpoint.
+Note, that Access does not validate provided ACR values and allows those not in OpenID configuration.
+Requested values will be forwarded to the configured IdP and validated by the IdP.
 
 To request a specific ACR value include `acr_values` parameter when requesting ID Token, e.g.:
 
 ```http
 http://tokenserver.example.com/oauth/authorize?response_type=code&client_id=openid&redirect_uri=http%3A%2F%2F.example.com&scope=openid&state=d5dbda85-ecdb-4172-9ada-7ba15c6982d0&acr_values=urn:onegini.com:oidc:authentication_level:2
 ```
-
-Access may return an ACR with a value that is higher than the authentication level that was requested.
 
 Further reading:
 
