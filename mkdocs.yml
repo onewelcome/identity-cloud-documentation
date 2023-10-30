@@ -113,7 +113,7 @@ nav:
                   - 'System features configuration': products/access/topics/technical-app-management/system-features-config/system-features-config.md
                   - 'Session configuration': products/access/topics/technical-app-management/session-config/session-config.md
                   - 'Api configuration': products/access/topics/technical-app-management/api-configuration/api-configuration.md
-                  - 'CORS configuration': products/access/topics/technical-app-management/cors-support/session-config.md
+                  - 'CORS configuration': products/access/topics/technical-app-management/cors-support/cors-support.md
                   - 'Extension Engine': products/access/topics/technical-app-management/extension-engine/extension-engine-properties.md
                   - 'SAML Service Provider configuration': products/access/topics/technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md
               - 'Integration and extension':
