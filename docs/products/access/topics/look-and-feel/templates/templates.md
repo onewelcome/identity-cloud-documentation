@@ -8,7 +8,7 @@ align their look and feel with your mobile application or company standards.
 Access uses template sets that contain one or more custom templates. The default template is used when a specific template is not available in the
 template set. One custom template set can be marked as the default template set for all applications and web clients.
 
-Customized templates can be uploaded and managed via the [Self Styling application](../../../../../self-styling). To add the new template set, follow
+Customized templates can be uploaded and managed via the [Self Styling application](../../../../../self-styling/index.md). To add the new template set, follow
 the [directory structure](../../../../../self-styling/configuration-page.md)
 in the configured git repository. Refer to the [default template set](./content/access-engine-templates.zip) to further customize templates.
 

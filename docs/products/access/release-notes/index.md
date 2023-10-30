@@ -12,7 +12,7 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 
 ### Features
 * We now support more [`acr` values](../topics/oidc/overview/scopes-and-claims.md#acr) for non-CIM-type IdPs. These `acr_values` are also exposed in the Discovery Endpoint.
-* We added configuration to configure the SSO Session on a tenant level. This allows customers to set the default length and the maximum length of an SSO session.
+* We added [configuration](../topics/technical-app-management/session-config/session-config.md) to configure the SSO Session on a tenant level. This allows customers to set the default length and the maximum length of an SSO session.
 * The user details cache (used for the ID Token and the userinfo endpoint) can now be cleared automatically if the connected IdP sends Events.
 
 ### Improvements
