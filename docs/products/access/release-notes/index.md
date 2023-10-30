@@ -17,7 +17,7 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 
 ### Improvements
 * Extended the token revocation events with a `User ID`.
-* Improved the logging around errors happening in the hooks. 
+* * Improved error logging in [web hooks](../topics/integration-extension/hooks/index.md)
 
 ### Bugs
 * Ensure the `acr` value is not lost when a specific attribute mapping is configured for an IdP.
