@@ -17,8 +17,8 @@ function execute(requestPayload) {
 ```
 
 #### Complete Script
-The complete script requires a `user` object with an `id` property defined to be returned. Property `amr` is optional (requires 
-extension-engine `2.5.0` or greater. 
+The complete script requires a `user` object with a defined `id` property to be returned. The `amr` property is optional (requires 
+extension-engine `2.5.0` or later). The `user` object may also contain any other attributes describing the authenticated user, these attributes are exposed in the `id_token` as well as via the UserInfo and Token introspection APIs.
 
 ```js
 function execute(requestPayload) {
@@ -27,7 +27,10 @@ function execute(requestPayload) {
     status: 2000,
     user: {
       id: userId,
-      amr: ["mfa", "pwd"]
+      amr: ["mfa", "pwd"],
+      firstName: "John",
+      lastName: "Doe",
+      email: "john.doe@onewelcome.io"
     }
   };
 }
