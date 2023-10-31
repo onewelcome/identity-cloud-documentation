@@ -111,6 +111,7 @@ nav:
                   - 'Introduction': products/access/topics/technical-app-management/index.md
                   - 'General configuration': products/access/topics/technical-app-management/general-config/general-config.md
                   - 'System features configuration': products/access/topics/technical-app-management/system-features-config/system-features-config.md
+                  - 'Session configuration': products/access/topics/technical-app-management/session-config/session-config.md
                   - 'Api configuration': products/access/topics/technical-app-management/api-configuration/api-configuration.md
                   - 'CORS configuration': products/access/topics/technical-app-management/cors-support/cors-support.md
                   - 'Extension Engine': products/access/topics/technical-app-management/extension-engine/extension-engine-properties.md

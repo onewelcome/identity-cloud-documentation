@@ -4,6 +4,7 @@ The technical application management topic guides are focused on the technical s
 
 * [General configuration](general-config/general-config.md)
 * [System features configuration](system-features-config/system-features-config.md)
+* [Session configuration](session-config/session-config.md)
 * [Api configuration](api-configuration/api-configuration.md)
 * [CORS configuration](cors-support/cors-support.md)
 * [SAML Service Provider configuration](idp-saml-sp-config/idp-saml-sp-config.md)

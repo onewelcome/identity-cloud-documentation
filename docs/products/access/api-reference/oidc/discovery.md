@@ -21,10 +21,7 @@ Pragma: no-cache
     "userinfo_endpoint": "https://tokenserver.example.com/oauth/v1/userinfo",
     "revocation_endpoint": "https://tokenserver.example.com/oauth/v1/revoke",
     "response_types_supported": [
-        "code",
-        "token",
-        "id_token",
-        "token id_token"
+        "code"
     ],
     "subject_types_supported": [
         "public"
@@ -41,7 +38,9 @@ Pragma: no-cache
         "es512"
     ],
     "token_endpoint_auth_methods_supported": [
-        "client_secret_basic"
+        "client_secret_basic",
+        "client_secret_post",
+        "private_key_jwt"
     ],
     "scopes_supported": [
         "address",
@@ -73,32 +72,52 @@ Pragma: no-cache
         "updated_at",
         "custom_attributes"
     ],
-    "check_session_iframe": "https://tokenserver.example.com/oauth/v1/check_session",
+    "check_session_iframe": "https://tokenserver.example.com/oauth/v1/checksession",
     "end_session_endpoint": "https://tokenserver.example.com/oauth/v1/logout",
     "frontchannel_logout_supported": true,
     "frontchannel_logout_session_supported": false,
     "id_token_encryption_alg_values_supported": [
-        "RSA1_5",
-        "RSA-OAEP",
         "RSA-OAEP-256",
+        "RSA-OAEP-384",
+        "RSA-OAEP-512",
         "ECDH-ES",
         "ECDH-ES+A128KW",
         "ECDH-ES+A192KW",
         "ECDH-ES+A256KW"
     ],
     "id_token_encryption_enc_values_supported": [
+        "A256GCM",
+        "A192GCM",
+        "A128GCM",
         "A128CBC-HS256",
         "A192CBC-HS384",
-        "A256CBC-HS512",
-        "A128GCM",
-        "A192GCM",
-        "A256GCM"
+        "A256CBC-HS512"
     ],
     "acr_values_supported": [
         "urn:onegini.com:oidc:authentication_level:1",
+        "urn:onegini.com:oidc:authentication_level:1:identification_level:1",
+        "urn:onegini.com:oidc:authentication_level:1:identification_level:2",
+        "urn:onegini.com:oidc:authentication_level:1:identification_level:3",
+        "urn:onegini.com:oidc:authentication_level:1:identification_level:4",
         "urn:onegini.com:oidc:authentication_level:2",
+        "urn:onegini.com:oidc:authentication_level:2:identification_level:1",
+        "urn:onegini.com:oidc:authentication_level:2:identification_level:2",
+        "urn:onegini.com:oidc:authentication_level:2:identification_level:3",
+        "urn:onegini.com:oidc:authentication_level:2:identification_level:4",
         "urn:onegini.com:oidc:authentication_level:3",
-        "urn:onegini.com:oidc:authentication_level:4"
+        "urn:onegini.com:oidc:authentication_level:3:identification_level:1",
+        "urn:onegini.com:oidc:authentication_level:3:identification_level:2",
+        "urn:onegini.com:oidc:authentication_level:3:identification_level:3",
+        "urn:onegini.com:oidc:authentication_level:3:identification_level:4",
+        "urn:onegini.com:oidc:authentication_level:4",
+        "urn:onegini.com:oidc:authentication_level:4:identification_level:1",
+        "urn:onegini.com:oidc:authentication_level:4:identification_level:2",
+        "urn:onegini.com:oidc:authentication_level:4:identification_level:3",
+        "urn:onegini.com:oidc:authentication_level:4:identification_level:4"
+    ],
+    "code_challenge_methods_supported": [
+        "plain",
+        "S256"
     ]
 }
 ```
