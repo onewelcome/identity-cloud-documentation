@@ -8,6 +8,21 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-10-30
+
+### Features
+* We now support more [`acr` values](../topics/oidc/overview/scopes-and-claims.md#acr). These `acr_values` are also exposed in the [Discovery Endpoint](../api-reference/oidc/discovery.md)
+* We added [configuration](../topics/technical-app-management/session-config/session-config.md) to configure the SSO Session on a tenant level. This allows customers to set the default length and the maximum length of an SSO session.
+* The user details cache (used for the ID Token and the userinfo endpoint) can now be cleared automatically if the connected IdP sends Events.
+
+### Improvements
+* Extended the token revocation events with a `User ID`.
+* Improved error logging in [web hooks](../topics/integration-extension/hooks/index.md)
+
+### Bugs
+* Ensure the `acr` value is not lost when a specific attribute mapping is configured for an IdP.
+* Removed some details from specific events.
+
 ## Release date 2023-10-09
 
 ### Features
