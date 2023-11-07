@@ -4,6 +4,11 @@ This section contains release notes for Onegini DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
 
+## Release date: 2023-11-06
+
+### Bugs
+* We have corrected the content-type used in the invitation request sent to the Customer Identity Management (CIM) system.
+
 ## Release date: 2023-08-02
 
 ### Bugs
