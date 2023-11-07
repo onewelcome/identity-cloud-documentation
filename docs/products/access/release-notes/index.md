@@ -8,6 +8,12 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-11-03
+
+### Features
+* We enabled Custom Registration scripts to return user attributes in the ID Token and UserInfo Endpoint response.
+* We have introduced a feature that allows for the removal of a user's Access Tokens and grants whenever they change their password. This enhancement ensures that a user's security and access control are maintained by revoking their existing access privileges and requiring them to reauthenticate with their new password.
+
 ## Release date 2023-10-30
 
 ### Features
