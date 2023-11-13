@@ -1,27 +1,30 @@
 # User Session API
 
-The User Session API provides capabilities for managing user sessions. Like the endpoints in the end user API, the session endpoints are only accessible with valid API client credentials. These endpoints can be utilized by a web application to list active sessions for a specific user. For instance, the web application might want to display to the user a list of their active sessions, including details such as session ID, authentication time, last issued access time, user agent, and location information.
+The User Session API provides capabilities for managing user sessions. Like the endpoints in the end user API, the session endpoints are
+only accessible with valid API client credentials. These endpoints can be utilized by a web application to list active sessions for a
+specific user. For instance, the web application might want to display a list of active sessions to the user, including details such
+as session ID, authentication time, last issued access time, user agent, and location information.
 
 ## List User Sessions
 
 Endpoint: `GET /oauth/api/v1/users/{userId}/sessions`
 
-| Parameter | Description         |
-|-----------|---------------------|
-| `userId`  | User identifier     |
+| Parameter | Description     |
+|-----------|-----------------|
+| `userId`  | User identifier |
 
-This endpoint requires basic authentication, using the API client credentials.
+This endpoint requires basic authentication using the API client credentials.
 If the user does not exist, or if the user has no active sessions, a `404 Not Found` is returned.
 If there are active sessions, a response is returned with an array of session details.
 
-| Attribute    | Description                                                                                          |
-|--------------|------------------------------------------------------------------------------------------------------|
-| `session_id` | Identifier the session.                                                                              |
-| `auth_time`  | Timestamp indicating when the user was authenticated in this session.                                |
-| `last_iat`   | Timestamp indicating the time when the last Access Token was issued for the user in this session.    |
-| `user_agent` | String indicating the user agent of the device used in the session.                                  |
-| `location`   | Object containing location information such as IP address.                                           |
-| `clients`    | Array of objects representing the clients associated with the session, including client ID and name. |
+| Attribute    | Description                                                                                             |
+|--------------|---------------------------------------------------------------------------------------------------------|
+| `session_id` | Identifier of the session.                                                                              |
+| `auth_time`  | A timestamp indicating when the user was authenticated in this session.                                 |
+| `last_iat`   | A timestamp indicating when the last Access Token was issued for the user in this session.              |
+| `user_agent` | A string indicating the user agent of the device used in the session.                                   |
+| `location`   | An object containing location information such as IP address.                                           |
+| `clients`    | An array of objects representing the clients associated with the session, including client ID and name. |
 
 **Example response:**
 

@@ -1,16 +1,20 @@
 # Access token API
 
-The access token API provides access token management capabilities. Like all endpoints in the end user API, the token endpoints are only accessible with valid API client credentials. These endpoints can be used by a web application to list active tokens for a given user, or delete them. For example, the web application may wish to show the user a list of devices with authenticated sessions, and allow the user to revoke access for a device (by deleting the relevant token).
+The access token API provides access token management capabilities. Like all endpoints in the end user API, the token endpoints are only
+accessible with valid API client credentials. These endpoints can be used by a web application to list active tokens for a given user, or
+delete them. For example, the web application may wish to show the user a list of devices with authenticated sessions, and allow the user to
+revoke access for a device (by deleting the relevant token).
 
 ## List access tokens
 
 Endpoint: `GET /oauth/api/v1/users/{userId}/tokens`
 
-| Parameter | Description            |
-|-----------|------------------------|
-| `userId`  | User identifier        |
+| Parameter | Description     |
+|-----------|-----------------|
+| `userId`  | User identifier |
 
-This endpoint requires basic authentication, using the API client credentials. If the user does not exist, or if the user has no valid access tokens, a `404 Not Found` is returned. If the user has one or more valid tokens, an array is returned with the following attributes.
+This endpoint requires basic authentication, using the API client credentials. If the user does not exist, or if the user has no valid
+access tokens, a `404 Not Found` is returned. If the user has one or more valid tokens, an array is returned with the following attributes.
 
 | Attribute              | Description                                                                                                                                                 |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -78,4 +82,5 @@ Endpoint: `DELETE /oauth/api/v1/users/{userId}/tokens/{tokenId}`
 | `userId`  | Identifier of the user         |
 | `tokenId` | Identifier of the access token |
 
-This endpoint requires basic authentication, using the API client credentials. This endpoint returns `204 No Content` regardless of whether the user and/or token existed before deletion.
+This endpoint requires basic authentication, using the API client credentials. This endpoint returns `204 No Content` regardless of whether
+the user and/or token existed before deletion.
