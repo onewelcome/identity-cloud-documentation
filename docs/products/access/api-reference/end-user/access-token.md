@@ -12,14 +12,16 @@ Endpoint: `GET /oauth/api/v1/users/{userId}/tokens`
 
 This endpoint requires basic authentication, using the API client credentials. If the user does not exist, or if the user has no valid access tokens, a `404 Not Found` is returned. If the user has one or more valid tokens, an array is returned with the following attributes.
 
-| Attribute       | Description                                                                                                                                                 |
-|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`            | UUID identifying the token.                                                                                                                                 |
-| `client_name`   | Name specified for the client that has access to the user's resources via this token.                                                                       |
-| `device_name`   | Name of the device to which this token is granted (may be not present, as this attribute only contains a value in case of a dynamically registered client). |
-| `created_at`    | Timestamp of the moment the access token was created.                                                                                                       |
-| `scopes`        | String array with scopes that were granted for this access token.                                                                                           |
-| `type`          | The authentication method to be used with this access token.                                                                                                |
+| Attribute              | Description                                                                                                                                                 |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                   | UUID identifying the token.                                                                                                                                 |
+| `client_name`          | Name specified for the client that has access to the user's resources via this token.                                                                       |
+| `device_name`          | Name of the device to which this token is granted (may be not present, as this attribute only contains a value in case of a dynamically registered client). |
+| `created_at`           | Timestamp of the moment the access token was created.                                                                                                       |
+| `scopes`               | String array with scopes that were granted for this access token.                                                                                           |
+| `type`                 | The authentication method to be used with this access token.                                                                                                |
+| `refresh_token_issued` | Indicates whether a Refresh Token has been issued alongside the given Access Token.                                                                         |
+| `expired`              | Indicates if the Access Token has expired. Tokens without an issued Refresh Token are omitted from the response once expired                                |
 
 **Example response:**
 
@@ -40,7 +42,9 @@ Pragma: no-cache
         "email",
         "profile"
       ],
-      "type":"DEFAULT"
+      "type":"DEFAULT",
+      "refresh_token_issued": true,
+      "expired": false
     },
     {
       "id": "1c05119e-21b2-4905-bc93-8f67790a16d6",
@@ -49,7 +53,9 @@ Pragma: no-cache
       "scopes": [
         "email"
       ],
-      "type":"FINGER_PRINT"
+      "type":"FINGER_PRINT",
+      "refresh_token_issued": true,
+      "expired": false
     }
   ]
  }

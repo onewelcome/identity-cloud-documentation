@@ -169,6 +169,7 @@ nav:
               - 'End user':
                   - 'Introduction': products/access/api-reference/end-user/index.md
                   - 'Access token API': products/access/api-reference/end-user/access-token.md
+                  - 'User Sessions API': products/access/api-reference/end-user/session.md
                   - 'Application API': products/access/api-reference/end-user/application.md
                   - 'Consent API': products/access/api-reference/end-user/consent.md
                   - 'Device API version 3 (deprecated)': products/access/api-reference/end-user/device-v3.md
