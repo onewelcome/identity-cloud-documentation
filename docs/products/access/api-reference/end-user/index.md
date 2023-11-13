@@ -10,6 +10,7 @@ All endpoints contained within the end user API are secured via an API client. T
 ## APIs
 
 * [Access token API](access-token.md)
+* [User Sessions API](session.md)
 * [Application API](application.md)
 * [Consent API](consent.md)
 * [Device API version 3 (deprecated)](device-v3.md)
