@@ -60,7 +60,7 @@ JSON body parameters:
 | Param                            | Required | Example                                              | Description                                                                  
 |----------------------------------|----------|------------------------------------------------------|---------------------------------------------------------------------
 | id                               |  no      |  "c7b34d6a-682e-4eb2-8d1d-af2842108867"              |  Unique identifier for the configuration
-| type                             |  yes     |  "DABP"                                              |  The type of the WebHook, allowed values are `DABP` and `USER_DETAILS_CUSTOMIZATION`
+| type                             |  yes     |  "DABP"                                              |  The type of the WebHook, allowed values are `CUSTOMIZE_TOKEN`, `DABP` and `USER_DETAILS_CUSTOMIZATION`
 | name                             |  yes     |  "Delegated Administration production cluster"       |  Human readable name of the configuration
 | base_uri                         |  yes     |  "https://dabp-prod.example.com"                     |  Base URI that Access Service can reach for calls to Web Hook API
 | authentication_method            |  yes     |  "BASIC"                                             |  The type of the authentication required by the WebHook, allowed values are `BASIC` and `NONE`.
@@ -183,7 +183,7 @@ Only the fields that are sent in the request will be changed.
 | Param                            | Required | Example                                              | Description                                                                  
 |----------------------------------|----------|------------------------------------------------------|---------------------------------------------------------------------
 | name                             |  no      |  "Delegated Administration production cluster"       |  Human readable name of the configuration
-| type                             |  no      |  "DABP"                                              |  The type of the WebHook, allowed values are `DABP` and `USER_DETAILS_CUSTOMIZATION`
+| type                             |  no      |  "DABP"                                              |  The type of the WebHook, allowed values are `CUSTOMIZE_TOKEN`, `DABP` and `USER_DETAILS_CUSTOMIZATION`
 | base_uri                         |  no      |  "https://dabp-prod.example.com"                     |  Base URI that Access Service can reach for calls to DUM engine
 | authentication_method            |  no      |  "BASIC"                                             |  The type of the authentication required by the WebHook, allowed values are `BASIC` and `NONE`.
 | username                         |  no      |  "dabp_user"                                         |  Username to call the DUM engine APIs
