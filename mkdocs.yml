@@ -165,8 +165,8 @@ nav:
                   - 'Application versions': products/access/api-reference/config-api/applications/application-version-api.md
                   - 'Identity Providers': products/access/api-reference/config-api/identity-provider-api.md
                   - 'Scopes': products/access/api-reference/config-api/scope.md
-                  - 'Web Hooks': products/access/api-reference/config-api/webhooks-configuration-api.md
                   - 'Web Client': products/access/api-reference/config-api/web-client.md
+                  - 'Web Hooks': products/access/api-reference/config-api/webhooks-configuration-api.md
               - 'End user':
                   - 'Introduction': products/access/api-reference/end-user/index.md
                   - 'Access token API': products/access/api-reference/end-user/access-token.md
