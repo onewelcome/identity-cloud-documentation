@@ -1,6 +1,6 @@
 # Config API
 
-This section describes the REST APIs that are used for configuration of Onegini Access.
+This section describes the REST APIs that are used for the configuration of OneWelcome Access.
 
 ## Authentication
 
@@ -16,3 +16,4 @@ It requires an API client with the scope `onegini_api_config` (Config API).
 * [Identity Providers](identity-provider-api.md)
 * [Scopes](scope.md)
 * [Web Client](web-client.md)
+* [Web Hooks](webhooks-configuration-api.md)
