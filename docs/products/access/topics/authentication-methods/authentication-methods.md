@@ -102,7 +102,7 @@ This can result in:
 
 ##### Preparing a JWK Set (self-signed)
 
-OneWelcome supports Elliptic Curve (min P-256) or RSA (min key length 2048) formats.
+OneWelcome supports Elliptic Curve (min P-256) or RSA (min 2048, max 4096 key length) formats.
 
 A [Java command-line utility](https://github.com/mitreid-connect/json-web-key-generator/releases/download/json-web-key-generator-0.8.2/json-web-key-generator.jar) created by Justin Richer can be used to generate keys in JWK format. 
 
