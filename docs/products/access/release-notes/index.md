@@ -8,6 +8,19 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-11-22
+
+### Features
+* We added an API to view all active sessions for a user. [User Sessions API](../api-reference/end-user/session.md)
+
+### Improvements
+* We adjusted the communication resiliency properties for Access to better handle issues with the external services. 
+
+### Bugs
+* The version of the backend for the mobile app config was fixed.
+* Standard ID Token claims are now filtered from the custom registration user object.
+* We ensured that the tenant context is always set when handling OneEx events.
+
 ## Release date 2023-11-03
 
 ### Features
