@@ -1,7 +1,7 @@
 # Identity Providers
 
 These APIs allow the retrieval of configuration
-of [identity-providers](../../topics/general-app-config/identity-providers/identity-providers.md) via a REST
+of [identity-providers](../../topics/general-app-config/identity-providers/index.md) via a REST
 API.
 
 ## Endpoints
