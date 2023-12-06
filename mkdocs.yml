@@ -58,7 +58,10 @@ nav:
                   - 'Introduction': products/access/topics/general-app-config/index.md
                   - 'PIN policy configuration': products/access/topics/general-app-config/pin-policy/pin-policy.md
                   - 'Scopes configuration': products/access/topics/general-app-config/scopes/scopes.md
-                  - 'Identity provider configuration': products/access/topics/general-app-config/identity-providers/identity-providers.md
+                  - 'Identity Providers':
+                    - 'Introduction': products/access/topics/general-app-config/identity-providers/index.md
+                    - 'Identity provider configuration': products/access/topics/general-app-config/identity-providers/identity-providers.md
+                    - 'UJO Identity Provider configuration': products/access/topics/general-app-config/identity-providers/ujo-integration.md
                   - 'Resource gateway configuration': products/access/topics/general-app-config/resource-gateway/resource-gateway.md
                   - 'OS version management': products/access/topics/general-app-config/os-version-configuration/os-version-configuration.md
               - 'Mobile applications':
