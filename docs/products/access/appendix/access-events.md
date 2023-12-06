@@ -217,6 +217,11 @@
 | ONEGINI IDP EXTERNAL IDPS FETCH FAILED                        | Onegini Access was unable to fetch the list of external identity providers that are configured in the [Consumer Identity Manager](https://docs-single-tenant.onegini.com/cim/stable/idp) application.                |
 | TULIP ACCESS TOKEN REQUEST FAILED                             | Request to Tulips `token` endpoint for API access token failed.                                                                                                                                                      |
 | TULIP UDH REQUEST FAILED                                      | Failed to get user data from Tulip's User Data Enhancer endpoint.                                                                                                                                                    |
+| IDP UJO JOURNEY INITIALIZATION FAILED                         | An unexpected error occurred during User Journey Initialization.                                                                                                                                                     |
+| IDP UJO INVALID TRANSACTION                                   | Returned transaction identifier mismatches with the local state.                                                                                                                                                     |
+| IDP UJO INVALID OR INCOMPLETE USER INFORMATION                | The returned user id and/or id store type are missing or invalid.                                                                                                                                                    |
+| IDP UJO FAILED TO FETCH JOURNEY RESULT                        | An unexpected error occurred while resolving the journey result.                                                                                                                                                     |
+| IDP UJO FAILED TO USER INFO                                   | An unexpected error occurred while resolving UserInfo.                                                                                                                                                               |
 
 ## Dynamic clients
 
