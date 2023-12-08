@@ -1,7 +1,7 @@
 # Identity Providers
 
-OneWelcome Access has no user management. OneWelcome Access depends on external identity providers (IdP) integrations to identify a user.
-OneWelcome Access supports multiple integrations with identity providers out of the box. Custom integrations are also supported.
+User management is not present in OneWelcome Access. Instead, Access relies on external identity provider (IdP) integrations to
+identify a user. It offers built-in support for various identity providers and also allows for the custom integrations.
 
 * [Identity Providers configuration](identity-providers.md)
 * [UJO Identity Provider configuration](ujo-integration.md)
