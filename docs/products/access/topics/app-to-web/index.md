@@ -6,7 +6,8 @@ functionality likely exists.
 This feature is available when using the Tulip identity provider, 
 the [Onegini CIM identity provider](../general-app-config/identity-providers/identity-providers.md#configure-a-onegini-cim-identity-provider),
 or the [Onegini CIM API identity provider](../general-app-config/identity-providers/identity-providers.md#configure-a-onegini-cim-api-identity-provider).
-OneWelcome Access uses the ActionToken Type `LOGIN_APP2WEB`, which has been available since Tulip version 103 and Onegini CIM version 6.2.0.
+In CIM, OneWelcome Access uses the ActionToken Type `LOGIN_APP2WEB`, which has been available since Onegini CIM version 6.2.0.
+In Tulip, OneWelcome Access uses a Authentication Token, this can be used with Tulip R103 and up.
 
 The Onegini SDK allow you to specify a target URL where authentication is required. This URL must be configured in the
 [Action Token](https://docs-single-tenant.onegini.com/cim/stable/idp/topic-guides/authentication/action-token-login.html) configuration. It
