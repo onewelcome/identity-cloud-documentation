@@ -1,5 +1,6 @@
 mkdocs==1.5.3
 mkdocs-redirects==1.2.1
-mkdocs-material==9.5.1
+# Make sure it is compatible with mk-docs before updating, otherwise the deploy fails at readthedocs
+mkdocs-material==9.2.8
 pygments
 pymdown-extensions
