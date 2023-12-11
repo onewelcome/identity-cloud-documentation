@@ -12,9 +12,9 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 
 ### Features
 * Implemented the new [Push Messaging configuration](../topics/mobile-apps/mobile-authentication/push-authentication.md#configuration-using-http-v1-fcm-apis--recommended-) for Android.
-  * *Note*: All push messaging configuration for Android should be updated before June 20th, 2024. [Details about the migration](https://firebase.google.com/docs/cloud-messaging/migrate-v1)
+    * *Note*: All push messaging configuration for Android should be updated before June 20th, 2024. [Details about the migration](https://firebase.google.com/docs/cloud-messaging/migrate-v1)
 * Certain high volume 'success' events have been excluded by default from being persisted to the database to improve performance.
-  * These events can be configured via the Admin console. Please view our [topic guide](../topics/technical-app-management/events/events.md) for additional information.
+    * These events can be configured via the Admin console. Please view our [topic guide](../topics/technical-app-management/events/events.md) for additional information.
 * Added support for more signing algorithms for use with Private Key JWT (see `token_endpoint_auth_signing_alg_values` in the [Discovery API](../api-reference/oidc/discovery.md)).
 * [Discovery API](../api-reference/oidc/discovery.md) now accepts `POST` requests.
 
@@ -258,7 +258,7 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 
 ### Improvement
 * Added support for setting [AMR](https://www.rfc-editor.org/rfc/rfc8176.html) when using [custom registration](../topics/custom-registration/index.md)
-  * Requires the [Extension Engine](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/release-notes/2.x.html) `2.5.0` and above.
+    * Requires the [Extension Engine](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/release-notes/2.x.html) `2.5.0` and above.
 
 ## Release date: 2023-02-21
 
