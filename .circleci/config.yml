@@ -9,4 +9,4 @@ workflows:
       - onegini-build/build-docs:
           executor:
             name: onegini-build/docs-builder
-            tag: "3.7-browsers" # Keep in line with readthedocs.yml python version
+            tag: "3.8-browsers" # Keep in line with readthedocs.yml python version otherwise requirements.txt may fail
