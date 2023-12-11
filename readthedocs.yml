@@ -2,6 +2,7 @@ version: 2
 build:
   os: "ubuntu-22.04"
   tools:
+    ## Keep in line with config.yml executor python version
     python: "3.8"
 python:
   install:
