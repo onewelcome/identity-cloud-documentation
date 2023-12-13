@@ -100,20 +100,37 @@ Application bundle identifier can be configured at application version level. Se
 
 ### Android
 
-In order to configure Android specific push messaging go to the `Push messaging configuration` subsection of the `Mobile Authentication` section.
+To configure Android specific push messaging go to the `Push messaging configuration` subsection of the `Mobile Authentication` section.
  Click the `Add push messaging configuration` and select `android` platform to display Android specific configuration fields like on the image below:
 
-![configure android push messaging](img/android.png)
-
-#### Configure FCM endpoint (optional)
-
-For Android applications the Firebase Cloud Messaging (FCM) services are used. The default endpoint for this service is
-`https://fcm.googleapis.com/fcm/send`. If a different URL is required it can be provided as push server endpoint, otherwise leave this field empty.
-
-#### Configure FCM Server key
+![configure_android_push_messaging](img/android.png)
+For Android applications, the Firebase Cloud Messaging (FCM) services are used.
 
 >**Note**:
 Your client application needs to be registered in the Firebase Console to use Firebase. In order to setup your Android app to use FCM follow the steps described in [Add Firebase to your app FCM guide](https://firebase.google.com/docs/android/setup#manually_add_firebase).
+
+>**Firebase Cloud Messaging (FCM) API versions**<br />
+FCM introduced new type of APIs, HTTP v1 APIs, which will replace existing legacy APIs.
+Legacy APIs were deprecated on 6/20/2023 and will stop working on 6/20/2024.
+Because of this, all existing push messaging configurations should migrate to use HTTP v1 APIs as soon as possible.
+New push messaging configurations should use HTTP v1 APIs.
+Information about differences in APIs is available [here](https://firebase.google.com/docs/cloud-messaging/migrate-v1).
+
+#### Configuration using HTTP v1 FCM APIs (recommended)
+- Obtain the FCM Service Account Key JSON file from the Firebase Console. 
+Description about how to do this is available [here](https://firebase.google.com/docs/cloud-messaging/migrate-v1#provide-credentials-manually).
+- Proceed to _FCM Push Messaging section_ of _Add Push messaging configuration form_
+- Select _HTTP v1 API_ FCM API Version 
+- Select downloaded Service Account as FCM Service Account key
+![configure_fcm_api](img/android-fcm-http-v1-api.png)
+#### Configuration using Legacy FCM APIs (deprecated)
+![configure-legacy-fcm-api](img/android-fcm-legacy-api.png)
+##### Configure FCM endpoint (optional)
+
+The default endpoint for this service is `https://fcm.googleapis.com/fcm/send`. 
+If a different URL is required it can be provided as push server endpoint, otherwise leave this field empty.
+
+#### Configure FCM Server key
 
 FCM requires an API key to identify the project/application you would like to send push messages for. In order to configure it, follow the steps described below:
 

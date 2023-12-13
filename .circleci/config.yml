@@ -1,9 +1,12 @@
 version: 2.1
 orbs:
-    onegini-build: onegini/onegini-build@2
+    onegini-build: onegini/onegini-build@3
 
 workflows:
   version: 2
   build-workflow:
     jobs:
-      - onegini-build/build-docs
+      - onegini-build/build-docs:
+          executor:
+            name: onegini-build/docs-builder
+            tag: "3.8-browsers" # Keep in line with readthedocs.yml python version otherwise requirements.txt may fail
