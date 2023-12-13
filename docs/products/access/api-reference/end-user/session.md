@@ -5,8 +5,9 @@ only accessible with valid API client credentials. These endpoints can be utiliz
 specific user. For instance, the web application might want to display a list of active sessions to the user, including details such
 as session ID, authentication time, last issued access time, user agent, and location information.
 
-In addition to listing sessions, this API also allows for terminating user sessions. 
-These termination endpoints provide a layer of security and control over user sessions. It ensures old and inactive sessions can be properly ended as needed, maintaining the integrity of the user's active sessions.
+In addition to listing sessions, this API also allows for terminating user sessions.
+These termination endpoints provide a layer of security and control over user sessions. It ensures old and inactive sessions can be properly
+ended as needed, maintaining the integrity of the user's active sessions.
 
 ## List User Sessions
 
@@ -72,19 +73,21 @@ Pragma: no-cache
 
 Endpoint: `DELETE /oauth/api/v1/users/{userId}/sessions`
 
-| Parameter | Description |
-| --- | --- |
-| `userId` | User's unique identifier |
+| Parameter | Description              |
+|-----------|--------------------------|
+| `userId`  | User's unique identifier |
 
-This secure endpoint requires authentication using API credentials. It has been designed to delete every active session of a specified user. Default behavior is to remove the associated tokens as well.
+This secure endpoint requires authentication using API credentials. It has been designed to delete every active session of a specified user.
+Default behavior is to remove the associated tokens as well.
 
-Upon successful deletion, a `204 No Content` status is sent back. If the user doesn't exist or has no active sessions, it will also result in `204 No Content` being returned. 
+Upon successful deletion, a `204 No Content` status is sent back. If the user doesn't exist or has no active sessions, it will also result
+in `204 No Content` being returned.
 
 **Query Parameters:**
 
-| Parameter | Description | Default |
-| --- | --- | --- |
-| `removeTokens` | If true, additionally scraps all of the associated tokens. | `true` |
+| Parameter      | Description                                                | Default |
+|----------------|------------------------------------------------------------|---------|
+| `removeTokens` | If true, additionally scraps all of the associated tokens. | `true`  |
 
 ---
 
@@ -92,19 +95,22 @@ Upon successful deletion, a `204 No Content` status is sent back. If the user do
 
 Endpoint: `DELETE /oauth/api/v1/users/{userId}/sessions/{sessionId}`
 
-| Parameter | Description |
-| --- | --- |
-| `userId` | User's unique identifier |
+| Parameter   | Description                 |
+|-------------|-----------------------------|
+| `userId`    | User's unique identifier    |
 | `sessionId` | Session's unique identifier |
 
-This endpoint, protected by authentication via client credentials, removes an individual session of the user in question. By default, the associated tokens are removed too.
+This endpoint, protected by authentication via client credentials, removes an individual session of the user in question. By default, the
+associated tokens are removed too.
 
-Upon successful deletion, you'll receive a `204 No Content` status. If the user or the session is nonexistent, a status `204 No Content` is sent back as well.
+Upon successful deletion, you'll receive a `204 No Content` status. If the user or the session is nonexistent, a status `204 No Content` is
+sent back as well.
 
 **Query Parameters:**
 
-| Parameter | Description | Default |
-| --- | --- | --- |
-| `removeTokens` | If true, cleans out all of the tokens associated with the session. | `true` |
+| Parameter      | Description                                                        | Default |
+|----------------|--------------------------------------------------------------------|---------|
+| `removeTokens` | If true, cleans out all of the tokens associated with the session. | `true`  |
 
-Both of these endpoints are invaluable security tools that help you administer user sessions and ensure that older, unused sessions are appropriately terminated thereby enhancing your control over the process of user authentication.
+Both of these endpoints are invaluable security tools that help you administer user sessions and ensure that older, unused sessions are
+appropriately terminated thereby enhancing your control over the process of user authentication.
