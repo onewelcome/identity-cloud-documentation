@@ -3,6 +3,8 @@
 This API is the implementation of [OpenID Connect Discovery 1.0](https://openid.net/specs/openid-connect-discovery-1_0.html) specification.
 It is used to publish OIDC-related metadata that can be used by Relying Party to understand which features are available and how to interact with it.
 
+**Note**: This endpoint accepts `GET` or `POST` requests
+
 Endpoint: `GET /oauth/.well-known/openid-configuration`
 
 **Example response**
@@ -41,6 +43,17 @@ Pragma: no-cache
         "client_secret_basic",
         "client_secret_post",
         "private_key_jwt"
+    ],
+    "token_endpoint_auth_signing_alg_values": [
+        "rs256",
+        "rs384",
+        "rs512",
+        "ps256",
+        "ps384",
+        "ps512",
+        "es256",
+        "es384",
+        "es512"
     ],
     "scopes_supported": [
         "address",
