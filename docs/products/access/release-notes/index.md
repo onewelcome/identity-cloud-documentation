@@ -11,7 +11,7 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 ## Release date 2023-12-19
 
 ### Features
-* Added two new methods to the [User Sessions API](../api-reference/end-user/session.md) that make it possible to end all sessions for a given user. Or to end a specific session for a user.
+* Added two new methods to the [User Sessions API](../api-reference/end-user/session.md) that make it possible to end all sessions for a given user or to end a specific session for a user.
 
 ### Improvements
 * We improved our caching for the [Discovery](../api-reference/oidc/discovery.md) and JWKS endpoints so these endpoints can handle more load. 
