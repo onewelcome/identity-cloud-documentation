@@ -217,6 +217,8 @@
 | ONEGINI IDP EXTERNAL IDPS FETCH FAILED                        | Onegini Access was unable to fetch the list of external identity providers that are configured in the [Consumer Identity Manager](https://docs-single-tenant.onegini.com/cim/stable/idp) application.                |
 | TULIP ACCESS TOKEN REQUEST FAILED                             | Request to Tulips `token` endpoint for API access token failed.                                                                                                                                                      |
 | TULIP UDH REQUEST FAILED                                      | Failed to get user data from Tulip's User Data Enhancer endpoint.                                                                                                                                                    |
+| SESSION_TERMINATION_ALL_USER_SESSIONS_TERMINATED              | All user sessions were ended.                                                                                                                                                                                        |
+| SESSION_TERMINATION_USER_SESSION_TERMINATED                   | Particular user session was ended.                                                                                                                                                                                   |
 
 ## Dynamic clients
 
