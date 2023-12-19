@@ -8,6 +8,14 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2023-12-19
+
+### Features
+* Added two new methods to the [User Sessions API](../api-reference/end-user/session.md) that make it possible to end all sessions for a given user. Or to end a specific session for a user.
+
+### Improvements
+* We improved our caching for the [Discovery](../api-reference/oidc/discovery.md) and JWKS endpoints so these endpoints can handle more load. 
+
 ## Release date 2023-12-11
 
 ### Features
