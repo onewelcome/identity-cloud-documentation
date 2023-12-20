@@ -223,6 +223,8 @@
 | IDP UJO INVALID OR INCOMPLETE USER INFORMATION                | The returned user id and/or id store type are missing or invalid.                                                                                                                                                    |
 | IDP UJO FAILED TO FETCH JOURNEY RESULT                        | An unexpected error occurred while resolving the journey result.                                                                                                                                                     |
 | IDP UJO FAILED TO USER INFO                                   | An unexpected error occurred while resolving UserInfo.                                                                                                                                                               |
+| SESSION_TERMINATION_ALL_USER_SESSIONS_TERMINATED              | All user sessions were ended.                                                                                                                                                                                        |
+| SESSION_TERMINATION_USER_SESSION_TERMINATED                   | Particular user session was ended.                                                                                                                                                                                   |
 
 ## Dynamic clients
 
