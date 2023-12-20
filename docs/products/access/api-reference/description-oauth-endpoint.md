@@ -1,6 +1,6 @@
 # OAuth endpoints
 
-This section explains the OAuth API endpoints within Onegini Access. It's divided into the following subsections:
+This section explains the OAuth API endpoints within OneWelcome Access. It's divided into the following subsections:
 <!-- toc -->
 
 For details about the OAuth endpoints we refer to the [OAuth specification](https://tools.ietf.org/html/rfc6749).
@@ -12,7 +12,7 @@ For details about the OAuth endpoints we refer to the [OAuth specification](http
 OAuth defines four roles:
 
 * Resource owner: the user
-* Authorization server: Onegini Access. It's responsible for managing [tokens](../topics/tokens/index.md).
+* Authorization server: OneWelcome Access. It's responsible for managing [tokens](../topics/tokens/index.md).
 * Client: a website or app that wants to access the user's resources. Resources can be anything: personal data, documents, transactions, signatures, images, etc.
 * Resource server: a server that contains the user's resources that are being accessed by the client. It grants access to the resource when the client provides 
 a valid token. It is also referred to as Resource Gateway.
@@ -24,7 +24,7 @@ The OAuth 2.0 specification describes the following flows to obtain tokens:
 * [Authorization code](https://tools.ietf.org/html/rfc6749#section-4.1)
 * [Client credentials](https://tools.ietf.org/html/rfc6749#section-4.4)
 
-Onegini Access supports all of these flows. However, only the authorization code grant and client credentials grant are recommended.
+OneWelcome Access supports all of these flows. However, only the authorization code grant and client credentials grant are recommended.
 
 When to use which flow: 
 
@@ -38,7 +38,7 @@ behalf of which user the client requests access. Obtaining the access token can 
 ## Authorization endpoint
 
 The authorization endpoint is used in the authorization code flow. In this flow, the 
-Onegini Access sends an access grant to the client. The client can exchange this access grant for an access token by calling the [token endpoint](#token-endpoint).
+OneWelcome Access sends an access grant to the client. The client can exchange this access grant for an access token by calling the [token endpoint](#token-endpoint).
 
 Endpoints: `GET /oauth/authorize` or `GET /oauth/v1/authorize`
 
@@ -46,7 +46,7 @@ Example request for the authorization code flow:
 
 ```http
 GET /oauth/v1/authorize?response_type=code&client_id=exampleApp&state=xyz&redirect_uri=https%3A%2F%2Fclient%2Eexample%2Ecom%2Fredirect HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 ```
 
 Example success response for the authorization code flow:
@@ -64,12 +64,12 @@ See the [OAuth specification section 3.1](https://tools.ietf.org/html/rfc6749#se
 ### Authorization extensions
 
 This endpoint allows additional request parameters. None of them are required. This section describes the parameters that are specific for the 
-Onegini Access.
+OneWelcome Access.
 
 #### idp
 
 Specifies the [identity provider](../topics/general-app-config/identity-providers/identity-providers.md) for the authentication. The value is the identifier of
-the identity provider in Onegini Access.
+the identity provider in OneWelcome Access.
 
 Example value: `idp=idpId`
 
@@ -78,21 +78,21 @@ existing customers. Both identity providers would be configured for this applica
 
 #### external_idp
 
-Preselects the external identity provider in Onegini CIM for authentication. The value starts with `urn:com:onegini:saml:idp:` followed by the
-[identifier of the identity provider](https://docs-single-tenant.onegini.com/cim/stable/idp/administration/identity-providers.html) in Onegini CIM.
-This feature requires [Onegini CIM to be used as an identity provider](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-onegini-cim-identity-provider).
+Preselects the external identity provider in OneWelcome CIM for authentication. The value starts with `urn:com:onegini:saml:idp:` followed by the
+[identifier of the identity provider](https://docs-single-tenant.onegini.com/cim/stable/idp/administration/identity-providers.html) in OneWelcome CIM.
+This feature requires [OneWelcome CIM to be used as an identity provider](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-onewelcome-cim-identity-provider).
 
 Example value: `external_idp=urn%3Acom%3Aonegini%3Asaml%3Aidp%3Adigid`
 
-Example use case: an application that authenticates the user with the third party identity provider via Onegini CIM but wants to skip the login
+Example use case: an application that authenticates the user with the third party identity provider via OneWelcome CIM but wants to skip the login
 screen of the latter.
 
 #### external_idp_custom_param.*
 
-This parameter can be used to populate a key value map in the [Onegini Extension](https://docs-single-tenant.onegini.com/cim/stable/idp/authentication/saml/saml-extension-custom-parameters.html)
-as part of the SAML Authentication Request. The key value map can be used in the Onegini CIM product for customizing styling or logic in combination with the
+This parameter can be used to populate a key value map in the [OneWelcome Extension](https://docs-single-tenant.onegini.com/cim/stable/idp/authentication/saml/saml-extension-custom-parameters.html)
+as part of the SAML Authentication Request. The key value map can be used in the OneWelcome CIM product for customizing styling or logic in combination with the
 [Session API](https://docs-single-tenant.onegini.com/cim/stable/idp/api-reference/session-api.html). This feature requires
- [Onegini CIM to be used as an identity provider](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-onegini-cim-identity-provider).
+ [OneWelcome CIM to be used as an identity provider](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-onewelcome-cim-identity-provider).
 
 Example value: `external_idp_custom_param.key1=val1&external_idp_custom_param.key2=val2&external_idp_custom_param.key2=val3`
 
@@ -102,7 +102,7 @@ Example use cases are described in the [extension custom parameters topic guide]
 
 #### app_view
 
-Indication for Onegini CIM that the pages are shown within a mobile app. Passing this parameter is only needed when a
+Indication for OneWelcome CIM that the pages are shown within a mobile app. Passing this parameter is only needed when a
 [web client](../topics/web-clients/index.md) is used for a mobile device (not recommended). The default value for [mobile apps](../topics/mobile-apps/index.md)
 is `mobile`.
 
@@ -150,14 +150,14 @@ meant to give more information about the specific error that happened.
 
 #### Error cause parameters
 
-Onegini Access uses external Identity Providers to authenticate users. In some scenarios authentication can fail, but it can be a bit unclear why it failed.
+OneWelcome Access uses external Identity Providers to authenticate users. In some scenarios authentication can fail, but it can be a bit unclear why it failed.
 
 In case the SAML IdP is used and authentication failed due to a malformed request or due to some user interaction, the generic SAML error will be available in `onegini_saml_error`. To provide additional information the `onegini_error_cause` parameter is sometimes added in case of a specific error during the authorization flow.
 
 The `onegini_saml_error` and `onegini_error_cause` parameters are included on top of the standard error response as defined by the OAuth specification [RFC6749, section 4.1.2.1](https://tools.ietf.org/html/rfc6749#section-4.1.2.1).
 Currently, these fields are only provided when a SAML IdP is used for authentication by the end user.
 The value of the `onegini_saml_error` attribute contains the SAML response status (e.g. `urn:oasis:names:tc:SAML:2.0:status:NoPassive`)
-of the SAML response that was sent by the external IdP to the Onegini Access. For a list of SAML status codes see the [SAML 2.0 core specification, section 3.2.2.2](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf)
+of the SAML response that was sent by the external IdP to the OneWelcome Access. For a list of SAML status codes see the [SAML 2.0 core specification, section 3.2.2.2](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf)
 The value of the `onegini_error_cause` can contain more detailed information about the error cause like custom error codes, which are especially useful in processes like on-boarding. Values can be, for example, `no_existing_customer`, `invalid_birthdate`, `fraud_detected` or whatever is defined as custom error in the user journey.
 
 ## Token endpoint
@@ -213,7 +213,7 @@ For more information, see [Authentication Methods documentation](../topics/authe
 
 ## Revoke token endpoint
 
-Use this endpoint to revoke tokens. The Onegini Access will immediately make them invalid, but clients or resource servers will not receive a 
+Use this endpoint to revoke tokens. The OneWelcome Access will immediately make them invalid, but clients or resource servers will not receive a 
 notification. When the resource server requests token introspection for the token, the response does indicate that this token is no longer valid.
 
 Endpoint: `POST /oauth/revoke` or `POST /oauth/v1/revoke`

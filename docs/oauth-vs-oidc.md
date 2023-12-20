@@ -41,7 +41,7 @@ The authorization server also acts as an OpenID Connect Provider, which means yo
 
 ### OpenID Connect
 
-OpenID Connect is an authentication standard built on top of OAuth 2.0. It adds an additional token called an ID token. OpenID Connect also standardizes areas that OAuth 2.0 leaves up to choice, such as scopes, endpoint discovery, and dynamic registration of clients. Onegini is [OpenID Certified](https://openid.net/certification/).
+OpenID Connect is an authentication standard built on top of OAuth 2.0. It adds an additional token called an ID token. OpenID Connect also standardizes areas that OAuth 2.0 leaves up to choice, such as scopes, endpoint discovery, and dynamic registration of clients. OneWelcome is [OpenID Certified](https://openid.net/certification/).
 
 Although OpenID Connect is built on top of OAuth 2.0, the [OpenID Connect specification](https://openid.net/connect/) uses somewhat different terms for the roles in the flows:
 
@@ -65,7 +65,7 @@ The table shows you which OAuth 2.0 flow to use for the type of application that
 | :---------------------- | :------------------------------------------------------ |
 | Server-side (AKA Web)   | Authorization Code Flow                                 |
 | Single-Page Application | Authorization Code Flow with PKCE                       |
-| Mobile apps             | Onegini Mobile SDK or Authorization Code Flow with PKCE |
+| Mobile apps             | OneWelcome Mobile SDK or Authorization Code Flow with PKCE |
 | Service                 | Client Credentials                                      |
 
 ### Does your application need an ID token?
@@ -86,7 +86,7 @@ The Authorization Code flow is best used by server-side apps. The apps should be
 sequenceDiagram
     participant RO as Resource Owner (User)
     participant RP as Web application
-    participant AS as Authorization Server (Onegini)
+    participant AS as Authorization Server (OneWelcome)
     participant RS as Resource Server (Your App)
 
     RP->>AS: Authentication Code Request to /authorize
@@ -117,7 +117,7 @@ A rogue app could only intercept the authorization code, but it wouldn't have ac
 sequenceDiagram
     participant RO as Resource Owner (User)
     participant RP as Web application
-    participant AS as Authorization Server (Onegini)
+    participant AS as Authorization Server (OneWelcome)
     participant RS as Resource Server (Your App)
 
     RP->>RP: Generate PKCE code_verifier & code_challenge
@@ -141,7 +141,7 @@ The Client Credentials flow is intended for server-side (AKA "confidential") cli
 ```mermaid
 sequenceDiagram
     participant RO as Client + Resource Owner
-    participant AS as Authorization Server (Onegini)
+    participant AS as Authorization Server (OneWelcome)
     participant RS as Resource Server (Your App)
 
     RO->>AS: Acces token request to /token

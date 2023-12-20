@@ -1,6 +1,6 @@
 # General system properties configuration
 
-In order to configure Onegini Access general properties, go to the `Configuration` section of the administration console, then `System` and choose the `General` tab.
+In order to configure OneWelcome Access general properties, go to the `Configuration` section of the administration console, then `System` and choose the `General` tab.
 
 The picture below shows the `General` view in the Admin Console with an example configuration.
 

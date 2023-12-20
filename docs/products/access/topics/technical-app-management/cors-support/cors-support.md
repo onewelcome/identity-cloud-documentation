@@ -1,7 +1,7 @@
 # CORS support
 
 Cross-Origin Resource Sharing ([CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)) is an HTTP-header based mechanism that allows a server to
-indicate any other origins (domain, scheme, or port) than its own from which a browser should permit loading of resources. In Onegini Access you can configure
+indicate any other origins (domain, scheme, or port) than its own from which a browser should permit loading of resources. In OneWelcome Access you can configure
 CORS.
 
 ## Configure CORS support
@@ -18,17 +18,17 @@ Enable CORS support by checking the `CORS enabled` checkbox.
 
 ### Specify allowed origins
 
-In order to allow certain domains to access Onegini Access you need to fill the `Allowed origin(s)` field.
+In order to allow certain domains to access OneWelcome Access you need to fill the `Allowed origin(s)` field.
 
 **Origin** - The unique combination of a scheme and domain (or hostname and port) combined as `scheme://hostname` (or `scheme://hostname:port`)
 
 You can specify one or more origins, each separated with a comma.
 
-> **Note:** If you leave this field empty, while CORS support is enabled, all origins will be allowed to access the endpoints of Onegini Access. This is not recommended for security reasons.
+> **Note:** If you leave this field empty, while CORS support is enabled, all origins will be allowed to access the endpoints of OneWelcome Access. This is not recommended for security reasons.
 
 ### Specify paths which be accessible from external origins
 
-In order to make certain Onegini Access endpoints accessible by (configured) external origins, you need to fill the `Accessible path(s)`.
+In order to make certain OneWelcome Access endpoints accessible by (configured) external origins, you need to fill the `Accessible path(s)`.
 
 You can specify one or more origins, each separated with a comma. Exact path mapping URIs (such as `/revoke`) are supported as well as Ant-style path patterns (
 such as `/api/**`).

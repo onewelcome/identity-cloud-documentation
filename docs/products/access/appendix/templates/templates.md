@@ -1,8 +1,8 @@
 # Templates
 
-This section covers the template customizations possible in the Onegini Access.
+This section covers the template customizations possible in the OneWelcome Access.
 
-The Onegini Access has a number of templates that can be customized. Onegini uses the Thymeleaf template engine to render templates. It takes XML (XHTML) as
+The OneWelcome Access has a number of templates that can be customized. OneWelcome uses the Thymeleaf template engine to render templates. It takes XML (XHTML) as
 input and replaces static content using special attributes. Refer to the
 [Thymeleaf manual](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html) for the full syntax.
 

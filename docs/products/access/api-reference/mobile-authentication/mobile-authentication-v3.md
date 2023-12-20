@@ -14,7 +14,7 @@ is [version 4](./mobile-authentication-v4.md).
 
 Only authorized API clients can access this API. Its credentials need to be provided via HTTP Basic Authentication header or via url encoded
 form. The required
-credentials are the client id and client secret configured in the Admin console of Onegini Access.
+credentials are the client id and client secret configured in the Admin console of OneWelcome Access.
 > **Note:** Please look in the [OAuth config](../../appendix/administration/api-config.md) section on how to configure an API client.
 > In order to allow an API client to access mobile authentication endpoints add `Mobile authentication` to the `Valid for APIs` list in the
 > API client configuration.
@@ -50,7 +50,7 @@ Pragma: no-cache
 
 ## Availability
 
-Onegini Access provides two endpoints to check the availability of mobile authentication types for specific users.
+OneWelcome Access provides two endpoints to check the availability of mobile authentication types for specific users.
 
 ### Check if authentication is available for user and application
 
@@ -180,7 +180,7 @@ Pragma: no-cache
 
 ## Mobile authentication initialization
 
-Mobile authentication can be initialized by an asynchronous API call to Onegini Access. For most mobile authentication types (push, OTP) the
+Mobile authentication can be initialized by an asynchronous API call to OneWelcome Access. For most mobile authentication types (push, OTP) the
 portal will be
 informed of the authentication result via a callback.
 
@@ -268,7 +268,7 @@ object also contains an
 information about authentication method which was actually used (PUSH or SMS) plus the time to live for the transaction (in milliseconds).
 Information may be
 useful in situations where for some reason PUSH authentication failed, but in the initial request portal also provided user's phone number
-so Onegini Access was
+so OneWelcome Access was
 able to fallback on the SMS authentication method.
 
 **Example failure result:**
@@ -287,7 +287,7 @@ Pragma: no-cache
 
 ## Mobile authentication result
 
-Once the user has completed authentication, the portal must be informed of the results. This is done via a callback from Onegini Access to
+Once the user has completed authentication, the portal must be informed of the results. This is done via a callback from OneWelcome Access to
 the portal, and a
 subsequent request to fetch the mobile authentication results.
 
@@ -297,7 +297,7 @@ request.
 
 ### Callback
 
-Once authentication has occurred (or failed), Onegini Access calls the endpoint provided by the portal during the mobile authentication
+Once authentication has occurred (or failed), OneWelcome Access calls the endpoint provided by the portal during the mobile authentication
 initialization step (
 specifically, the `callback_uri` field).
 
@@ -426,7 +426,7 @@ In the event of an error, one of these [error codes](#error-codes) will be retur
 
 While mobile authentication with SMS is initialized using the same endpoint as other types, the completion of the request differs in that
 the user must submit
-their SMS code to the portal. Onegini Access therefore provides two endpoints for this purpose.
+their SMS code to the portal. OneWelcome Access therefore provides two endpoints for this purpose.
 
 ### Verify SMS code
 

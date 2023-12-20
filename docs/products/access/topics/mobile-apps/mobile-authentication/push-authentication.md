@@ -4,12 +4,12 @@
 
 Mobile authentication can be performed via push messages that are sent to the user's mobile device.
 
-The end-user must have installed a mobile app with the Onegini SDK to use mobile authentication via push messaging. After the end-user has installed the app,
+The end-user must have installed a mobile app with the OneWelcome SDK to use mobile authentication via push messaging. After the end-user has installed the app,
 they must enroll their app for mobile authentication with push messaging.
-The website initiates the mobile authentication at Onegini Access which sends a push message via Google's FCM or Apple's APNs service to the mobile
+The website initiates the mobile authentication at OneWelcome Access which sends a push message via Google's FCM or Apple's APNs service to the mobile
 device. When the end-user interacts with the push message, the mobile app is opened. The mobile app will ask the end-user to approve the transaction. For extra
 security, the end-user may need to authenticate by entering their pin, or using biometric authentication (finger print, face recognition). This is configurable.
-The Onegini SDK sends the approval result to Onegini Access which then notifies the website.
+The OneWelcome SDK sends the approval result to OneWelcome Access which then notifies the website.
 
 ## Configure enrollment
 ### Configure mobile authentication enrollment rules
@@ -68,14 +68,14 @@ In order to configure iOS specific push messaging go to the `Push messaging conf
 
 ![configure ios push messaging](img/ios.png)
 
-For iOS applications the Apple Push Notification service (APNs) is used to send notifications. This service allows clients (for example, Onegini Access) to authenticate
+For iOS applications the Apple Push Notification service (APNs) is used to send notifications. This service allows clients (for example, OneWelcome Access) to authenticate
  using signed JSON web tokens (JWT). This involves some configuration on the part of the administrator.
 
 The overview of the APNs can be found in [Apple developer documentation](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html).
 
 #### Configure push messaging
 
->**Note**: Onegini Access previously used certificate authentication, which was configured per application and whose configuration was significantly more complex.
+>**Note**: OneWelcome Access previously used certificate authentication, which was configured per application and whose configuration was significantly more complex.
 The newer token authentication supported by Apple is a much more straightforward process and can be used across all applications per team, which is why support for
 certificate authentication has been dropped for newer applications (old configurations still work, but should be migrated as soon as possible).
 
@@ -137,7 +137,7 @@ FCM requires an API key to identify the project/application you would like to se
 1. Go to your project dashboard in [Firebase Console](https://console.firebase.google.com).
 2. Click the cog in the left hand menu, and select `Project Settings`.
 3. Choose `Cloud messaging` tab
-4. Copy the Server key and provide it in the `FCM Key for server applications` field of the Android push messaging configuration in Onegini Access Admin Console.
+4. Copy the Server key and provide it in the `FCM Key for server applications` field of the Android push messaging configuration in OneWelcome Access Admin Console.
 
 ## Mobile authentication type configuration
 
@@ -158,7 +158,7 @@ means that resending the message is not allowed.
 * Request expires in: the time the user gets to complete the authentication via OTP
 * Fallback type: The fallback is used when the originally requested mobile authentication method cannot be initialized. For example, a mobile authentication
 type with method PUSH may be configured to use SMS as a fallback. In the event that the user has not enrolled any applications for push authentication, the
-Onegini Access will not be able to send a push notification. Instead, it will start SMS authentication.
+OneWelcome Access will not be able to send a push notification. Instead, it will start SMS authentication.
 
 Optional configuration:
 

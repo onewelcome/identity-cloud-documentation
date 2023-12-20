@@ -4,7 +4,7 @@ With a [custom API Identity Provider](../../topics/custom-registration/index.md)
 will be utilized
 during user registration via a server that is outside the scope of a mobile application. You can use this endpoint to execute a custom
 script within the
-Onegini Extension Engine to store data to be used in later steps.
+OneWelcome Extension Engine to store data to be used in later steps.
 
 See the [Example Scripts](../../topics/custom-registration/custom-api-example.md) for help creating the scripts.
 
@@ -20,7 +20,7 @@ JSON body parameters:
 
 | Param   | Required  | Description                                                                          |
 |---------|-----------|--------------------------------------------------------------------------------------|
-| `data`  | no        | Raw registration request data which will be provided to the Onegini Extension Engine |
+| `data`  | no        | Raw registration request data which will be provided to the OneWelcome Extension Engine |
 
 This endpoint requires valid API client credentials provided via basic authentication. It requires the API Client have
 the `User Registration` scope.

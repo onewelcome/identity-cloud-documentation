@@ -1,18 +1,18 @@
 # QR Registration Example
-This shows some capabilities of the Onegini Extension Engine and how you might implement a QR registration. The scripts are based on the following flow:
+This shows some capabilities of the OneWelcome Extension Engine and how you might implement a QR registration. The scripts are based on the following flow:
 
 1. User logs in on the website or portal with their credentials
-2. Website calls Onegini Access on the backchannel endpoint
-3. Onegini Access triggers the backchannel script for this Identity Provider and returns the result to the website.
+2. Website calls OneWelcome Access on the backchannel endpoint
+3. OneWelcome Access triggers the backchannel script for this Identity Provider and returns the result to the website.
 4. Website generates a QR code based on the response
 5. User scans this QR code with the mobile app
-6. Mobile app calls Onegini Access on the complete endpoint
-7. Onegini Access triggers the complete script and returns the result to the mobile app
+6. Mobile app calls OneWelcome Access on the complete endpoint
+7. OneWelcome Access triggers the complete script and returns the result to the mobile app
 8. User is logged in with the mobile app if the result is successful
 
 ## Backchannel Script
 
-The backchannel script is the first part of QR registration. It is used as a way to interact with the Onegini Extension Engine before the actual user gets involved with
+The backchannel script is the first part of QR registration. It is used as a way to interact with the OneWelcome Extension Engine before the actual user gets involved with
 their app. You can utilize this script to store data that will be fetched later. In our example, we send a `userId` to be stored and then fetched during the 
 complete script. Below is a sample string that sends a `userId` in the requestPayload.
 
@@ -63,7 +63,7 @@ Here is an example response you'd get from the script above. As part of the QR f
 The complete script is the second part of QR registration. In this step, the mobile app will allow the user to scan the generated QR code, parse the data 
 embedded in it, and then send that on to the SDK. In our example, the identifier json is sent with the complete request so it can be used to fetch the userId 
 that was stored earlier. The json below is a sample of what you would need to send to the SDK. The SDK will automatically escape it when it sends the request 
-to Onegini Access.
+to OneWelcome Access.
 
 
 ### Example String sent to SDK

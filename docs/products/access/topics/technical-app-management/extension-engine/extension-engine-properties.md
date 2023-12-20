@@ -1,12 +1,12 @@
-# Onegini Extension Engine properties
+# OneWelcome Extension Engine properties
 
-The scripts in the Onegini Extension Engine can contain properties that are specific for an environment or values that the script developer should not know. Examples are the URLs of third party APIs and their credentials. You can configure these properties via the Admin Console of Onegini Access.
+The scripts in the OneWelcome Extension Engine can contain properties that are specific for an environment or values that the script developer should not know. Examples are the URLs of third party APIs and their credentials. You can configure these properties via the Admin Console of OneWelcome Access.
 
-Go to `Configuration` → `System` → `Extension Engine` → `Properties`. This shows an overview of all the properties in the Onegini Extension Engine. Values are masked with `********` in the Admin Console when they contain sensitive data. It is recommended to flag values as sensitive when they contain a password, API key or any other value that should not be shown on the screen after they have been saved.
+Go to `Configuration` → `System` → `Extension Engine` → `Properties`. This shows an overview of all the properties in the OneWelcome Extension Engine. Values are masked with `********` in the Admin Console when they contain sensitive data. It is recommended to flag values as sensitive when they contain a password, API key or any other value that should not be shown on the screen after they have been saved.
 
-The picture below shows the page to configure the Onegini Extension Engine properties in the Admin Console with example values.
+The picture below shows the page to configure the OneWelcome Extension Engine properties in the Admin Console with example values.
 
-![Onegini Extension Engine properties form](img/extension-engine-properties-form.png)
+![OneWelcome Extension Engine properties form](img/extension-engine-properties-form.png)
 
 ## Properties
 

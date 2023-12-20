@@ -1,10 +1,10 @@
 # Custom Authenticator example scripts
 
-This section contains example scripts for a Custom Authenticator. They show the minimal response to complete the step in the process. The Onegini Extension Engine contains documentation for [writing scripts](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/topics/writing-scripts.html) with more details about the syntax of the scripts. 
+This section contains example scripts for a Custom Authenticator. They show the minimal response to complete the step in the process. The OneWelcome Extension Engine contains documentation for [writing scripts](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/topics/writing-scripts.html) with more details about the syntax of the scripts. 
 
 ### Registration script
 
-This is an example for registration which accepts all incoming requests. It returns the `requestPayload` from the request as `registrationData` in the response. `registrationData` is saved in Onegini Access for future requests to this Custom Authenticator. The (empty) `responsePayload` is returned via Onegini Access to Onegini SDK. 
+This is an example for registration which accepts all incoming requests. It returns the `requestPayload` from the request as `registrationData` in the response. `registrationData` is saved in OneWelcome Access for future requests to this Custom Authenticator. The (empty) `responsePayload` is returned via OneWelcome Access to OneWelcome SDK. 
 
 The format of the `requestPayload` parameter is defined by the mobile application. It is sent as String parameter to the `execute` function. The script developer is responsible for parsing this String and implement the logic to either register the user or reject the registration.
 
@@ -22,7 +22,7 @@ function execute(requestPayload, userIdentifier) {
 
 ### Authentication script
 
-This is an example for authentication. It compares the `requestPayload` from the current request with the `registrationData` that was saved during registration. When it succeeds, it returns a status code 2000 (Success), otherwise 4000 (Failure, user can try again). The (empty) `responsePayload` is returned via Onegini Access to Onegini SDK.
+This is an example for authentication. It compares the `requestPayload` from the current request with the `registrationData` that was saved during registration. When it succeeds, it returns a status code 2000 (Success), otherwise 4000 (Failure, user can try again). The (empty) `responsePayload` is returned via OneWelcome Access to OneWelcome SDK.
 
 The format of the `requestPayload` is defined by the mobile application. Both `requestPayload` and `registrationData` are sent as String parameter to the `execute` function. The script developer is responsible for parsing this String and implement the logic to either authenticate the user or reject the authentication.
 
@@ -42,7 +42,7 @@ function execute(requestPayload, userIdentifier, registrationData) {
 
 ## Status codes
 
-The `execute` function of the script is responsible for returning a status that can be interpreted by Onegini Access. Onegini Access will perform different actions (such as issuing or revoking tokens, etc.) based on the returned status, and will return only selected status codes to the SDK. Extreme care must be taken that they are correct.
+The `execute` function of the script is responsible for returning a status that can be interpreted by OneWelcome Access. OneWelcome Access will perform different actions (such as issuing or revoking tokens, etc.) based on the returned status, and will return only selected status codes to the SDK. Extreme care must be taken that they are correct.
 
 There are different ranges of status codes, each with a particular meaning.
 
@@ -51,7 +51,7 @@ There are different ranges of status codes, each with a particular meaning.
 * 4xxx: Recoverable client error
 * 5xxx: Non-recoverable client error
 
-The script should return a status code of 2000, 4xxx, or 5000. A 3xxx status is returned by the Onegini Extension Engine when the script could not be executed. 
+The script should return a status code of 2000, 4xxx, or 5000. A 3xxx status is returned by the OneWelcome Extension Engine when the script could not be executed. 
 
 The following table contains an overview of the status codes and their meaning. 
 
