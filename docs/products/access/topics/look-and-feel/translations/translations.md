@@ -10,7 +10,7 @@ System &rightarrow; General &rightarrow; Supported Locales.
 
 ## Adding or updating a translation
 
-When no translation is found for a message key, OneWelcome Access will look for an available default. These defaults are available for the standard Onegini
+When no translation is found for a message key, OneWelcome Access will look for an available default. These defaults are available for the standard OneWelcome
 templates. When using custom templates, we advise picking different message keys per template set, so for these messages, no defaults will be available without
 any configuration.
 

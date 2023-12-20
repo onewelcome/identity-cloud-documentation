@@ -55,7 +55,7 @@ Example request:
 ```http
 GET /resources/devices HTTP/1.1
 Authorization: Bearer 5F09FC2DD7DCDB72ABF1A6C026DF8FFB9D7D1F4AD069E34F0A6EC6206A593420
-Host: www.onegini.com:9999
+Host: www.onewelcome.com:9999
 Connection: close
 ```
 

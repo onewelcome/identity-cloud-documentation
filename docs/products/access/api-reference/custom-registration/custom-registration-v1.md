@@ -25,7 +25,7 @@ Example request:
 
 ```http
 POST /oauth/custom-registration/example-custom-registration-idp/init HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 Content-Type: application/json
 Authentication: Basic Y2xpZW50OnNlY3JldA==
 

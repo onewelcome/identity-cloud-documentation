@@ -59,7 +59,7 @@ JSON Attributes:
 
 ```http
 GET /api/v1/events?event_type=ADMIN_CLIENT_DELETED&event_type=API_DEVICE_REMOVED&start_date=1555405987532 HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 ```
 
 Example success response:

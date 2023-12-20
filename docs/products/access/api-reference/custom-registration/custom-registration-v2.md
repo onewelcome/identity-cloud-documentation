@@ -35,7 +35,7 @@ Example request:
 
 ```http
 POST /oauth/v2/custom-registration/example-custom-registration-idp/init HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 Content-Type: application/json
 
 {
@@ -98,7 +98,7 @@ Example request:
 
 ```http
 POST /oauth/v2/custom-registration/example-custom-registration-idp/complete HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 Content-Type: application/json
 
 {

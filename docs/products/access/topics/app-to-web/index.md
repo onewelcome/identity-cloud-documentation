@@ -4,8 +4,8 @@ App to Web Single Sign on allows you to take a session from your mobile applicat
 useful for giving a seamless experience to your users when they transition from the mobile application to the website where more
 functionality likely exists. 
 This feature is available when using the Tulip identity provider, 
-the [OneWelcome CIM identity provider](../general-app-config/identity-providers/identity-providers.md#configure-a-onegini-cim-identity-provider),
-or the [OneWelcome CIM API identity provider](../general-app-config/identity-providers/identity-providers.md#configure-a-onegini-cim-api-identity-provider).
+the [OneWelcome CIM identity provider](../general-app-config/identity-providers/identity-providers.md#configure-a-onewelcome-cim-identity-provider),
+or the [OneWelcome CIM API identity provider](../general-app-config/identity-providers/identity-providers.md#configure-a-onewelcome-cim-api-identity-provider).
 In CIM, OneWelcome Access uses the ActionToken Type `LOGIN_APP2WEB`, which has been available since OneWelcome CIM version 6.2.0.
 In Tulip, OneWelcome Access uses a Authentication Token, this can be used with Tulip R103 and up.
 

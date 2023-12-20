@@ -1,7 +1,7 @@
 ## Functional overview
 
 The expectations for consumers are set by webshops like Coolblue, Apple, Amazon and Google. Insurance companies can now start to impress users and meet higher
-demands from business and regulation. Onegini's Identity & Single Sign-On solution - as a part of the OneWelcome Identity Cloud - contains components you can
+demands from business and regulation. OneWelcome's Identity & Single Sign-On solution - as a part of the OneWelcome Identity Cloud - contains components you can
 easily add to your existing enterprise architecture. The picture below shows the high-level functionality the platform provides.
 
 ![Architecture overview](./img/overview-identity-single-sign-on.svg)

@@ -28,7 +28,7 @@ Example request:
 
 ```http
 GET /api/v1/configuration/api-clients?page=1 HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 ```
 
 Example success response:
@@ -82,7 +82,7 @@ Example request:
 
 ```http
 POST /api/v1/configuration/api-clients HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 Content-Type: application/json
 {
    "name":"API client 1",

@@ -86,7 +86,7 @@ The Authorization Code flow is best used by server-side apps. The apps should be
 sequenceDiagram
     participant RO as Resource Owner (User)
     participant RP as Web application
-    participant AS as Authorization Server (Onegini)
+    participant AS as Authorization Server (OneWelcome)
     participant RS as Resource Server (Your App)
 
     RP->>AS: Authentication Code Request to /authorize
@@ -117,7 +117,7 @@ A rogue app could only intercept the authorization code, but it wouldn't have ac
 sequenceDiagram
     participant RO as Resource Owner (User)
     participant RP as Web application
-    participant AS as Authorization Server (Onegini)
+    participant AS as Authorization Server (OneWelcome)
     participant RS as Resource Server (Your App)
 
     RP->>RP: Generate PKCE code_verifier & code_challenge
@@ -141,7 +141,7 @@ The Client Credentials flow is intended for server-side (AKA "confidential") cli
 ```mermaid
 sequenceDiagram
     participant RO as Client + Resource Owner
-    participant AS as Authorization Server (Onegini)
+    participant AS as Authorization Server (OneWelcome)
     participant RS as Resource Server (Your App)
 
     RO->>AS: Acces token request to /token

@@ -29,7 +29,7 @@ IDP. It makes features like [OpenID Connect](../../oidc/index.md) easily configu
 like [App to Web SSO](../../app-to-web/index.md).
 It is configured in much the same way as a [SAML Identity Provider](#configure-a-saml-identity-provider).
 
-![Add OneWelcome CIM Idp](img/add-onegini-idp.png)
+![Add OneWelcome CIM Idp](img/add-onewelcome-idp.png)
 
 Depending on which integration(s) are enabled, the configuration requirements change. See the table below for information:
 
@@ -60,7 +60,7 @@ to use the SAML IdP integration.
 
 When the SAML IdP functionality is used OneWelcome Access acts as a SAML service provider. The metadata of the service provider can be
 configured via
-[SAML Service Provider Configuration](../../technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md). In the SAML IdP Onegini
+[SAML Service Provider Configuration](../../technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md). In the SAML IdP OneWelcome
 Access has to be configured as service
 provider. Please refer
 to [Configuring the Metadata of the SAML Service Provider](../../technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md#configure-metadata-of-the-saml-service-provider)
@@ -108,7 +108,7 @@ The attribute mapping functionality described below allows you to restrict this 
 UserInfo integration, the assertion attributes will be overwritten if they have the same name.
 
 OneWelcome Access supports free format attribute names. All attributes (including the non default ones) are available in the token
-introspection response and in the consent template. A set of default attributes is available that can lead to different behavior in Onegini
+introspection response and in the consent template. A set of default attributes is available that can lead to different behavior in OneWelcome
 Access:
 
 * userId

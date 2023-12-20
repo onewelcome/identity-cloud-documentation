@@ -23,7 +23,7 @@ On the right-hand side you see the server side functionality where you provide t
 
 ### Passwordless login 
 
-Build on top of our Mobile security offering we offer a whitelabel authenticator app that your can use to offer a secure Passwordless Login experience for your customers and/or employees. The app is ready to go and requires low effort for both developers and the end users. Onegini's Passwordless Login is branded in your company's styling/colors. The user experience is very intuitive and fluent. In all flows of the app, the error handling is included in a user-friendly way. Onegini's Passwordless Login supports App2Web technology, enabling your users to continue their journey as a logged-in user in responsive web pages. 
+Build on top of our Mobile security offering we offer a whitelabel authenticator app that your can use to offer a secure Passwordless Login experience for your customers and/or employees. The app is ready to go and requires low effort for both developers and the end users. OneWelcome's Passwordless Login is branded in your company's styling/colors. The user experience is very intuitive and fluent. In all flows of the app, the error handling is included in a user-friendly way. OneWelcome's Passwordless Login supports App2Web technology, enabling your users to continue their journey as a logged-in user in responsive web pages. 
 
 Out-of-the-box supported flows:
 

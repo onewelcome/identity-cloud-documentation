@@ -156,7 +156,7 @@ Example request:
 
 ```http
 POST /oauth/api/v4/users/myDummyUserId/devices
-Host: onegini.example.com
+Host: onewelcome.example.com
 Accept: application/json
 Content-Type: application/json
 

@@ -130,4 +130,4 @@ To synchronize a Git Repository, click \[Synchronize\] in the overview page:
 
 !!!important
 
-    Changes in the templates will only be visible on the production environment after clearing the CIM cache (or restarting the application). Please ask your contact within Onegini.
+    Changes in the templates will only be visible on the production environment after clearing the CIM cache (or restarting the application). Please ask your contact within OneWelcome.

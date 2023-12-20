@@ -46,7 +46,7 @@ Example request for the authorization code flow:
 
 ```http
 GET /oauth/v1/authorize?response_type=code&client_id=exampleApp&state=xyz&redirect_uri=https%3A%2F%2Fclient%2Eexample%2Ecom%2Fredirect HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 ```
 
 Example success response for the authorization code flow:
@@ -80,7 +80,7 @@ existing customers. Both identity providers would be configured for this applica
 
 Preselects the external identity provider in OneWelcome CIM for authentication. The value starts with `urn:com:onegini:saml:idp:` followed by the
 [identifier of the identity provider](https://docs-single-tenant.onegini.com/cim/stable/idp/administration/identity-providers.html) in OneWelcome CIM.
-This feature requires [OneWelcome CIM to be used as an identity provider](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-onegini-cim-identity-provider).
+This feature requires [OneWelcome CIM to be used as an identity provider](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-onewelcome-cim-identity-provider).
 
 Example value: `external_idp=urn%3Acom%3Aonegini%3Asaml%3Aidp%3Adigid`
 
@@ -92,7 +92,7 @@ screen of the latter.
 This parameter can be used to populate a key value map in the [OneWelcome Extension](https://docs-single-tenant.onegini.com/cim/stable/idp/authentication/saml/saml-extension-custom-parameters.html)
 as part of the SAML Authentication Request. The key value map can be used in the OneWelcome CIM product for customizing styling or logic in combination with the
 [Session API](https://docs-single-tenant.onegini.com/cim/stable/idp/api-reference/session-api.html). This feature requires
- [OneWelcome CIM to be used as an identity provider](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-onegini-cim-identity-provider).
+ [OneWelcome CIM to be used as an identity provider](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-onewelcome-cim-identity-provider).
 
 Example value: `external_idp_custom_param.key1=val1&external_idp_custom_param.key2=val2&external_idp_custom_param.key2=val3`
 

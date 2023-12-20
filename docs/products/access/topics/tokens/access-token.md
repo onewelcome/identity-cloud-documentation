@@ -47,7 +47,7 @@ sections are displayed in the example below.
 {
   "ver": 1,
   "jti": "AT.d405c8b0-2afc-4720-a567-e890fecd28b2",
-  "iss": "https://token-server.onegini.com/oauth",
+  "iss": "https://token-server.onewelcome.com/oauth",
   "aud": "profile-api",
   "iat": 1537437991,
   "nbf": 1537437991,

@@ -42,7 +42,7 @@ The introspection response object described in [paragraph 2.2](https://tools.iet
 Example token introspection request:
 ```http
 POST /oauth/api/v2/token/introspect HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW

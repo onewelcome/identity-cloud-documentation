@@ -1,7 +1,7 @@
 # OneWelcome Identity Cloud
 
 With OneWelcome Identity Cloud,
-the company offers an omnichannel Customer Identity and Access Management solution (CIAM) for the banking, insurance and pension industry. With Onegini,
+the company offers an omnichannel Customer Identity and Access Management solution (CIAM) for the banking, insurance and pension industry. With OneWelcome,
 organisations quickly and securely create mobile apps and digital portals for consumers, employers and advisors while not having to worry about registration,
 identification, login and management of the digital identity.
 
