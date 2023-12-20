@@ -25,7 +25,7 @@ In this section you can see an example of an ID Token. A JWT contains three sect
   "sub": "1c0e2c84-b05f-4c23-9175-c238f70901be",
   "email_verified": true,
   "gender": "male",
-  "iss": "https://token-server.onewelcome.com/oauth",
+  "iss": "https://tenant.onewelcome.io/oauth",
   "preferred_username": "John Doe",
   "given_name": "John",
   "locale": "en",
