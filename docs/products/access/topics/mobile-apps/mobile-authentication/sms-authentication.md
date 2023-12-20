@@ -2,9 +2,9 @@
 
 ## Introduction
 
-For SMS, the end-user does not have to install an app on their mobile device. The website initiates the mobile authentication at Onegini Access
+For SMS, the end-user does not have to install an app on their mobile device. The website initiates the mobile authentication at OneWelcome Access
 which sends a text message with a code to the end-user. The website then needs to present a screen to the end-user to enter the code that was sent via SMS. When
-the end-user has entered the code, the website sends this to Onegini Access which returns the validation result.
+the end-user has entered the code, the website sends this to OneWelcome Access which returns the validation result.
 
 ## General configuration
 
@@ -16,7 +16,7 @@ The checkbox at `SMS Authentication` / `Authentication enabled` must be checked 
 a preconfigured phone number. You can override this phone number by entering your own sender id. This can be a phone number, a short code that is
 registered with your SMS provider, or an alphanumeric sender id (e.g. your brand name). Not all countries support sending SMS messages from an
 alphanumeric sender id, while other countries require to register the sender id up front. When sending the text message fails with this sender id,
-Onegini Access tries to send the SMS message from the default phone number.
+OneWelcome Access tries to send the SMS message from the default phone number.
 
 The enrollment options are not necessary for SMS.
 
@@ -42,20 +42,20 @@ Optional configuration:
 authentication type. This can be a phone number, a short code that is registered with your SMS provider, or an alphanumeric sender id (e.g. your brand name). 
 Not all countries support sending SMS messages from an alphanumeric sender id, while other countries require to register the sender id up front. Configuring the
 sender id per mobile authentication type is optional. When sending the text message fails with the sender id for this mobile authentication type, the 
-Onegini Access will retry sending the SMS using the sender id that is configured in as sender id in the [General configuration](#general-configuration). 
-When that fails, it tries to send the message using the default phone number for Onegini Access.
+OneWelcome Access will retry sending the SMS using the sender id that is configured in as sender id in the [General configuration](#general-configuration). 
+When that fails, it tries to send the message using the default phone number for OneWelcome Access.
 * Default messages: per supported language you can preconfigure the message that is sent to the user via SMS. Refer to [SMS message body](#sms-message-body) for
 their format.
 
 ## SMS message body
 With SMS authentication, the end-user will receive a six digit code. This code must be included in the message. This message can be configured up front or sent
 with the api request that triggers the mobile authentication. A placeholder must be included to indicate where the code should be inserted in the message.
-The placeholder to be used is `{code}`. If the `{code}` placeholder is not included in the message, Onegini Access will only send the code in the text
+The placeholder to be used is `{code}`. If the `{code}` placeholder is not included in the message, OneWelcome Access will only send the code in the text
 message and no additional message. 
 
 An example SMS message: `Your example SMS code: {code}`.
 
-Onegini Access is sending SMS for one time codes. There is a (proposed) [standard for sending one time codes](https://github.com/WICG/sms-one-time-codes)
+OneWelcome Access is sending SMS for one time codes. There is a (proposed) [standard for sending one time codes](https://github.com/WICG/sms-one-time-codes)
 via SMS. Some browsers will suggest using the code that has been sent for that domain. For the autocomplete, the message must end with:
 
 * a newline

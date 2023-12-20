@@ -1,16 +1,16 @@
 # Translations
 
-Onegini Access supports the internationalization of templates via messages. For each message, multiple translations can be set. This topic guide will explain how to
+OneWelcome Access supports the internationalization of templates via messages. For each message, multiple translations can be set. This topic guide will explain how to
 configure the translations of messages used in templates. These translations follow the <abbr title="Internationalization">i18n</abbr> standard for messages.
 
 ## Configure the supported language(s)
 
-A translation can be configured for the locales supported by Onegini Access. The supported locales can be configured via the admin console:
+A translation can be configured for the locales supported by OneWelcome Access. The supported locales can be configured via the admin console:
 System &rightarrow; General &rightarrow; Supported Locales.
 
 ## Adding or updating a translation
 
-When no translation is found for a message key, Onegini Access will look for an available default. These defaults are available for the standard Onegini
+When no translation is found for a message key, OneWelcome Access will look for an available default. These defaults are available for the standard Onegini
 templates. When using custom templates, we advise picking different message keys per template set, so for these messages, no defaults will be available without
 any configuration.
 

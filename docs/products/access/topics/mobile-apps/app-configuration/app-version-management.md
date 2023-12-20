@@ -1,10 +1,10 @@
 # Mobile application version management
 
-As organisation you only want approved application versions to be able to communicate with Onegini Access. Therefore application version management is an
-important feature of Onegini Access. Each application version which is published must be configured. When talking about an application version a version of
+As organisation you only want approved application versions to be able to communicate with OneWelcome Access. Therefore application version management is an
+important feature of OneWelcome Access. Each application version which is published must be configured. When talking about an application version a version of
 the application for a specific platform is used. So for example: `PaymentApp v1.1 Android`. 
 
-An application should prove it is the application version it pretends to be when it communicates with Onegini Access for the first time. When this is proven the 
+An application should prove it is the application version it pretends to be when it communicates with OneWelcome Access for the first time. When this is proven the 
 application will receive credentials which can be used for further communication. Based on these credentials all requests for this application can be correlated
 to this specific application installation.
 
@@ -23,11 +23,11 @@ Click on the `Add App version` button to create an App version from scratch. Cli
 The `Version` fields need to be filled with a version identifier of the mobile app for that platform. The version identifier is a free format text field. It is
 advised to use [semantic versioning](https://semver.org/) to see the relation between versions in terms of which is the latest.
 
-The `Status` defines whether the Onegini Access accepts requests from app installations for this version. The status field has three options:
+The `Status` defines whether the OneWelcome Access accepts requests from app installations for this version. The status field has three options:
 
-1. `Enabled`: this version of the application can register itself as a new application installation on the Onegini Access and existing application
+1. `Enabled`: this version of the application can register itself as a new application installation on the OneWelcome Access and existing application
    installations can be used.
-2. `Login enabled, registration disabled`: only applications that already had registered before can keep using the Onegini Access without upgrading. New
+2. `Login enabled, registration disabled`: only applications that already had registered before can keep using the OneWelcome Access without upgrading. New
    registrations for this app version are denied.
 3. `Disabled`: completely disable the usage of a specific version. For example, when a version configuration is created for future usage, the version contains a
    severe issue which requires it to be disabled, or when a version is so outdated that customers cannot use it anymore.
@@ -36,7 +36,7 @@ The `Status` defines whether the Onegini Access accepts requests from app instal
 
 #### Application signature
 
-The application sends a signature with every request to the Onegini Access to prove that it is a genuine app installation. An app developer will deliver
+The application sends a signature with every request to the OneWelcome Access to prove that it is a genuine app installation. An app developer will deliver
 application signatures as described in the [App delivery lifecycle topic](../app-delivery-lifecycle/app-delivery-lifecycle.md#final-steps). Application
 signatures are sometimes referred to as Application thumbprints or Application secrets. Configure their values in the `Application signatures` fields.
 
@@ -47,7 +47,7 @@ Level `None` is only recommended for development purposes.
 > **Note:** The integrity level is only used for Onegini's Android SDK 11+ and iOS SDK 10+. Earlier versions use the settings for Development mode and
 > Tampering protection.
 To prevent tampering with the application, for example via byte code manipulation, `Tampering protection` checkbox should be enabled. With tampering protection
-the application has to prove its identity to the Onegini Access in a more strict way.
+the application has to prove its identity to the OneWelcome Access in a more strict way.
 
 > **Note:** Tampering protection option for iOS SDK 11+ is deprecated. Use Integrity level FULL and use a new App Signature (App ID) calculated from TeamID and BundleID instead of the one created from the calculator. For more info check [here](https://developer.onewelcome.com/ios/sdk/application-integrity).
 
@@ -64,8 +64,8 @@ not valid because the first part does not have the correct size.
 
 For the communication of sensitive information TLS/SSL might not be sufficient. The `Payload encryption` feature adds a layer of encryption to the request and
 response. When an attacker is able to compromise the TLS transport layer, they cannot read the contents of the messages because their payload will be encrypted
-as well. An installation of the Onegini Security Proxy is required to use payload encryption. Enabling `Payload encryption` without the
-Onegini Security Proxy does not have any effect.   
+as well. An installation of the OneWelcome Security Proxy is required to use payload encryption. Enabling `Payload encryption` without the
+OneWelcome Security Proxy does not have any effect.   
 
 ### Configure mobile authentication
 

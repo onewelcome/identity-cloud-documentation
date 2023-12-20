@@ -1,17 +1,17 @@
 # User management
 
-Onegini Access manages the users' access to the mobile applications that they have installed. There are a few ways to view or manage the end-users actions. 
+OneWelcome Access manages the users' access to the mobile applications that they have installed. There are a few ways to view or manage the end-users actions. 
 For instance via the administration console you can search for a user to get an overview of all actions that a user has performed and what information is stored
 of that user. All user management possibilities are explained in this topic guide.
 
->**Note:** Onegini Access itself does not manage user personal data such as name, email, etc. It merely consumes incoming data that is given to the 
-Onegini Access during user authentication. The authentication mechanism must take care 
+>**Note:** OneWelcome Access itself does not manage user personal data such as name, email, etc. It merely consumes incoming data that is given to the 
+OneWelcome Access during user authentication. The authentication mechanism must take care 
 that all communication for a given user identifier (user ID) refers to the same user and that this ID is unique. The user identifier is therefore also the 
 identifier that is used in order to find information about a specific user.
 
 ## Manage user information via admin console
 
-Via the admin console you can get user information by going to the `Users` section. This section is accessible to all authorised users of the Onegini Admin 
+Via the admin console you can get user information by going to the `Users` section. This section is accessible to all authorised users of the OneWelcome Admin 
 console. It gives an overview of the events and data for a user. In order to see user data you need to enter the user identifier for a specific user.
 
 ![Users](img/users.png)
@@ -31,9 +31,9 @@ the application to which this token was issued has the ability to refresh it bas
 This section should be empty unless a client has not yet exchanged the Access Grant for an Access Token. This might be in case a client is configured improperly or when a device is suffering with network connectivity issues.
 
 ### Mobile devices
-Shows the mobile devices that a user has connected with Onegini Access. It also shows the application to which this mobile registration is linked. 
+Shows the mobile devices that a user has connected with OneWelcome Access. It also shows the application to which this mobile registration is linked. 
 
-Modifications on mobile devices for a user are allowed for users of the Onegini Admin console with the role `admin`.
+Modifications on mobile devices for a user are allowed for users of the OneWelcome Admin console with the role `admin`.
 
 ![Mobile devices](img/mobile-devices.png)
 

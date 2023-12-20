@@ -1,10 +1,10 @@
 # API config
 
-This section explains how administrators can manage access to [APIs within Onegini Access](../../api-reference/index.md).
+This section explains how administrators can manage access to [APIs within OneWelcome Access](../../api-reference/index.md).
 
 ## API clients
 
-API clients are required to use their credentials to authorise access to APIs of Onegini Access. These credentials, as well as the APIs to which 
+API clients are required to use their credentials to authorise access to APIs of OneWelcome Access. These credentials, as well as the APIs to which 
 clients can get access to, can be configured within the following fields:
 
 | Field                       | Required | Description                                                      |

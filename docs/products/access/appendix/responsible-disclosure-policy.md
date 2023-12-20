@@ -1,6 +1,6 @@
 # Responsible disclosure policy
 
-In the unlikely event that security issues are found within Onegini Access, the responsible disclosure policy allows individuals to easily communicate 
+In the unlikely event that security issues are found within OneWelcome Access, the responsible disclosure policy allows individuals to easily communicate 
 their findings to Onegini. This allows us to further strengthen the security of our products with minimal overhead.
 
 ## Configuration

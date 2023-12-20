@@ -380,7 +380,7 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 ## Release date: 2022-06-29
 
 ### Features
-* It is now possible to add an [extra param `hook_context_custom_param.*`](../api-reference/description-oauth-endpoint.md) to the authorization endpoint. This param is then available in the [Onegini Customize Access Token Web Hook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md) as context.
+* It is now possible to add an [extra param `hook_context_custom_param.*`](../api-reference/description-oauth-endpoint.md) to the authorization endpoint. This param is then available in the [OneWelcome Customize Access Token Web Hook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md) as context.
 
 ## Release date: 2022-06-09
 
@@ -405,7 +405,7 @@ since January 1 1970 UTC. To use this new value, please switch to the v2 of our 
   the [OpenID Connect discovery endpoint](../api-reference/oidc/discovery.md).
 * Improved the [integrity check](../topics/mobile-apps/app-delivery-lifecycle/app-delivery-lifecycle.md) for mobile apps. This improved integrity check is
   required for new mobile apps introduced to the Google Play Store after August 1st, 2021. The existing apps, both running on Android and iOS, will continue to
-  work without any changes. Still, it is recommended to plan an update of the Onegini SDK and use the improved integrity check.
+  work without any changes. Still, it is recommended to plan an update of the OneWelcome SDK and use the improved integrity check.
 
 ### Bug fixes
 
@@ -438,7 +438,7 @@ since January 1 1970 UTC. To use this new value, please switch to the v2 of our 
 * The mobile applications that were using the [Custom Registration](../topics/custom-registration/index.md) feature had to send additional request in order to
   obtain an ID Token. This will no longer be required as the ID Token will be returned to the client along with the Access Token when configured.
 * Users who are either members of many Delegated Administration for Business Partners ([DABP](../../../dabp/index.md)) groups or are having many DABP policies
-  assigned, could experience issues when logging out from DABP or Onegini Console applications. The logout request in such scenarios will no longer be rejected.
+  assigned, could experience issues when logging out from DABP or OneWelcome Console applications. The logout request in such scenarios will no longer be rejected.
 
 ## Release date: 2021-03-09
 

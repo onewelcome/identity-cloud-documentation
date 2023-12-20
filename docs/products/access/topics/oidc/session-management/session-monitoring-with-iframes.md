@@ -27,7 +27,7 @@ This scenario also supports multiple RP's that exist within the same User Agent 
 
 ## Implementation as the Relying Party
 
-You will need to embed the two iframes into your pages to monitor the session state of your users. Onegini as the OP, has provided an endpoint to get the html
+You will need to embed the two iframes into your pages to monitor the session state of your users. OneWelcome as the OP, has provided an endpoint to get the html
 for the OP iframe. It is located at `/oauth/v1/checksession` of the OP server. You can see an example of the html with comments in
 [OpenID Provider iframe](../../../api-reference/oidc/session-management/check-session.md). The RP iframe is responsible for calling the `postMessage` function
 of the OP iframe with the necessary arguments.
@@ -71,13 +71,13 @@ Once the RP iframe has been implemented, it is as simple as including both on a 
 ## Restrictions
 
 ### Identity Providers
-Onegini Access requires Onegini CIM or any other SAML identity provider to determine if the user is still authenticated. For a
+OneWelcome Access requires OneWelcome CIM or any other SAML identity provider to determine if the user is still authenticated. For a
 JavaScript client that utilizes the authorization code flow with PKCE, you must use the SAML artifact binding. For server side Relying Party implementations you
 can also use the SAML redirect or post binding.
-When a different type of identity provider is used, Onegini Access will always respond with the error `login_required`.
+When a different type of identity provider is used, OneWelcome Access will always respond with the error `login_required`.
 
 ### Hosts and cookies
-The request towards Onegini Access requires a cookie to determine the session. Browsers are no longer always sending cookies to servers to protect the
+The request towards OneWelcome Access requires a cookie to determine the session. Browsers are no longer always sending cookies to servers to protect the
 privacy of their users. The request to check the session with the OP is done via an iframe, and this has brought restrictions to the setup. Some browsers will
 only send cookies to the OP when it shares the domain name with the RP and only via https.
 

@@ -41,7 +41,7 @@ The authorization server also acts as an OpenID Connect Provider, which means yo
 
 ### OpenID Connect
 
-OpenID Connect is an authentication standard built on top of OAuth 2.0. It adds an additional token called an ID token. OpenID Connect also standardizes areas that OAuth 2.0 leaves up to choice, such as scopes, endpoint discovery, and dynamic registration of clients. Onegini is [OpenID Certified](https://openid.net/certification/).
+OpenID Connect is an authentication standard built on top of OAuth 2.0. It adds an additional token called an ID token. OpenID Connect also standardizes areas that OAuth 2.0 leaves up to choice, such as scopes, endpoint discovery, and dynamic registration of clients. OneWelcome is [OpenID Certified](https://openid.net/certification/).
 
 Although OpenID Connect is built on top of OAuth 2.0, the [OpenID Connect specification](https://openid.net/connect/) uses somewhat different terms for the roles in the flows:
 
@@ -65,7 +65,7 @@ The table shows you which OAuth 2.0 flow to use for the type of application that
 | :---------------------- | :------------------------------------------------------ |
 | Server-side (AKA Web)   | Authorization Code Flow                                 |
 | Single-Page Application | Authorization Code Flow with PKCE                       |
-| Mobile apps             | Onegini Mobile SDK or Authorization Code Flow with PKCE |
+| Mobile apps             | OneWelcome Mobile SDK or Authorization Code Flow with PKCE |
 | Service                 | Client Credentials                                      |
 
 ### Does your application need an ID token?

@@ -1,15 +1,15 @@
 # Tokens
 
-Onegini Access, as the name of the component implies issues tokens. These tokens can be used in all kinds of scenarios. This topic describes what kind of tokens are issued and what's their use.
+OneWelcome Access, as the name of the component implies issues tokens. These tokens can be used in all kinds of scenarios. This topic describes what kind of tokens are issued and what's their use.
 
 ## Token Types
 
 - JSON Web Tokens (JWT): Tokens that conform to a standard: the [JSON Web Token standard](https://tools.ietf.org/html/rfc7519). A JWT contains information about an identity in the form of claims. They are self-contained. This means that it is not necessary for the party that receives this token to call a server to validate the token or get additional information about the token (read the claims).
-- Opaque tokens: Tokens in a proprietary format. Basically the token is a random string. This random string is an identifier to information in a server’s (persistent) storage. To validate an opaque token, the party that receives this token needs to call the issuer, in our case Onegini Access.
+- Opaque tokens: Tokens in a proprietary format. Basically the token is a random string. This random string is an identifier to information in a server’s (persistent) storage. To validate an opaque token, the party that receives this token needs to call the issuer, in our case OneWelcome Access.
 
-## Tokens issued by Onegini Access
+## Tokens issued by OneWelcome Access
 
-Onegini Access issues a number of different tokens each with a different use. All these tokens are issued as part of the OAuth or OpenID Connect specifications
+OneWelcome Access issues a number of different tokens each with a different use. All these tokens are issued as part of the OAuth or OpenID Connect specifications
 
 ### ID Token
 

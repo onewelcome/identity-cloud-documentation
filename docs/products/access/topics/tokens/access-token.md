@@ -20,8 +20,8 @@ is configured.
 ``` 
 
 ## JSON Web Token (JWT)
-Onegini Access can issue a [JWT](https://tools.ietf.org/html/rfc7519) as access token. However, the receiver does not have to treat it as a JWT but can also 
-treat it as an opaque token and present it to Onegini Access for validation. Refer to the 
+OneWelcome Access can issue a [JWT](https://tools.ietf.org/html/rfc7519) as access token. However, the receiver does not have to treat it as a JWT but can also 
+treat it as an opaque token and present it to OneWelcome Access for validation. Refer to the 
 [Token Introspection documentation](../../api-reference/token-introspection.md) for details on validation an access token.
 
 The JWT token is returned when this is [configured for a web client](../web-clients/web-client-configuration.md). It contains the user identifier when the 

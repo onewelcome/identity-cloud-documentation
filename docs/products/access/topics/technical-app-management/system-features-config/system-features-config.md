@@ -1,6 +1,6 @@
 # Configure system features
 
-Onegini Access has several features that can be disabled on system level. When a feature is disabled on system level functional configuration options in the 
+OneWelcome Access has several features that can be disabled on system level. When a feature is disabled on system level functional configuration options in the 
 admin console for the feature are no longer available. Any existing functional configuration will remain but will be inactive. So when you temporary disable a 
 feature on system level and you enable it again later, the original configuration will be available again.
 

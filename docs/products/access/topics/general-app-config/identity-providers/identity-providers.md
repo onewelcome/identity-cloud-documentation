@@ -1,6 +1,6 @@
 # Identity provider configuration
 
-Onegini Access has no user management. Onegini Access depends on external identity providers (IdP) to identify a user. Onegini Access
+OneWelcome Access has no user management. OneWelcome Access depends on external identity providers (IdP) to identify a user. OneWelcome Access
 supports multiple integrations with identity providers out of the box. Custom integrations are also supported.
 
 Go to `Configuration` and then to `Identity providers` to configure identity providers in the admin console.
@@ -11,25 +11,25 @@ Go to `Configuration` and then to `Identity providers` to configure identity pro
 
 The following properties can be set for each type of identity provider:
 
-* Type: the type of this identity provider. The type can only be changed later from a generic SAML to a Onegini CIM identity provider.
+* Type: the type of this identity provider. The type can only be changed later from a generic SAML to a OneWelcome CIM identity provider.
 * Identifier: the id of the identity provider. This uniquely identifies the IdP and cannot be changed later.
 * Name: a human readable name of the identity provider. This name is not shown to the end user, only to administrators.
 * Default: an identity provider can be assigned to an application. When no identity provider is specified for an application, the default
   identity provider is used.
 * Enabled: flag to enable/disable this identity provider.
 
-Additionally, for those identity providers that expose identity via API, it is possible make Onegini Access aware of this API.
+Additionally, for those identity providers that expose identity via API, it is possible make OneWelcome Access aware of this API.
 See [Configure User Info endpoint](#configure-user-info-endpoint) for further details.
 
-## Configure a Onegini CIM Identity Provider
+## Configure a OneWelcome CIM Identity Provider
 
-The Onegini CIM Identity Provider is meant to connect with the
-Onegini [Consumer Identity Manager](https://docs-single-tenant.onegini.com/cim/stable/idp) (CIM)
+The OneWelcome CIM Identity Provider is meant to connect with the
+OneWelcome [Consumer Identity Manager](https://docs-single-tenant.onegini.com/cim/stable/idp) (CIM)
 IDP. It makes features like [OpenID Connect](../../oidc/index.md) easily configurable and exposes new features
 like [App to Web SSO](../../app-to-web/index.md).
 It is configured in much the same way as a [SAML Identity Provider](#configure-a-saml-identity-provider).
 
-![Add Onegini CIM Idp](img/add-onegini-idp.png)
+![Add OneWelcome CIM Idp](img/add-onegini-idp.png)
 
 Depending on which integration(s) are enabled, the configuration requirements change. See the table below for information:
 
@@ -54,11 +54,11 @@ to [general system configuration page documentation](../../technical-app-managem
 
 ![Add saml IdP](img/add-saml-idp.png)
 
-By default, the endpoints required for SAML in Onegini Access are disabled. These endpoints should be enabled
+By default, the endpoints required for SAML in OneWelcome Access are disabled. These endpoints should be enabled
 via [SAML Service Provider Configuration `SAML Service Provider enabled`](../../technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md#saml-enabled)
 to use the SAML IdP integration.
 
-When the SAML IdP functionality is used Onegini Access acts as a SAML service provider. The metadata of the service provider can be
+When the SAML IdP functionality is used OneWelcome Access acts as a SAML service provider. The metadata of the service provider can be
 configured via
 [SAML Service Provider Configuration](../../technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md). In the SAML IdP Onegini
 Access has to be configured as service
@@ -66,7 +66,7 @@ provider. Please refer
 to [Configuring the Metadata of the SAML Service Provider](../../technical-app-management/idp-saml-sp-config/idp-saml-sp-config.md#configure-metadata-of-the-saml-service-provider)
 for more information.
 
-The Entity ID must be configured in Onegini Access for a SAML IdP. The Entity ID in the configuration of Onegini Access should be equal to
+The Entity ID must be configured in OneWelcome Access for a SAML IdP. The Entity ID in the configuration of OneWelcome Access should be equal to
 the Entity ID in the
 metadata of the IdP.
 
@@ -77,13 +77,13 @@ There are two options to specify the IdP metadata:
 2. 'Static XML' - the complete XML representing Saml metadata is provided directly as a static text. When using this option make sure that
    metadata has sufficient expiry date and keys within the metadata are up-to-date.
 
-Onegini Access supports multiple certificates in the metadata in order to migrate to a new certificate smoothly.
+OneWelcome Access supports multiple certificates in the metadata in order to migrate to a new certificate smoothly.
 
-Onegini Access supports IdP initiated SAML Single Logout (SLO). By enabling SLO, the IdP is able to terminate sessions at Onegini Access.
-This means that when a user logs out at the identity provider, Onegini Access will receive a request to revoke all access tokens and grants
+OneWelcome Access supports IdP initiated SAML Single Logout (SLO). By enabling SLO, the IdP is able to terminate sessions at OneWelcome Access.
+This means that when a user logs out at the identity provider, OneWelcome Access will receive a request to revoke all access tokens and grants
 associated with that session. This feature is only available for web clients that do not make use of refresh tokens.
 
-Onegini Access can choose requested authentication context class reference which then will be used with all SAML requests. If none is
+OneWelcome Access can choose requested authentication context class reference which then will be used with all SAML requests. If none is
 specified it defaults to
 `urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport`
 
@@ -107,7 +107,7 @@ enables mapping of all attributes in the SAML assertion from the external IDP to
 The attribute mapping functionality described below allows you to restrict this mapping to specific claims only. If you have enabled the
 UserInfo integration, the assertion attributes will be overwritten if they have the same name.
 
-Onegini Access supports free format attribute names. All attributes (including the non default ones) are available in the token
+OneWelcome Access supports free format attribute names. All attributes (including the non default ones) are available in the token
 introspection response and in the consent template. A set of default attributes is available that can lead to different behavior in Onegini
 Access:
 
@@ -123,7 +123,7 @@ Access:
 
 ![Add OAuth IdP](img/add-oauth-idp.png)
 
-Onegini Access can act as an OAuth client for an identity provider that acts as an OAuth authorization server. Onegini Access then uses the
+OneWelcome Access can act as an OAuth client for an identity provider that acts as an OAuth authorization server. OneWelcome Access then uses the
 OAuth [authorization code flow](https://tools.ietf.org/html/rfc6749#page-24) to obtain an access token and uses that access token to get
 user information.
 
@@ -131,20 +131,20 @@ The following properties can or must be set for the OAuth Identity Provider:
 
 | Property                 | Example                             | Required | Description                                                                                                                                                                                                                                                                  |
 |--------------------------|-------------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Client ID                | jeguighreuwih8792459uht893          | Yes      | The identifier for Onegini Access in the OAuth IdP.                                                                                                                                                                                                                          |
-| Secret                   | fjerfr9uf089rf908f90refeef          | Yes      | The secret for Onegini Access in the OAuth IdP.                                                                                                                                                                                                                              |
-| Authorization URL        | https://example.com/oauth/authorize | Yes      | URL to start the authorization without request parameters. These are added by Onegini Access.                                                                                                                                                                                |
-| Token URL                | https://example.com/oauth/token     | Yes      | URL to exchange the access grant for an access token without request parameters. These are added by Onegini Access. The URL is called via HTTP POST. The client id and secret are sent via the HTTP Authorization header (Basic authentication) or via the url encoded form. |
+| Client ID                | jeguighreuwih8792459uht893          | Yes      | The identifier for OneWelcome Access in the OAuth IdP.                                                                                                                                                                                                                          |
+| Secret                   | fjerfr9uf089rf908f90refeef          | Yes      | The secret for OneWelcome Access in the OAuth IdP.                                                                                                                                                                                                                              |
+| Authorization URL        | https://example.com/oauth/authorize | Yes      | URL to start the authorization without request parameters. These are added by OneWelcome Access.                                                                                                                                                                                |
+| Token URL                | https://example.com/oauth/token     | Yes      | URL to exchange the access grant for an access token without request parameters. These are added by OneWelcome Access. The URL is called via HTTP POST. The client id and secret are sent via the HTTP Authorization header (Basic authentication) or via the url encoded form. |
 | Profile URL              | https://example.com/me              | Yes      | URL for an OAuth resource call that returns a user profile. The URL is called via HTTP POST. The access token is sent via the HTTP Authorization header with a [Bearer token](https://tools.ietf.org/html/rfc6750#section-2.1).                                              |
 | Scopes                   | profile                             | No       | Scopes that are needed for getting the user profile. Multiple scopes must be separated by a space. An empty value is allowed.                                                                                                                                                |
 | Map assertion attributes | True                                | No       |
 
-During the OAuth authorization flow the user is redirected back from the OAuth IdP to the Onegini Access. This redirect URL is the engine
+During the OAuth authorization flow the user is redirected back from the OAuth IdP to the OneWelcome Access. This redirect URL is the engine
 base URI + the engine
 context root + `/oauth-idp/callback`.
 Example: `https://token-server.example.com/oauth/oauth-idp/callback`.
 
-Attribute mappings are currently not supported in this IdP. The Onegini Access expects the profile in the following structure to extract the
+Attribute mappings are currently not supported in this IdP. The OneWelcome Access expects the profile in the following structure to extract the
 user identifier:
 
 ```json
@@ -155,7 +155,7 @@ user identifier:
 
 ## Configure a Custom API Identity Provider
 
-Custom API Identity Providers can be either `One Step` or `Two Step`. These Identity Providers utilize the Onegini Extension Engine to
+Custom API Identity Providers can be either `One Step` or `Two Step`. These Identity Providers utilize the OneWelcome Extension Engine to
 execute custom JavaScript to
 validate the registration. Scripts should be supplied when configuring this Identity Provider. `Two Step` requires an `Init registration`
 and
@@ -168,19 +168,19 @@ For more information on the Identity Provider refer to the [Custom Registration 
 
 See the [Example Scripts](../../custom-registration/custom-api-example.md) for help to create the scripts.
 
-## Configure a Onegini CIM API Identity Provider
+## Configure a OneWelcome CIM API Identity Provider
 
-The Onegini CIM API Identity Provider combines the flexibility of the Custom API Identity Provider with out-of-the-box integrations of
-Onegini CIM. The user
+The OneWelcome CIM API Identity Provider combines the flexibility of the Custom API Identity Provider with out-of-the-box integrations of
+OneWelcome CIM. The user
 registration flow is handled via scripts to fully customize the look and feel in the mobile app. After the user has registered, existing
 integrations like [App
-to Web Single Sign On](../../app-to-web/index.md) can be called from the Onegini Mobile SDK.
+to Web Single Sign On](../../app-to-web/index.md) can be called from the OneWelcome Mobile SDK.
 
 ## Configure User Info endpoint
 
-For any type of the Identity Provider it is possible to configure an endpoint which Onegini Access will use as a source of user identity
+For any type of the Identity Provider it is possible to configure an endpoint which OneWelcome Access will use as a source of user identity
 attributes. It is used
-by Onegini Access to expose UserInfo and populate ID Token with claims in OpenID Connect flows. This endpoint needs to be compliant with
+by OneWelcome Access to expose UserInfo and populate ID Token with claims in OpenID Connect flows. This endpoint needs to be compliant with
 [Person API](https://docs-single-tenant.onegini.com/cim/stable/idp/api-reference/person-api.html).
 The reference implementation of this API is provided by CIM. Refer to CIM documentation for API specification and instructions how to enable
 it.
@@ -206,16 +206,16 @@ By default, the attributes are stored under the original keys, but it is possibl
 If at least one custom mapping is defined, only those attributes will be mapped. That means other attributes that are not mapped will be
 dropped. If you are
 using [SAML attribute name mapping](https://docs-single-tenant.onegini.com/cim/stable/idp/administration/configure-attributes.html) in
-Onegini CIM, make sure to coordinate the configuration between the two products. The attribute names are case-sensitive.
+OneWelcome CIM, make sure to coordinate the configuration between the two products. The attribute names are case-sensitive.
 
-A special user attribute is the user identifier. It identifies the user within the Onegini Access. For a SAML based identity provider the
+A special user attribute is the user identifier. It identifies the user within the OneWelcome Access. For a SAML based identity provider the
 assertion
 `Subject/NameID` is the standard user identifier. Create an attribute that maps to `userId` if you need to use a different attribute as user
 identifier.
 
 ### Person API attributes
 
-The attributes are stored during authorization, but the Onegini Access will not resynchronize them later. This results in potentially stale
+The attributes are stored during authorization, but the OneWelcome Access will not resynchronize them later. This results in potentially stale
 data.
 To overcome this limitation, consider leveraging the [Person API integration](#configure-user-info-endpoint).
 

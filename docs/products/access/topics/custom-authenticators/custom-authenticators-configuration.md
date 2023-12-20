@@ -1,6 +1,6 @@
 # General Custom Authenticators configuration
 
-Custom Authenticators is an optional component of Onegini Access. If you want to use it, enable the `Custom Authenticators` option described on the [Configure system features](../technical-app-management/system-features-config/system-features-config.md) page.
+Custom Authenticators is an optional component of OneWelcome Access. If you want to use it, enable the `Custom Authenticators` option described on the [Configure system features](../technical-app-management/system-features-config/system-features-config.md) page.
 
 ## Create or edit a Custom Authenticator
 
@@ -19,7 +19,7 @@ Enter the scripts for each step of the Custom Authentication flow in the fields 
 
 ## Application configuration
 
-Custom Authenticators can be enabled per Application in Onegini Access. 
+Custom Authenticators can be enabled per Application in OneWelcome Access. 
 
 Go to `Configuration` → `App configuration` → `Applications` and add or edit an Application.
 

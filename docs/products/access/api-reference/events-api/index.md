@@ -1,6 +1,6 @@
 # Events API
 
-This section describes the REST APIs that delivers details about operations executed within Onegini Access.
+This section describes the REST APIs that delivers details about operations executed within OneWelcome Access.
 
 ## Authentication
 

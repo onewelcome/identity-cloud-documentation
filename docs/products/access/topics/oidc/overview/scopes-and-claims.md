@@ -38,7 +38,7 @@ and mapped as listed below:
 
 ## Custom claims
 
-Custom claims that are defined and returned by Onegini Access are sharing a constant prefix `urn:onegini.com:oidc` value that allows to uniquely
+Custom claims that are defined and returned by OneWelcome Access are sharing a constant prefix `urn:onegini.com:oidc` value that allows to uniquely
 identify their source and also prevent from potential clashes/collisions.
 
 ## Optional claims
@@ -50,15 +50,15 @@ authentication.
 
 #### CIM
 
-Only supported ACR values will be accepted when using the Onegini CIM as the identity provider.
+Only supported ACR values will be accepted when using the OneWelcome CIM as the identity provider.
 CIM accepts ACR values format containing authentication level and optionally identification level.
 
 Example values:
 
 | ACR value                                                          | Description                                                                                                |
 |--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| urn:onegini.com:oidc:authentication_level:2                        | Requires an authentication level of at least 2 from Onegini CIM.                                           |
-| urn:onegini.com:oidc:authentication_level:3:identification_level:2 | Requires an authentication level of at least 3 and an identification level of at least 2 from Onegini CIM. |
+| urn:onegini.com:oidc:authentication_level:2                        | Requires an authentication level of at least 2 from OneWelcome CIM.                                           |
+| urn:onegini.com:oidc:authentication_level:3:identification_level:2 | Requires an authentication level of at least 3 and an identification level of at least 2 from OneWelcome CIM. |
 
 All supported values are exposed via the [Discovery API](../../../api-reference/oidc/discovery.md).
 
@@ -91,12 +91,12 @@ Further reading:
 
 ### Custom attributes
 >**Note:**
-> This feature requires the Onegini CIM
+> This feature requires the OneWelcome CIM
 
-The Onegini CIM supports custom attributes for a user. These attributes are included as claims within ID Token.
+The OneWelcome CIM supports custom attributes for a user. These attributes are included as claims within ID Token.
 
 ### DABP policies
 
-When DABP integration is enabled, Onegini Access will attempt to resolve user's policies and group memberships and return them in a form of a 
+When DABP integration is enabled, OneWelcome Access will attempt to resolve user's policies and group memberships and return them in a form of a 
 [custom claim](#custom-claims)`urn:onegini.com:oidc:group_policies` in the id-token. The claim value is a complex JSON object, please refer to the DABP API 
 reference to learn more about the object outline.

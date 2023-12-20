@@ -1,8 +1,8 @@
 # Release notes
 
-This section contains release notes for Onegini DABP.
+This section contains release notes for OneWelcome DABP.
 
-In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [Onegini Support](https://support.onegini.com).
+In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onegini.com).
 
 ## Release date: 2023-11-06
 
@@ -128,7 +128,7 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 * The browser title is now customizable
 
 ### Bugs
-* Fixed an issue with internal communications with other Onegini services
+* Fixed an issue with internal communications with other OneWelcome services
 
 ## Release date: 2021-04-28
 

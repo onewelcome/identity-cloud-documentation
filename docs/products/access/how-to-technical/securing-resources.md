@@ -1,13 +1,13 @@
 # Securing resources
 
-One of the most common use cases for using the Onegini Mobile Security Platform is to securely expose sensitive data to mobile apps via APIs. The Onegini SDK
+One of the most common use cases for using the OneWelcome Mobile Security Platform is to securely expose sensitive data to mobile apps via APIs. The OneWelcome SDK
 uses the Bearer Token Usage RFC ([rfc6750](https://tools.ietf.org/html/rfc6750)) to talk to these protected API endpoints. This quick guide will show you how to
 easily setup a resource gateway according to the specification to protect your APIs.
 
 The resource gateway has the following responsibilities:
 
 - [Extract the access token from an incoming request](#extract-the-access-token-from-an-incoming-request)
-- [Introspect the access token at Onegini Access](#introspect-the-access-token-at-the-token-server)
+- [Introspect the access token at OneWelcome Access](#introspect-the-access-token-at-the-token-server)
 - [Verify the access level through the introspection result](#verify-the-access-level-through-the-introspection-result)
 - [Verify the Authentication Method through the introspection result](#verify-the-authentication-method-through-the-introspection-result)
 - [Fetch and return the secured resource to the client](#fetch-and-return-the-secured-resource-to-the-client)
@@ -16,38 +16,38 @@ The resource gateway has the following responsibilities:
 [This example code](#the-code) shows how to implement these responsibilities in a simple Spring Boot application. For a production setup you might consider
 using a third party product or a more scalable solution.
 
-The example code exposes three endpoints. The `/resource/devices` endpoint, which returns a list of the registered user's devices from Onegini Access.
-The `/resource/application-details` endpoint, which returns some general information about the client application coming from Onegini Access. And
+The example code exposes three endpoints. The `/resource/devices` endpoint, which returns a list of the registered user's devices from OneWelcome Access.
+The `/resource/application-details` endpoint, which returns some general information about the client application coming from OneWelcome Access. And
 the `/resource/user-id-decorated` endpoint, which returns the current user's user ID with some added affixes.
 
 The rest of this document will follow a scenario where the client requests the devices endpoint. In this scenario the client first performs a GET request
-to `/resources/devices` with an access token in the `Authorization` header (1). The resource gateway then introspects the access token with Onegini Access (2).
-Onegini Access responds to this request with information about the access token (3), among which are the user ID (`sub`) and scopes associated with the token.
-The `read` scope is required to access the devices endpoint. Onegini Access also provides us with an Authentication Method Reference (`amr`) field. This field
+to `/resources/devices` with an access token in the `Authorization` header (1). The resource gateway then introspects the access token with OneWelcome Access (2).
+OneWelcome Access responds to this request with information about the access token (3), among which are the user ID (`sub`) and scopes associated with the token.
+The `read` scope is required to access the devices endpoint. OneWelcome Access also provides us with an Authentication Method Reference (`amr`) field. This field
 can be used to view how a user has authenticated. In the case of the device's endpoint we want to check this field to deny access to users who are implicitly
 authenticated. If the token introspection result confirmed the required scope is present, the devices for the user assigned to the access token are fetched from
-the secured API (4 and 5), in this scenario that is Onegini Access device API. Finally, the list of devices is returned to the client application (6).
+the secured API (4 and 5), in this scenario that is OneWelcome Access device API. Finally, the list of devices is returned to the client application (6).
 
 ```
-  +-------------+                           +------------------+                                          +-----------------+                               
-  | Onegini SDK | ---- (1) get devices ---> | Resource Gateway |  ---- (2) introspect access token --->   | Onegini Access  |                               
-  | (Client)    |                           |                  |                                          |                 |                               
-  |             | <--- (6) user devices --- |                  |  <---- (3) introspection response -----  |                 |                               
-  +-------------+                           +------------------+                                          +-----------------+    
+  +----------------+                           +------------------+                                          +--------------------+                               
+  | OneWelcome SDK | ---- (1) get devices ---> | Resource Gateway |  ---- (2) introspect access token --->   | OneWelcome Access  |                               
+  | (Client)       |                           |                  |                                          |                    |                               
+  |                | <--- (6) user devices --- |                  |  <---- (3) introspection response -----  |                    |                               
+  +----------------+                           +------------------+                                          +--------------------+    
                                                     ^ |
-                                                    | |                                                   +-----------------+ 
-                                                    | +------------------ (4) get user devices ---------> | Resource Server | 
-                                                    |                                                     | (Onegini Access)| 
-                                                    +---------------------- (5) user devices ------------ |                 |
-                                                                                                          +-----------------+ 
+                                                    | |                                                   +--------------------+ 
+                                                    | +------------------ (4) get user devices ---------> | Resource Server    | 
+                                                    |                                                     | (OneWelcome Access)| 
+                                                    +---------------------- (5) user devices ------------ |                    |
+                                                                                                          +--------------------+ 
 ```
 
-To configure a resource gateway in Onegini Access, you might want to consult
+To configure a resource gateway in OneWelcome Access, you might want to consult
 the [Resource gateway configuration](../topics/general-app-config/resource-gateway/resource-gateway.md) topic guide.
 
 ## Extract the access token from an incoming request
 
-The Onegini SDK provides the access token in the `Authorization` header with the `Bearer` prefix. The access token is included in plain text so *no*
+The OneWelcome SDK provides the access token in the `Authorization` header with the `Bearer` prefix. The access token is included in plain text so *no*
 encoding.
 
 Example request:
@@ -84,12 +84,12 @@ public class AccessTokenExtractor {
 }
 ```
 
-## Introspect the access token at Onegini Access
+## Introspect the access token at OneWelcome Access
 
-The received access token should be send to Onegini Access for introspection. For the API description see Onegini
+The received access token should be send to OneWelcome Access for introspection. For the API description see OneWelcome
 Access [introspection API reference](../api-reference/token-introspection.md).
 
-The following code executes the introspection requests and checks if the the token is valid according to Onegini Access:
+The following code executes the introspection requests and checks if the the token is valid according to OneWelcome Access:
 
 ```java
 
@@ -280,7 +280,7 @@ public class DeviceApiRequestService {
 
 Alternatively a resource can be requested that is not user specific. For example you have some content you only want to share via a mobile app and not being
 publicly available on the web. For that an anonymous resource call can be performed. This call uses an access token which does not have a user assigned. An
-application needs to have the `Anonymous resource calls` flow enabled in Onegini Access to be able to receive such an access token.
+application needs to have the `Anonymous resource calls` flow enabled in OneWelcome Access to be able to receive such an access token.
 
 The example resource gateway exposes an endpoint `/resources/application-details` which returns the details of an application like the application version. This
 information is fetched from the access token introspection result and can be used with a user and an anonymous access token. A prerequisite is that

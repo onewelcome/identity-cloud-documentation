@@ -40,7 +40,7 @@ LOAs). You can use a market standard like STORK or configure your own levels by:
 
 When you want to give your users the option to login using a second factor like a mobile phone, the user is required to register the device. There are a number
 of possibilities to enable the device registration and handling of second factor authentication. You can either enable your current apps to handle the second
-factor or you can use an existing authenticator app provided by Onegini which provides the functionality for you.
+factor or you can use an existing authenticator app provided by OneWelcome which provides the functionality for you.
 
 ### Authentication / Login
 

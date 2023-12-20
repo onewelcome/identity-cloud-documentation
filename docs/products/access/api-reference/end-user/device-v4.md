@@ -24,9 +24,9 @@ When no devices are found because the user does not exist or the user does not h
 | `id`                            | Identifier of the device.                                                                    
 | `name`                          | The device name                                                                              
 | `application`                   | A web client / group of dynamic clients that use the same configuration                      
-| `model`                         | The name of the corresponding device model, for example `Nexus 6P`. This field is optional and will be returned only in case Onegini Access is able to determine its value.                            
+| `model`                         | The name of the corresponding device model, for example `Nexus 6P`. This field is optional and will be returned only in case OneWelcome Access is able to determine its value.                            
 | `platform`                      | Platform / os of the device. Possible values: `android` and `ios`.                            
-| `osVersion`                     | Device's operating system version (e.g. `8.0.0`). This field is optional and will be returned only in case Onegini Access is able to determine its value.                            
+| `osVersion`                     | Device's operating system version (e.g. `8.0.0`). This field is optional and will be returned only in case OneWelcome Access is able to determine its value.                            
 | `createdAt`                    | Timestamp when the device was registered; the value can be empty.
 | `tokenTypes`                    | List of access token types issued for a device. Possible values `DEFAULT`, `FINGER_PRINT`, `CUSTOM_AUTHENTICATOR` and `IMPLICIT_AUTHENTICATION`.
 | `lastLogin`                     | Date of the last login using a device                                                        
@@ -90,8 +90,8 @@ Pragma: no-cache
 
 ## Delete or revoke device
 
-The delete device endpoint can be used to delete a device from Onegini Access. This completely deregisters the user from the device meaning that all 
-access grants, access  tokens, registered custom authentications, and mobile authentication enrollments are revoked on Onegini Access. Note that these
+The delete device endpoint can be used to delete a device from OneWelcome Access. This completely deregisters the user from the device meaning that all 
+access grants, access  tokens, registered custom authentications, and mobile authentication enrollments are revoked on OneWelcome Access. Note that these
 assets will remain on the device itself, but they will not be valid anymore on the server side.
 
 Endpoint: `DELETE /oauth/api/v4/users/{userId}/devices/{deviceId}`
@@ -215,9 +215,9 @@ This endpoint always returns a `204 No Content` response, independent of the exe
 
 ## Disable mobile authentication
 
-The disable mobile authentication can be used to withdraw a user's device for mobile authentication. When the SDK enrolls a user for mobile authentication, the SDK and the Onegini Access exchange public keys. The SDK must take an additional step to enroll for mobile authentication with push (and provide a push token).
+The disable mobile authentication can be used to withdraw a user's device for mobile authentication. When the SDK enrolls a user for mobile authentication, the SDK and the OneWelcome Access exchange public keys. The SDK must take an additional step to enroll for mobile authentication with push (and provide a push token).
 
-When this endpoint is called for a user's device, the Onegini Access withdraws the user's device for all types of mobile authentication (including push). The public keys are removed server side, and the push token (if it exists) is also dropped.
+When this endpoint is called for a user's device, the OneWelcome Access withdraws the user's device for all types of mobile authentication (including push). The public keys are removed server side, and the push token (if it exists) is also dropped.
 
 Note that this action does not prevent a user from enrolling the same device a second time for mobile authentication.
 
@@ -232,7 +232,7 @@ This endpoint always returns a `204 No Content` response, independent of the exe
 
 ## Disable mobile authentication with push
 
-The disable mobile authentication with push endpoint can be used to disenroll a user's device for push only. It removes the push token from the Onegini Access, but leaves the user's public key intact, allowing other forms of mobile authentication to remain working.
+The disable mobile authentication with push endpoint can be used to disenroll a user's device for push only. It removes the push token from the OneWelcome Access, but leaves the user's public key intact, allowing other forms of mobile authentication to remain working.
 
 Note that this action does not prevent a user from re-enrolling for mobile authentication with push.
 
