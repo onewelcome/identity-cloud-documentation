@@ -1,6 +1,6 @@
 # OneWelcome Identity Cloud
 
-OneWelcome was founded in 2011 and supports today over 200 customer labels with over 45 million users spread over multiple countries. With OneWelcome Identity Cloud,
+With OneWelcome Identity Cloud,
 the company offers an omnichannel Customer Identity and Access Management solution (CIAM) for the banking, insurance and pension industry. With Onegini,
 organisations quickly and securely create mobile apps and digital portals for consumers, employers and advisors while not having to worry about registration,
 identification, login and management of the digital identity.
