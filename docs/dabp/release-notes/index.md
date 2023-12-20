@@ -2,7 +2,7 @@
 
 This section contains release notes for OneWelcome DABP.
 
-In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onegini.com).
+In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
 ## Release date: 2023-11-06
 

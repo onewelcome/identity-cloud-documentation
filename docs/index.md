@@ -33,5 +33,5 @@ Navigate to the single-tenant documentation site on [docs-single-tenant.onegini.
 * Token Server, Security Proxy, and Extension Engine
 * Customer Service
 
-Contact [OneWelcome Support](https://support.onegini.com/) if you are not sure whether you are on the single-tenant or multi-tenant version of the OneWelcome Identity
+Contact [OneWelcome Support](https://support.onewelcome.com/) if you are not sure whether you are on the single-tenant or multi-tenant version of the OneWelcome Identity
 Cloud.
