@@ -44,7 +44,7 @@ Pragma: no-cache
         "client_secret_post",
         "private_key_jwt"
     ],
-    "token_endpoint_auth_signing_alg_values": [
+    "token_endpoint_auth_signing_alg_values_supported": [
         "rs256",
         "rs384",
         "rs512",
