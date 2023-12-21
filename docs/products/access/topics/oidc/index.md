@@ -1,6 +1,6 @@
 # OpenID Connect
 
-Onegini Access may be used as an OpenID Provider as explained in [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) specification.
+OneWelcome Access may be used as an OpenID Provider as explained in [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) specification.
 
 * [OpenID Connect overview](overview/overview.md)
     * [Authentication](overview/authentication.md)

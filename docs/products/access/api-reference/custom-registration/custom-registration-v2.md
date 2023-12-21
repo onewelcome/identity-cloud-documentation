@@ -35,7 +35,7 @@ Example request:
 
 ```http
 POST /oauth/v2/custom-registration/example-custom-registration-idp/init HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 Content-Type: application/json
 
 {
@@ -90,7 +90,7 @@ JSON body parameters:
 | `transaction_id`             | yes (`TWO_STEP`) otherwise optional    | Generated in **Init step**. For `TWO_STEP`, ensures same transaction                                                                                                                                  |
 | `data`                       | no                                     | Raw registration request data which will be provided to the Extension Engine                                                                                                                          |
 | `scope`                      | no                                     | An array of scopes. If none are specified the default scopes are granted.                                                                                                                             |
-| `profile_id`                 | yes (mobile client) otherwise optional | The profile ID of the user on the Onegini SDK, static clients can omit this. <br/> Profile ID must be 6 characters long.                                                                              |
+| `profile_id`                 | yes (mobile client) otherwise optional | The profile ID of the user on the OneWelcome SDK, static clients can omit this. <br/> Profile ID must be 6 characters long.                                                                              |
 | `hook_context_custom_params` | no                                     | A map of custom web hooks context parameters used in [Web Hooks](../../topics/integration-extension/hooks/index.md)                                                                                   |
 | `grant_type`                 | no                                     | Grant type that the Access Token will be bound with. <br/> If not specified, the default grant type will be used. <br/> Available values: `urn:onewelcome:oauth2:grant_type:stateless_authentication` |
 
@@ -98,7 +98,7 @@ Example request:
 
 ```http
 POST /oauth/v2/custom-registration/example-custom-registration-idp/complete HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 Content-Type: application/json
 
 {

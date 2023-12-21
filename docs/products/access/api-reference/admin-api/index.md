@@ -1,6 +1,6 @@
 # Admin API
 
-This section describes the REST APIs that are used for system configuration of Onegini Access.
+This section describes the REST APIs that are used for system configuration of OneWelcome Access.
 
 ## Authentication
 

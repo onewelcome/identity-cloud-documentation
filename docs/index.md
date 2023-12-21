@@ -1,7 +1,7 @@
 # OneWelcome Identity Cloud
 
-Onegini was founded in 2011 and supports today over 200 customer labels with over 45 million users spread over multiple countries. With OneWelcome Identity Cloud,
-the company offers an omnichannel Customer Identity and Access Management solution (CIAM) for the banking, insurance and pension industry. With Onegini,
+With OneWelcome Identity Cloud,
+the company offers an omnichannel Customer Identity and Access Management solution (CIAM) for the banking, insurance and pension industry. With OneWelcome,
 organisations quickly and securely create mobile apps and digital portals for consumers, employers and advisors while not having to worry about registration,
 identification, login and management of the digital identity.
 
@@ -33,5 +33,5 @@ Navigate to the single-tenant documentation site on [docs-single-tenant.onegini.
 * Token Server, Security Proxy, and Extension Engine
 * Customer Service
 
-Contact [Onegini Support](https://support.onegini.com/) if you are not sure whether you are on the single-tenant or multi-tenant version of the Onegini Identity
+Contact [OneWelcome Support](https://support.onewelcome.com/) if you are not sure whether you are on the single-tenant or multi-tenant version of the OneWelcome Identity
 Cloud.

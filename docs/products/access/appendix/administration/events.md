@@ -1,10 +1,10 @@
 # Activity
 
-This section shows an overview of the full audit log for Onegini Access. The most recent events are shown first.
+This section shows an overview of the full audit log for OneWelcome Access. The most recent events are shown first.
 
 The Activity section is available for users with the admin role or the operator role assigned. The events section provides access to events that are generated
 by the Access engine as well as the admin console itself. An overview of event types is included in the [Access events](../access-events.md) section of
-Onegini Access.
+OneWelcome Access.
 
 ## Filter events
 

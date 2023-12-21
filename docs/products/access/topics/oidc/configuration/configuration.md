@@ -1,9 +1,9 @@
 # Configuration
 
-The steps below summarizes how to configure Onegini Access as OpenID Provider.
+The steps below summarizes how to configure OneWelcome Access as OpenID Provider.
 
 ## Configure JWT Keys for signing
-Onegini Access allows to configure the algorithm and keys used for calculating digital signature of the ID Token.
+OneWelcome Access allows to configure the algorithm and keys used for calculating digital signature of the ID Token.
 
 ![JWT Key configuration](img/jwt-key-configuration.png)
 
@@ -18,7 +18,7 @@ Onegini Access allows to configure the algorithm and keys used for calculating d
 The `Next key` and `Current key` are generated during initial application startup.
 
 For security reasons it is advised to periodically change the keys used for the digital signature. To ensure that the Relying Party 
-is able to validate the signature of the ID Tokens issued prior to key change, Onegini Access provides the following key rotation mechanism:
+is able to validate the signature of the ID Tokens issued prior to key change, OneWelcome Access provides the following key rotation mechanism:
 upon clicking `Rotate Keys` button, the `Current key` becomes the `Previous key`, the `Next key` becomes the `Current key` and a new `Next key`
 is generated.
 
@@ -72,6 +72,6 @@ For additional information on the use of the Redirect and Front Channel URLs, re
 
 ## Identity Provider
 A Relying Party may request additional claims as specified in [OpenID Connect scopes](../overview/scopes-and-claims.md).
-To enable Onegini Access capability to retrieve this information, it is required to enable User Info as described in
+To enable OneWelcome Access capability to retrieve this information, it is required to enable User Info as described in
 [Configure User Info Endpoint](../../general-app-config/identity-providers/identity-providers.md#configure-user-info-endpoint) for the Identity Provider associated
 with the Relying Party.

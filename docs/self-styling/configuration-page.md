@@ -65,7 +65,7 @@ in [Delegated Administration for Business Partners (DABP)](../dabp/index.md). Yo
 
 ### Create git repository connection
 
-1. Log into **Onegini Console**
+1. Log into **OneWelcome Console**
 2. Select tenant for which you want to configure styling. This step is optional if only single tenant is available for logged-in user.
 3. Using top navigation `Switch to` option select `Configuration`, and then `Self styling` from side menu.
 4. The window *Self styling* opens: <br><br>
@@ -130,4 +130,4 @@ To synchronize a Git Repository, click \[Synchronize\] in the overview page:
 
 !!!important
 
-    Changes in the templates will only be visible on the production environment after clearing the CIM cache (or restarting the application). Please ask your contact within Onegini.
+    Changes in the templates will only be visible on the production environment after clearing the CIM cache (or restarting the application). Please ask your contact within OneWelcome.

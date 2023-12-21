@@ -18,16 +18,16 @@ In order to obtain the ID Token in this flow, make sure the web client has the g
  
 ## Implicit and hybrid flow
 
-Onegini Access does not support the implicit or hybrid flows. The only supported value for `response_type` is `code`.
+OneWelcome Access does not support the implicit or hybrid flows. The only supported value for `response_type` is `code`.
 
 ## User interaction
 
 The regular authentication flows assume that they are called when authentication is needed. When the user does not yet have a session with the Identity Provider 
 (IdP), the user needs to perform some interaction, such as entering their credentials. When the user does have a session, the IdP redirects them back to the 
-Onegini Access. This section describes several scenarios to obtain tokens via OpenID Connect.  
+OneWelcome Access. This section describes several scenarios to obtain tokens via OpenID Connect.  
 
 ### Require login
-If the user already has a session with the IdP, the IdP will return the user information to Onegini Access automatically. There are situations where
+If the user already has a session with the IdP, the IdP will return the user information to OneWelcome Access automatically. There are situations where
 you want to force the user to sign in again to obtain a token. For example, when the user changes personal data, or when another user wants to register for the 
 same mobile app on a shared mobile device. Add the following request parameter to the authentication request: `prompt=login`.
 
@@ -35,15 +35,15 @@ same mobile app on a shared mobile device. Add the following request parameter t
 Some sites have publicly accessible pages that can show personalized content if the user is authenticated. It's not required to immediately sign in and 
 therefore you want to avoid showing a login page until it is needed. You do want to benefit from having an access token and/or ID token if the user is signed in. 
 For this case you can use the authorization code flow with a SAML based identity provider.  If the user is signed in at the SAML IdP, and no user interaction is 
-required, Onegini Access will issue an access token and ID token. 
+required, OneWelcome Access will issue an access token and ID token. 
 
 To perform this passive login, add the following parameter to the authentication request: `prompt=none`.
 
 You can use this passive login for [session management with iframes](../session-management/session-monitoring-with-iframes.md).
 
 ### Cookie based login
-This is similar to the passive login, but the user does not need to have a valid session with the identity provider. It requires Onegini CIM as
-identity provider. If the user has a cookie from a previous session in Onegini CIM, and no user interaction is required, Onegini Access 
+This is similar to the passive login, but the user does not need to have a valid session with the identity provider. It requires OneWelcome CIM as
+identity provider. If the user has a cookie from a previous session in OneWelcome CIM, and no user interaction is required, OneWelcome Access 
 will issue an access token and ID token.
 
 To perform the cookie based login, add the following parameters to the authentication request: 

@@ -6,10 +6,10 @@ For One Time Password (OTP) authentication, the user's application obtains an OT
 authentication request (without specifying the user), the web portal may display a QR code that the user can scan using their app. The OTP is then used to link
 the user's unauthenticated session on the portal to the authenticated session in the app.
 
-The end-user must have installed a mobile app with the Onegini SDK to use mobile authentication via OTP. After the end-user has installed the app, they must
-enroll their app for mobile authentication. The website initiates the mobile authentication at Onegini Access which returns a (long) code. A common process is
+The end-user must have installed a mobile app with the OneWelcome SDK to use mobile authentication via OTP. After the end-user has installed the app, they must
+enroll their app for mobile authentication. The website initiates the mobile authentication at OneWelcome Access which returns a (long) code. A common process is
 to include this code in a QR-code which the end-user can scan with their mobile device. When the end-user is already on their mobile device, you can create a
-link that opens the mobile app. The mobile app then sends the code to Onegini Access which will notify the website about the result.
+link that opens the mobile app. The mobile app then sends the code to OneWelcome Access which will notify the website about the result.
 
 ## Configure mobile authentication enrollment rules
 
