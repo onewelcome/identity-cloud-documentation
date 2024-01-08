@@ -245,3 +245,92 @@ See the OAuth specification for [token revocation](https://tools.ietf.org/html/r
 
 Note for refreshing and revoking the access token: When a public client uses the authorization code grant type with PKCE, the request parameter `client_id` is mandatory.
 For *confidential* clients both the client id and the client secret are sent as basic authentication credentials via the `authorization` header.
+
+## OAuth Device Flow Extension
+
+### Introduction
+
+The OAuth Device Flow is an extension to the standard OAuth 2.0 protocol, specifically designed for devices with no browser or limited input
+capability. This flow enables users to authorize such devices in a user-friendly and secure manner. After entering the correct code, the
+user proceeds through the standard authorization process, including authentication and, if enabled on the client, consent. For detailed
+specifications, refer to [RFC 8628](https://tools.ietf.org/html/rfc8628).
+
+### Authorization Process
+
+The client initiates the authorization process by sending a POST request to the `/oauth/device_authorization` endpoint. This request
+includes the client's unique identifier (`client_id`) and optionally the requested `scope` and identity provider (`idp`). The server
+responds with a `device_code`, `user_code`, and `verification_uri`. The user must visit this URI in a browser and enter the user code to
+authorize the device, after which they complete the standard authorization flow.
+
+#### Request and Response Example:
+
+- **Request**:
+  ```http
+  POST /oauth/device_authorization HTTP/1.1
+  Host: example.com
+  Content-Type: application/x-www-form-urlencoded
+
+  client_id=your-client-id&scope=openid&idp=idp123
+  ```
+
+- **Response**:
+  ```http
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+
+  {
+    "device_code": "OVvqygRcDyw1zLda8Vh78OmVijaDSAPj09ebUIDZu9wP2tqsJgOW9x0ggFqNji4L",
+    "user_code": "GMVRZTXC",
+    "verification_uri": "https://example.com/oauth/device_authorization/verification",
+    "verification_uri_complete": "https://example.com/oauth/device_authorization/verification?user_code=GMVRZTXC"
+  }
+  ```
+
+#### Error handling
+
+| Error                  | Description                                                                              |
+|------------------------|------------------------------------------------------------------------------------------|
+| invalid_request        | Required parameters are missing or the request is malformed.                             |
+| invalid_client         | The client is unknown or not valid.                                                      |
+| unauthorized_client    | The client is not authorized to use the requested grant type.                            |
+| invalid_scope          | The requested scopes are not allowed for this client.                                    |
+| invalid_idp_identifier | The specified identity provider identifier is invalid or not associated with the client. |
+
+### Token Generation
+
+The client polls the `/oauth/token` endpoint for an access token using the `device_code` and its `client_id`. The server will respond with a
+pending authorization message or, upon successful authorization, the access token and related information.
+
+#### Request and Response Example:
+
+- **Request**:
+  ```http
+  POST /oauth/token HTTP/1.1
+  Host: example.com
+  Content-Type: application/x-www-form-urlencoded
+
+  device_code=OVvqygRcDyw1zLda8Vh78OmVijaDSAPj09ebUIDZu9wP2tqsJgOW9x0ggFqNji4L&client_id=client123&grant_type=urn:ietf:params:oauth:grant-type:device_code
+  ```
+
+- **Response**:
+  ```http
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+
+  {
+    "token_type": "bearer",
+    "access_token": "D24A8C3742C613F547399C65BC9EC6462CD68F4213F3F085483DF895AFF40EE7",
+    "refresh_token": "F41F194EFCDF64DA35221C756E281C40929667C96862709AF2F904F6A67B7C75",
+    "expires_in": 900,
+    "profile_id": "static"
+  }
+  ```
+
+#### Error handling
+
+| Error                 | Description                                                                           |
+|-----------------------|---------------------------------------------------------------------------------------|
+| invalid_request       | Missing a required parameter such as 'client_id' or 'device_code'.                    |
+| invalid_grant         | Provided grant is invalid or doesn't match, or the device code has already been used. |
+| authorization_pending | The device has not yet been authorized by the user.                                   |
+| expired_token         | The device code has expired before the token exchange or before authorization.        |
