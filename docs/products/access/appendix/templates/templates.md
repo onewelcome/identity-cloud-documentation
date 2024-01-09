@@ -261,19 +261,19 @@ The name of the template file must be `device-authorization-status.html`.
 
 ### Available Messages
 
-| Key                                             | Description                                            |
-|-------------------------------------------------|--------------------------------------------------------|
-| pages.deviceAuthStatus.title.success            | Title when the device is successfully connected.       |
-| pages.deviceAuthStatus.title.expired            | Title when the user code has expired.                  |
-| pages.deviceAuthStatus.title.already_authorized | Title when the device is already connected.            |
-| pages.deviceAuthStatus.title.invalid_user_code  | Title when an invalid code is entered.                 |
-| deviceAuthStatus.content.success                | Content message for successful connection.             |
-| deviceAuthStatus.content.expired                | Content message when the code has expired.             |
-| deviceAuthStatus.content.already_authorized     | Content message when the device is already authorized. |
-| deviceAuthStatus.content.invalid_user_code      | Content message when an invalid code is entered.       |
+| Key                                            | Description                                            |
+|------------------------------------------------|--------------------------------------------------------|
+| pages.deviceAuthStatus.title.success           | Title when the device is successfully connected.       |
+| pages.deviceAuthStatus.title.expired           | Title when the user code has expired.                  |
+| pages.deviceAuthStatus.title.alreadyAuthorized | Title when the device is already connected.            |
+| pages.deviceAuthStatus.title.invalidUserCode   | Title when an invalid code is entered.                 |
+| deviceAuthStatus.content.success               | Content message for successful connection.             |
+| deviceAuthStatus.content.expired               | Content message when the code has expired.             |
+| deviceAuthStatus.content.alreadyAuthorized     | Content message when the device is already authorized. |
+| deviceAuthStatus.content.invalidUserCode       | Content message when an invalid code is entered.       |
 
 ### Available Variables
 
-| Variable Name | Description                                                                                                                               |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| result        | A variable indicating the result of the authorization process. Can be 'success', 'expired', 'already_authorized', or 'invalid_user_code'. |
+| Variable Name | Description                                                                                                                            |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| result        | A variable indicating the result of the authorization process. Can be 'success', 'expired', 'alreadyAuthorized', or 'invalidUserCode'. |
