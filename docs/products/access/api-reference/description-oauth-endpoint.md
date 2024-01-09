@@ -288,8 +288,12 @@ authorize the device, after which they complete the standard authorization flow.
 
 ### Token Generation
 
-The client polls the `/oauth/token` endpoint for an access token using the `device_code` and its `client_id`. The server will respond with a
-pending authorization message or, upon successful authorization, the access token and related information.
+The client polls the `/oauth/token` endpoint for an access token using the `device_code` and its `client_id`. It's important to note that
+there is no mechanism in place to limit the polling of this endpoint, and the `slow_down` error is not used. However, it is recommended to
+implement a polling interval of at least 5 seconds, especially since this is also a requirement of the RFC in cases where the interval has
+not been returned in the authorization request.
+
+The server will respond with a pending authorization message or, upon successful authorization, the access token and related information.
 
 #### Token Generation Examples
 
