@@ -326,12 +326,13 @@ sequenceDiagram
 11. **Access Token**
     - If the *User* has authorized the *Device Client*, the *Access* responds with an Access Token.
 
-### Authorization Process
+### Device Authorization Request
 
 The client initiates the authorization process by sending a POST request to the `/oauth/device_authorization` endpoint. This request
 includes the client's unique identifier (`client_id`) and optionally the requested `scope` and identity provider (`idp`). The server
 responds with a `device_code`, `user_code`, and `verification_uri`. The user must visit this URI in a browser and enter the user code to
 authorize the device, after which they complete the standard authorization flow.
+Each User Code is composed of 8 characters, exclusively utilizing the following set: BCDFGHJKLMNPQRSTVWXZ.
 
 #### Request and Response Example:
 
