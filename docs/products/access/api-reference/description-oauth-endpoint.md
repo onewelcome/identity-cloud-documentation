@@ -253,7 +253,78 @@ For *confidential* clients both the client id and the client secret are sent as 
 The OAuth Device Flow is an extension to the standard OAuth 2.0 protocol, specifically designed for devices with no browser or limited input
 capability. This flow enables users to authorize such devices in a user-friendly and secure manner. After entering the correct code, the
 user proceeds through the standard authorization process, including authentication and, if enabled on the client, consent. For detailed
-specifications, refer to [RFC 8628](https://tools.ietf.org/html/rfc8628).
+specifications, refer to [RFC 8628](https://tools.ietf.org/html/rfc8628). The following diagram illustrates the flow:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Client as Device Client
+    participant Access
+    participant User
+    activate Client
+    Client ->> Access: Device Authorization Request
+    activate Access
+    Access -->> Client: Device Code & User Code
+    deactivate Access
+    Client ->> User: Display User Code
+    activate User
+
+    par
+        User ->> Access: Enter Code on Webpage
+        activate Access
+        Access -->> User: Redirect to authorization flow
+        deactivate Access
+        User ->> Access: Authorize Device
+        activate Access
+        Access -->> User: Status page
+        deactivate Access
+        deactivate User
+    and
+        loop Access Token not generated
+            Client ->> Access: Token Request
+            activate Access
+            alt not authorized yet
+                Access -->> Client: Pending Authorization
+                Client ->> Client: Wait 5 seconds
+            else
+                Access -->> Client: Access Token
+            end
+            deactivate Access
+        end
+    end
+    deactivate Client
+```
+
+1. **Device Authorization Request**
+    - The *Device Client* initiates the process by sending a request to the *Access*.
+2. **Access responds with Device Code and User Code**
+    - The *Access* responds to the *Device Client* with a *Device Code* and a User Code.
+    - The *Device Code* will be used by *Device Client* to generate the Access Token.
+    - The User Code will be presented to the *User*.
+3. **Display User Code**
+    - The *Device Client* displays the User Code to the user and Verification URI (as text or QR code).
+    - The Verification URI points to a webpage hosted by the *Access* and its theme can be customized
+      using [User Code Template](../appendix/templates/templates.md#user-code-template)
+4. **User Enters Code on Webpage**
+    - The *User* uses another device (e.g., a smartphone) to visit the webpage (as instructed by the *Device Client*) and enters the *User
+      Code* or confirms it if already entered.
+5. **Redirect to Authorization Flow**
+    - After successful validation of the User Code, the *Access* component redirects the *User* to an authorization flow that is the same
+      as for the standard OAuth 2.0 Authorization Code flow.
+6. **Authorize Device**
+    - The *User* authorizes the device, typically by logging in and confirming the authorization.
+7. **Status Page**
+    - After authorization, the *Access* component displays a status page to the user.
+    - Status page can be customized using [Device Authorization Status Template](../appendix/templates/templates.md#device-authorization-status-template)
+8. **Token Request**
+    - Concurrently to the *User* authorization process, the *Device Client* repeatedly requests a token from the *Access*.
+    - Concurrently, the *Device Client* repeatedly requests a token from the *Access* component.
+9. **Pending Authorization**
+    - If the *User* hasn't authorized the *Device Client* yet, the *Access* responds with a message indicating that authorization is pending.
+10. **Wait 5 seconds**
+    - The *Device Client* waits 5 seconds before requesting the token again.
+11. **Access Token**
+    - If the *User* has authorized the *Device Client*, the *Access* responds with an Access Token.
 
 ### Authorization Process
 
