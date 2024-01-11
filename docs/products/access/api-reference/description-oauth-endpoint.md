@@ -264,7 +264,7 @@ sequenceDiagram
     activate Client
     Client ->> Access: Device Authorization Request
     activate Access
-    Access -->> Client: Device Code & User Code
+    Access -->> Client: Device Code, User Code and Verification URI
     deactivate Access
     Client ->> User: Display User Code
     activate User
@@ -274,19 +274,19 @@ sequenceDiagram
         activate Access
         Access -->> User: Redirect to authorization flow
         deactivate Access
-        User ->> Access: Authorize Device
+        User ->> Access: Authorize Client
         activate Access
         Access -->> User: Status page
         deactivate Access
         deactivate User
     and
-        loop Access Token not generated
+        loop Client not authorized yet
             Client ->> Access: Token Request
             activate Access
             alt not authorized yet
                 Access -->> Client: Pending Authorization
                 Client ->> Client: Wait 5 seconds
-            else
+            else already authorized
                 Access -->> Client: Access Token
             end
             deactivate Access
@@ -297,10 +297,11 @@ sequenceDiagram
 
 1. **Device Authorization Request**
     - The *Device Client* initiates the process by sending a request to the *Access*.
-2. **Access responds with Device Code and User Code**
+2. **Access responds with Device Code, User Code and Verification URI**
     - The *Access* responds to the *Device Client* with a *Device Code* and a User Code.
     - The *Device Code* will be used by *Device Client* to generate the Access Token.
     - The User Code will be presented to the *User*.
+    - Verification URI will be used by the *User* to authorize the device.
 3. **Display User Code**
     - The *Device Client* displays the User Code to the user and Verification URI (as text or QR code).
     - The Verification URI points to a webpage hosted by the *Access* and its theme can be customized
@@ -311,8 +312,9 @@ sequenceDiagram
 5. **Redirect to Authorization Flow**
     - After successful validation of the User Code, the *Access* component redirects the *User* to an authorization flow that is the same
       as for the standard OAuth 2.0 Authorization Code flow.
-6. **Authorize Device**
-    - The *User* authorizes the device, typically by logging in and confirming the authorization.
+6. **Authorize Client**
+    - The *User* authorizes the *Client*, usually by logging in and giving consent.
+    - Consent page can be customized using [Consent Template](../appendix/templates/templates.md#consent-template)
 7. **Status Page**
     - After authorization, the *Access* component displays a status page to the user.
     - Status page can be customized using [Device Authorization Status Template](../appendix/templates/templates.md#device-authorization-status-template)
