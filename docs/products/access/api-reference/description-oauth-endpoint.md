@@ -266,7 +266,7 @@ sequenceDiagram
     activate Access
     Access -->> Client: Device Code, User Code and Verification URI
     deactivate Access
-    Client ->> User: Display User Code
+    Client ->> User: Display User Code & Verification URI
     activate User
 
     par
@@ -302,7 +302,7 @@ sequenceDiagram
     - The *Device Code* will be used by *Device Client* to generate the Access Token.
     - The User Code will be presented to the *User*.
     - Verification URI will be used by the *User* to authorize the device.
-3. **Display User Code**
+3. **Display User Code & Verification URI**
     - The *Device Client* displays the User Code to the user and Verification URI (as text or QR code).
     - The Verification URI points to a webpage hosted by the *Access* and its theme can be customized
       using [User Code Template](../appendix/templates/templates.md#user-code-template)
