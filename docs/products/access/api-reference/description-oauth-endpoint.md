@@ -316,12 +316,14 @@ sequenceDiagram
     - Consent page can be customized using [Consent Template](../appendix/templates/templates.md#consent-template).
 7. **Status Page**
     - After authorization, the *Access* component displays a status page to the user.
-    - The status page can be customized using [Device Authorization Status Template](../appendix/templates/templates.md#device-authorization-status-template).
+    - The status page can be customized
+      using [Device Authorization Status Template](../appendix/templates/templates.md#device-authorization-status-template).
 8. **Token Request**
     - Concurrently to the *User* authorization process, the *Device Client* repeatedly requests a token from the *Access*.
     - Concurrently, the *Device Client* repeatedly requests a token from the *Access* component.
 9. **Pending Authorization**
-    - If the *User* hasn't authorized the *Device Client* yet, the *Access* responds with a message indicating that authorization is pending.
+    - If the *User* hasn't authorized the *Device Client* yet, the *Access* responds with a message indicating that authorization is
+      pending.
 10. **Wait 5 seconds**
     - The *Device Client* waits 5 seconds before requesting the token again.
 11. **Access Token**
