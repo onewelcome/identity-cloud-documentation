@@ -300,24 +300,23 @@ sequenceDiagram
 2. **Access responds with Device Code, User Code and Verification URI**
     - The *Access* responds to the *Device Client* with a *Device Code* and a User Code.
     - The *Device Code* will be used by *Device Client* to generate the Access Token.
-    - The User Code will be presented to the *User*.
+    - The *Device Client* displays the User Code to the *User* and Verification URI (as text or QR code).
     - Verification URI will be used by the *User* to authorize the device.
 3. **Display User Code & Verification URI**
-    - The *Device Client* displays the User Code to the user and Verification URI (as text or QR code).
-    - The Verification URI points to a webpage hosted by the *Access* and its theme can be customized
-      using [User Code Template](../appendix/templates/templates.md#user-code-template)
+    - The Verification URI points to a webpage hosted by *Access*, and its theme can be customized
+      using [User Code Template](../appendix/templates/templates.md#user-code-template).
 4. **User Enters Code on Webpage**
     - The *User* uses another device (e.g., a smartphone) to visit the webpage (as instructed by the *Device Client*) and enters the *User
-      Code* or confirms it if already entered.
+      Code* or confirms it if the code was provided as a parameter in the URI.
 5. **Redirect to Authorization Flow**
-    - After successful validation of the User Code, the *Access* component redirects the *User* to an authorization flow that is the same
-      as for the standard OAuth 2.0 Authorization Code flow.
+    - After successful validation of the User Code, the *Access* redirects the *User* to the authorization flow of the configured default
+      IdP or the IDP defined in the request for this Web Client.
 6. **Authorize Client**
     - The *User* authorizes the *Client*, usually by logging in and giving consent.
-    - Consent page can be customized using [Consent Template](../appendix/templates/templates.md#consent-template)
+    - Consent page can be customized using [Consent Template](../appendix/templates/templates.md#consent-template).
 7. **Status Page**
     - After authorization, the *Access* component displays a status page to the user.
-    - Status page can be customized using [Device Authorization Status Template](../appendix/templates/templates.md#device-authorization-status-template)
+    - The status page can be customized using [Device Authorization Status Template](../appendix/templates/templates.md#device-authorization-status-template).
 8. **Token Request**
     - Concurrently to the *User* authorization process, the *Device Client* repeatedly requests a token from the *Access*.
     - Concurrently, the *Device Client* repeatedly requests a token from the *Access* component.
