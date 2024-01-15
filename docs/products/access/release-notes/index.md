@@ -8,6 +8,15 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-01-11
+
+### Improvements
+* External IdPs can now use other signing algorithms than RS256 for signing JWT tokens.
+* URL validation for WebHook is improved.
+
+### Bugs
+* [Session monitoring](../topics/oidc/session-management/relying-party-iframe.md) iframe was not always informed if the users's session expires.
+
 ## Release date 2023-12-19
 
 ### Features
