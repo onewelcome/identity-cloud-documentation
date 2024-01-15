@@ -15,7 +15,7 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 * URL validation for WebHook is improved.
 
 ### Bugs
-* [Session monitoring](../topics/oidc/session-management/relying-party-iframe.md) iframe was not always informed if the users's session expires.
+* [Session monitoring](../topics/oidc/session-management/session-monitoring-with-iframes.md) iframe was not always informed if the users's session expires.
 
 ## Release date 2023-12-19
 
