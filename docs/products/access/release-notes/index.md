@@ -16,6 +16,10 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 ### Improvements
 * We improved the security of our session cookies by adding a `__Host` prefix to them.
 
+  We included both the legacy and the new secure cookies for existing customers to keep the existing sessions.
+
+  The legacy cookies can be disabled in the Access Admin, by going to `Configuration` → `System` → `Cookies` and turning off the `Add fallback cookie` option.
+
 ### Bug Fix
 * Logout and session related exceptions are now handled gracefully.
 
