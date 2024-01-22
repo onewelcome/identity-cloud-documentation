@@ -19,7 +19,7 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
   We included both the legacy and the new secure cookies for existing customers to keep the existing sessions.
 
   The legacy cookies can be disabled in the Access Admin, by going to `Configuration` → `System` → `Cookies` and turning off the `Add fallback cookie` option.
-  The existing users sessions will not be impacted.
+  This option can be safely switched once all users establish a new session with the updated Access Engine. Max session length can checked in the Access Admin (`Configuration` → `System` → `Session` → `Maximum session length` )
 
 ### Bug Fix
 * Logout and session related exceptions are now handled gracefully.
