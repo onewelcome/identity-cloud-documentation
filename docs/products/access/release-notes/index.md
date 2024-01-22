@@ -8,6 +8,22 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-01-22
+
+### Features
+* Added support for the [OAuth Device Flow](../api-reference/description-oauth-endpoint.md#oauth-device-flow-extension)
+
+### Improvements
+* We improved the security of our session cookies by adding a `__Host` prefix to them.
+
+  We included both the legacy and the new secure cookies for existing customers to keep the existing sessions.
+
+  The legacy cookies can be disabled in the Access Admin, by going to `Configuration` → `System` → `Cookies` and turning off the `Add fallback cookie` option.
+  This option can be safely switched once all users establish a new session with the updated Access Engine. Max session length can checked in the Access Admin (`Configuration` → `System` → `Session` → `Maximum session length` )
+
+### Bug Fix
+* Logout and session related exceptions are now handled gracefully.
+
 ## Release date 2024-01-11
 
 ### Improvements
