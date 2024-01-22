@@ -140,7 +140,8 @@
 | AUTHZ REQUEST GRANT CREATED                                   | An authorization code is created for the requested client and scopes.                                                                                                                                                |
 | AUTHZ REQUEST INVALID CLIENT                                  | The `client_id` in the OAuth authorization request is invalid or unknown                                                                                                                                             |
 | AUTHZ REQUEST INVALID RESPONSE TYPE                           | The response type is not supported by the application. The OneWelcome Access only supports `response_type=code`.                                                                                                     |
-| AUTHZ REQUEST UNAUTHORIZED CLIENT                             | The client is not allowed to perform this action. Make sure the 'authorization code' flow is enabled for a used web client or 'user registration' for a mobile application.                                          |
+| AUTHZ REQUEST UNAUTHORIZED CLIENT                             | The client is not allowed to perform this action. Make sure the 'authorization code' grant type, or 'device code' grant type (web client) or 'user registration' flow (application) is enabled.                      |
+| AUTHZ REQUEST INVALID RESPONSE TYPE                           | The response type is not supported by the application. The Onegini Access only supports `response_type=code`.                                                                                                        |
 | AUTHN REQUEST LOGIN REQUIRED                                  | The client has requested authentication without user interaction, but the user has no session or the identity provider does not support authentication without user interaction.                                     |
 | AUTHN REQUEST INTERACTION REQUIRED                            | The client has requested authentication without user interaction, and has authorized the application, but needs to be redirected elsewhere before authentication can be completed.                                   |
 | AUTHN REQUEST CONSENT REQUIRED                                | The client has requested authentication without user interaction, but the user has to give consent.                                                                                                                  |
@@ -219,6 +220,17 @@
 | TULIP UDH REQUEST FAILED                                      | Failed to get user data from Tulip's User Data Enhancer endpoint.                                                                                                                                                    |
 | SESSION_TERMINATION_ALL_USER_SESSIONS_TERMINATED              | All user sessions were ended.                                                                                                                                                                                        |
 | SESSION_TERMINATION_USER_SESSION_TERMINATED                   | Particular user session was ended.                                                                                                                                                                                   |
+
+## OAuth Device Flow events
+
+| Event                                          | Description                                                                                                              |
+|------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| AUTHZ REQUEST DEVICE GRANT CREATED             | A device grant is created for the requested client and scopes.                                                           |
+| DEVICE AUTHZ REQUEST DEVICE_CODE CREATED       | A device code is created for the requested client                                                                        |
+| DEVICE AUTHZ REQUEST INVALID                   | The OAuth device authorization request is missing one or more required fields.                                           |
+| DEVICE AUTHZ REQUEST INVALID CLIENT            | The client_id in the OAuth device authorization request is invalid                                                       |
+| DEVICE AUTHZ REQUEST SCOPE INVALID             | One or more of the requested scopes in the OAuth device authorization request is not available for the specified client. |
+| TOKEN REQUEST DEVICE CODE ACCESS TOKEN CREATED | Access token created via provided device code.                                                                           |
 
 ## Dynamic clients
 

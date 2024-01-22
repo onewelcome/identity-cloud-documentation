@@ -245,3 +245,183 @@ See the OAuth specification for [token revocation](https://tools.ietf.org/html/r
 
 Note for refreshing and revoking the access token: When a public client uses the authorization code grant type with PKCE, the request parameter `client_id` is mandatory.
 For *confidential* clients both the client id and the client secret are sent as basic authentication credentials via the `authorization` header.
+
+## OAuth Device Flow Extension
+
+### Introduction
+
+The OAuth Device Flow is an extension to the standard OAuth 2.0 protocol, specifically designed for devices with no browser or limited input
+capability. This flow enables users to authorize such devices in a user-friendly and secure manner. After entering the correct code, the
+user proceeds through the standard authorization process, including authentication and, if enabled on the client, consent. For detailed
+specifications, refer to [RFC 8628](https://tools.ietf.org/html/rfc8628). The following diagram illustrates the flow:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Client as Device Client
+    participant Access
+    participant User
+    activate Client
+    Client ->> Access: Device Authorization Request
+    activate Access
+    Access -->> Client: Device Code, User Code and Verification URI
+    deactivate Access
+    Client ->> User: Display User Code & Verification URI
+    activate User
+
+    par
+        User ->> Access: Enter Code on Webpage
+        activate Access
+        Access -->> User: Redirect to authorization flow
+        deactivate Access
+        User ->> Access: Authorize Client
+        activate Access
+        Access -->> User: Status page
+        deactivate Access
+        deactivate User
+    and
+        loop Client not authorized yet
+            Client ->> Access: Token Request
+            activate Access
+            alt not authorized yet
+                Access -->> Client: Pending Authorization
+                Client ->> Client: Wait 5 seconds
+            else already authorized
+                Access -->> Client: Access Token
+            end
+            deactivate Access
+        end
+    end
+    deactivate Client
+```
+
+1. **Device Authorization Request**
+    - The *Device Client* initiates the process by sending a request to the *Access*.
+2. **Access responds with Device Code, User Code and Verification URI**
+    - The *Access* responds to the *Device Client* with a *Device Code* and a User Code.
+    - The *Device Code* will be used by *Device Client* to generate the Access Token.
+    - The *Device Client* displays the User Code to the *User* and Verification URI (as text or QR code).
+    - Verification URI will be used by the *User* to authorize the device.
+3. **Display User Code & Verification URI**
+    - The Verification URI points to a webpage hosted by *Access*, and its theme can be customized
+      using [User Code Template](../appendix/templates/templates.md#user-code-template).
+4. **User Enters Code on Webpage**
+    - The *User* uses another device (e.g., a smartphone) to visit the webpage (as instructed by the *Device Client*) and enters the *User
+      Code* or confirms it if the code was provided as a parameter in the URI.
+5. **Redirect to Authorization Flow**
+    - After successful validation of the User Code, the *Access* redirects the *User* to the authorization flow of the configured default
+      IdP or the IDP defined in the request for this Web Client.
+6. **Authorize Client**
+    - The *User* authorizes the *Client*, usually by logging in and giving consent.
+    - Consent page can be customized using [Consent Template](../appendix/templates/templates.md#consent-template).
+7. **Status Page**
+    - After authorization, the *Access* component displays a status page to the user.
+    - The status page can be customized
+      using [Device Authorization Status Template](../appendix/templates/templates.md#device-authorization-status-template).
+8. **Token Request**
+    - Concurrently to the *User* authorization process, the *Device Client* repeatedly requests a token from the *Access*.
+    - Concurrently, the *Device Client* repeatedly requests a token from the *Access* component.
+9. **Pending Authorization**
+    - If the *User* hasn't authorized the *Device Client* yet, the *Access* responds with a message indicating that authorization is
+      pending.
+10. **Wait 5 seconds**
+    - The *Device Client* waits 5 seconds before requesting the token again.
+11. **Access Token**
+    - If the *User* has authorized the *Device Client*, the *Access* responds with an Access Token.
+
+### Device Authorization Request
+
+The client initiates the authorization process by sending a POST request to the `/oauth/device_authorization` endpoint. This request
+includes the client's unique identifier (`client_id`) and optionally the requested `scope` and identity provider (`idp`). The server
+responds with a `device_code`, `user_code`, and `verification_uri`. The user must visit this URI in a browser and enter the user code to
+authorize the device, after which they complete the standard authorization flow.
+Each User Code is composed of 8 characters, exclusively utilizing the following set: BCDFGHJKLMNPQRSTVWXZ.
+
+#### Request and Response Example:
+
+- **Request**:
+  ```http
+  POST /oauth/device_authorization HTTP/1.1
+  Host: example.com
+  Content-Type: application/x-www-form-urlencoded
+
+  client_id=your-client-id&scope=openid&idp=idp123
+  ```
+
+- **Response**:
+  ```http
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+
+  {
+    "device_code": "OVvqygRcDyw1zLda8Vh78OmVijaDSAPj09ebUIDZu9wP2tqsJgOW9x0ggFqNji4L",
+    "user_code": "GMVRZTXC",
+    "verification_uri": "https://example.com/oauth/device_authorization/verification",
+    "verification_uri_complete": "https://example.com/oauth/device_authorization/verification?user_code=GMVRZTXC"
+  }
+  ```
+
+### Token Generation
+
+The client polls the `/oauth/token endpoint for an access token using the `device_code` and its `client_id`. It's important to note that we
+require clients to implement a polling interval of at least 5 seconds.
+
+The server will respond with a pending authorization message or, upon successful authorization, the access token and related information.
+
+#### Token Generation Examples
+
+##### Unauthorized Client Example
+
+- *Request*:
+  ```http
+  POST /oauth/token HTTP/1.1
+  Host: example.com
+  Content-Type: application/x-www-form-urlencoded
+
+  device_code=OVvqygRcDyw1zLda8Vh78OmVijaDSAPj09ebUIDZu9wP2tqsJgOW9x0ggFqNji4L&client_id=client123&grant_type=urn:ietf:params:oauth:grant-type:device_code
+  ```
+- *Response*:
+  ```http
+  HTTP/1.1 400 Bad Request
+  Content-Type: application/json
+
+  {
+    "error": "authorization_pending",
+    "error_description": "The authorization request is still pending"
+  }
+  ```
+
+Note: While the `400` status code typically indicates an error, in this context, it is an expected outcome signaling that the client's
+authorization is still pending.
+
+##### Authorized Client Example
+
+- *Request*:
+  ```http
+  POST /oauth/token HTTP/1.1
+  Host: example.com
+  Content-Type: application/x-www-form-urlencoded
+
+  device_code=OVvqygRcDyw1zLda8Vh78OmVijaDSAPj09ebUIDZu9wP2tqsJgOW9x0ggFqNji4L&client_id=client123&grant_type=urn:ietf:params:oauth:grant-type:device_code
+  ```
+- *Response*:
+  ```http
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+
+  {
+    "token_type": "bearer",
+    "access_token": "D24A8C3742C613F547399C65BC9EC6462CD68F4213F3F085483DF895AFF40EE7",
+    "refresh_token": "F41F194EFCDF64DA35221C756E281C40929667C96862709AF2F904F6A67B7C75",
+    "expires_in": 900,
+    "profile_id": "static"
+  }
+  ```
+
+#### Error Handling
+
+| Error           | Description                                                                           |
+|-----------------|---------------------------------------------------------------------------------------|
+| invalid_request | Missing a required parameter such as 'client_id' or 'device_code'.                    |
+| invalid_grant   | Provided grant is invalid or doesn't match, or the device code has already been used. |
+| expired_token   | The device code has expired before the token exchange or before authorization.        |
