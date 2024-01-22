@@ -19,6 +19,7 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
   We included both the legacy and the new secure cookies for existing customers to keep the existing sessions.
 
   The legacy cookies can be disabled in the Access Admin, by going to `Configuration` → `System` → `Cookies` and turning off the `Add fallback cookie` option.
+  The existing users sessions will not be impacted.
 
 ### Bug Fix
 * Logout and session related exceptions are now handled gracefully.
