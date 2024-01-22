@@ -8,6 +8,17 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-01-22
+
+### Features
+* Added support for the [OAuth Device Flow](../api-reference/description-oauth-endpoint.md#oauth-device-flow-extension)
+
+### Improvements
+* We improved the security of our session cookies by adding a `__Host` prefix to them.
+
+### Bug Fix
+* Logout and session related exceptions are now handled gracefully.
+
 ## Release date 2024-01-11
 
 ### Improvements
