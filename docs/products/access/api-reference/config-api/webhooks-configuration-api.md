@@ -290,7 +290,7 @@ Example JWT that Access generates for use in WebHooks:
 - `exp` (Expiration Time): Specifies the expiration time after which the JWT must not be accepted for processing. It is a numeric value
   representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time.
   
-  > Issued tokens are valid for 15 minutes and can be cached and reused by Access Service for performance reasons.  
+  > Issued tokens are valid for 15 minutes and can be cached and reused by us for performance reasons.  
 - `jti` (JWT ID): Provides a unique identifier for the JWT, which can be used to prevent the JWT from being replayed. It is a case-sensitive
   string.
 - `cid` (Client ID): Identifies the client that requested the JWT. It will contain a fixed value `onewelcomeAccessWebHookClient`.
