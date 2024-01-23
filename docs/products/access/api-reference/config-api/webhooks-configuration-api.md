@@ -289,12 +289,14 @@ Example JWT that Access generates for use in WebHooks:
 - `iss` (Issuer): Identifies the principal that issued the JWT. It will contain URL of Access service which calls the WebHook.
 - `exp` (Expiration Time): Specifies the expiration time after which the JWT must not be accepted for processing. It is a numeric value
   representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time.
+  
+  > Issued tokens are valid for 15 minutes and can be cached and reused by Access Service for performance reasons.  
 - `jti` (JWT ID): Provides a unique identifier for the JWT, which can be used to prevent the JWT from being replayed. It is a case-sensitive
   string.
 - `cid` (Client ID): Identifies the client that requested the JWT. It will contain a fixed value `onewelcomeAccessWebHookClient`.
 
 Token will be signed by Access Service and can be verified by using public keys available
-at: `https://<access_service_hostname>/oauth/v1/keys`
+at: `<value_of_iss_claim>/v1/keys` for example `https://customer.onewelcome.io/oauth/v1/keys`
 
 ## Basic Authentication (deprecated)
 
