@@ -202,15 +202,22 @@ Authorization: Bearer <token>
 
 Client authentication is only useful when a client application can keep a secret. Public clients cannot keep a secret. Examples of those
 public client applications are a Single Page Application (SPA) running in the browser, or an app that is installed on the end-user's device.
-The same set of credentials would be exposed via the browser or stored on the end-user's device and anyone who has access to the device
+The same set of credentials would be exposed via the browser or stored on the end-user's device, and anyone who has access to the device
 would be able to obtain these credentials.
 
 This is typically when you would use Proof Key for Code Exchange, [PKCE](https://tools.ietf.org/html/rfc7636) instead of client credentials
-or a private key JWT. PKCE is not used to authenticate the public client, but to relate the initial authorization request to the token
-request. PKCE prevents that a malicious
-client will obtain a token by intercepting the authorization grant.
+or a private key JWT. PKCE is a security extension to OAuth 2.0, designed to mitigate interception attacks and provide improved authorization.
+It is not used to authenticate the Public Client, but to relate the initial authorization request to the token
+request. PKCE prevents that a malicious client will obtain a token by intercepting the authorization grant.
+It is geared towards securing the Authorization Code Flow, as it targets redirection-based flows. 
+It's not applicable for Client Credentials nor Device Authorization flows. 
+
+Use of PKCE is highly recommended for Confidential Clients and mandatory for Public Clients.
 
 You could embed some client credentials with the approach of “Why make it easy for them? It’s another hurdle for the attacker”, but when
 it’s the same set of credentials across all instances of that client application, then the benefits are negligible. OneWelcome offers
 a mobile SDK for [Android](https://developer.onewelcome.com/android/android-sdk/) and [iOS](https://developer.onewelcome.com/ios/sdk) that
 handles dynamic client registration in mobile apps. Each installation of the mobile app will then have its dedicated client credentials.
+
+OneWelcome supports PKCE for both Confidential and Public Clients, as described
+in [Authorization endpoint](../../api-reference/description-oauth-endpoint.md#authorization-endpoint) 

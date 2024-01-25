@@ -39,11 +39,11 @@ behalf of which user the client requests access. Obtaining the access token can 
 The authorization endpoint is used in the authorization code flow. In this flow, the 
 OneWelcome Access sends an access grant to the client. The client can exchange this access grant for an access token by calling the [token endpoint](#token-endpoint).
 
-Authorization code flow can be used with a feature called Proof Key for Code Exchange (PKCE).
+Authorization code flow can be used with a feature called Proof Key for Code Exchange ([PKCE](https://datatracker.ietf.org/doc/html/rfc7636)).
 PKCE provides an additional layer of security for OAuth 2.0 flows and helps prevent authorization code interception attacks.
 While PKCE is optional for Confidential Clients, it is strongly recommended,
 and is mandatory for Public Clients due to their inability to maintain the confidentiality of their client secrets.
-For Confidential Clients OneWelcome Access will handle PKCE if `code_challenge` and `code_method` parameters are provided in request to
+For Confidential Clients OneWelcome Access will handle PKCE if `code_challenge` and `code_challenge_method` parameters are provided in request to
 Authorization endpoint as well as when `code_verifier` is passed to request to [Token endpoint](#token-endpoint).
 
 Endpoints: `GET /oauth/authorize` or `GET /oauth/v1/authorize`
