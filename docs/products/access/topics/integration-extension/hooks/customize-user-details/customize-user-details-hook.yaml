@@ -14,6 +14,7 @@ paths:
       description: Customize the attributes of a user.
       security:
         - basicAuth: []
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -32,6 +33,10 @@ components:
     basicAuth:
       type: http
       scheme: basic
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   schemas:
     UserDetailsCustomizationRequest:
       type: object

@@ -27,40 +27,55 @@ forbidden resources is not possible, also after refreshing the token.
 The example request and response for this hook may look as follows:
 
 ```json
-"httpRequest": {
-  "method": "POST",
-  "path": "/v1/customize-access-token",
-  "headers": {
-    "Authorization": ["Basic aG9vazpob29r"]
-  },
-  "body": {
-    "type": "JSON",
-    "json": {
-      "user": {"id": "myUserId22700111101"},
-      "client": {"id": "client"},
-      "scopes": ["profile", "email"],
-      "userClaims": {
-        "name": "John"
-      },
-      "contextCustomParams": {
-        "on_behalf_of" : ["user"]
+{
+  "httpRequest": {
+    "method": "POST",
+    "path": "/v1/customize-access-token",
+    "headers": {
+      "Authorization": [
+        "Basic aG9vazpob29r"
+      ]
+    },
+    "body": {
+      "type": "JSON",
+      "json": {
+        "user": {
+          "id": "myUserId22700111101"
+        },
+        "client": {
+          "id": "client"
+        },
+        "scopes": [
+          "profile",
+          "email"
+        ],
+        "userClaims": {
+          "name": "John"
+        },
+        "contextCustomParams": {
+          "on_behalf_of": [
+            "user"
+          ]
+        }
       }
     }
-  }
-},
-"httpResponse": {
-  "statusCode": 200,
-  "headers": {
-    "content-type": [
-      "application/json"
-    ]
   },
-  "body": {
-    "type": "JSON",
-    "json": {
-      "removeScopes": ["email"],
-      "additionalClaims": {
-        "name": "John"
+  "httpResponse": {
+    "statusCode": 200,
+    "headers": {
+      "content-type": [
+        "application/json"
+      ]
+    },
+    "body": {
+      "type": "JSON",
+      "json": {
+        "removeScopes": [
+          "email"
+        ],
+        "additionalClaims": {
+          "name": "John"
+        }
       }
     }
   }
@@ -87,7 +102,7 @@ Next, select `Add Web Hook Configuration` option and provide necessary informati
 - set the base URL. Please note that the base URL will be concatenated with the web hook path that's defined in the API contract. For
 example, by setting `https://hooks.onewelcome.com` the Access will be calling the following location
 `https://hooks.onewelcome.com/v1/customize-access-token`
-- choose the desired authentication scheme
+- choose the desired [authentication scheme](../../../../api-reference/config-api/webhooks-configuration-api.md#authentication-methods)
 
 Once done, save the configuration and proceed to your client configuration page.
 

@@ -56,7 +56,7 @@ Next, select `Add Web Hook Configuration` option and provide necessary informati
 - set the base URL. Please note that the base URL will be concatenated with the web hook path that's defined in the API contract. For
 example, by setting `https://hooks.onewelcome.com` the Access seek will be calling the following location
 `https://hooks.onewelcome.com/v1/customize-token`
-- choose the desired authentication scheme
+- choose the desired [authentication scheme](../../../../api-reference/config-api/webhooks-configuration-api.md#authentication-methods)
 
 Once done, save the configuration and proceed to your client configuration page.
 
