@@ -14,6 +14,7 @@ paths:
       description: This webhook is meant for Access Token customization that includes requested scopes reduction as well as adding additional custom claims to JWT formatted token.
       security:
         - basicAuth: [ ]
+        - bearerAuth: [ ]
       requestBody:
         content:
           application/json:
@@ -34,6 +35,10 @@ components:
     basicAuth:
       type: http
       scheme: basic
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   schemas:
     CustomizeAccessTokenRequest:
       type: object
