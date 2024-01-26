@@ -36,9 +36,12 @@ terms and conditions document, the resource server needs to know which client re
 behalf of which user the client requests access. Obtaining the access token can be automated and does not require user interaction.
 
 ## Authorization endpoint
-
 The authorization endpoint is used in the authorization code flow. In this flow, the 
 OneWelcome Access sends an access grant to the client. The client can exchange this access grant for an access token by calling the [token endpoint](#token-endpoint).
+
+The Authorization Code Flow in OneWelcome Access incorporates the Proof Key for Code Exchange ([PKCE](https://datatracker.ietf.org/doc/html/rfc7636)) feature to enhance the security of OAuth 2.0 interactions, mitigating the risk of authorization code interception attacks.
+
+While the use of PKCE is optional for Confidential Clients, it is strongly recommended. However, for Public Clients, the use of PKCE is mandatory due to their inherent inability to maintain the confidentiality of client secrets. If a Confidential Client adds the `code_challenge` and `code_challenge_method` parameters in the Authorization request, the `code_verifier` parameter will be mandatory in the request to [Token endpoint](#token-endpoint) for that transaction.
 
 Endpoints: `GET /oauth/authorize` or `GET /oauth/v1/authorize`
 
