@@ -244,4 +244,5 @@ Here is a simplified example of how PKCE works in a request:
 6. The client sends this code and the `code_verifier` to the authorization server’s `/token` endpoint.
 7. The authorization server verifies the `code_challenge` and `code_verifier`.
 8. The authorization server responds with an ID token and access token (and optionally, a refresh token).
+
 This way, a malicious attacker can only intercept the Authorization Code, and they cannot exchange it for a token without the Code Verifier.
