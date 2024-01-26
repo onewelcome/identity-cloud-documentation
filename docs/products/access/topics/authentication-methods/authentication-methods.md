@@ -196,28 +196,51 @@ The client must send this JWT token in the Authorization header when making requ
 
 ```http
 Authorization: Bearer <token>
-``` 
+```
 
-### PKCE
-
+### Public (no authentication)
 Client authentication is only useful when a client application can keep a secret. Public clients cannot keep a secret. Examples of those
-public client applications are a Single Page Application (SPA) running in the browser, or an app that is installed on the end-user's device.
+public client applications are Single Page Applications (SPA) running in the browser, or an app that is installed on the end-user's device.
 The same set of credentials would be exposed via the browser or stored on the end-user's device, and anyone who has access to the device
 would be able to obtain these credentials.
 
-This is typically when you would use Proof Key for Code Exchange, [PKCE](https://tools.ietf.org/html/rfc7636) instead of client credentials
-or a private key JWT. PKCE is a security extension to OAuth 2.0, designed to mitigate interception attacks and provide improved authorization.
-It is not used to authenticate the Public Client, but to relate the initial authorization request to the token
-request. PKCE prevents that a malicious client will obtain a token by intercepting the authorization grant.
-It is geared towards securing the Authorization Code Flow, as it targets redirection-based flows. 
-It's not applicable for Client Credentials nor Device Authorization flows. 
-
-Use of PKCE is highly recommended for Confidential Clients and mandatory for Public Clients.
+This is typically when you would use Proof Key for Code Exchange, [PKCE](#PKCE) instead of client credentials
+or a private key JWT. PKCE is not used to authenticate the public client, but to relate the initial authorization request to the token
+request. PKCE prevents a malicious client from obtaining a token by intercepting the authorization grant.
 
 You could embed some client credentials with the approach of “Why make it easy for them? It’s another hurdle for the attacker”, but when
 it’s the same set of credentials across all instances of that client application, then the benefits are negligible. OneWelcome offers
 a mobile SDK for [Android](https://developer.onewelcome.com/android/android-sdk/) and [iOS](https://developer.onewelcome.com/ios/sdk) that
 handles dynamic client registration in mobile apps. Each installation of the mobile app will then have its dedicated client credentials.
 
-OneWelcome supports PKCE for both Confidential and Public Clients, as described
-in [Authorization endpoint](../../api-reference/description-oauth-endpoint.md#authorization-endpoint) 
+
+### PKCE
+[PKCE](https://tools.ietf.org/html/rfc7636) (Proof Key for Code Exchange) is an extension to the OAuth 2.0 protocol that prevents authorization code interception attacks. 
+It is a lightweight mechanism that can be implemented in any application that requests an authorization code.
+
+PKCE is particularly beneficial for public clients, such as Single Page Applications (SPAs) and native applications, which cannot securely 
+store a client secret. However, it is also recommended for confidential clients.
+
+For public clients, PKCE is mandatory as it is the only way for the authorization server to ensure the client’s authenticity. For confidential 
+clients, which can safely maintain the confidentiality of their credentials, PKCE is still beneficial. Even though these clients can use a 
+securely stored client secret to authenticate to the server, PKCE provides an additional layer of security. 
+It helps prevent other clients from impersonating your client.
+
+PKCE supports two code challenge methods:
+
+* `Plain`: In the plain mode, the code challenge is equal to the code verifier.
+* `S256`: In S256 mode, the SHA-256 hash of the code verifier is encoded using the BASE64URL encoding.
+The S256 method is recommended because it provides a higher level of security.
+
+#### Example Request
+Here is a simplified example of how PKCE works in a request:
+
+1. The client generates a random string to use as the `code_verifier`.
+2. The client transforms the `code_verifier` into the `code_challenge` parameter using a supported method (either `plain` or `S256`).
+3. The client sends the `code_challenge` and `code_challenge_method` to the authorization server’s [`/authorize` endpoint](../../api-reference/description-oauth-endpoint.md#authorization-endpoint).
+4. The authorization server redirects the user to the login and authorization prompt.
+5. The authorization server stores the `code_challenge` and redirects the user back to the application with an authorization code.
+6. The client sends this code and the `code_verifier` to the authorization server’s `/token` endpoint.
+7. The authorization server verifies the `code_challenge` and `code_verifier`.
+8. The authorization server responds with an ID token and access token (and optionally, a refresh token).
+This way, a malicious attacker can only intercept the Authorization Code, and they cannot exchange it for a token without the Code Verifier.
