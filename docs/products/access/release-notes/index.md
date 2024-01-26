@@ -8,6 +8,16 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-01-25
+
+### Features
+* [PKCE](../topics/authentication-methods/authentication-methods.md#pkce) can now also be used for confidential clients.
+* [Hook authentication via JWT](../api-reference/config-api/webhooks-configuration-api.md#jwt) is now available.
+
+### Bugs
+* Fixed a UI issue when creating a client credentials client.
+* Added some missing translations for error messages.
+
 ## Release date 2024-01-22
 
 ### Features
