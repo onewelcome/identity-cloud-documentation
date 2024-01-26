@@ -256,9 +256,9 @@ One of the following responses will be returned, containing a JSON object with a
 | 404         | not_found       | Web Hook configuration cannot be found for this id                                                       |
 | 409         | conflict        | The id already exists for a different Web Hook configuration                                             |
 
-# Authentication Methods
+## Authentication Methods
 
-## JWT
+### JWT
 
 JSON Web Tokens (JWT) is the preferred method for authentication.
 JWT is a reliable, secure method of representing claims to be transferred between two parties.
@@ -298,7 +298,7 @@ Example JWT that Access generates for use in WebHooks:
 Token will be signed by Access Service and can be verified by using public keys available
 at: `<value_of_iss_claim>/v1/keys` for example `https://customer.onewelcome.io/oauth/v1/keys`
 
-## Basic Authentication (deprecated)
+### Basic Authentication (deprecated)
 
 > **Note:** While old integrations built on Basic Authentication still function, we highly recommend updating them to use the JWT (JSON Web
 > Tokens) method as soon as possible.
@@ -315,7 +315,7 @@ Despite its simplicity, Basic Authentication is seen as insecure for most web ap
 the network in plaintext (albeit base64 encoded) and could be easily intercepted. It is vulnerable to man-in-the-middle attacks, and for
 this reason, we favor safer alternative - JWT.
 
-## No Authentication
+### No Authentication
 
 No Authentication means there are no special encoding, keys, or credentials needed to access the API or webhook. Any API calls made do not
 require any token or Basic Auth.
