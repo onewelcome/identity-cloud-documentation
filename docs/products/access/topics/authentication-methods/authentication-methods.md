@@ -230,6 +230,7 @@ PKCE supports two code challenge methods:
 
 * `Plain`: In the plain mode, the code challenge is equal to the code verifier.
 * `S256`: In S256 mode, the SHA-256 hash of the code verifier is encoded using the BASE64URL encoding.
+
 The S256 method is recommended because it provides a higher level of security.
 
 #### Example Request
