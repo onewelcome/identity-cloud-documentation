@@ -428,3 +428,47 @@ authorization is still pending.
 | invalid_request | Missing a required parameter such as 'client_id' or 'device_code'.                    |
 | invalid_grant   | Provided grant is invalid or doesn't match, or the device code has already been used. |
 | expired_token   | The device code has expired before the token exchange or before authorization.        |
+
+### In-App Device Authorization Grant
+
+#### Overview
+
+The In-App Authorization feature enhances the OAuth 2.0 Device Authorization Grant by allowing authorization within the application. This
+streamlines the user experience by avoiding redirection to a browser or authorization server and prevents the need for re-authentication, as
+the user is already logged in within the app.
+
+The API facilitates device authorization directly within the app, using two key parameters:
+
+- `user_code`: Entered by the user within the application.
+- `access_token`: Belongs to the application making the request and must include the `access:device-authorization:approve` scope.
+
+##### _Example_
+
+- *Request*
+  ```http
+  POST /oauth/device_authorization/approve?user_code=ABCD1234 HTTP/1.1
+  Host: server.example.com
+  Authorization: Bearer eyJraWQiOiJhYzMxN...
+  ```
+
+- *Response*
+  ```http
+  HTTP/1.1 204 No Content
+  ```
+
+#### Error Handling
+
+| Error              | Description                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------------|
+| invalid_request    | Missing `user_code` or `access_token` in the request.                                         |
+| access_denied      | Access denied due to missing `access:device-authorization:approve` scope in the access token. |
+| insufficient_scope | The access token's scope is insufficient compared to what is required by the device.          |
+| already_authorized | The device has already been authorized, making the request redundant.                         |
+| expired_token      | The provided user code has expired and is no longer valid.                                    |
+
+#### Device Verification URLs
+
+It may be beneficial to consider configuring specific URLs to simplify the implementation of the device client. This approach can streamline
+the process of integrating the authorization flow within the application. For details on setting up these URLs, refer to the relevant
+sections describing the use of [APIs](../api-reference/config-api/web-client.md) or
+the [administration console](../topics/web-clients/web-client-configuration.md).
