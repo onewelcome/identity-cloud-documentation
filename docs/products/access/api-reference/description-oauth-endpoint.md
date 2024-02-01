@@ -366,7 +366,7 @@ Each User Code is composed of 8 characters, exclusively utilizing the following 
 
 ### Token Generation
 
-The client polls the `/oauth/token endpoint for an access token using the `device_code` and its `client_id`. It's important to note that we
+The client polls the `/oauth/token` endpoint for an access token using the `device_code` and its `client_id`. It's important to note that we
 require clients to implement a polling interval of at least 5 seconds.
 
 The server will respond with a pending authorization message or, upon successful authorization, the access token and related information.
