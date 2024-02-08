@@ -18,10 +18,16 @@ Pragma: no-cache
 {
     "issuer": "https://tokenserver.example.com",
     "authorization_endpoint": "https://tokenserver.example.com/oauth/v1/authorize",
+    "device_authorization_endpoint": "https://tokenserver.example.com/oauth/device_authorization",
     "token_endpoint": "https://tokenserver.example.com/oauth/v1/token",
     "jwks_uri": "https://tokenserver.example.com/oauth/v1/keys",
     "userinfo_endpoint": "https://tokenserver.example.com/oauth/v1/userinfo",
     "revocation_endpoint": "https://tokenserver.example.com/oauth/v1/revoke",
+        "grant_types_supported": [
+        "authorization_code",
+        "client_credentials",
+        "urn:ietf:params:oauth:grant-type:device_code"
+    ],
     "response_types_supported": [
         "code"
     ],
