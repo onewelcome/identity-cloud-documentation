@@ -8,6 +8,14 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-02-08
+
+### Features
+* Added support for the [In-App Device Authorization Grant](../api-reference/description-oauth-endpoint.md#in-app-device-authorization-grant)
+
+### Improvements
+* Added more details to `AUTHZ_REQUEST_TRANSACTION_TAMPERING` event
+
 ## Release date 2024-01-25
 
 ### Features
