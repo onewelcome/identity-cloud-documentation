@@ -570,9 +570,9 @@ This section contains events for mobile authentication
 | API DUM ENGINE CONFIG UPDATED              | A Delegated Administration Configuration was updated via the API.                                                                                        |
 | API DUM ENGINE CONFIG DELETED              | A Delegated Administration Configuration was deleted via the API.                                                                                        |
 | API DUM ENGINE CONFIG ALREADY EXISTS       | An attempt was made to create a Delegated Administration Configuration via the admin API, but a different configuration with the same id already exists. |
-| API SERVICE PROVIDER ADDED                 | A new Service Provider was added via the API.                                                                                                            |
+| API SERVICE PROVIDER ADDED                 | A new Service Provider configuration was added via the API.                                                                                              |
 | API SERVICE PROVIDER UPDATED               | The configuration of a Service Provider was updated via the API.                                                                                         |
-| API SERVICE PROVIDER DELETED               | A Service Provider was deleted via the API.                                                                                                              |
+| API SERVICE PROVIDER DELETED               | A Service Provider configuration was deleted via the API.                                                                                                |
 
 ## Geolocation audit events
 
