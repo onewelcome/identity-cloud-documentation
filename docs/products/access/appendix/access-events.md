@@ -63,7 +63,7 @@
 | ADMIN API CLIENT CREATED                                      | An oauth client for API calls has been created via the admin console.                                                                                                                                                |
 | ADMIN OPENID CLIENT CONFIG CREATED                            | An OpenID configuration for a client has been created via the admin console                                                                                                                                          |
 | ADMIN OPENID CLIENT CONFIG DELETED                            | An OpenID configuration for a client has been deleted via the admin console                                                                                                                                          |
-| ADMIN OPENID CLIENT CONFIG UPDATED                            | An OpenID configuration for a cleint has been updated via the admin console                                                                                                                                          | 
+| ADMIN OPENID CLIENT CONFIG UPDATED                            | An OpenID configuration for a client has been updated via the admin console                                                                                                                                          |
 | ADMIN SCOPE DELETED                                           | An oauth scope has been deleted via the admin console.                                                                                                                                                               |
 | ADMIN SCOPE CREATED                                           | An oauth scope has been created via the admin console.                                                                                                                                                               |
 | ADMIN SCOPE UPDATED                                           | An oauth scope has been updated via the admin console.                                                                                                                                                               |
@@ -110,7 +110,7 @@
 | ADMIN USER REVOKE FAILURE                                     | An attempt to revoke user from device via the admin console failed.                                                                                                                                                  |
 | ADMIN PUSH ENROLLMENT REVOKED                                 | Revoke push enrollment for a user via the admin console.                                                                                                                                                             |
 | ADMIN PUSH ENROLLMENT NOT REVOKED NOT FOUND                   | Attempt to revoke push enrollment for a user via the admin console, but no push enrollment was found.                                                                                                                |
-| ADMIN PUSH_ENROLLMENT NOT REVOKED INCORRECT DEVICE            | Attempt to revoke push enrollment for a user via the admin console, but the device does not match or is unknown.                                                                                                     |
+| ADMIN PUSH ENROLLMENT NOT REVOKED INCORRECT DEVICE            | Attempt to revoke push enrollment for a user via the admin console, but the device does not match or is unknown.                                                                                                     |
 | ADMIN USER CLIENT KEYS REVOKED                                | Revoke mobile authentication enrollment for a user via the admin console.                                                                                                                                            |
 | ADMIN USER CLIENT KEYS NOT REVOKED NOT FOUND                  | Attempt to revoke mobile authentication enrollment for a user via the admin console, but no mobile authentication enrollment was found.                                                                              |
 | ADMIN USER CLIENT KEYS NOT REVOKED INCORRECT DEVICE           | Attempt to revoke mobile authentication enrollment for a user via the admin console, but the device does not match or is unknown.                                                                                    |
@@ -127,7 +127,6 @@
 | CLIENT CREDENTIALS CHECK SUCCESS                              | Successfully verified the client credentials                                                                                                                                                                         |
 | CLIENT CREDENTIALS CHECK SKIPPED                              | The client credentials are not validated because the application is running in development mode.                                                                                                                     |
 | CLIENT CREDENTIALS CHECK FAILED                               | Could not verify the client credentials                                                                                                                                                                              |
-| CLIENT CREDENTIALS CHECK FAILED                               | Client credentials validation request is invalid                                                                                                                                                                     |
 | CLIENT AUTHENTICATION FAILED INVALID JWKS URI                 | The jwksUri was not reachable or did not return a valid response.                                                                                                                                                    |
 | AUTHORIZATION LVL UNSUPPORTED                                 | The authentication level specified in the authentication level header of the incoming request can not be parsed to a valid integer value.                                                                            |
 | AUTHORIZATION FAILED UNABLE TO GENERATE ID TOKEN              | Error occurred during id token generation process, check OpenID Connect signing/encryption properties.                                                                                                               |
@@ -141,7 +140,6 @@
 | AUTHZ REQUEST INVALID CLIENT                                  | The `client_id` in the OAuth authorization request is invalid or unknown                                                                                                                                             |
 | AUTHZ REQUEST INVALID RESPONSE TYPE                           | The response type is not supported by the application. The OneWelcome Access only supports `response_type=code`.                                                                                                     |
 | AUTHZ REQUEST UNAUTHORIZED CLIENT                             | The client is not allowed to perform this action. Make sure the 'authorization code' grant type, or 'device code' grant type (web client) or 'user registration' flow (application) is enabled.                      |
-| AUTHZ REQUEST INVALID RESPONSE TYPE                           | The response type is not supported by the application. The Onegini Access only supports `response_type=code`.                                                                                                        |
 | AUTHN REQUEST LOGIN REQUIRED                                  | The client has requested authentication without user interaction, but the user has no session or the identity provider does not support authentication without user interaction.                                     |
 | AUTHN REQUEST INTERACTION REQUIRED                            | The client has requested authentication without user interaction, and has authorized the application, but needs to be redirected elsewhere before authentication can be completed.                                   |
 | AUTHN REQUEST CONSENT REQUIRED                                | The client has requested authentication without user interaction, but the user has to give consent.                                                                                                                  |
@@ -186,7 +184,6 @@
 | TOKEN REVOKE CLIENT TOKENS SUCCESS                            | All tokens available for a client were removed via the client tokens revocation endpoint.                                                                                                                            |
 | TOKEN REVOKE PROFILE TOKENS SUCCESS                           | All tokens available for a profile were removed via the profile revocation endpoint.                                                                                                                                 |
 | TOKEN REVOKE CLIENT FINGER PRINT TOKENS SUCCESS               | All fingerprint tokens available for a client were removed via the token revocation endpoint.                                                                                                                        |
-| TOKEN REVOKE PROFILE TOKENS SUCCESS                           | All tokens available for a profile on a client were revoked using the profile token revocation endpoint.                                                                                                             |
 | TOKEN REVOKE PROFILE FINGER PRINT TOKENS SUCCESS              | All fingerprint tokens available for a profile on a client were removed using the profile token revocation endpoint.                                                                                                 |
 | TOKEN INTROSPECTION SUCCESS                                   | Token introspection of the token was successful                                                                                                                                                                      |
 | TOKEN INTROSPECTION FAILED                                    | Token introspection failed, access token used is expired or revoked.                                                                                                                                                 |
@@ -218,15 +215,15 @@
 | ONEGINI IDP EXTERNAL IDPS FETCH FAILED                        | OneWelcome Access was unable to fetch the list of external identity providers that are configured in the [Consumer Identity Manager](https://docs-single-tenant.onegini.com/cim/stable/idp) application.             |
 | TULIP ACCESS TOKEN REQUEST FAILED                             | Request to Tulips `token` endpoint for API access token failed.                                                                                                                                                      |
 | TULIP UDH REQUEST FAILED                                      | Failed to get user data from Tulip's User Data Enhancer endpoint.                                                                                                                                                    |
-| SESSION_TERMINATION_ALL_USER_SESSIONS_TERMINATED              | All user sessions were ended.                                                                                                                                                                                        |
-| SESSION_TERMINATION_USER_SESSION_TERMINATED                   | Particular user session was ended.                                                                                                                                                                                   |
+| SESSION TERMINATION ALL USER SESSIONS TERMINATED              | All user sessions were ended.                                                                                                                                                                                        |
+| SESSION TERMINATION USER SESSION TERMINATED                   | Particular user session was ended.                                                                                                                                                                                   |
 
 ## OAuth Device Flow events
 
 | Event                                          | Description                                                                                                              |
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | AUTHZ REQUEST DEVICE GRANT CREATED             | A device grant is created for the requested client and scopes.                                                           |
-| DEVICE AUTHZ REQUEST DEVICE_CODE CREATED       | A device code is created for the requested client                                                                        |
+| DEVICE AUTHZ REQUEST DEVICE CODE CREATED       | A device code is created for the requested client                                                                        |
 | DEVICE AUTHZ REQUEST INVALID                   | The OAuth device authorization request is missing one or more required fields.                                           |
 | DEVICE AUTHZ REQUEST INVALID CLIENT            | The client_id in the OAuth device authorization request is invalid                                                       |
 | DEVICE AUTHZ REQUEST SCOPE INVALID             | One or more of the requested scopes in the OAuth device authorization request is not available for the specified client. |
@@ -268,8 +265,7 @@ The following events are specific for mobile apps that use the OneWelcome SDK.
 ### Client validation events
 
 Client validation happens at start up of a mobile app with the OneWelcome SDK. The app validates whether its registration is still valid and
-receives up to date
-configuration.
+receives up to date configuration.
 
 | Event                                          | Description                                                                                                                                                                    |
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -314,7 +310,7 @@ configuration.
 | OPENID TOKEN ENCRYPTION BAD JWKS URI            | The jwks_uri was not reachable or did not return a proper response.                                 |
 | OPENID TOKEN ENCRYPTION FAILED                  | Failed to encrypt a signed JWT.                                                                     |
 
-## Mobile authentication
+## Mobile authentication events
 
 This section contains events for mobile authentication
 
@@ -609,3 +605,4 @@ This section contains events for mobile authentication
 | STORE KEY VALUE INVALID IDP TYPE          | The identity provider that was specified was not of the OneWelcome type.                                                                                                            |
 | STORE KEY VALUE INVALID IDP CONFIG        | The configuration on the OneWelcome IDP for the Storage API is not correct (bad or missing credentials).                                                                            |
 | STORE KEY VALUE FAILED                    | An error occurred when storing the value in the keystore. Typically an issue in the [Consumer Identity Manager](https://docs-single-tenant.onegini.com/cim/stable/idp) application. |
+
