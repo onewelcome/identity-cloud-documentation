@@ -1,16 +1,45 @@
 # Service Providers API
 
-This allows the creation of new Service Provider via a REST API.
-It can be utilized in scripts to add, list, edit, or delete service providers.
+This allows to configure a Service Provider via a REST API.
+It can be utilized in scripts to add, list, edit, or delete service provider configurations.
 
-All endpoints are protected with API client. 
+All endpoints are protected with API client.
 It requires an API client with the `onegini_api_config` scope (Config API).
+
+## Service Provider configuration JSON body parameters
+
+JSON body parameters used in the [Create](#Create-Service-Provider-configuration)
+and [Update](#Update-Service-Provider-configuration) requests:
+
+| Param                     | Required | Example                           | Description                                                                      |
+|---------------------------|----------|-----------------------------------|----------------------------------------------------------------------------------|
+| name                      | yes      | "Service Provider name"           | Service Provider name.                                                           |
+| metadata_type             | yes      | "XML"                             | Type of Service Provider metadata. <br/> Allowed values: `URL`, `XML`, `MANUAL`. |
+| metadata_xml              | depends  | XML file content                  | Required when metadata type is XML.                                              |
+| metadata_url              | depends  | "https://example.sp.com/metadata" | Location of the remote XML metadata. Required when metadata type is URL.         |
+| manual_metadata           | depends  | See table below                   | Metadata in form of JSON object. Required when metadata type is MANUAL.          |
+| user_identifier           | yes      | "Email address"                   | Format of the user identifier.                                                   |
+| attribute_mappings        | no       | { "email" : "Email address" }     | Attribute mappings in form of key-value map.                                     |
+| identity_provider         | yes      | "onewelcome_idp"                  | Id of the default Identity Provider.                                             |
+| backup_identity_providers | no       | ["backup_idp_id"]                 | Ids of the backup Identity Providers.                                            |
+
+The following parameters are a part of the `manual_metadata` object.
+
+| Param                               | Required | Example                                          | Description                                                                                              |
+|-------------------------------------|----------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| entity_id                           | yes      | "https://example.sp.com"                         | Entity ID.                                                                                               |
+| assertion_consumer_service_location | yes      | "https://example.sp.com/authn-response"          | Location of the Assertion Consumer Service.                                                              |
+| assertion_consumer_service_binding  | yes      | "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" | Binding type of the Assertion Consumer Service. Allowed bindings: `POST`, `Redirect`, `Artifact`, `PAOS` |
+| signing_certificate                 | yes      | "-----BEGIN CERTIFICATE-----\r\nMIIEnTCCAoC ..." | Plain certificate for assertions signing in x509 format.                                                 |
+| encryption_certificate              | no       | "-----BEGIN CERTIFICATE-----\r\nMIIEnTCCAoC ..." | Plain certificate for encryption in x509 format.                                                         |
+| logout_url_redirect                 | no       | "https://example.sp.com/logout"                  | Location of the Single Logout Service (POST binding).                                                    |
+| logout_url_post                     | no       | "https://example.sp.com/logout_post"             | Location of the Single Logout Service (Redirect binding).                                                |
 
 ## Endpoints
 
-### List of Service Providers
+### List of configured Service Providers
 
-This returns a list of all Service Providers.
+This returns a list of all configured Service Providers.
 
 * Endpoint: `/api/v1/saml-sp-config`
 * Method: GET
@@ -38,7 +67,7 @@ Pragma: no-cache
             "metadata_type": "XML"
         },
         {
-        ... more service providers ...
+        ... more service provider configurations ...
         }
    ]
 }
@@ -46,38 +75,12 @@ Pragma: no-cache
 
 In the event of an error, one of the [generic error codes](#error-codes) will be returned.
 
-### Create Service Provider
+### Create Service Provider configuration
 
-This creates a new Service Provider
+This creates a new Service Provider configuration
 
 * Endpoint: `/api/v1/saml-sp-config`
 * Method: POST
-
-JSON body parameters:
-
-| Param                     | Required | Example                           | Description                                                                      |
-|---------------------------|----------|-----------------------------------|----------------------------------------------------------------------------------|
-| name                      | yes      | "Service Provider name"           | Service Provider name.                                                           |
-| metadata_type             | yes      | "XML"                             | Type of Service Provider metadata. <br/> Allowed values: `URL`, `XML`, `MANUAL`. |
-| metadata_xml              | depends  | Xml file content                  | Required when metadata type is Xml.                                              |
-| metadata_url              | depends  | "https://example.sp.com/metadata" | Location of the remote Xml metadata. Required when metadata type is URL.         |
-| manual_metadata           | depends  | See table below                   | Metadata in form of Json object. Required when metadata type is MANUAL.          |
-| user_identifier           | yes      | "Email address"                   | Format of the user identifier.                                                   |
-| attribute_mappings        | no       | { "email" : "Email address" }     | Attribute mappings in form of key-value map.                                     |
-| identity_provider         | yes      | "onewelcome_idp"                  | Id of the default Identity Provider.                                             |
-| backup_identity_providers | no       | ["backup_idp_id"]                 | Ids of the backup Identity Providers.                                            |
-
-The following parameters are a part of the `manual_metadata` object.
-
-| Param                               | Required | Example                                          | Description                                                                                              |
-|-------------------------------------|----------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| entity_id                           | yes      | "https://example.sp.com"                         | Entity ID.                                                                                               |
-| assertion_consumer_service_location | yes      | "https://example.sp.com/authn-response"          | Location of the Assertion Consumer Service.                                                              |
-| assertion_consumer_service_binding  | yes      | "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" | Binding type of the Assertion Consumer Service. Allowed bindings: `POST`, `Redirect`, `Artifact`, `PAOS` |
-| signing_certificate                 | yes      | "-----BEGIN CERTIFICATE-----\r\nMIIEnTCCAoC ..." | Plain certificate for assertions signing in x509 format.                                                 |
-| encryption_certificate              | no       | "-----BEGIN CERTIFICATE-----\r\nMIIEnTCCAoC ..." | Plain certificate for encryption in x509 format.                                                         |
-| logout_url_redirect                 | no       | "https://example.sp.com/logout"                  | Location of the Single Logout Service (POST binding).                                                    |
-| logout_url_post                     | no       | "https://example.sp.com/logout_post"             | Location of the Single Logout Service (Redirect binding).                                                |
 
 #### Limitations
 
@@ -88,7 +91,7 @@ The following parameters are a part of the `manual_metadata` object.
 3. In the case of `URL` and `XML` metadata type, when `validUntil` attribute is specified in Entity Descriptor, Access will check the
    metadata
    validity and return an error in case of expired metadata.
-4. In the case of `URL` and `XML` metadata type, when the xml metadata is signed, Access will check the signature validity and return an
+4. In the case of `URL` and `XML` metadata type, when the XML metadata is signed, Access will check the signature validity and return an
    error in case of failed verification.
 5. Provided metadata must contain `SPSSODescriptor` element, containing a signing certificate, and at least one `AssertionConsumerService`
 6. The max length of `name` and `entity_id` fields is 255.
@@ -125,6 +128,7 @@ HTTP/1.1 201 CREATED
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-store
 Pragma: no-cache
+Location: /oauth/api/v1/saml-sp-config/60eb60e3-01e0-496e-87f4-fd29737a8881
 {
     "id": "60eb60e3-01e0-496e-87f4-fd29737a8881",
     "name": "My Service Provider",
@@ -133,7 +137,7 @@ Pragma: no-cache
 }
 ```
 
-Create Service Provider request is validated. In case of failure, a list of validation errors is returned.
+Create Service Provider configuration request is validated. In case of failure, a list of validation errors is returned.
 Example failed response:
 
 ```http
@@ -155,18 +159,18 @@ Pragma: no-cache
 }
 ```
 
-### Read Service Provider
+### Read Service Provider configuration
 
-This returns detailed Service Provider object.
+This returns detailed Service Provider configuration object.
 
 * Endpoint: `/api/v1/saml-sp-config/{service_provider_id}`
 * Method: GET
 
 Path parameters:
 
-| Param               | Required | Description                                |
-|---------------------|----------|--------------------------------------------|
-| service_provider_id | yes      | Unique identifier of the Service Provider. |
+| Param               | Required | Description                                              |
+|---------------------|----------|----------------------------------------------------------|
+| service_provider_id | yes      | Unique identifier of the Service Provider configuration. |
 
 Example request:
 
@@ -230,20 +234,18 @@ Pragma: no-cache
 }
 ```
 
-### Update Service Provider
+### Update Service Provider configuration
 
-Service Provider fields can be updated after creating a Service Provider
+Service Provider configuration fields can be updated after creating a Service Provider configuration.
 
 * Endpoint: `/api/v1/saml-sp-config/{service_provider_id}`
 * Method: PATCH
 
 Path parameters:
 
-| Param               | Required | Description                                |
-|---------------------|----------|--------------------------------------------|
-| service_provider_id | yes      | Unique identifier of the Service Provider. |
-
-The same JSON body parameters as in [Create Service Provider](#Create-Service-Provider) can be used to update the Service Provider.
+| Param               | Required | Description                                              |
+|---------------------|----------|----------------------------------------------------------|
+| service_provider_id | yes      | Unique identifier of the Service Provider configuration. |
 
 Only the fields that are sent in the request will be changed.
 
@@ -275,7 +277,7 @@ Pragma: no-cache
 }
 ```
 
-Update Service Provider request is validated. In case of validation failure, a list of validation errors is returned.
+Update Service Provider configuration request is validated. In case of validation failure, a list of validation errors is returned.
 Example failed response:
 
 ```http
@@ -293,18 +295,18 @@ Pragma: no-cache
 }
 ```
 
-### Delete Service Provider
+### Delete Service Provider configuration
 
-This removes a Service Provider.
+This removes a Service Provider configuration.
 
 * Endpoint: `/api/v1/saml-sp-config/{service_provider_id}`
 * Method: DELETE
 
 Path parameters:
 
-| Param               | Required | Description                                |
-|---------------------|----------|--------------------------------------------|
-| service_provider_id | yes      | Unique identifier of the Service Provider. |
+| Param               | Required | Description                                              |
+|---------------------|----------|----------------------------------------------------------|
+| service_provider_id | yes      | Unique identifier of the Service Provider configuration. |
 
 Example request:
 
