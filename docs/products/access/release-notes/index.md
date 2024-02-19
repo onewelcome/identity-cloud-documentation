@@ -8,7 +8,7 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
-## Release date 2024-02-29
+## Release date 2024-02-19
 
 ### Improvements
 * When using the OAuth Device Flow together with OAuth consent, an end-user needs to provide consent for every authentication. 
