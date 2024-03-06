@@ -8,6 +8,20 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-02-19
+
+### Improvements
+* When using the OAuth Device Flow together with OAuth consent, an end-user needs to provide consent for every authentication. 
+
+### Bugs
+* Fixed an issue where multiple waiting calls to external systems could impact the overall availability of the service.
+
+## Release date 2024-02-12
+
+### Bugs
+* We added the `iat` claim to [Access Tokens](../topics/tokens/access-token.md).
+* We now omit sending the `RequestedAuthnContext` to an external SAML IDP if the `Authentication context class reference` is not specified in the [SAML IDP configuration](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-saml-identity-provider), before we defaulted to `urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport`. 
+
 ## Release date 2024-02-08
 
 ### Features
