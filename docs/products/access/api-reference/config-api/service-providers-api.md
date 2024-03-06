@@ -18,7 +18,6 @@ and [Update](#Update-Service-Provider-configuration) requests:
 | metadata_xml              | depends  | XML file content                  | Required when metadata type is XML.                                              |
 | metadata_url              | depends  | "https://example.sp.com/metadata" | Location of the remote XML metadata. Required when metadata type is URL.         |
 | manual_metadata           | depends  | See table below                   | Metadata in form of JSON object. Required when metadata type is MANUAL.          |
-| user_identifier           | yes      | "Email address"                   | Format of the user identifier.                                                   |
 | attribute_mappings        | no       | { "email" : "Email address" }     | Attribute mappings in form of key-value map.                                     |
 | identity_provider         | yes      | "onewelcome_idp"                  | Id of the default Identity Provider.                                             |
 | backup_identity_providers | no       | ["backup_idp_id"]                 | Ids of the backup Identity Providers.                                            |
@@ -41,13 +40,13 @@ The following parameters are a part of the `manual_metadata` object.
 
 This returns a list of all configured Service Providers.
 
-* Endpoint: `/api/v1/saml-sp-config`
+* Endpoint: `/api/v1/configuration/saml-sp`
 * Method: GET
 
 Example request:
 
 ```http
-GET /api/v1/saml-sp-config HTTP/1.1
+GET /api/v1/configuration/saml-sp HTTP/1.1
 Host: onewelcome.example.com
 ```
 
@@ -79,7 +78,7 @@ In the event of an error, one of the [generic error codes](#error-codes) will be
 
 This creates a new Service Provider configuration
 
-* Endpoint: `/api/v1/saml-sp-config`
+* Endpoint: `/api/v1/configuration/saml-sp`
 * Method: POST
 
 #### Limitations
@@ -99,7 +98,7 @@ This creates a new Service Provider configuration
 Example request:
 
 ```http
-POST /api/v1/saml-sp-config HTTP/1.1
+POST /api/v1/configuration/saml-sp HTTP/1.1
 Host: onewelcome.example.com
 Content-Type: application/json
 {
@@ -112,7 +111,6 @@ Content-Type: application/json
         "signing_certificate": "-----BEGIN CERTIFICATE----- (...) -----END CERTIFICATE-----",
         "logout_url_post": "https://example.sp.com/logout"
     },
-    "user_identifier": "Email",
     "attribute_mappings": {
         "email": "Email address",
         "display_name": "Display name"
@@ -128,7 +126,7 @@ HTTP/1.1 201 CREATED
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-store
 Pragma: no-cache
-Location: /oauth/api/v1/saml-sp-config/60eb60e3-01e0-496e-87f4-fd29737a8881
+Location: /api/v1/configuration/saml-sp/60eb60e3-01e0-496e-87f4-fd29737a8881
 {
     "id": "60eb60e3-01e0-496e-87f4-fd29737a8881",
     "name": "My Service Provider",
@@ -163,7 +161,7 @@ Pragma: no-cache
 
 This returns detailed Service Provider configuration object.
 
-* Endpoint: `/api/v1/saml-sp-config/{service_provider_id}`
+* Endpoint: `/api/v1/configuration/saml-sp/{service_provider_id}`
 * Method: GET
 
 Path parameters:
@@ -175,7 +173,7 @@ Path parameters:
 Example request:
 
 ```http
-GET /api/v1/saml-sp-config/120b0682-8ddd-41fc-9ec9-6f76c48afc08 HTTP/1.1
+GET /api/v1/configuration/saml-sp/120b0682-8ddd-41fc-9ec9-6f76c48afc08 HTTP/1.1
 Host: onewelcome.example.com
 ```
 
@@ -198,7 +196,6 @@ Pragma: no-cache
         "assertion_consumer_service_location": "https://example.sp.com/authn-response",
         "signing_certificate": "-----BEGIN CERTIFICATE----- (...) -----END CERTIFICATE-----"
     },
-    "user_identifier": "Email",
     "attribute_mappings": {
         "email": "Email address",
         "display_name": "Display name"
@@ -238,7 +235,7 @@ Pragma: no-cache
 
 Service Provider configuration fields can be updated after creating a Service Provider configuration.
 
-* Endpoint: `/api/v1/saml-sp-config/{service_provider_id}`
+* Endpoint: `/api/v1/configuration/saml-sp/{service_provider_id}`
 * Method: PATCH
 
 Path parameters:
@@ -252,7 +249,7 @@ Only the fields that are sent in the request will be changed.
 Example request:
 
 ```http
-PATCH /api/v1/saml-sp-config/60eb60e3-01e0-496e-87f4-fd29737a8881 HTTP/1.1
+PATCH /api/v1/configuration/saml-sp/60eb60e3-01e0-496e-87f4-fd29737a8881 HTTP/1.1
 Host: onewelcome.example.com
 Content-Type: application/json
 {
@@ -299,7 +296,7 @@ Pragma: no-cache
 
 This removes a Service Provider configuration.
 
-* Endpoint: `/api/v1/saml-sp-config/{service_provider_id}`
+* Endpoint: `/api/v1/configuration/saml-sp/{service_provider_id}`
 * Method: DELETE
 
 Path parameters:
@@ -311,7 +308,7 @@ Path parameters:
 Example request:
 
 ```http
-DELETE /api/v1/saml-sp-config/60eb60e3-01e0-496e-87f4-fd29737a8881 HTTP/1.1
+DELETE /api/v1/configuration/saml-sp/60eb60e3-01e0-496e-87f4-fd29737a8881 HTTP/1.1
 Host: onewelcome.example.com
 ```
 
