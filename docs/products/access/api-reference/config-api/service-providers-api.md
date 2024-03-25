@@ -11,16 +11,16 @@ It requires an API client with the `onegini_api_config` scope (Config API).
 JSON body parameters used in the [Create](#Create-Service-Provider-configuration)
 and [Update](#Update-Service-Provider-configuration) requests:
 
-| Param                     | Required | Example                           | Description                                                                      |
-|---------------------------|----------|-----------------------------------|----------------------------------------------------------------------------------|
-| name                      | yes      | "Service Provider name"           | Service Provider name.                                                           |
-| metadata_type             | yes      | "XML"                             | Type of Service Provider metadata. <br/> Allowed values: `URL`, `XML`, `MANUAL`. |
-| metadata_xml              | depends  | XML file content                  | Required when metadata type is XML.                                              |
-| metadata_url              | depends  | "https://example.sp.com/metadata" | Location of the remote XML metadata. Required when metadata type is URL.         |
-| manual_metadata           | depends  | See table below                   | Metadata in form of JSON object. Required when metadata type is MANUAL.          |
-| attribute_mappings        | no       | { "email" : "Email address" }     | Attribute mappings in form of key-value map.                                     |
-| identity_provider         | yes      | "onewelcome_idp"                  | Id of the default Identity Provider.                                             |
-| backup_identity_providers | no       | ["backup_idp_id"]                 | Ids of the backup Identity Providers.                                            |
+| Param              | Required | Example                           | Description                                                                                                                       |
+|--------------------|----------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| name               | yes      | "Service Provider name"           | Service Provider name.                                                                                                            |
+| metadata_type      | yes      | "XML"                             | Type of Service Provider metadata. <br/> Allowed values: `URL`, `XML`, `MANUAL`.                                                  |
+| metadata_xml       | depends  | XML file content                  | Required when metadata type is XML.                                                                                               |
+| metadata_url       | depends  | "https://example.sp.com/metadata" | Location of the remote XML metadata. Required when metadata type is URL.                                                          |
+| manual_metadata    | depends  | See table below                   | Metadata in form of JSON object. Required when metadata type is MANUAL.                                                           |
+| identity_provider  | yes      | "onewelcome_idp"                  | Id of the default Identity Provider.                                                                                              |
+| oauth_scopes       | no       | ["openid", "profile"]             | Scopes that will be sent with authentication requests to the selected Identity Provider. It applies only to the OAuth based IDPs. |
+| attribute_mappings | no       | { "email" : "Email address" }     | Attribute mappings in form of key-value map.                                                                                      |
 
 The following parameters are a part of the `manual_metadata` object.
 
@@ -84,9 +84,8 @@ This creates a new Service Provider configuration
 #### Limitations
 
 1. Entity ID must be unique in the scope of one tenant.
-2. The `identity_provider` and `backup_identity_providers` fields are references to other parts in the configuration of Access.
-   This API can only refer to existing identifiers of Identity Providers. When an unknown identifier is passed, the response will contain
-   a validation error: `Identity provider [provided_id] not found`.
+2. The `identity_provider` field can only refer to existing identifiers of Identity Providers.
+   When an unknown identifier is passed, the response will contain a validation error: `Identity provider [provided_id] not found`.
 3. In the case of `URL` and `XML` metadata type, when `validUntil` attribute is specified in Entity Descriptor, Access will check the
    metadata
    validity and return an error in case of expired metadata.
@@ -115,7 +114,8 @@ Content-Type: application/json
         "email": "Email address",
         "display_name": "Display name"
     },
-    "identity_provider": "oidc_idp"
+    "identity_provider": "oidc_idp",
+    "oauth_scopes": [ "openid", "profile", "email" ]
 }
 ```
 
@@ -201,7 +201,7 @@ Pragma: no-cache
         "display_name": "Display name"
     },
     "identity_provider": "custom",
-    "backup_identity_providers": [],
+    "oauth_scopes": [],
     "parsed_metadata": {
         "assertion_consumer_services": [
             {
