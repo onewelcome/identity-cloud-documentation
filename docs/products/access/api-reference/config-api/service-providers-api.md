@@ -20,7 +20,7 @@ and [Update](#Update-Service-Provider-configuration) requests:
 | manual_metadata    | depends  | See table below                   | Metadata in form of JSON object. Required when metadata type is MANUAL.                                                           |
 | identity_provider  | yes      | "onewelcome_idp"                  | Id of the default Identity Provider.                                                                                              |
 | oauth_scopes       | no       | ["openid", "profile"]             | Scopes that will be sent with authentication requests to the selected Identity Provider. It applies only to the OAuth based IDPs. |
-| attribute_mappings | no       | { "email" : "Email address" }     | Attribute mappings in form of key-value map.                                                                                      |
+| attribute_mappings | no       | { "email" : "email_address" }     | Attribute mappings in form of key-value map.                                                                                      |
 
 The following parameters are a part of the `manual_metadata` object.
 
@@ -111,8 +111,8 @@ Content-Type: application/json
         "logout_url_post": "https://example.sp.com/logout"
     },
     "attribute_mappings": {
-        "email": "Email address",
-        "display_name": "Display name"
+        "email": "email_address",
+        "display_name": "user_name"
     },
     "identity_provider": "oidc_idp",
     "oauth_scopes": [ "openid", "profile", "email" ]
@@ -197,8 +197,8 @@ Pragma: no-cache
         "signing_certificate": "-----BEGIN CERTIFICATE----- (...) -----END CERTIFICATE-----"
     },
     "attribute_mappings": {
-        "email": "Email address",
-        "display_name": "Display name"
+        "email": "email_address",
+        "display_name": "user_name"
     },
     "identity_provider": "custom",
     "oauth_scopes": [],
