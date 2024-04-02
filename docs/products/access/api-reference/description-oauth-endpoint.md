@@ -23,6 +23,7 @@ The OAuth 2.0 specification describes the following flows to obtain tokens:
 
 * [Authorization code](https://tools.ietf.org/html/rfc6749#section-4.1)
 * [Client credentials](https://tools.ietf.org/html/rfc6749#section-4.4)
+* [Resource Owner Password Credentials (ROPC)](https://tools.ietf.org/html/rfc6749#section-4.3)
 
 OneWelcome Access supports all of these flows. However, only the authorization code grant and client credentials grant are recommended.
 
