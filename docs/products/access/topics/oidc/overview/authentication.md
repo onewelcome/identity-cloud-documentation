@@ -15,10 +15,20 @@ The Authorization code flow is an extension of the OAuth 2.0 authorization code 
 
 In order to obtain the ID Token in this flow, make sure the web client has the grant type `Authorization Code` and the scope `openid` configured. Create an
  OAuth authorization request with the [scope](scopes-and-claims.md) `openid`.
- 
-## Implicit and hybrid flow
 
-OneWelcome Access does not support the implicit or hybrid flows. The only supported value for `response_type` is `code`.
+## Implicit Flow
+
+Implicit flow is a one-step flow - the client requests an access token and/or ID Token directly from the authorization endpoint using a
+front-channel (e.g. via a web browser). This workflow can be suitable for those clients that cannot store client secret in a secure
+fashion (e.g. web applications running inside user agent such as web browser). However, this flow is no longer recommended. Use the
+authorization code flow with PKCE.
+
+In order to obtain the ID Token in this flow, make sure the web client has the grant type `Implicit` enabled and create an OAuth
+authorization request with `response_type=id_token` and the scope `openid`.
+
+## Hybrid flow
+
+OneWelcome Access does not support the Hybrid flow.
 
 ## User interaction
 
