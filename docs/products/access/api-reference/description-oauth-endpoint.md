@@ -35,6 +35,8 @@ this flow.
 * The client credentials flow returns an access token that gives access to resources for a specific client. For example, when the user requests the general 
 terms and conditions document, the resource server needs to know which client requests access to this document. The resource server does not need to know on
 behalf of which user the client requests access. Obtaining the access token can be automated and does not require user interaction.
+* The Resource Owner Password Credentials (ROPC) is deprecated and is no longer considered secure for most scenarios. See the topic
+  on [Resource owner password credentials](../topics/web-clients/resource-owner-password-credentials.md) for more information.
 
 ## Authorization endpoint
 The authorization endpoint is used in the authorization code flow. In this flow, the 
