@@ -25,7 +25,7 @@ In this section you can see an example of an ID Token. A JWT contains three sect
   "sub": "1c0e2c84-b05f-4c23-9175-c238f70901be",
   "email_verified": true,
   "gender": "male",
-  "iss": "https://token-server.onegini.com/oauth",
+  "iss": "https://tenant.onewelcome.io/oauth",
   "preferred_username": "John Doe",
   "given_name": "John",
   "locale": "en",
@@ -54,7 +54,7 @@ Below you can find a description for the generic claims that are in the ID Token
 | Claim   | Description
 |---------|------------
 | at_hash | Hash of the access token that was issued. More information can be found on the [Open ID Core specification](https://openid.net/specs/openid-connect-core-1_0.html#CodeIDToken)
-| iss     | The issuer of this ID Token. This will always be Onegini Access
+| iss     | The issuer of this ID Token. This will always be OneWelcome Access
 | aud     | The audience for which this ID Token is intended. The Relying Party client ID that requested this ID Token is always included as the audience.
 | sub     | The user identifier for then end-user that this ID Token is representing
 | urn:onegini.com:oidc:group_policies | User's policies and group memberships. Requires [configuration of the Delegated Administration](../../topics/dum-report/index.md).

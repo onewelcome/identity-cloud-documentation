@@ -1,6 +1,6 @@
 # Events
 
-In order to configure Onegini Access events, go to the `Configuration` section of the administration console, then `System` and choose
+In order to configure OneWelcome Access events, go to the `Configuration` section of the administration console, then `System` and choose
 the `Events` tab.
 
 The picture below shows the `Events` view in the Admin Console with an example configuration.

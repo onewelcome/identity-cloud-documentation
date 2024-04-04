@@ -1,8 +1,8 @@
 # Templates
 
-This section covers the template customizations possible in the Onegini Access.
+This section covers the template customizations possible in the OneWelcome Access.
 
-The Onegini Access has a number of templates that can be customized. Onegini uses the Thymeleaf template engine to render templates. It takes XML (XHTML) as
+The OneWelcome Access has a number of templates that can be customized. OneWelcome uses the Thymeleaf template engine to render templates. It takes XML (XHTML) as
 input and replaces static content using special attributes. Refer to the
 [Thymeleaf manual](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html) for the full syntax.
 
@@ -215,3 +215,65 @@ The name of the template file must be `endsession-reject.html`.
 | pages.openid.endsession.reject.title       | Page title to be used in the browser title.        |                                                                    |
 | openid.endsession.reject.header            | Title of the page in the body.                     |                                                                    |
 | openid.endsession.reject.body              | Paragraph of text.                                 | HTML is allowed.                                                   |
+
+## User Code Template
+
+### Introduction
+
+The User Code template is for OAuth Device Flow, serving as the template for the page where the user enters or confirms the user code.
+
+### Naming Convention
+
+The name of the template file must be `user-code.html`.
+
+### Available Messages
+
+| Key                             | Description                                                 |
+|---------------------------------|-------------------------------------------------------------|
+| pages.userCode.title            | Title for the user code page.                               |
+| userCode.header.enter           | Header text when the user is entering the code.             |
+| userCode.header.confirm         | Header text when the user is confirming the code.           |
+| userCode.intro.enter            | Introductory text explaining the code entry process.        |
+| userCode.intro.confirm          | Introductory text explaining the confirmation process.      |
+| userCode.submit                 | Label used for the submit button.                           |
+| userCode.error.invalidCode      | Error message displayed when an incorrect code is entered.  |
+| userCode.error.invalidCsrfToken | Error message displayed when there's a CSRF token mismatch. |
+
+### Available Variables
+
+| Variable Name    | Description                                                 |
+|------------------|-------------------------------------------------------------|
+| userCode         | The actual user code that needs to be confirmed or entered. |
+| invalidUserCode  | Boolean indicating if the entered user code is invalid.     |
+| invalidCsrfToken | Boolean indicating if there's a CSRF token mismatch.        |
+
+
+## Device Authorization Status Template
+
+### Introduction
+
+The Device Authorization Status template displays the status of a device's authorization process. It is used to communicate with the end
+user whether the device connection was successful, expired, already connected, or invalid.
+
+### Naming Convention
+
+The name of the template file must be `device-authorization-status.html`.
+
+### Available Messages
+
+| Key                                            | Description                                            |
+|------------------------------------------------|--------------------------------------------------------|
+| pages.deviceAuthStatus.title.success           | Title when the device is successfully connected.       |
+| pages.deviceAuthStatus.title.expired           | Title when the user code has expired.                  |
+| pages.deviceAuthStatus.title.alreadyAuthorized | Title when the device is already connected.            |
+| pages.deviceAuthStatus.title.invalidUserCode   | Title when an invalid code is entered.                 |
+| deviceAuthStatus.content.success               | Content message for successful connection.             |
+| deviceAuthStatus.content.expired               | Content message when the code has expired.             |
+| deviceAuthStatus.content.alreadyAuthorized     | Content message when the device is already authorized. |
+| deviceAuthStatus.content.invalidUserCode       | Content message when an invalid code is entered.       |
+
+### Available Variables
+
+| Variable Name | Description                                                                                                                            |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| result        | A variable indicating the result of the authorization process. Can be 'success', 'expired', 'alreadyAuthorized', or 'invalidUserCode'. |

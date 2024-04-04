@@ -1,7 +1,7 @@
 # OS version configuration
 
-As an organisation you want applications to use only approved operating system versions to communicate with Onegini Access. Therefore OS version management is
-an important feature of Onegini Access. This gives your organisation more control over which applications are allowed to communicate with your back-ends.
+As an organisation you want applications to use only approved operating system versions to communicate with OneWelcome Access. Therefore OS version management is
+an important feature of OneWelcome Access. This gives your organisation more control over which applications are allowed to communicate with your back-ends.
 
 Each Operating System has their own versions. Hence, for every OS different versions can be accepted. It is not required to create a configuration for an
 Operating system. If an OS does not have any configuration, it means that all versions are accepted for this OS. The OS configuration applies to all mobile
@@ -17,7 +17,7 @@ the `Operating Systems` tab.
 
 ## Forcing end-users to upgrade
 
-Only clients providing a valid OS version will be granted access by Onegini Access. The version is valid when it meets the conditions provided within the OS
+Only clients providing a valid OS version will be granted access by OneWelcome Access. The version is valid when it meets the conditions provided within the OS
 configuration:
 
 - is greater than the minimal version set (if a minimal version is configured)
@@ -32,7 +32,7 @@ Clients providing an invalid OS version will be forced to upgrade the OS version
 ### Forcing end-users to upgrade their application
 
 If a configuration for a certain OS is set and application running on that OS will not send the OS version information, the user of that application will be
-prompted to upgrade the application version to a newer one that does provide the OS version to Onegini Access.
+prompted to upgrade the application version to a newer one that does provide the OS version to OneWelcome Access.
 
 ## Limit approved OS versions
 

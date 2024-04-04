@@ -1,6 +1,6 @@
 # Mobile application configuration
 
-Mobile Applications typically using the Onegini SDK to communicate with an Onegini Access instance and need to be configured via the admin console. This 
+Mobile Applications typically using the OneWelcome SDK to communicate with an OneWelcome Access instance and need to be configured via the admin console. This 
 section describes the steps related to configuration of these applications.
 
 ## Creating a new application
@@ -10,7 +10,7 @@ On the overview that is shown you can see all the existing applications.
 
 >**Note:**
 > **Applications** are meant for mobile applications that are installed on a device that is not managed by you or a trusted party. In general this are your 
-customers' mobile devices. These can be exposed to all kinds of attacks and the application configuration combined with the Onegini SDK provides the necessary 
+customers' mobile devices. These can be exposed to all kinds of attacks and the application configuration combined with the OneWelcome SDK provides the necessary 
 protection against that. These clients are also named dynamic clients.
 
 To add a new application click on the add button. The following form will appear:
@@ -32,7 +32,7 @@ Fill all the mandatory fields (marked with `*` on the form). The other fields ar
 | Resource gateway                     | no       |                     | A mobile app typically uses a [resource gateway](../../general-app-config/resource-gateway/resource-gateway.md) to fetch data from backend services. Here you can specify the resource gateway which this application will be talking to. It is also used to populate the `aud` claim in a JWT access token.
 | Additional audiences                 | no       | aud1, aud2          | A set of case sensitive strings that identifies the audience of the issued access token besides the resource gateways. It is used to populate the `aud` claim in a JWT access token.
 | Delegated Administration configuration             | no       | myDumConfig         | Configuration of Delegated Administration that should be used to gather person report containing information about group memberships and permissions.
-| Default scopes                       | no       |                     | The scopes that are assigned to an authorization request if no scopes are requested. If no scopes are requested by the application in the authorization request and no defaults specified Onegini Access will fail the request.
+| Default scopes                       | no       |                     | The scopes that are assigned to an authorization request if no scopes are requested. If no scopes are requested by the application in the authorization request and no defaults specified OneWelcome Access will fail the request.
 | Additional scopes                    | no       |                     | The scopes the application is allowed to request apart from the default scopes. The default scopes are also counted as scopes that can be requested by an application.
 | Primary Identity provider            | depends  | myIdp               | The identity provider used when a user authenticates for this application. See the [Identity Provider configuration topic](../../general-app-config/identity-providers/identity-providers.md) for more information on Identity Providers.
 | Additional Identity provider(s)      | no       | addIdp1, addIdp2    | Additional identity providers that can be used when a user authenticates with this application. A primary must be specified if additional are entered.
@@ -44,7 +44,7 @@ Fill all the mandatory fields (marked with `*` on the form). The other fields ar
 | Implicit authentication enabled      | no       |                     | Flag to enable implicit authentication for this application. Can be enabled when the registration flow is enabled.
 | Max PIN attempts                     | yes      | 3                   | Max number of times a user can provide a valid PIN before the application is revoked and the user has to authorize the app again. When the value is set to 0 the number of attempts is unlimited.
 | PIN policy                           | no       | my PIN policy       | PIN policy that will be used by the mobile application during the PIN creation process. Please see the [PIN policy topic](../../general-app-config/pin-policy/pin-policy.md)
-| Certificates                         | no       |                     | Certificates that are used by the App to establish a secure connection with Onegini Access and other backend systems. The selected Certificates will be part of the configuration file that you can export for your Application.
+| Certificates                         | no       |                     | Certificates that are used by the App to establish a secure connection with OneWelcome Access and other backend systems. The selected Certificates will be part of the configuration file that you can export for your Application.
 | Development mode                     | no       | false               | When the development mode is selected the configured application signature is ignored and the developer does not have to configure a new application signature for every new version of the application. To learn more about the application signature check out the [Application version management topic](app-version-management.md).
 | Logo URI                             | no       |                     | URI of the logo for this application, it can be used in for example the consent screen.
 | Template set                         | no       | payment-app/        | Every application can have its own branding. Therefore multiple sets of templates are supported. The prefix corresponds to the directory in which a set of templates is stored.

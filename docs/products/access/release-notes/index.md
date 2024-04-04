@@ -8,6 +8,63 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-02-19
+
+### Improvements
+* When using the OAuth Device Flow together with OAuth consent, an end-user needs to provide consent for every authentication. 
+
+### Bugs
+* Fixed an issue where multiple waiting calls to external systems could impact the overall availability of the service.
+
+## Release date 2024-02-12
+
+### Bugs
+* We added the `iat` claim to [Access Tokens](../topics/tokens/access-token.md).
+* We now omit sending the `RequestedAuthnContext` to an external SAML IDP if the `Authentication context class reference` is not specified in the [SAML IDP configuration](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-saml-identity-provider), before we defaulted to `urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport`. 
+
+## Release date 2024-02-08
+
+### Features
+* Added support for the [In-App Device Authorization Grant](../api-reference/description-oauth-endpoint.md#in-app-device-authorization-grant)
+
+### Improvements
+* Added more details to `AUTHZ_REQUEST_TRANSACTION_TAMPERING` event
+
+## Release date 2024-01-25
+
+### Features
+* [PKCE](../topics/authentication-methods/authentication-methods.md#pkce) can now also be used for confidential clients.
+* [Hook authentication via JWT](../api-reference/config-api/webhooks-configuration-api.md#jwt) is now available.
+
+### Bugs
+* Fixed a UI issue when creating a client credentials client.
+* Added some missing translations for error messages.
+
+## Release date 2024-01-22
+
+### Features
+* Added support for the [OAuth Device Flow](../api-reference/description-oauth-endpoint.md#oauth-device-flow-extension)
+
+### Improvements
+* We improved the security of our session cookies by adding a `__Host` prefix to them.
+
+  We included both the legacy and the new secure cookies for existing customers to keep the existing sessions.
+
+  The legacy cookies can be disabled in the Access Admin, by going to `Configuration` → `System` → `Cookies` and turning off the `Add fallback cookie` option.
+  This option can be safely switched once all users establish a new session with the updated Access Engine. Max session length can checked in the Access Admin (`Configuration` → `System` → `Session` → `Maximum session length` )
+
+### Bug Fix
+* Logout and session related exceptions are now handled gracefully.
+
+## Release date 2024-01-11
+
+### Improvements
+* External IdPs can now use other signing algorithms than RS256 for signing JWT tokens.
+* URL validation for WebHook is improved.
+
+### Bugs
+* [Session monitoring](../topics/oidc/session-management/session-monitoring-with-iframes.md) iframe was not always informed if the users's session expires.
+
 ## Release date 2023-12-19
 
 ### Features
@@ -380,7 +437,7 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 ## Release date: 2022-06-29
 
 ### Features
-* It is now possible to add an [extra param `hook_context_custom_param.*`](../api-reference/description-oauth-endpoint.md) to the authorization endpoint. This param is then available in the [Onegini Customize Access Token Web Hook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md) as context.
+* It is now possible to add an [extra param `hook_context_custom_param.*`](../api-reference/description-oauth-endpoint.md) to the authorization endpoint. This param is then available in the [OneWelcome Customize Access Token Web Hook](../topics/integration-extension/hooks/customize-access-token/customize-access-token-hook.md) as context.
 
 ## Release date: 2022-06-09
 
@@ -405,7 +462,7 @@ since January 1 1970 UTC. To use this new value, please switch to the v2 of our 
   the [OpenID Connect discovery endpoint](../api-reference/oidc/discovery.md).
 * Improved the [integrity check](../topics/mobile-apps/app-delivery-lifecycle/app-delivery-lifecycle.md) for mobile apps. This improved integrity check is
   required for new mobile apps introduced to the Google Play Store after August 1st, 2021. The existing apps, both running on Android and iOS, will continue to
-  work without any changes. Still, it is recommended to plan an update of the Onegini SDK and use the improved integrity check.
+  work without any changes. Still, it is recommended to plan an update of the OneWelcome SDK and use the improved integrity check.
 
 ### Bug fixes
 
@@ -438,7 +495,7 @@ since January 1 1970 UTC. To use this new value, please switch to the v2 of our 
 * The mobile applications that were using the [Custom Registration](../topics/custom-registration/index.md) feature had to send additional request in order to
   obtain an ID Token. This will no longer be required as the ID Token will be returned to the client along with the Access Token when configured.
 * Users who are either members of many Delegated Administration for Business Partners ([DABP](../../../dabp/index.md)) groups or are having many DABP policies
-  assigned, could experience issues when logging out from DABP or Onegini Console applications. The logout request in such scenarios will no longer be rejected.
+  assigned, could experience issues when logging out from DABP or OneWelcome Console applications. The logout request in such scenarios will no longer be rejected.
 
 ## Release date: 2021-03-09
 

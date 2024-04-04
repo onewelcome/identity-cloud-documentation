@@ -28,7 +28,7 @@ Example request:
 
 ```http
 GET /api/v1/configuration/api-clients?page=1 HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 ```
 
 Example success response:
@@ -73,7 +73,7 @@ JSON body parameters:
 | client_id                        |  yes         | "F167433E63CE8BD874D7…"                                   |  Unique identifier for a client
 | authentication_method            |  no          | "private_key_jwt"                                         |  Indicates authentication method for that client. Options are `client_secret_basic` and `private_key_jwt`. If not provided it defaults to `client_secret_basic`.
 | client_secret                    |  depends     | "AF33E2BF29C54A4639AB…"                                   |  Client secret (not returned on GET)
-| public_jwk                       |  depends     | EC or RSA public key                                      |  Plain public key for private key JWT authentication in the Elliptic Curve (min P-256) or RSA (min 2048, max 4096 key length) x509 format. Onegini Access will favour `jwks_uri` if provided over statically defined JWK.
+| public_jwk                       |  depends     | EC or RSA public key                                      |  Plain public key for private key JWT authentication in the Elliptic Curve (min P-256) or RSA (min 2048, max 4096 key length) x509 format. OneWelcome Access will favour `jwks_uri` if provided over statically defined JWK.
 | jwks_uri                         |  depends     | "https://authorization-server/jwks"                       |  Uri of JWKS endpoint with public keys for private key JWT authentication.
 | scopes                           |  yes         | ["onegini_api_end_user", "onegini_api_user_registration"] |  Valid values are described in the [API scopes](../../appendix/administration/api-config.md#API-scopes)
 | public_base_uri                  |  no          | "https://example.com/sth"                                 |  When this Client gives access to the [Token introspection API](../token-introspection.md), it has some URI where it can be reached. Configure the base URI in which all calls to this client should originate.
@@ -82,7 +82,7 @@ Example request:
 
 ```http
 POST /api/v1/configuration/api-clients HTTP/1.1
-Host: onegini.example.com
+Host: onewelcome.example.com
 Content-Type: application/json
 {
    "name":"API client 1",
@@ -174,7 +174,7 @@ Only the fields that are sent in the request will be changed.
 | client_secret                    |  depends     |  "AF33E2BF29C54A4639AB…"                             |  Client secret (not returned on GET)
 | scopes                           |  no          |  ["onegini_api_end_user", "onegini_api_user_registration"] |  Valid values are described in the [API scopes](../../appendix/administration/api-config.md#API-scopes)
 | public_base_uri                  |  no          |  "https://example.com/sth"                           |  When this Client gives access to the [Token introspection API](../token-introspection.md), it has some URI where it can be reached. Configure the base URI in which all calls to this client should originate.
-| public_jwk                       |  depends     |   EC or RSA public key                               |  Plain public key for private key JWT authentication in the Elliptic Curve (min P-256) or RSA (min 2048, max 4096 key length) x509 format. Onegini Access will favour `jwks_uri` if provided over statically defined JWK.
+| public_jwk                       |  depends     |   EC or RSA public key                               |  Plain public key for private key JWT authentication in the Elliptic Curve (min P-256) or RSA (min 2048, max 4096 key length) x509 format. OneWelcome Access will favour `jwks_uri` if provided over statically defined JWK.
 | jwks_uri                         |  depends     |  "https://authorization-server/jwks                  |  Uri of JWKS endpoint with public keys for private key JWT authentication.
   
 Example request:

@@ -13,7 +13,7 @@ This section describes the API for mobile authentication, version 4.
 
 Only authorized API clients can access this API. Its credentials need to be provided via HTTP Basic Authentication header or via url encoded
 form.
-The required credentials are the client id and client secret configured in the Admin console of Onegini Access.
+The required credentials are the client id and client secret configured in the Admin console of OneWelcome Access.
 > **Note:** Please look in the [OAuth config](../../appendix/administration/api-config.md) section on how to configure an API client.
 > In order to allow an API client to access mobile authentication endpoints, add `Mobile authentication` to the `Valid for APIs` list in the
 > API client configuration.
@@ -49,7 +49,7 @@ Pragma: no-cache
 
 ## Availability
 
-Onegini Access provides two endpoints to check the availability of mobile authentication types for specific users.
+OneWelcome Access provides two endpoints to check the availability of mobile authentication types for specific users.
 
 ### Check if authentication is available for user and device
 
@@ -175,7 +175,7 @@ Pragma: no-cache
 
 ## Mobile authentication initialization
 
-Mobile authentication can be initialized by an asynchronous API call to Onegini Access. For most mobile authentication types (push, OTP) the
+Mobile authentication can be initialized by an asynchronous API call to OneWelcome Access. For most mobile authentication types (push, OTP) the
 portal will be informed of the authentication result via a callback.
 
 #### Request
@@ -288,11 +288,11 @@ The returned object also contains information about the authentication method wh
 live for the
 transaction (in milliseconds). This information can be useful in situations where for some reason PUSH authentication failed, but in the
 initial request the
-portal has also provided the user's phone number, and the Onegini Access was able to fallback on sending a code via SMS. For push, the
+portal has also provided the user's phone number, and the OneWelcome Access was able to fallback on sending a code via SMS. For push, the
 portal can show
 instructions to open the mobile app, and it should wait for the result on the callback uri. For SMS, the portal should display an input
 field to enter the one
-time code, and verify this code with the Onegini Access when the user submits the form.
+time code, and verify this code with the OneWelcome Access when the user submits the form.
 
 **Example failure result:**
 
@@ -310,7 +310,7 @@ Pragma: no-cache
 
 ## Mobile authentication result
 
-Once the user has completed authentication, the portal must be informed of the results. This is done via a callback from the Onegini Access
+Once the user has completed authentication, the portal must be informed of the results. This is done via a callback from the OneWelcome Access
 to the portal, and a subsequent request to fetch the mobile authentication results.
 
 **Note:** This section does not apply to SMS mobile authentication types. Please refer to the SMS endpoints section for completing an SMS
@@ -318,7 +318,7 @@ mobile authentication request.
 
 ### Callback
 
-Once authentication has occurred (or failed), the Onegini Access calls the endpoint provided by the portal during the mobile authentication
+Once authentication has occurred (or failed), the OneWelcome Access calls the endpoint provided by the portal during the mobile authentication
 initialization step (specifically, the `callback_uri` field).
 
 Endpoint: `POST <callback_uri>`
@@ -445,7 +445,7 @@ In the event of an error, one of these [error codes](#error-codes) will be retur
 ## SMS endpoints
 
 While mobile authentication with SMS is initialized using the same endpoint as other types, the completion of the request differs in that
-the user must submit their SMS code to the portal. The Onegini Access therefore provides two endpoints for this purpose.
+the user must submit their SMS code to the portal. The OneWelcome Access therefore provides two endpoints for this purpose.
 
 ### Verify SMS code
 

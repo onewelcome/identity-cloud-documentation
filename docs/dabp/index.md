@@ -13,7 +13,7 @@ This system allows your distribution partners to take care of their own user man
 internal changes (employees leaving, getting promoted, getting certified, reorganizations, etc.). This will significantly lighten the load
 on your B2B support center.
 
-Delegated Administration for Business Partners is offered as an additional feature you can add to your Onegini Identity & Single Sign On
+Delegated Administration for Business Partners is offered as an additional feature you can add to your OneWelcome Identity & Single Sign On
 module.
 It can be configured easily for the needs of different industries and client-types.
 

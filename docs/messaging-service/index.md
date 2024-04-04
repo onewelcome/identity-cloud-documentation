@@ -29,14 +29,19 @@ tenant-specific-folder:
             - messages.properties
             - messages_en.properties
             - messages_pl.properties
-            - messages_otherlocalecode.properties              
+            - messages_nl_BE.properties
+            - messages_otherlangugecode_COUNTRYCODE.properties              
 ```
 
 The Messaging service uses the [Mustache template language](https://github.com/samskivert/jmustache) for templating. Templates can be localized and sent in a
 language specified in the request. All messages files MUST contain all translation keys. The Messaging service does not merge the default file with localized
 files to avoid unnecessary file downloads. The locale must be passed in the request. If no locale is provided, the default file will be used. If no file for the
 provided locale is present, the default file will be used. To include a localized message in the template, the message key should be wrapped in the `{{i18n}}`
-tag. 
+tag.
+
+!!! note
+
+    The requested locale is case-sensitive and must match the messages.properties extension. e.g. if the requested locale is `nl_BE`, it will match the file messages_nl_BE.properties.
 
 ### Example
 

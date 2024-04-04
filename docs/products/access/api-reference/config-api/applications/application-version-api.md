@@ -308,7 +308,7 @@ In the event of an error, one of the [generic error codes](#error-codes) will be
 
 ### Export an Application version config
 
-This endpoint produces a ZIP file with the configuration that is needed by the Onegini SDK.
+This endpoint produces a ZIP file with the configuration that is needed by the OneWelcome SDK.
 
 * Endpoint: `/api/v1/configuration/applications/{appId}/platforms/{platform}/versions/{versionName}/export`
 * Method: GET

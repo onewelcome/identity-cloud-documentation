@@ -101,7 +101,7 @@ This creates an Identity Provider from scratch
 * Endpoint: `/api/v1/configuration/idps`
 * Method: POST
 
-Supported Identity Provider types: `TULIP`, `OAUTH`
+Supported Identity Provider types: `TULIP`, `OAUTH`, `ID_BROKER`
 
 JSON body parameters:
 
@@ -175,6 +175,19 @@ Content-Type: application/json
   "token_url": "https://example.com/oauth/v1/token",
   "profile_url": "https://example.com/oauth/v1/userinfo",
   "scopes": "openid profile email"
+}
+```
+
+Example `ID_BROKER` type request:
+
+```http
+POST /api/v1/configuration/idps 
+Host: onegini.example.com
+Content-Type: application/json
+{
+  "type": "ID_BROKER",
+  "id": "id-broker",
+  "name": "ID Broker Identity Provider"
 }
 ```
 

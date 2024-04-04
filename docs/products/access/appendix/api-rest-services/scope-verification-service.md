@@ -1,6 +1,6 @@
 # REST Scope Verification Service API specification
 
-This section describes the API that Onegini Access expects when the REST Scope Verification Service is used.
+This section describes the API that OneWelcome Access expects when the REST Scope Verification Service is used.
 
 See the topic guide about [Scope Verification Service](../../topics/integration-extension/scope-verification/scope-verification.md) for instructions on enabling
 this REST service.
