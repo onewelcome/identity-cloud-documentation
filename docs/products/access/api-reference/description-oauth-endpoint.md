@@ -39,6 +39,8 @@ behalf of which user the client requests access. Obtaining the access token can 
 * The Implicit flow is a simplified OAuth flow previously recommended for public clients where the access token is returned immediately
   without an extra authorization code exchange step. **It is not recommended to use the implicit flow.** Public clients such as native apps
   and JavaScript apps should use the authorization code flow with PKCE.
+* The Resource Owner Password Credentials (ROPC) is deprecated and is no longer considered secure for most scenarios. See the topic
+  on [Resource owner password credentials](../topics/web-clients/resource-owner-password-credentials.md) for more information.
 
 ## Authorization endpoint
 The authorization endpoint is used in the authorization code flow. In this flow, the 
