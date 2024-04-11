@@ -8,6 +8,13 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-04-10
+
+### Features
+* We reintroduced the [Resource Owner Password Credentials (ROPC)](../topics/web-clients/resource-owner-password-credentials.md) grant type and OAuth [Implicit flow](../topics/oidc/overview/authentication.md#implicit-flow).
+
+  Both flows are deprecated and are no longer considered secure for most scenarios.
+
 ## Release date 2024-02-19
 
 ### Improvements
