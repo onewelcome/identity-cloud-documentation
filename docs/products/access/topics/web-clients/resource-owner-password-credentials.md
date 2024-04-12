@@ -14,19 +14,17 @@ vice versa.
 Features that require user interaction via the browser are not supported for web clients using the ROPC. So for example consent
 and additional user authentication (SMS) are not available.
 
-The ROPC feature works in combination with
-the [SAML ECP PAOS binding](https://docs.oasis-open.org/security/saml/Post2.0/saml-ecp/v2.0/cs01/saml-ecp-v2.0-cs01.pdf) and also provides
-the option to integrate with the TULIP proprietary
-API using _resource owner password credentials_ integration. Therefore, a web client using this feature has two possibilities for
-authentication:
+The ROPC feature works with
+the [SAML ECP PAOS binding](https://docs.oasis-open.org/security/saml/Post2.0/saml-ecp/v2.0/cs01/saml-ecp-v2.0-cs01.pdf) and allows
+integration with the TULIP proprietary API using the _resource owner password credentials_ integration. Therefore, a web client using this
+feature has two possibilities for authentication:
 
-SAML ECP PAOS Binding: In this case, the web client should have a SAML identity provider configured. The configured SAML identity provider
-requires a single sign-on service with a `urn:oasis:names:tc:SAML:2.0:bindings:SOAP` binding in its metadata. Attribute mappings of the
-identity provider will be used to set the user ID and other user properties.
+1. SAML ECP PAOS Binding: The web client should be configured with a SAML identity provider in this case. The configured SAML identity
+   provider requires a single sign-on service with the `urn:oasis:names:tc:SAML:2.0:bindings:SOAP` binding in its metadata. Attribute
+   mappings of the identity provider will be used to set the user ID and other user properties.
 
-Tulip Proprietary API: Alternatively, the web client can use Tulip identity provider with
-_resource owner password credentials_ integration. This integration allows communication with public Tulip API for authentication using
-username and password for use in ROPC flow.
+2. Tulip Proprietary API: The web client can use the Tulip identity provider with the _resource owner password credentials_ integration.
+   This integration allows communication with public Tulip API for authentication using username and password for ROPC flow.
 
 The [RFC](https://tools.ietf.org/html/rfc6749#section-4.3.2) specifies that the authorization server should protect against brute force
 attacks. For this protection the OneWelcome Access relies on the used identity provider.
