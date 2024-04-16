@@ -21,14 +21,15 @@ This endpoint requires basic authentication using the API client credentials.
 If the user does not exist, or if the user has no active sessions, a `404 Not Found` is returned.
 If there are active sessions, a response is returned with an array of session details.
 
-| Attribute    | Description                                                                                             |
-|--------------|---------------------------------------------------------------------------------------------------------|
-| `session_id` | Identifier of the session.                                                                              |
-| `auth_time`  | A timestamp indicating when the user was authenticated in this session.                                 |
-| `last_iat`   | A timestamp indicating when the last Access Token was issued for the user in this session.              |
-| `user_agent` | A string indicating the user agent of the device used in the session.                                   |
-| `location`   | An object containing location information such as IP address.                                           |
-| `clients`    | An array of objects representing the clients associated with the session, including client ID and name. |
+| Attribute                | Description                                                                                                                         |
+|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| `session_id`             | Identifier of the session.                                                                                                          |
+| `auth_time`              | A timestamp indicating when the user was authenticated in this session.                                                             |
+| `last_iat`               | A timestamp indicating when the last Access Token was issued for the user in this session.                                          |
+| `user_agent`             | A string indicating the user agent of the device used in the session.                                                               |
+| `location`               | An object containing location information such as IP address.                                                                       |
+| `clients`                | An array of objects representing the clients associated with the session, including client ID and name.                             |
+| `saml_service_providers` | An array of objects representing the saml service providers associated with the session, including provider id, entity id and name. |
 
 **Example response:**
 
@@ -52,6 +53,13 @@ Pragma: no-cache
         {
           "id": "my-client",
           "name": "my-client"
+        }
+      ],
+      "saml_service_providers": [
+        {
+           "id": "4fa0da36-be99-469a-a40e-155f13e70e3e",
+           "name": "Test SP",
+           "entity_id": "http://default.sp"
         }
       ]
     }
