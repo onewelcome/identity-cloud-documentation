@@ -8,6 +8,22 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-04-25
+
+### Improvements
+* We removed the `Use external identity as account identifier` configuration property from
+  the [General system properties configuration](../topics/technical-app-management/general-config/general-config.md).
+
+### Bugs
+* The browser state cookie is now updated after the user session is terminated using the [User Session API](../api-reference/end-user/session.md).
+
+## Release date 2024-04-10
+
+### Features
+* We reintroduced the [Resource Owner Password Credentials (ROPC)](../topics/web-clients/resource-owner-password-credentials.md) grant type and OAuth [Implicit flow](../topics/oidc/overview/authentication.md#implicit-flow).
+
+  Both flows are deprecated and are no longer considered secure for most scenarios.
+
 ## Release date 2024-02-19
 
 ### Improvements
