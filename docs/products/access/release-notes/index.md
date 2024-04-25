@@ -11,7 +11,6 @@ In the release notes, we mention new features and bug fixes. If anything is uncl
 ## Release date 2024-04-25
 
 ### Improvements
-* We improved the tenant creation process by allowing adding redirect URIs for the OneWelcome tenant.
 * We removed the `Use external identity as account identifier` configuration property from
   the [General system properties configuration](../topics/technical-app-management/general-config/general-config.md).
 
