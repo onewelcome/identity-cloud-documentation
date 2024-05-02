@@ -6,3 +6,5 @@ dynamically.
 This topic guides covers the following subjects:
 
 * [Web client configuration](web-client-configuration.md)
+* [Resource Owner Password Credentials](resource-owner-password-credentials.md)
+* [Web Clients](web-client-migration.md)
