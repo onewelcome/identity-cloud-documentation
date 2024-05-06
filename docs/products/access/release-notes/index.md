@@ -8,6 +8,17 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-05-06
+
+### Features
+* We added support for [migration of Web Clients with hashed secrets](../topics/web-clients/web-client-migration.md).
+
+### Improvements
+* We revolved an issue that could lead to an `AUTHZ_REQUEST_TRANSACTION_TAMPERING` event.
+
+### Bugs
+* We resolved an issue where not all redirect URIs where available after mmigration from a Single-tenant Token Server to OneWelcome Access.
+
 ## Release date 2024-04-25
 
 ### Improvements
