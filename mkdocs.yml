@@ -77,7 +77,7 @@ nav:
                   - 'Introduction': products/access/topics/web-clients/index.md
                   - 'Web client configuration': products/access/topics/web-clients/web-client-configuration.md
                   - 'Resource Owner Password Credentials': products/access/topics/web-clients/resource-owner-password-credentials.md
-                  - 'Migration of Web Clients without known plaintext secrets': products/access/topics/web-clients/web-client-migration.md
+                  - 'Migration of Web Clients with hashed secrets': products/access/topics/web-clients/web-client-migration.md
               - 'Tokens':
                   - 'Introduction': products/access/topics/tokens/index.md
                   - 'Access Token': products/access/topics/tokens/access-token.md

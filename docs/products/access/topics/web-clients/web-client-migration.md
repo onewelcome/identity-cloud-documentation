@@ -1,11 +1,11 @@
-# Migration of Web Clients without known plaintext secrets
+# Migration of Web Clients with hashed secrets
 
 ## Overview
 
 This guide explains how to migrate Web Clients that use Basic Authentication when only the hashed versions of their secrets are available.
 We focus on configuring these secrets through our API, assuming the hashing algorithm and its parameters are known.
 
-## Configuring the Web Client with a hshed secret
+## Configuring the Web Client with a hashed secret
 
 To configure a Web Client using a hashed secret, utilize the `hashed_client_secret` attribute in the Web Client creation request:
 
@@ -38,7 +38,7 @@ Our system adheres to the PHC format, supporting the following secure hashing al
 The PHC string format is a modular system for specifying password hash parameters in a portable and compact way. It is structured as
 follows: `$identifier$params$salt$hash`, where:
 
-- `$identifier` specifies the hashing algorithm (e.g., bcrypt, pbkdf2-sha1, argon2id).
+- `identifier` specifies the hashing algorithm (e.g., bcrypt, pbkdf2-sha1, argon2id).
 - `params` defines operational parameters such as cost or iterations.
 - `salt` is the salt used in hashing, encoded in base64.
 - `hash` is the actual hash result, also encoded in base64.
@@ -68,7 +68,7 @@ def bcrypt_to_phc(bcrypt):
     )
     salt_standard_b64 = salt.translate(translation_table)
     checksum_standard_b64 = hash.translate(translation_table)
-    return f"$bcrypt$c={cost}${salt_standard_b64}${checksum_standard_b64}"
+    return f"$bcrypt$c={int(cost)}${salt_standard_b64}${checksum_standard_b64}"
 
 
 print(bcrypt_to_phc(sys.argv[1]))
