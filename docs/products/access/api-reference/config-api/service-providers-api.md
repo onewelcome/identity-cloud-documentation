@@ -11,15 +11,16 @@ It requires an API client with the `onegini_api_config` scope (Config API).
 JSON body parameters used in the [Create](#Create-Service-Provider-configuration)
 and [Update](#Update-Service-Provider-configuration) requests:
 
-| Param              | Required | Example                           | Description                                                                                                                       |
-|--------------------|----------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| name               | yes      | "Service Provider name"           | Service Provider name.                                                                                                            |
-| metadata_type      | yes      | "XML"                             | Type of Service Provider metadata. <br/> Allowed values: `URL`, `XML`, `MANUAL`.                                                  |
-| metadata_xml       | depends  | XML file content                  | Required when metadata type is XML.                                                                                               |
-| metadata_url       | depends  | "https://example.sp.com/metadata" | Location of the remote XML metadata. Required when metadata type is URL.                                                          |
-| manual_metadata    | depends  | See table below                   | Metadata in form of JSON object. Required when metadata type is MANUAL.                                                           |
-| identity_provider  | yes      | "onewelcome_idp"                  | Id of the default Identity Provider.                                                                                              |
-| oauth_scopes       | no       | ["openid", "profile"]             | Scopes that will be sent with authentication requests to the selected Identity Provider. It applies only to the OAuth based IDPs. |
+| Param             | Required | Example                           | Description                                                                                                                       |
+|-------------------|----------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| id                | no       | "431eb5b7-c8e2-4b67-b735-ed95a1"  | Unique identifier for the SP configuration. If not specified, it will be generated.                                               |
+| name              | yes      | "Service Provider name"           | Service Provider name.                                                                                                            |
+| metadata_type     | yes      | "XML"                             | Type of Service Provider metadata. <br/> Allowed values: `URL`, `XML`, `MANUAL`.                                                  |
+| metadata_xml      | depends  | XML file content                  | Required when metadata type is XML.                                                                                               |
+| metadata_url      | depends  | "https://example.sp.com/metadata" | Location of the remote XML metadata. Required when metadata type is URL.                                                          |
+| manual_metadata   | depends  | See table below                   | Metadata in form of JSON object. Required when metadata type is MANUAL.                                                           |
+| identity_provider | yes      | "onewelcome_idp"                  | Id of the default Identity Provider.                                                                                              |
+| oauth_scopes      | no       | ["openid", "profile"]             | Scopes that will be sent with authentication requests to the selected Identity Provider. It applies only to the OAuth based IDPs. |
 
 The following parameters are a part of the `manual_metadata` object.
 
