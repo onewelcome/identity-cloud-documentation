@@ -15,24 +15,11 @@ and [Update](#Update-Service-Provider-configuration) requests:
 |-------------------|----------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | id                | no       | "431eb5b7-c8e2-4b67-b735-ed95a1"  | Unique identifier for the SP configuration. If not specified, it will be generated.                                               |
 | name              | yes      | "Service Provider name"           | Service Provider name.                                                                                                            |
-| metadata_type     | yes      | "XML"                             | Type of Service Provider metadata. <br/> Allowed values: `URL`, `XML`, `MANUAL`.                                                  |
+| metadata_type     | yes      | "XML"                             | Type of Service Provider metadata. <br/> Allowed values: `URL`, `XML`.                                                            |
 | metadata_xml      | depends  | XML file content                  | Required when metadata type is XML.                                                                                               |
 | metadata_url      | depends  | "https://example.sp.com/metadata" | Location of the remote XML metadata. Required when metadata type is URL.                                                          |
-| manual_metadata   | depends  | See table below                   | Metadata in form of JSON object. Required when metadata type is MANUAL.                                                           |
 | identity_provider | yes      | "onewelcome_idp"                  | Id of the default Identity Provider.                                                                                              |
 | oauth_scopes      | no       | ["openid", "profile"]             | Scopes that will be sent with authentication requests to the selected Identity Provider. It applies only to the OAuth based IDPs. |
-
-The following parameters are a part of the `manual_metadata` object.
-
-| Param                               | Required | Example                                          | Description                                                                                              |
-|-------------------------------------|----------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| entity_id                           | yes      | "https://example.sp.com"                         | Entity ID.                                                                                               |
-| assertion_consumer_service_location | yes      | "https://example.sp.com/authn-response"          | Location of the Assertion Consumer Service.                                                              |
-| assertion_consumer_service_binding  | yes      | "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" | Binding type of the Assertion Consumer Service. Allowed bindings: `POST`, `Redirect`, `Artifact`, `PAOS` |
-| signing_certificate                 | yes      | "-----BEGIN CERTIFICATE-----\r\nMIIEnTCCAoC ..." | Plain certificate for assertions signing in x509 format.                                                 |
-| encryption_certificate              | no       | "-----BEGIN CERTIFICATE-----\r\nMIIEnTCCAoC ..." | Plain certificate for encryption in x509 format.                                                         |
-| logout_url_redirect                 | no       | "https://example.sp.com/logout"                  | Location of the Single Logout Service (POST binding).                                                    |
-| logout_url_post                     | no       | "https://example.sp.com/logout_post"             | Location of the Single Logout Service (Redirect binding).                                                |
 
 ## Endpoints
 
@@ -91,7 +78,7 @@ This creates a new Service Provider configuration
    validity and return an error in case of expired metadata.
 4. In the case of `URL` and `XML` metadata type, when the XML metadata is signed, Access will check the signature validity and return an
    error in case of failed verification.
-5. Provided metadata must contain `SPSSODescriptor` element, containing a signing certificate, and at least one `AssertionConsumerService`
+5. Provided metadata must contain `SPSSODescriptor` element containing at least one `AssertionConsumerService`.
 6. The max length of `name` and `entity_id` fields is 255.
 
 Example request:
@@ -102,14 +89,8 @@ Host: onewelcome.example.com
 Content-Type: application/json
 {
     "name": "My Service Provider",
-    "metadata_type": "MANUAL",
-    "manual_metadata": {
-        "entity_id": "myEntityId",
-        "assertion_consumer_service_binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST",
-        "assertion_consumer_service_location": "https://example.sp.com/authn-response",
-        "signing_certificate": "-----BEGIN CERTIFICATE----- (...) -----END CERTIFICATE-----",
-        "logout_url_post": "https://example.sp.com/logout"
-    },
+    "metadata_type": "URL",
+    "metadata_url": "https://example.sp.com/metadata.xml",
     "identity_provider": "oidc_idp",
     "oauth_scopes": [ "openid", "profile", "email" ]
 }
@@ -127,7 +108,7 @@ Location: /api/v1/configuration/saml-sp/60eb60e3-01e0-496e-87f4-fd29737a8881
     "id": "60eb60e3-01e0-496e-87f4-fd29737a8881",
     "name": "My Service Provider",
     "entity_id": "myEntityId",
-    "metadata_type": "MANUAL"
+    "metadata_type": "URL"
 }
 ```
 
@@ -184,14 +165,8 @@ Pragma: no-cache
     "id": "120b0682-8ddd-41fc-9ec9-6f76c48afc08",
     "name": "My Service Provider",
     "entity_id": "myEntityId",
-    "metadata_type": "MANUAL",
-    "manual_metadata": {
-        "entity_id": "myEntityId",
-        "logout_url_post": "https://example.sp.com/logout",
-        "assertion_consumer_service_binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST",
-        "assertion_consumer_service_location": "https://example.sp.com/authn-response",
-        "signing_certificate": "-----BEGIN CERTIFICATE----- (...) -----END CERTIFICATE-----"
-    },
+    "metadata_type": "URL",
+    "metadata_url": "https://example.sp.com/metadata.xml",
     "identity_provider": "custom",
     "oauth_scopes": [],
     "parsed_metadata": {
