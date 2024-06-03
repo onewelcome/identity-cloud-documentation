@@ -8,7 +8,21 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
-## Release date 2024-05-06
+## Release date 2024-05-29
+
+### Features
+* It is now possible to set custom headers for Access, this can be done through our Proffessianal Services department.
+
+### Improvements
+* When connected to Tulip, we can now delete sessions and tokens for Soft deleted users.
+
+## Release date 2024-05-23
+
+### Features
+* We now send Public Events when new Web Clients are created.
+
+## Release date 2024-05-10 
+This release was initially on deployed on 2024-05-10, but that was rolled back because of an issue.
 
 ### Features
 * We added support for [migration of Web Clients with hashed secrets](../topics/web-clients/web-client-migration.md).
