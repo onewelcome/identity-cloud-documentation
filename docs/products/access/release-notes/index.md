@@ -8,6 +8,47 @@ The releases are backward compatible. However, we will extend the API contract (
 
 In the release notes, we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com).
 
+## Release date 2024-05-29
+
+### Features
+* Added the ability to set custom response headers for Access, this can be done through our Professional Services department.
+
+### Improvements
+* When connected to Tulip, sessions and tokens can now be cleaned up for Soft deleted users.
+
+## Release date 2024-05-23
+
+### Features
+* Public Events will be sent when new Web Clients are created.
+
+## Release date 2024-05-10 
+This release was initially on deployed on 2024-05-06, but was rolled back because of an issue. This release fixes that issue.
+
+### Features
+* We added support for [migration of Web Clients with hashed secrets](../topics/web-clients/web-client-migration.md).
+
+### Improvements
+* We revolved an issue that could lead to an `AUTHZ_REQUEST_TRANSACTION_TAMPERING` event.
+
+### Bugs
+* We resolved an issue where not all redirect URIs where available after mmigration from a Single-tenant Token Server to OneWelcome Access.
+
+## Release date 2024-04-25
+
+### Improvements
+* We removed the `Use external identity as account identifier` configuration property from
+  the [General system properties configuration](../topics/technical-app-management/general-config/general-config.md).
+
+### Bugs
+* The browser state cookie is now updated after the user session is terminated using the [User Session API](../api-reference/end-user/session.md).
+
+## Release date 2024-04-10
+
+### Features
+* We reintroduced the [Resource Owner Password Credentials (ROPC)](../topics/web-clients/resource-owner-password-credentials.md) grant type and OAuth [Implicit flow](../topics/oidc/overview/authentication.md#implicit-flow).
+
+  Both flows are deprecated and are no longer considered secure for most scenarios.
+
 ## Release date 2024-02-19
 
 ### Improvements

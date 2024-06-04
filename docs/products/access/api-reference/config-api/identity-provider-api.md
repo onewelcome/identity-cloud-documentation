@@ -101,7 +101,7 @@ This creates an Identity Provider from scratch
 * Endpoint: `/api/v1/configuration/idps`
 * Method: POST
 
-Supported Identity Provider types: `TULIP`, `OAUTH`
+Supported Identity Provider types: `TULIP`, `OAUTH`, `ID_BROKER`
 
 JSON body parameters:
 
@@ -123,7 +123,7 @@ JSON body parameters:
 | tulip_api_client_secret      | TULIP        | depends  | Client secret for Tulip API calls. <br/> Required when `APP_TO_WEB` or `UDH_API` integration is enabled and authentication method is `client_secret_basic` or `client_secret_post`.                                     |
 | tulip_api_base_url           | TULIP        | depends  | This should be the base url of the Tulip brand without a trailing slash. UDH and App To Web will use this as a base for their urls. <br/> Required when `APP_TO_WEB` or `UDH_API` integration is enabled.               |
 | tulip_api_access_scope       | TULIP        | depends  | Space-separated scopes for the required Tulip segments e.g. `iwelcome:segment:example`. <br/> Required when `APP_TO_WEB` or `UDH_API` integration is enabled.                                                           |
-| tulip_api_used_auth_methods  | TULIP        | no       | List of Auth Methods for the App to Web integration with Tulip e.g. `["SMS", "another"]`. <br/> Used when `APP_TO_WEB` integration is enabled.                                                                        |
+| tulip_api_used_auth_methods  | TULIP        | no       | List of Auth Methods for the App to Web integration with Tulip e.g. `["SMS", "another"]`. <br/> Used when `APP_TO_WEB` integration is enabled.                                                                          |
 | authorization_url            | OAUTH        | yes      | Oauth authorization endpoint.                                                                                                                                                                                           |
 | token_url                    | OAUTH        | yes      | Oauth token endpoint.                                                                                                                                                                                                   |
 | profile_url                  | OAUTH        | yes      | OpenID Connect UserInfo endpoint.                                                                                                                                                                                       |
@@ -178,6 +178,19 @@ Content-Type: application/json
 }
 ```
 
+Example `ID_BROKER` type request:
+
+```http
+POST /api/v1/configuration/idps 
+Host: onegini.example.com
+Content-Type: application/json
+{
+  "type": "ID_BROKER",
+  "id": "id-broker",
+  "name": "ID Broker Identity Provider"
+}
+```
+
 Example success response:
 
 ```http
@@ -199,9 +212,9 @@ This removes an Identity Provider.
 
 Path parameters:
 
-| Param     | Required | Description                                 |
-|-----------|----------|---------------------------------------------|
-| id        | yes      | Unique identifier for an Identity Provider. |
+| Param | Required | Description                                 |
+|-------|----------|---------------------------------------------|
+| id    | yes      | Unique identifier for an Identity Provider. |
 
 Example request:
 
