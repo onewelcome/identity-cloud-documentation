@@ -23,6 +23,7 @@ The OAuth 2.0 specification describes the following flows to obtain tokens:
 
 * [Authorization code](https://tools.ietf.org/html/rfc6749#section-4.1)
 * [Client credentials](https://tools.ietf.org/html/rfc6749#section-4.4)
+* [Implicit](https://tools.ietf.org/html/rfc6749#section-4.2)
 * [Resource Owner Password Credentials (ROPC)](https://tools.ietf.org/html/rfc6749#section-4.3)
 
 OneWelcome Access supports all of these flows. However, only the authorization code grant and client credentials grant are recommended.
@@ -35,6 +36,9 @@ this flow.
 * The client credentials flow returns an access token that gives access to resources for a specific client. For example, when the user requests the general 
 terms and conditions document, the resource server needs to know which client requests access to this document. The resource server does not need to know on
 behalf of which user the client requests access. Obtaining the access token can be automated and does not require user interaction.
+* The Implicit flow is a simplified OAuth flow previously recommended for public clients where the access token is returned immediately
+  without an extra authorization code exchange step. **It is no longer recommended to use the implicit flow due to the poor security.** 
+  Public clients such as native apps and JavaScript apps should use the [authorization code flow with PKCE](../../../oauth-vs-oidc.md#authorization-code-flow-with-pkce).
 * The Resource Owner Password Credentials (ROPC) is deprecated and is no longer considered secure for most scenarios. See the topic
   on [Resource owner password credentials](../topics/web-clients/resource-owner-password-credentials.md) for more information.
 
