@@ -269,28 +269,26 @@ Example JWT that Access generates for use in WebHooks:
 {
   "aud": "http://wiremock:8080",
   "sub": "onewelcomeAccessWebHookClient",
-  "scope": [
-    "onewelcome_webhooks",
-    "onewelcome_webhook_test"
-  ],
+  "scope": "onewelcome_webhooks onewelcome_webhook_test",
   "iss": "https://playground.test.onewelcome.io/oauth",
   "exp": 1705585175,
   "jti": "AT.4027b2b3-b3f8-4ff9-bef7-c7a0f01d6bec",
   "cid": "onewelcomeAccessWebHookClient"
 }
 ```
+
 - `aud` (Audience): Specifies the recipients that the JWT is intended for. It will contain `base_uri` from WebHook configuration
 - `sub` (Subject): Identifies the principal that is the subject of the JWT. In this case, it represents the identity of the webhook client
   named `onewelcomeAccessWebHookClient`.
-- `scope`: Defines the permission scope granted to the WebHook client. It will contain two scopes a fixed one `onewelcome_webhooks`
-  and one based on the name of the WebHook - `onewelcome_webhook_<name>` where `<name>` will be replaced with lower cased WebHook name
-  where space characters are replaced with underscore sign. For example, WebHook named `My WebHook` will contain
-  scope `onwewelcome_webhook_my_webhook`.
+- `scope`: Defines the permission scope granted to the WebHook client. It will contain two space-delimited
+- scopes a fixed one `onewelcome_webhooks` and one based on the name of the WebHook - `onewelcome_webhook_<name>` where `<name>` will be
+  replaced with lower cased WebHook name where space characters are replaced with underscore sign. For example, WebHook named `My WebHook`
+  will contain scope `onwewelcome_webhook_my_webhook`.
 - `iss` (Issuer): Identifies the principal that issued the JWT. It will contain URL of Access service which calls the WebHook.
 - `exp` (Expiration Time): Specifies the expiration time after which the JWT must not be accepted for processing. It is a numeric value
   representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time.
-  
-  > Issued tokens are valid for 15 minutes and can be cached and reused by us for performance reasons.  
+
+  > Issued tokens are valid for 15 minutes and can be cached and reused by us for performance reasons.
 - `jti` (JWT ID): Provides a unique identifier for the JWT, which can be used to prevent the JWT from being replayed. It is a case-sensitive
   string.
 - `cid` (Client ID): Identifies the client that requested the JWT. It will contain a fixed value `onewelcomeAccessWebHookClient`.
