@@ -4,6 +4,20 @@ This section contains release notes for OneWelcome DABP.
 
 In the release notes we mention new features and bug fixes. If anything is unclear, feel free to contact [OneWelcome Support](https://support.onewelcome.com/).
 
+## Release date: 2024-08-19
+
+### Improvements
+* Memberships are now sorted by group name on the member details overlay.
+* Ensure we always show a `Select all/none` option while selecting a policy for a user or a group.
+
+### Improvements
+* Updated major UI dependencies.
+
+## Release date: 2023-12-20
+
+### Improvement
+* Deleting a user now happens asynchronously and shows a spinner to indicate progress.
+
 ## Release date: 2023-11-06
 
 ### Bugs
