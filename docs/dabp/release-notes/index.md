@@ -7,8 +7,8 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 ## Release date: 2024-08-19
 
 ### Improvements
-* Memberships are now sorted by group name on the member details page.
-* We added a `Select all/none` option for the scenario when the policy selector switched to a multi-select component.
+* Memberships are now sorted by group name on the member details overlay.
+* Added a `Select all/none` option for when the policy list is long in the multi-select component.
 
 ## Release date: 2024-04-16
 
@@ -17,9 +17,8 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 
 ## Release date: 2023-12-20
 
-### Improvements
-* The delete call to CIM is now async
-* Added a spinner when deleting a user, so it is visible that there is progress. 
+### Improvement
+* Deleting a user now happens asynchronously and shows a spinner to indicate progress.
 
 ## Release date: 2023-11-06
 
