@@ -8,12 +8,10 @@ In the release notes we mention new features and bug fixes. If anything is uncle
 
 ### Improvements
 * Memberships are now sorted by group name on the member details overlay.
-* Added a `Select all/none` option for when the policy list is long in the multi-select component.
-
-## Release date: 2024-04-16
+* Ensure we always show a `Select all/none` option while selecting a policy for a user or a group.
 
 ### Improvements
-* Updated major UI dependencies
+* Updated major UI dependencies.
 
 ## Release date: 2023-12-20
 
