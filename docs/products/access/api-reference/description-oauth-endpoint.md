@@ -89,7 +89,7 @@ existing customers. Both identity providers would be configured for this applica
 #### external_idp
 
 Preselects the external identity provider in OneWelcome CIM for authentication. The value starts with `urn:com:onegini:saml:idp:` followed by the
-[identifier of the identity provider](https://docs-single-tenant.onewelcome.net/cim/stable/idp/administration/identity-providers.html) in OneWelcome CIM.
+[identifier of the identity provider](https://docs-single-tenant.onewelcome.com/cim/stable/idp/administration/identity-providers.html) in OneWelcome CIM.
 This feature requires [OneWelcome CIM to be used as an identity provider](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-onewelcome-cim-identity-provider).
 
 Example value: `external_idp=urn%3Acom%3Aonegini%3Asaml%3Aidp%3Adigid`
@@ -99,16 +99,16 @@ screen of the latter.
 
 #### external_idp_custom_param.*
 
-This parameter can be used to populate a key value map in the [OneWelcome Extension](https://docs-single-tenant.onewelcome.net/cim/stable/idp/authentication/saml/saml-extension-custom-parameters.html)
+This parameter can be used to populate a key value map in the [OneWelcome Extension](https://docs-single-tenant.onewelcome.com/cim/stable/idp/authentication/saml/saml-extension-custom-parameters.html)
 as part of the SAML Authentication Request. The key value map can be used in the OneWelcome CIM product for customizing styling or logic in combination with the
-[Session API](https://docs-single-tenant.onewelcome.net/cim/stable/idp/api-reference/session-api.html). This feature requires
+[Session API](https://docs-single-tenant.onewelcome.com/cim/stable/idp/api-reference/session-api.html). This feature requires
  [OneWelcome CIM to be used as an identity provider](../topics/general-app-config/identity-providers/identity-providers.md#configure-a-onewelcome-cim-identity-provider).
 
 Example value: `external_idp_custom_param.key1=val1&external_idp_custom_param.key2=val2&external_idp_custom_param.key2=val3`
 
 This example shows the ability to pass multiple keys: `key1` and `key2`, and multiple values for a single key: `key2` has values `val2` and `val3`.
 
-Example use cases are described in the [extension custom parameters topic guide](https://docs-single-tenant.onewelcome.net/cim/stable/idp/topic-guides/extension-custom-parameters.html).
+Example use cases are described in the [extension custom parameters topic guide](https://docs-single-tenant.onewelcome.com/cim/stable/idp/topic-guides/extension-custom-parameters.html).
 
 #### app_view
 

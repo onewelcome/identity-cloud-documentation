@@ -6,7 +6,7 @@ OneWelcome Access. Therefore, the application developer should know which config
 simplify things for the application developer, the OneWelcome Access administrator can prepare and export the application configuration in the
 OneWelcome Access. This configuration is exported as a zip archive which can be used in the
 
-[SDK tooling](https://docs.onewelcome.net/sdk-configurator) to generate the required code and config files.
+[SDK tooling](https://docs.onewelcome.com/sdk-configurator) to generate the required code and config files.
 
 ## Process
 
@@ -56,7 +56,7 @@ Bypassing the validation of the application signature enables functional testing
 each individual build. Once testing and development are completed, the final release can be built. At this moment the application developer will need to
 generate the application signature based on the release version of the application. Please note, that each small change in the application binary will have
 impact on the application signature. So an application signature has to be generated for each version of the application. This will slow down development. More
-details about using the SDK can be found in the platform specific [SDK documentation](https://docs.onewelcome.net/onegini-sdk.html).
+details about using the SDK can be found in the platform specific [SDK documentation](https://docs.onewelcome.com/onegini-sdk.html).
 
 #### Production ready application signature
 

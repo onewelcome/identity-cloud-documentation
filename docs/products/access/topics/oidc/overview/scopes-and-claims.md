@@ -13,7 +13,7 @@ The table below summarizes the scopes relevant for OpenID Connect.
 | address     | Requests access to `address` claim that is composed of the following fields: `street_address`, `locality`, `region`, `postal_code`, `country`    | 
 | phone       | Requests access to the following claims: `phone_number` and `phone_number_verified`                                                              |
 
-The claims are obtained from the Identity Provider via [Person API](https://docs-single-tenant.onewelcome.net/cim/stable/idp/api-reference/person-api.html) 
+The claims are obtained from the Identity Provider via [Person API](https://docs-single-tenant.onewelcome.com/cim/stable/idp/api-reference/person-api.html) 
 and mapped as listed below:
 
 | claim                      | Person API source                                                      |
@@ -85,7 +85,7 @@ http://tokenserver.example.com/oauth/authorize?response_type=code&client_id=open
 
 Further reading:
 
-- [Authentication Level](https://docs-single-tenant.onewelcome.net/cim/stable/idp/authentication/saml/authentication-level.html) explains the
+- [Authentication Level](https://docs-single-tenant.onewelcome.com/cim/stable/idp/authentication/saml/authentication-level.html) explains the
   use-cases for using different `authentication_level`.
 - [OpenID Specification](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest)
 

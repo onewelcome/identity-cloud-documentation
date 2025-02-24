@@ -364,7 +364,7 @@ This release was initially on deployed on 2024-05-06, but was rolled back becaus
 
 ### Improvement
 * Added support for setting [AMR](https://www.rfc-editor.org/rfc/rfc8176.html) when using [custom registration](../topics/custom-registration/index.md)
-    * Requires the [Extension Engine](https://docs-single-tenant.onewelcome.net/msp/stable/extension-engine/release-notes/2.x.html) `2.5.0` and above.
+    * Requires the [Extension Engine](https://docs-single-tenant.onewelcome.com/msp/stable/extension-engine/release-notes/2.x.html) `2.5.0` and above.
 
 ## Release date: 2023-02-21
 
@@ -378,7 +378,7 @@ This release was initially on deployed on 2024-05-06, but was rolled back becaus
 ## Release date: 2023-02-16
 
 ### Bugs
-* Fixed an issue where a user was not always logged out when they had two sessions, one based on [Cookie based authentication](https://docs-single-tenant.onewelcome.net/cim/stable/idp/authentication/saml/cookie-based-authentication.html), and a 'regular' authentication.
+* Fixed an issue where a user was not always logged out when they had two sessions, one based on [Cookie based authentication](https://docs-single-tenant.onewelcome.com/cim/stable/idp/authentication/saml/cookie-based-authentication.html), and a 'regular' authentication.
 
 ## Release date: 2023-02-08
 
