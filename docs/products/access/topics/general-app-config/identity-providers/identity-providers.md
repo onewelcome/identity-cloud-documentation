@@ -24,7 +24,7 @@ See [Configure User Info endpoint](#configure-user-info-endpoint) for further de
 ## Configure a OneWelcome CIM Identity Provider
 
 The OneWelcome CIM Identity Provider is meant to connect with the
-OneWelcome [Consumer Identity Manager](https://docs-single-tenant.onegini.com/cim/stable/idp) (CIM)
+OneWelcome [Consumer Identity Manager](https://docs-single-tenant.onewelcome.net/cim/stable/idp) (CIM)
 IDP. It makes features like [OpenID Connect](../../oidc/index.md) easily configurable and exposes new features
 like [App to Web SSO](../../app-to-web/index.md).
 It is configured in much the same way as a [SAML Identity Provider](#configure-a-saml-identity-provider).
@@ -39,7 +39,7 @@ Depending on which integration(s) are enabled, the configuration requirements ch
 | Public Base Uri                 | `https://public.example.com`   | App To Web                  | The public facing base uri of the CIM IDP (possibly the same as the API base uri).                                                                                                                                         |
 | Person API Username             | `person_api_username`          | User Info or App to Web     | The username of the Person API.                                                                                                                                                                                            |
 | Person API Password             | `password`                     | User Info or App to Web     | The password of the Person API.                                                                                                                                                                                            |
-| Persons Partitioning Identifier | `examplePartition`             | Not required                | This value will be sent along with the Person API call. It should only be set when [persons partitioning](https://docs-single-tenant.onegini.com/cim/stable/idp/topic-guides/persons-partitioning.html) is enabled in CIM. |
+| Persons Partitioning Identifier | `examplePartition`             | Not required                | This value will be sent along with the Person API call. It should only be set when [persons partitioning](https://docs-single-tenant.onewelcome.net/cim/stable/idp/topic-guides/persons-partitioning.html) is enabled in CIM. |
 | Storage API Username            | `storage_api_username`         | Storage API                 | The username of the Storage API.                                                                                                                                                                                           |
 | Storage API Password            | `password`                     | Storage API                 | The password of the Storage API.                                                                                                                                                                                           |
 | Configuration API Username      | `configuration_api_username`   | Configuration API           | The username of the Configuration API.                                                                                                                                                                                     |
@@ -176,7 +176,7 @@ to Web Single Sign On](../../app-to-web/index.md) can be called from the OneWelc
 For any type of the Identity Provider it is possible to configure an endpoint which OneWelcome Access will use as a source of user identity
 attributes. It is used
 by OneWelcome Access to expose UserInfo and populate ID Token with claims in OpenID Connect flows. This endpoint needs to be compliant with
-[Person API](https://docs-single-tenant.onegini.com/cim/stable/idp/api-reference/person-api.html).
+[Person API](https://docs-single-tenant.onewelcome.net/cim/stable/idp/api-reference/person-api.html).
 The reference implementation of this API is provided by CIM. Refer to CIM documentation for API specification and instructions how to enable
 it.
 
@@ -200,7 +200,7 @@ are available as a key-value pair for an inspection via the [Token introspection
 By default, the attributes are stored under the original keys, but it is possible to override that behaviour by defining a custom mapping.
 If at least one custom mapping is defined, only those attributes will be mapped. That means other attributes that are not mapped will be
 dropped. If you are
-using [SAML attribute name mapping](https://docs-single-tenant.onegini.com/cim/stable/idp/administration/configure-attributes.html) in
+using [SAML attribute name mapping](https://docs-single-tenant.onewelcome.net/cim/stable/idp/administration/configure-attributes.html) in
 OneWelcome CIM, make sure to coordinate the configuration between the two products. The attribute names are case-sensitive.
 
 A special user attribute is the user identifier. It identifies the user within the OneWelcome Access. For a SAML based identity provider the

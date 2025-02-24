@@ -27,7 +27,7 @@ Here you can find the latest multi-tenant documentation for:
 * Delegated Administration
 * Self styling
 
-Navigate to the single-tenant documentation site on [docs-single-tenant.onegini.com](https://docs-single-tenant.onegini.com/) for:
+Navigate to the single-tenant documentation site on [docs-single-tenant.onewelcome.net](https://docs-single-tenant.onewelcome.net/) for:
 
 * Identity & Single Sign-On
 * Token Server, Security Proxy, and Extension Engine

@@ -1,6 +1,6 @@
 # Custom Authenticator example scripts
 
-This section contains example scripts for a Custom Authenticator. They show the minimal response to complete the step in the process. The OneWelcome Extension Engine contains documentation for [writing scripts](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/topics/writing-scripts.html) with more details about the syntax of the scripts. 
+This section contains example scripts for a Custom Authenticator. They show the minimal response to complete the step in the process. The OneWelcome Extension Engine contains documentation for [writing scripts](https://docs-single-tenant.onewelcome.net/msp/stable/extension-engine/topics/writing-scripts.html) with more details about the syntax of the scripts. 
 
 ### Registration script
 

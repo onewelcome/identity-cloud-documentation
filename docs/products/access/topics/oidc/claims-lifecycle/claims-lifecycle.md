@@ -24,7 +24,7 @@ This section aims to explain and visualise how Access deals with user claims/att
     2. If the underlying IdentityProvider is of SAML type (e.g. CIM), Access redirects the user to the defined SAML Identity Provider with
        SAML AuthnRequest (whether it is a redirect or a POST call depends on the integration characteristic).
         1. Access processes the SAML AuthnResponse.
-           SAML [Attributes Mapping](https://docs.onegini.com/products/access/topics/general-app-config/identity-providers/identity-providers/#attribute-mapping)
+           SAML [Attributes Mapping](https://docs.onewelcome.net/products/access/topics/general-app-config/identity-providers/identity-providers/#attribute-mapping)
            is triggered if any are defined for a given SAML Identity Provider. If no mappings are available all SAML assertion attributes
            are used in the next step.
         2. SAML assertion attributes are mapped to claims according to the configuration. Any unmapped attributes are discarded/filtered
@@ -47,7 +47,7 @@ This section aims to explain and visualise how Access deals with user claims/att
        cache.
     2. The User Object is populated with any claims returned by the User Info API. If a given claim already exists in the User Object, it
        will be overwritten with the claim from the User Info source, which is considered more recent.
-    3. [Access Token Customization Web Hook](https://docs.onegini.com/products/access/topics/integration-extension/hooks/customize-access-token/customize-access-token-hook/)
+    3. [Access Token Customization Web Hook](https://docs.onewelcome.net/products/access/topics/integration-extension/hooks/customize-access-token/customize-access-token-hook/)
        is executed. The hook implementation is provided with all available user information, as well as contextual details about the Access
        Token being created.
 4. If the requesting client is of OIDC type and `openid` scope was requested, Access triggers ID Token assembly,
@@ -65,7 +65,7 @@ This section aims to explain and visualise how Access deals with user claims/att
            Object, it will be overwritten with the claim from the User Info source, which is considered more recent.
         6. If a User Details Customisation Web Hook is configured for a requesting OAuth client/OIDC Relying Party, proceed to
            to [#5](#5.).
-        7. [User Details Customization Web Hook](https://docs.onegini.com/products/access/topics/integration-extension/hooks/customize-user-details/customize-user-details-hook/)
+        7. [User Details Customization Web Hook](https://docs.onewelcome.net/products/access/topics/integration-extension/hooks/customize-user-details/customize-user-details-hook/)
            is executed. The hook implementation is provided with all available user information, as well as contextual details about the ID
            token being created.
 5. Access generates an Access Token and ID Token (if requested).

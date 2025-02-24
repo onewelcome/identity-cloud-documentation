@@ -41,11 +41,11 @@ function execute(requestPayload){
 }
 ```
 
-The syntax used in the script above is described in more detail [here](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/topics/writing-scripts.html).
+The syntax used in the script above is described in more detail [here](https://docs-single-tenant.onewelcome.net/msp/stable/extension-engine/topics/writing-scripts.html).
 It is recommended to use [properties](../technical-app-management/extension-engine/extension-engine-properties.md) for variables that differ per environment, 
 e.g. URLs, and/or contain sensitive data, e.g. passwords.
 
-It utilizes the cache and sets a specific TTL. For more information involving the cache and default TTLs, refer to the [cache documentation](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/configuration/setup-cache.html).
+It utilizes the cache and sets a specific TTL. For more information involving the cache and default TTLs, refer to the [cache documentation](https://docs-single-tenant.onewelcome.net/msp/stable/extension-engine/configuration/setup-cache.html).
 
 
 ### Example response

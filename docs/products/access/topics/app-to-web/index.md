@@ -10,7 +10,7 @@ In CIM, OneWelcome Access uses the ActionToken Type `LOGIN_APP2WEB`, which has b
 In Tulip, OneWelcome Access uses a Authentication Token, this can be used with Tulip R103 and up.
 
 The OneWelcome SDK allow you to specify a target URL where authentication is required. This URL must be configured in the
-[Action Token](https://docs-single-tenant.onegini.com/cim/stable/idp/topic-guides/authentication/action-token-login.html) configuration. It
+[Action Token](https://docs-single-tenant.onewelcome.net/cim/stable/idp/topic-guides/authentication/action-token-login.html) configuration. It
 will then verify that your mobile
 application's session is valid and establish a session with the IDP before redirecting the user to the target URL with them logged in
 automatically.
