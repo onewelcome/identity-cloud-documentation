@@ -30,5 +30,5 @@ developer documentation.
 
 ## Single-tenant server components:
 
-* [Security Proxy](https://docs-single-tenant.onegini.com/msp/stable/security-proxy/)
-* [Extension Engine](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/)
+* [Security Proxy](https://docs-single-tenant.onewelcome.com/msp/stable/security-proxy/)
+* [Extension Engine](https://docs-single-tenant.onewelcome.com/msp/stable/extension-engine/)

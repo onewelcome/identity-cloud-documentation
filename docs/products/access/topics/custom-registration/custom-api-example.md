@@ -2,7 +2,7 @@
 
 The scripts below are executed by the OneWelcome Extension Engine during [Custom Registration](./index.md).
 
-Refer to the OneWelcome Extension Engine documentation for help [writing scripts](https://docs-single-tenant.onegini.com/msp/stable/extension-engine/topics/writing-scripts.html). 
+Refer to the OneWelcome Extension Engine documentation for help [writing scripts](https://docs-single-tenant.onewelcome.com/msp/stable/extension-engine/topics/writing-scripts.html). 
 It is recommended to use [properties](../technical-app-management/extension-engine/extension-engine-properties.md) for variables that differ per environment, 
 e.g. URLs, and/or contain sensitive data, e.g. passwords.
 
