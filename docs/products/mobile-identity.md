@@ -1,6 +1,6 @@
-# Mobile Identity & Access
+# Mobile Identity
 
-The Mobile Identity & Access solution provides you with all the required features to secure your mobile apps. It has a server component and mobile SDKs for
+The Mobile Identity solution provides you with all the required features to secure your mobile apps. It has a server component and mobile SDKs for
 Android and iOS. The mobile SDKs are responsible for making secure requests towards the server components.
 
 ## Android
@@ -28,8 +28,7 @@ Android and iOS. The mobile SDKs are responsible for making secure requests towa
 
 ## Server components
 
-Are you looking for the documentation on OAuth, OpenID Connect, or Mobile Authentication? These topics are covered in this section of the OneWelcome Identity Cloud
-developer documentation.
+* [Mobile indentity backend](https://thalesdocs.com/oip/mobile-id/mobile-id-access/index.html)
 
 ## Single-tenant server components:
 

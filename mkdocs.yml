@@ -47,7 +47,8 @@ nav:
               - 'Using Customer Self Styling for changing looks and behaviour of DABP': dabp/guides/technical/using-ers.md
               - 'Example palette.json': dabp/guides/technical/palette-example.md
       - 'Identity & Single Sign-On': products/identity-single-sign-on.md
-      - 'Mobile Identity & Access': https://thalesdocs.com/oip/idaas-core/idaas-core-access/index.html
+      - 'Access': https://thalesdocs.com/oip/idaas-core/idaas-core-access/index.html
+      - 'Mobile Identity': products/mobile-identity.md
       - Self-styling:
           - 'Introduction': self-styling/index.md
           - 'Frontend styling': self-styling/configuration-page.md
