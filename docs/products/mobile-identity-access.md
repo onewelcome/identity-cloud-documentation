@@ -5,23 +5,26 @@ Android and iOS. The mobile SDKs are responsible for making secure requests towa
 
 ## Android
 
-* [Android SDK documentation](https://developer.onewelcome.com/android/sdk)
+* [Android SDK documentation](https://thalesdocs.com/oip/omi-sdk/android-sdk/index.html)
 * [Android example app](https://github.com/onewelcome/example-app-android)
 
 ## iOS
 
-* [iOS SDK documentation](https://developer.onewelcome.com/ios/sdk)
+* [iOS SDK documentation](https://thalesdocs.com/oip/omi-sdk/ios-sdk/index.html)
 * [iOS example app](https://github.com/onewelcome/example-app-ios)
 
-## Cordova
+## React-Native
 
-* [Cordova plugin](https://developer.onewelcome.com/cordova/plugin)
-* [Cordova example app](https://github.com/onewelcome/example-app-cordova)
+* [React Native SDK](https://thalesdocs.com/oip/omi-sdk/react-native-sdk/index.html)
+* [Flutter example app](https://github.com/onewelcome/example-app-react-native)
 
 ## Flutter 
 
-* [Flutter plugin](https://developer.onewelcome.com/flutter/plugin)
-* [Flutter example app](https://github.com/onewelcome/example-app-flutter)
+* [Flutter plugin](https://thalesdocs.com/oip/omi-sdk/flutter-plugin/index.html)
+
+## Cordova (Deprecared)
+
+* [Cordova plugin](https://thalesdocs.com/oip/omi-sdk/cordova-plugin-versions/index.html)
 
 ## Server components
 
