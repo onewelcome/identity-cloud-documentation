@@ -47,7 +47,7 @@ following folders:
 #### Access
 
 The `access` directory contains template sets used to change your web applications and mobile clients' look and feel. Refer to
-the [Access component documentation](../products/access/topics/look-and-feel/index.md) to learn more about switching the template set per
+the [Access component documentation](https://thalesdocs.com/oip/ujo/ujo-access/configuration-page/index.html) to learn more about switching the template set per
 client and the contents of a particular template set. The name of the directory is resolved as the name of the specific template set. If the
 template cannot be found in the chosen set's directory, the content will be served from the `default` directory.
 The `messages` subdirectory contains message bundles that the Access Engine application will load. Please note that there is one folder
